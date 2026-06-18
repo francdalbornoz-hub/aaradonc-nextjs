@@ -183,17 +183,26 @@ export default function OralTumorsPage() {
               { href: '/oral-melanoma', species: 'Dogs', name: 'Oral Melanoma', desc: 'The most common malignant oral tumor in dogs. Radiation achieves excellent local control — typically combined with immunotherapy for systemic disease.', tag: 'Palliative · Local control' },
               { href: '/oral-squamous-cell-carcinoma', species: 'Dogs & Cats', name: 'Squamous Cell Carcinoma', desc: 'SCC is the most common oral tumor in cats and the second most common in dogs. Radiation provides meaningful local control, especially when surgery is not feasible.', tag: 'CFRT · Palliative' },
               { href: '/fibrosarcoma', species: 'Dogs', name: 'Fibrosarcoma', desc: 'Locally aggressive and prone to recurrence after surgery. CFRT post-resection significantly reduces recurrence rates and extends disease-free intervals.', tag: 'Post-surgical CFRT' },
-              { href: '/oral-tumors', species: 'Dogs', name: 'Acanthomatous Epulis', desc: 'While not technically malignant, acanthomatous epulis invades bone aggressively. CFRT achieves >90% long-term local control — often without surgery.', tag: '★ Excellent response to CFRT' },
-              { href: '/oral-tumors', species: 'Dogs', name: 'Osteosarcoma of the jaw', desc: 'Oral osteosarcoma carries a different prognosis than appendicular OSA. Radiation is used post-surgically or palliatively for unresectable cases.', tag: 'Post-surgical · Palliative' },
-              { href: '/contact-pet-owners', species: 'Ask us', name: 'Other oral tumors', desc: 'Every oral tumor case is evaluated individually. Our Radiation Oncologist reviews all oral cavity tumor types and determines the appropriate treatment approach.', tag: 'Case-by-case evaluation' },
+              { href: null, species: 'Dogs', name: 'Acanthomatous Epulis', desc: 'While not technically malignant, acanthomatous epulis invades bone aggressively. CFRT achieves >90% long-term local control — often without surgery.', tag: '★ Excellent response to CFRT' },
+              { href: null, species: 'Dogs', name: 'Osteosarcoma of the jaw', desc: 'Oral osteosarcoma carries a different prognosis than appendicular OSA. Radiation is used post-surgically or palliatively for unresectable cases.', tag: 'Post-surgical · Palliative' },
+              { href: null, species: 'Ask us', name: 'Other oral tumors', desc: 'Every oral tumor case is evaluated individually. Our Radiation Oncologist reviews all oral cavity tumor types and determines the appropriate treatment approach.', tag: 'Case-by-case evaluation' },
             ].map(({ href, species, name, desc, tag }) => (
-              <Link key={name} href={href} className="cond-type-card">
-                <div className="cond-type-card__species">{species}</div>
-                <div className="cond-type-card__name">{name}</div>
-                <div className="cond-type-card__desc">{desc}</div>
-                <div className="cond-type-card__tag">{tag}</div>
-                {href !== '/contact-pet-owners' && <div className="cond-type-card__link">Learn more →</div>}
-              </Link>
+              href ? (
+                <Link key={name} href={href} className="cond-type-card">
+                  <div className="cond-type-card__species">{species}</div>
+                  <div className="cond-type-card__name">{name}</div>
+                  <div className="cond-type-card__desc">{desc}</div>
+                  <div className="cond-type-card__tag">{tag}</div>
+                  <div className="cond-type-card__link">Learn more →</div>
+                </Link>
+              ) : (
+                <div key={name} className="cond-type-card cond-type-card--muted">
+                  <div className="cond-type-card__species">{species}</div>
+                  <div className="cond-type-card__name">{name}</div>
+                  <div className="cond-type-card__desc">{desc}</div>
+                  <div className="cond-type-card__tag">{tag}</div>
+                </div>
+              )
             ))}
           </div>
         </div>
@@ -251,8 +260,8 @@ export default function OralTumorsPage() {
             Protocol is chosen <em>by tumor type</em> and your goals.
           </h3>
           {[
-            { tag: 'Curative Intent — Post-surgical', name: 'CFRT', sessions: '16–20 sessions', note: 'Daily Mon–Fri · outpatient · same-day home', href: '/cfrt-veterinary-radiation-therapy-florida', dark: true },
-            { tag: 'Comfort-Focused Option', name: 'Palliative Radiation', sessions: '3–5 sessions', note: 'Pain relief · function restoration · outpatient', href: '/palliative-veterinary-radiation-therapy-florida', dark: false },
+            { tag: 'Curative Intent — Post-surgical', name: 'CFRT', sessions: '16–20 sessions', note: 'Daily Mon–Fri · outpatient · same-day home', href: '/radiation-therapy/#cfrt', dark: true },
+            { tag: 'Comfort-Focused Option', name: 'Palliative Radiation', sessions: '3–5 sessions', note: 'Pain relief · function restoration · outpatient', href: '/radiation-therapy/#palliative', dark: false },
           ].map(({ tag, name, sessions, note, href, dark }) => (
             <Link key={name} href={href} className={`cond-proto-card${dark ? ' cond-proto-card--dark' : ''}`}>
               <div className="cond-proto-card__tag">{tag}</div>

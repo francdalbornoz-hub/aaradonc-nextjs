@@ -222,8 +222,8 @@ export default function MastCellTumorsPage() {
             CFRT is the <em>standard after incomplete excision.</em>
           </h3>
           {[
-            { tag: 'Primary — Adjuvant Post-Surgical', name: 'CFRT', sessions: '16–20 sessions', note: 'Daily Mon–Fri · outpatient · same-day home', href: '/cfrt-veterinary-radiation-therapy-florida', dark: true },
-            { tag: 'Inoperable Disease', name: 'Palliative Radiation', sessions: '3–5 sessions', note: 'Tumor reduction · symptom relief · outpatient', href: '/palliative-veterinary-radiation-therapy-florida', dark: false },
+            { tag: 'Primary — Adjuvant Post-Surgical', name: 'CFRT', sessions: '16–20 sessions', note: 'Daily Mon–Fri · outpatient · same-day home', href: '/radiation-therapy/#cfrt', dark: true },
+            { tag: 'Inoperable Disease', name: 'Palliative Radiation', sessions: '3–5 sessions', note: 'Tumor reduction · symptom relief · outpatient', href: '/radiation-therapy/#palliative', dark: false },
           ].map(({ tag, name, sessions, note, href, dark }) => (
             <Link key={name} href={href} className={`cond-proto-card${dark ? ' cond-proto-card--dark' : ''}`}>
               <div className="cond-proto-card__tag">{tag}</div>

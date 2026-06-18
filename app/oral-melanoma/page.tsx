@@ -221,8 +221,8 @@ export default function OralMelanomaPage() {
             Palliative RT is the <em>most common</em> approach for oral melanoma.
           </h3>
           {[
-            { tag: 'Primary — Local Control', name: 'Palliative Radiation', sessions: '4–6 sessions', note: 'Hypofractionated · outpatient · same-day home', href: '/palliative-veterinary-radiation-therapy-florida', dark: true },
-            { tag: 'Also Available — Select Cases', name: 'CFRT', sessions: '16–20 sessions', note: 'Curative intent · daily Mon–Fri · outpatient', href: '/cfrt-veterinary-radiation-therapy-florida', dark: false },
+            { tag: 'Primary — Local Control', name: 'Palliative Radiation', sessions: '4–6 sessions', note: 'Hypofractionated · outpatient · same-day home', href: '/radiation-therapy/#palliative', dark: true },
+            { tag: 'Also Available — Select Cases', name: 'CFRT', sessions: '16–20 sessions', note: 'Curative intent · daily Mon–Fri · outpatient', href: '/radiation-therapy/#cfrt', dark: false },
           ].map(({ tag, name, sessions, note, href, dark }) => (
             <Link key={name} href={href} className={`cond-proto-card${dark ? ' cond-proto-card--dark' : ''}`}>
               <div className="cond-proto-card__tag">{tag}</div>

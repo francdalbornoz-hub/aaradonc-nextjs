@@ -182,20 +182,29 @@ export default function LymphomaPage() {
           </div>
           <div className="cond-types__grid">
             {[
-              { href: '/nasal-tumors', species: 'Primarily Cats', name: 'Nasal Lymphoma', desc: 'The most common nasal tumor in cats. Radiation ± chemotherapy achieves remission rates and survival times among the best of any feline cancer.', tag: '★ Excellent prognosis with RT' },
-              { href: '/lymphoma', species: 'Dogs & Cats', name: 'Mediastinal Lymphoma', desc: 'A large mediastinal mass can cause respiratory distress requiring urgent treatment. Radiation rapidly reduces tumor volume — often improving breathing within 1–2 fractions.', tag: 'Urgent · CFRT · Palliative' },
-              { href: '/spinal-tumors', species: 'Dogs & Cats', name: 'Spinal Lymphoma', desc: 'Epidural lymphoma causing spinal cord compression responds to radiation. Early treatment is critical to achieve neurological recovery before permanent damage occurs.', tag: 'Neurological urgency' },
-              { href: '/lymphoma', species: 'Dogs & Cats', name: 'CNS Lymphoma', desc: 'Central nervous system lymphoma — brain or spinal involvement — is treated with whole-brain radiation or focal RT depending on distribution and response to chemotherapy.', tag: 'CFRT · Palliative' },
-              { href: '/lymphoma', species: 'Dogs', name: 'Cutaneous Lymphoma', desc: 'Epitheliotropic (cutaneous) lymphoma is a T-cell form confined to the skin. Radiation provides effective local palliation for isolated, symptomatic skin lesions.', tag: 'Palliative · Focal RT' },
-              { href: '/contact-pet-owners', species: 'Ask us', name: 'Other lymphoma sites', desc: 'Every lymphoma case is evaluated individually. Dr. DiBernardi determines whether and how radiation integrates into your pet\'s overall treatment plan.', tag: 'Case-by-case evaluation' },
+              { href: null, species: 'Primarily Cats', name: 'Nasal Lymphoma', desc: 'The most common nasal tumor in cats. Radiation ± chemotherapy achieves remission rates and survival times among the best of any feline cancer.', tag: '★ Excellent prognosis with RT' },
+              { href: null, species: 'Dogs & Cats', name: 'Mediastinal Lymphoma', desc: 'A large mediastinal mass can cause respiratory distress requiring urgent treatment. Radiation rapidly reduces tumor volume — often improving breathing within 1–2 fractions.', tag: 'Urgent · CFRT · Palliative' },
+              { href: null, species: 'Dogs & Cats', name: 'Spinal Lymphoma', desc: 'Epidural lymphoma causing spinal cord compression responds to radiation. Early treatment is critical to achieve neurological recovery before permanent damage occurs.', tag: 'Neurological urgency' },
+              { href: null, species: 'Dogs & Cats', name: 'CNS Lymphoma', desc: 'Central nervous system lymphoma — brain or spinal involvement — is treated with whole-brain radiation or focal RT depending on distribution and response to chemotherapy.', tag: 'CFRT · Palliative' },
+              { href: null, species: 'Dogs', name: 'Cutaneous Lymphoma', desc: 'Epitheliotropic (cutaneous) lymphoma is a T-cell form confined to the skin. Radiation provides effective local palliation for isolated, symptomatic skin lesions.', tag: 'Palliative · Focal RT' },
+              { href: null, species: 'Ask us', name: 'Other lymphoma sites', desc: 'Every lymphoma case is evaluated individually. Dr. DiBernardi determines whether and how radiation integrates into your pet\'s overall treatment plan.', tag: 'Case-by-case evaluation' },
             ].map(({ href, species, name, desc, tag }) => (
-              <Link key={name} href={href} className="cond-type-card">
-                <div className="cond-type-card__species">{species}</div>
-                <div className="cond-type-card__name">{name}</div>
-                <div className="cond-type-card__desc">{desc}</div>
-                <div className="cond-type-card__tag">{tag}</div>
-                {href !== '/contact-pet-owners' && <div className="cond-type-card__link">Learn more →</div>}
-              </Link>
+              href ? (
+                <Link key={name} href={href} className="cond-type-card">
+                  <div className="cond-type-card__species">{species}</div>
+                  <div className="cond-type-card__name">{name}</div>
+                  <div className="cond-type-card__desc">{desc}</div>
+                  <div className="cond-type-card__tag">{tag}</div>
+                  <div className="cond-type-card__link">Learn more →</div>
+                </Link>
+              ) : (
+                <div key={name} className="cond-type-card cond-type-card--muted">
+                  <div className="cond-type-card__species">{species}</div>
+                  <div className="cond-type-card__name">{name}</div>
+                  <div className="cond-type-card__desc">{desc}</div>
+                  <div className="cond-type-card__tag">{tag}</div>
+                </div>
+              )
             ))}
           </div>
         </div>
@@ -253,8 +262,8 @@ export default function LymphomaPage() {
             CFRT or palliative RT — chosen by <em>site and urgency.</em>
           </h3>
           {[
-            { tag: 'Localized Disease — Curative Intent', name: 'CFRT', sessions: '16–20 sessions', note: 'Daily Mon–Fri · outpatient · same-day home', href: '/cfrt-veterinary-radiation-therapy-florida', dark: true },
-            { tag: 'Bulky Disease / Comfort-Focused', name: 'Palliative Radiation', sessions: '3–5 sessions', note: 'Rapid tumor reduction · symptom relief · outpatient', href: '/palliative-veterinary-radiation-therapy-florida', dark: false },
+            { tag: 'Localized Disease — Curative Intent', name: 'CFRT', sessions: '16–20 sessions', note: 'Daily Mon–Fri · outpatient · same-day home', href: '/radiation-therapy/#cfrt', dark: true },
+            { tag: 'Bulky Disease / Comfort-Focused', name: 'Palliative Radiation', sessions: '3–5 sessions', note: 'Rapid tumor reduction · symptom relief · outpatient', href: '/radiation-therapy/#palliative', dark: false },
           ].map(({ tag, name, sessions, note, href, dark }) => (
             <Link key={name} href={href} className={`cond-proto-card${dark ? ' cond-proto-card--dark' : ''}`}>
               <div className="cond-proto-card__tag">{tag}</div>

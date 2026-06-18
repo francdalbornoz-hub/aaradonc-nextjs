@@ -220,8 +220,8 @@ export default function NasalCarcinomaPage() {
             CFRT is the <em>standard of care</em> for nasal carcinoma.
           </h3>
           {[
-            { tag: 'Primary — Curative Intent', name: 'CFRT', sessions: '16–20 sessions', note: 'Daily Mon–Fri · outpatient · same-day home', href: '/cfrt-veterinary-radiation-therapy-florida', dark: true },
-            { tag: 'Comfort-Focused Option', name: 'Palliative Radiation', sessions: '3–5 sessions', note: 'Symptom relief · quality of life · outpatient', href: '/palliative-veterinary-radiation-therapy-florida', dark: false },
+            { tag: 'Primary — Curative Intent', name: 'CFRT', sessions: '16–20 sessions', note: 'Daily Mon–Fri · outpatient · same-day home', href: '/radiation-therapy/#cfrt', dark: true },
+            { tag: 'Comfort-Focused Option', name: 'Palliative Radiation', sessions: '3–5 sessions', note: 'Symptom relief · quality of life · outpatient', href: '/radiation-therapy/#palliative', dark: false },
           ].map(({ tag, name, sessions, note, href, dark }) => (
             <Link key={name} href={href} className={`cond-proto-card${dark ? ' cond-proto-card--dark' : ''}`}>
               <div className="cond-proto-card__tag">{tag}</div>

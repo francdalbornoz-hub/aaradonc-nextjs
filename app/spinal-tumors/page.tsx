@@ -220,8 +220,8 @@ export default function SpinalTumorsPage() {
             SRS/SRT or CFRT — chosen by <em>tumor type and location.</em>
           </h3>
           {[
-            { tag: 'Preferred — Well-Defined Spinal Tumors', name: 'SRS / SRT', sessions: '1–5 sessions', note: 'Submillimeter precision · outpatient · same-day home', href: '/srs-srt-veterinary-radiation-therapy-florida', dark: true },
-            { tag: 'Also Available', name: 'CFRT', sessions: '16–20 sessions', note: 'Post-surgical or diffuse disease · outpatient', href: '/cfrt-veterinary-radiation-therapy-florida', dark: false },
+            { tag: 'Preferred — Well-Defined Spinal Tumors', name: 'SRS / SRT', sessions: '1–5 sessions', note: 'Submillimeter precision · outpatient · same-day home', href: '/radiation-therapy/#srs-srt', dark: true },
+            { tag: 'Also Available', name: 'CFRT', sessions: '16–20 sessions', note: 'Post-surgical or diffuse disease · outpatient', href: '/radiation-therapy/#cfrt', dark: false },
           ].map(({ tag, name, sessions, note, href, dark }) => (
             <Link key={name} href={href} className={`cond-proto-card${dark ? ' cond-proto-card--dark' : ''}`}>
               <div className="cond-proto-card__tag">{tag}</div>

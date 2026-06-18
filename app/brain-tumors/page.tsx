@@ -208,16 +208,25 @@ export default function BrainTumorsPage() {
               { href: '/glioma', species: 'Primarily Dogs', name: 'Glioma', desc: 'Includes astrocytomas and oligodendrogliomas. More common in brachycephalic breeds. Radiation is the primary treatment — surgery is often not feasible.', tag: 'Radiation as primary Tx' },
               { href: '/pituitary-tumors', species: 'Dogs & Cats', name: 'Pituitary Tumors', desc: 'Can cause neurological signs and hormonal disorders. Radiation targets the tumor directly, controlling both structural and hormonal effects.', tag: 'Hormonal + neurological control' },
               { href: '/spinal-tumors', species: 'Dogs & Cats', name: 'Spinal Tumors', desc: 'Intramedullary and extramedullary spinal tumors causing progressive weakness or paralysis. Radiation can relieve compression and restore function.', tag: 'Nerve preservation' },
-              { href: '/contact-pet-owners', species: 'Dogs & Cats', name: 'Brain Stem Tumors', desc: 'Tumors of the brainstem — among the most delicate to treat. Stereotactic RT allows precise targeting with minimal exposure to adjacent structures.', tag: 'Precision targeting critical' },
-              { href: '/contact-pet-owners', species: 'Ask us', name: 'Other brain tumors', desc: 'Every case is unique. Our Radiation Oncologist evaluates all intracranial tumor types and determines whether radiation therapy is appropriate.', tag: 'Case-by-case evaluation' },
+              { href: null, species: 'Dogs & Cats', name: 'Brain Stem Tumors', desc: 'Tumors of the brainstem — among the most delicate to treat. Stereotactic RT allows precise targeting with minimal exposure to adjacent structures.', tag: 'Precision targeting critical' },
+              { href: null, species: 'Ask us', name: 'Other brain tumors', desc: 'Every case is unique. Our Radiation Oncologist evaluates all intracranial tumor types and determines whether radiation therapy is appropriate.', tag: 'Case-by-case evaluation' },
             ].map(({ href, species, name, desc, tag }) => (
-              <Link key={name} href={href} className="cond-type-card">
-                <div className="cond-type-card__species">{species}</div>
-                <div className="cond-type-card__name">{name}</div>
-                <div className="cond-type-card__desc">{desc}</div>
-                <div className="cond-type-card__tag">{tag}</div>
-                {href !== '/contact-pet-owners' && <div className="cond-type-card__link">Learn more →</div>}
-              </Link>
+              href ? (
+                <Link key={name} href={href} className="cond-type-card">
+                  <div className="cond-type-card__species">{species}</div>
+                  <div className="cond-type-card__name">{name}</div>
+                  <div className="cond-type-card__desc">{desc}</div>
+                  <div className="cond-type-card__tag">{tag}</div>
+                  <div className="cond-type-card__link">Learn more →</div>
+                </Link>
+              ) : (
+                <div key={name} className="cond-type-card cond-type-card--muted">
+                  <div className="cond-type-card__species">{species}</div>
+                  <div className="cond-type-card__name">{name}</div>
+                  <div className="cond-type-card__desc">{desc}</div>
+                  <div className="cond-type-card__tag">{tag}</div>
+                </div>
+              )
             ))}
           </div>
         </div>

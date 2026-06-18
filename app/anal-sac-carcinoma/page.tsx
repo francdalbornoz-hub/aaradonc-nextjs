@@ -221,8 +221,8 @@ export default function AnalSacCarcinomaPage() {
             Protocol chosen by <em>staging and surgical result.</em>
           </h3>
           {[
-            { tag: 'Adjuvant — Post-Surgical', name: 'CFRT', sessions: '16–20 sessions', note: 'Daily Mon–Fri · primary + nodal region · outpatient', href: '/cfrt-veterinary-radiation-therapy-florida', dark: true },
-            { tag: 'Lymph Node Compression / Inoperable', name: 'Palliative Radiation', sessions: '3–5 sessions', note: 'Rapid decompression · quality of life · outpatient', href: '/palliative-veterinary-radiation-therapy-florida', dark: false },
+            { tag: 'Adjuvant — Post-Surgical', name: 'CFRT', sessions: '16–20 sessions', note: 'Daily Mon–Fri · primary + nodal region · outpatient', href: '/radiation-therapy/#cfrt', dark: true },
+            { tag: 'Lymph Node Compression / Inoperable', name: 'Palliative Radiation', sessions: '3–5 sessions', note: 'Rapid decompression · quality of life · outpatient', href: '/radiation-therapy/#palliative', dark: false },
           ].map(({ tag, name, sessions, note, href, dark }) => (
             <Link key={name} href={href} className={`cond-proto-card${dark ? ' cond-proto-card--dark' : ''}`}>
               <div className="cond-proto-card__tag">{tag}</div>

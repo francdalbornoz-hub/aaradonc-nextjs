@@ -1,9 +1,13 @@
 'use client'
 
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
+import { usePathname } from 'next/navigation'
 import Lenis from 'lenis'
 
 export default function SmoothScroll() {
+  const lenisRef = useRef<Lenis | null>(null)
+  const pathname = usePathname()
+
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.4,
@@ -12,6 +16,7 @@ export default function SmoothScroll() {
       wheelMultiplier: 0.9,
       smoothWheel: true,
     })
+    lenisRef.current = lenis
 
     // Lenis needs to handle anchor links — stop native scroll-behavior
     // so it can intercept hash navigation too
@@ -38,8 +43,19 @@ export default function SmoothScroll() {
     return () => {
       document.removeEventListener('click', handleAnchorClick)
       lenis.destroy()
+      lenisRef.current = null
     }
   }, [])
+
+  // Start every new page at the top. Lenis keeps its own scroll position, so
+  // Next's default scroll-to-top is overridden — reset Lenis on route change.
+  // Skip when navigating to a hash target so anchor scrolling still works.
+  useEffect(() => {
+    if (typeof window !== 'undefined' && window.location.hash) return
+    const lenis = lenisRef.current
+    if (lenis) lenis.scrollTo(0, { immediate: true })
+    else window.scrollTo(0, 0)
+  }, [pathname])
 
   return null
 }

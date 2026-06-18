@@ -186,16 +186,25 @@ export default function HeartBaseTumorsPage() {
           </div>
           <div className="cond-types__grid" style={{ gridTemplateColumns: 'repeat(2, 1fr)' }}>
             {[
-              { href: '/heart-base-tumors', species: 'Boxers & Brachycephalic Breeds', name: 'Chemodectoma (Aortic Body Tumor)', desc: 'Slow-growing, rarely metastatic. Arises at the heart base from chemoreceptor cells. Not surgically accessible — radiation therapy is the primary treatment option. Median survival 12–24 months with radiation therapy.', tag: '★ Radiation-responsive · SRS/SRT preferred' },
-              { href: '/heart-base-tumors', species: 'German Shepherds & Large Breeds', name: 'Cardiac Hemangiosarcoma', desc: 'Arises from the right atrium or auricle. Highly aggressive with rapid growth and high metastatic potential. Prognosis is more guarded than chemodectoma. Radiation and chemotherapy may be used palliatively.', tag: 'Palliative · Poor prognosis' },
+              { href: null, species: 'Boxers & Brachycephalic Breeds', name: 'Chemodectoma (Aortic Body Tumor)', desc: 'Slow-growing, rarely metastatic. Arises at the heart base from chemoreceptor cells. Not surgically accessible — radiation therapy is the primary treatment option. Median survival 12–24 months with radiation therapy.', tag: '★ Radiation-responsive · SRS/SRT preferred' },
+              { href: null, species: 'German Shepherds & Large Breeds', name: 'Cardiac Hemangiosarcoma', desc: 'Arises from the right atrium or auricle. Highly aggressive with rapid growth and high metastatic potential. Prognosis is more guarded than chemodectoma. Radiation and chemotherapy may be used palliatively.', tag: 'Palliative · Poor prognosis' },
             ].map(({ href, species, name, desc, tag }) => (
-              <Link key={name} href={href} className="cond-type-card">
-                <div className="cond-type-card__species">{species}</div>
-                <div className="cond-type-card__name">{name}</div>
-                <div className="cond-type-card__desc">{desc}</div>
-                <div className="cond-type-card__tag">{tag}</div>
-                <div className="cond-type-card__link">Learn more →</div>
-              </Link>
+              href ? (
+                <Link key={name} href={href} className="cond-type-card">
+                  <div className="cond-type-card__species">{species}</div>
+                  <div className="cond-type-card__name">{name}</div>
+                  <div className="cond-type-card__desc">{desc}</div>
+                  <div className="cond-type-card__tag">{tag}</div>
+                  <div className="cond-type-card__link">Learn more →</div>
+                </Link>
+              ) : (
+                <div key={name} className="cond-type-card cond-type-card--muted">
+                  <div className="cond-type-card__species">{species}</div>
+                  <div className="cond-type-card__name">{name}</div>
+                  <div className="cond-type-card__desc">{desc}</div>
+                  <div className="cond-type-card__tag">{tag}</div>
+                </div>
+              )
             ))}
           </div>
         </div>
@@ -253,8 +262,8 @@ export default function HeartBaseTumorsPage() {
             SRS/SRT is the <em>preferred protocol</em> for heart base tumors.
           </h3>
           {[
-            { tag: 'Preferred — Chemodectoma', name: 'SRS / SRT', sessions: '1–5 sessions', note: 'Submillimeter precision · outpatient · same-day home', href: '/srs-srt-veterinary-radiation-therapy-florida', dark: true },
-            { tag: 'Also Available', name: 'CFRT', sessions: '16–20 sessions', note: 'Select cases · outpatient · daily Mon–Fri', href: '/cfrt-veterinary-radiation-therapy-florida', dark: false },
+            { tag: 'Preferred — Chemodectoma', name: 'SRS / SRT', sessions: '1–5 sessions', note: 'Submillimeter precision · outpatient · same-day home', href: '/radiation-therapy/#srs-srt', dark: true },
+            { tag: 'Also Available', name: 'CFRT', sessions: '16–20 sessions', note: 'Select cases · outpatient · daily Mon–Fri', href: '/radiation-therapy/#cfrt', dark: false },
           ].map(({ tag, name, sessions, note, href, dark }) => (
             <Link key={name} href={href} className={`cond-proto-card${dark ? ' cond-proto-card--dark' : ''}`}>
               <div className="cond-proto-card__tag">{tag}</div>

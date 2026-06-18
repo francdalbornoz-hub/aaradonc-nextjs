@@ -223,8 +223,8 @@ export default function BladderCancerPage() {
             Palliative radiation — <em>quality of life is the goal.</em>
           </h3>
           {[
-            { tag: 'Primary — Tumor Control & QoL', name: 'Palliative Radiation', sessions: '3–5 sessions', note: 'Tumor reduction · obstruction relief · outpatient', href: '/palliative-veterinary-radiation-therapy-florida', dark: true },
-            { tag: 'Combined with Systemic Therapy', name: 'CFRT (select cases)', sessions: '16–20 sessions', note: 'Higher cumulative dose · combined with chemo/NSAIDs', href: '/cfrt-veterinary-radiation-therapy-florida', dark: false },
+            { tag: 'Primary — Tumor Control & QoL', name: 'Palliative Radiation', sessions: '3–5 sessions', note: 'Tumor reduction · obstruction relief · outpatient', href: '/radiation-therapy/#palliative', dark: true },
+            { tag: 'Combined with Systemic Therapy', name: 'CFRT (select cases)', sessions: '16–20 sessions', note: 'Higher cumulative dose · combined with chemo/NSAIDs', href: '/radiation-therapy/#cfrt', dark: false },
           ].map(({ tag, name, sessions, note, href, dark }) => (
             <Link key={name} href={href} className={`cond-proto-card${dark ? ' cond-proto-card--dark' : ''}`}>
               <div className="cond-proto-card__tag">{tag}</div>

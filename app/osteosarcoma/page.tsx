@@ -319,7 +319,7 @@ export default function OsteosarcomaPage() {
         </div>
         <div className="cond-treat__right">
           {/* Palliative — primary card */}
-          <Link href="/palliative-veterinary-radiation-therapy-florida" className="cond-proto-card cond-proto-card--primary">
+          <Link href="/radiation-therapy/#palliative" className="cond-proto-card cond-proto-card--primary">
             <div className="cond-proto-card__glow" aria-hidden="true" />
             <div className="cond-proto-card__eyebrow">★ First-line for osteosarcoma pain</div>
             <div className="cond-proto-card__title">Palliative Radiation</div>
@@ -354,7 +354,7 @@ export default function OsteosarcomaPage() {
             </div>
           </Link>
           {/* CFRT — secondary card */}
-          <Link href="/cfrt-veterinary-radiation-therapy-florida" className="cond-proto-card cond-proto-card--secondary">
+          <Link href="/radiation-therapy/#cfrt" className="cond-proto-card cond-proto-card--secondary">
             <div className="cond-proto-card__eyebrow">For select axial osteosarcoma cases</div>
             <div className="cond-proto-card__title">CFRT</div>
             <div className="cond-proto-card__specs">

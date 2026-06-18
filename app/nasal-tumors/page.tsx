@@ -179,19 +179,28 @@ export default function NasalTumorsPage() {
           <div className="cond-types__grid">
             {[
               { href: '/nasal-carcinoma', species: 'Primarily Dogs', name: 'Nasal Carcinoma', desc: 'Adenocarcinoma is the most common nasal tumor in dogs. Highly responsive to definitive CFRT. Diagnosis requires CT staging and histopathology.', tag: '★ Most radiation-responsive' },
-              { href: '/nasal-carcinoma', species: 'Dogs & Cats', name: 'Nasal Squamous Cell Carcinoma', desc: 'SCC of the nasal planum and nasal cavity responds well to radiation. Cats with nasal SCC are candidates for both CFRT and palliative protocols.', tag: 'CFRT · Palliative' },
-              { href: '/nasal-carcinoma', species: 'Primarily Cats', name: 'Nasal Lymphoma', desc: 'The most common nasal tumor in cats. Radiation combined with chemotherapy achieves excellent local control and long-term remission in many cases.', tag: 'Radiation + Chemo' },
-              { href: '/nasal-carcinoma', species: 'Dogs', name: 'Nasal Sarcoma', desc: 'Chondrosarcomas and fibrosarcomas of the nasal cavity are less common but respond to radiation when surgery is not feasible or incomplete.', tag: 'CFRT · Post-surgical' },
-              { href: '/nasal-carcinoma', species: 'Dogs', name: 'Nasal Transitional Carcinoma', desc: 'A rare but radiation-responsive nasal tumor variant. Treated with the same definitive CFRT approach as other carcinomas.', tag: 'CFRT · Definitive' },
-              { href: '/contact-pet-owners', species: 'Ask us', name: 'Other nasal tumors', desc: 'Every case is evaluated individually. Our Radiation Oncologist reviews all nasal cavity tumor types and determines whether radiation therapy is appropriate.', tag: 'Case-by-case evaluation' },
+              { href: null, species: 'Dogs & Cats', name: 'Nasal Squamous Cell Carcinoma', desc: 'SCC of the nasal planum and nasal cavity responds well to radiation. Cats with nasal SCC are candidates for both CFRT and palliative protocols.', tag: 'CFRT · Palliative' },
+              { href: null, species: 'Primarily Cats', name: 'Nasal Lymphoma', desc: 'The most common nasal tumor in cats. Radiation combined with chemotherapy achieves excellent local control and long-term remission in many cases.', tag: 'Radiation + Chemo' },
+              { href: null, species: 'Dogs', name: 'Nasal Sarcoma', desc: 'Chondrosarcomas and fibrosarcomas of the nasal cavity are less common but respond to radiation when surgery is not feasible or incomplete.', tag: 'CFRT · Post-surgical' },
+              { href: null, species: 'Dogs', name: 'Nasal Transitional Carcinoma', desc: 'A rare but radiation-responsive nasal tumor variant. Treated with the same definitive CFRT approach as other carcinomas.', tag: 'CFRT · Definitive' },
+              { href: null, species: 'Ask us', name: 'Other nasal tumors', desc: 'Every case is evaluated individually. Our Radiation Oncologist reviews all nasal cavity tumor types and determines whether radiation therapy is appropriate.', tag: 'Case-by-case evaluation' },
             ].map(({ href, species, name, desc, tag }) => (
-              <Link key={name} href={href} className="cond-type-card">
-                <div className="cond-type-card__species">{species}</div>
-                <div className="cond-type-card__name">{name}</div>
-                <div className="cond-type-card__desc">{desc}</div>
-                <div className="cond-type-card__tag">{tag}</div>
-                {href !== '/contact-pet-owners' && <div className="cond-type-card__link">Learn more →</div>}
-              </Link>
+              href ? (
+                <Link key={name} href={href} className="cond-type-card">
+                  <div className="cond-type-card__species">{species}</div>
+                  <div className="cond-type-card__name">{name}</div>
+                  <div className="cond-type-card__desc">{desc}</div>
+                  <div className="cond-type-card__tag">{tag}</div>
+                  <div className="cond-type-card__link">Learn more →</div>
+                </Link>
+              ) : (
+                <div key={name} className="cond-type-card cond-type-card--muted">
+                  <div className="cond-type-card__species">{species}</div>
+                  <div className="cond-type-card__name">{name}</div>
+                  <div className="cond-type-card__desc">{desc}</div>
+                  <div className="cond-type-card__tag">{tag}</div>
+                </div>
+              )
             ))}
           </div>
         </div>
@@ -249,8 +258,8 @@ export default function NasalTumorsPage() {
             CFRT is the <em>standard of care</em> for nasal tumors.
           </h3>
           {[
-            { tag: 'Primary — Curative Intent', name: 'CFRT', sessions: '16–20 sessions', note: 'Daily Mon–Fri · outpatient · same-day home', href: '/cfrt-veterinary-radiation-therapy-florida', dark: true },
-            { tag: 'Comfort-Focused Option', name: 'Palliative Radiation', sessions: '3–5 sessions', note: 'Symptom relief · quality of life · outpatient', href: '/palliative-veterinary-radiation-therapy-florida', dark: false },
+            { tag: 'Primary — Curative Intent', name: 'CFRT', sessions: '16–20 sessions', note: 'Daily Mon–Fri · outpatient · same-day home', href: '/radiation-therapy/#cfrt', dark: true },
+            { tag: 'Comfort-Focused Option', name: 'Palliative Radiation', sessions: '3–5 sessions', note: 'Symptom relief · quality of life · outpatient', href: '/radiation-therapy/#palliative', dark: false },
           ].map(({ tag, name, sessions, note, href, dark }) => (
             <Link key={name} href={href} className={`cond-proto-card${dark ? ' cond-proto-card--dark' : ''}`}>
               <div className="cond-proto-card__tag">{tag}</div>

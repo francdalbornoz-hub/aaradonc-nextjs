@@ -223,8 +223,8 @@ export default function VaccineAssociatedSarcomaPage() {
             CFRT is the <em>standard for VAS.</em>
           </h3>
           {[
-            { tag: 'Primary — Adjuvant or Neoadjuvant', name: 'CFRT', sessions: '16–20 sessions', note: 'Daily Mon–Fri · outpatient · same-day home', href: '/cfrt-veterinary-radiation-therapy-florida', dark: true },
-            { tag: 'Inoperable or Recurrent Disease', name: 'Palliative Radiation', sessions: '3–5 sessions', note: 'Tumor control · quality of life · outpatient', href: '/palliative-veterinary-radiation-therapy-florida', dark: false },
+            { tag: 'Primary — Adjuvant or Neoadjuvant', name: 'CFRT', sessions: '16–20 sessions', note: 'Daily Mon–Fri · outpatient · same-day home', href: '/radiation-therapy/#cfrt', dark: true },
+            { tag: 'Inoperable or Recurrent Disease', name: 'Palliative Radiation', sessions: '3–5 sessions', note: 'Tumor control · quality of life · outpatient', href: '/radiation-therapy/#palliative', dark: false },
           ].map(({ tag, name, sessions, note, href, dark }) => (
             <Link key={name} href={href} className={`cond-proto-card${dark ? ' cond-proto-card--dark' : ''}`}>
               <div className="cond-proto-card__tag">{tag}</div>

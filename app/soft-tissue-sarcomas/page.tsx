@@ -334,7 +334,7 @@ export default function SoftTissueSarcomasPage() {
         </div>
         <div className="cond-treat__right">
           {/* CFRT — primary card */}
-          <Link href="/cfrt-veterinary-radiation-therapy-florida" className="cond-proto-card cond-proto-card--primary">
+          <Link href="/radiation-therapy/#cfrt" className="cond-proto-card cond-proto-card--primary">
             <div className="cond-proto-card__glow" aria-hidden="true" />
             <div className="cond-proto-card__eyebrow">★ Standard post-surgical STS protocol</div>
             <div className="cond-proto-card__title">CFRT</div>
@@ -369,7 +369,7 @@ export default function SoftTissueSarcomasPage() {
             </div>
           </Link>
           {/* Palliative — secondary card */}
-          <Link href="/palliative-veterinary-radiation-therapy-florida" className="cond-proto-card cond-proto-card--secondary">
+          <Link href="/radiation-therapy/#palliative" className="cond-proto-card cond-proto-card--secondary">
             <div className="cond-proto-card__eyebrow">Inoperable or recurrent STS</div>
             <div className="cond-proto-card__title">Palliative Radiation</div>
             <div className="cond-proto-card__specs">

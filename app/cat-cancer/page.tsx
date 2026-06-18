@@ -22,9 +22,9 @@ const CANCER_TYPES = [
 ]
 
 const PROTOCOLS = [
-  { id: 'cfrt', eyebrow: 'Curative Intent', title: 'CFRT', sessions: '16–20 daily', intent: 'Curative', bestFor: 'Nasal · Lymphoma · FISS', desc: 'Gold standard for nasal tumors, localized lymphoma, and vaccine-site sarcomas. Fractionated doses allow healthy tissue to recover while maintaining continuous tumor pressure.', href: '/cfrt-veterinary-radiation-therapy-florida', featured: false },
-  { id: 'srs', eyebrow: 'Stereotactic · High Precision', title: 'SRS / SRT', sessions: '1–5 total', intent: 'Precision ablative', bestFor: 'Brain tumors · Meningioma', desc: 'Ideal for feline meningiomas. Ultra-precise delivery in as few as one session — maximum accuracy with the fewest anesthetic events, important for older cats.', href: '/srs-srt-veterinary-radiation-therapy-florida', featured: true },
-  { id: 'pal', eyebrow: 'Comfort-Focused', title: 'Palliative Radiation', sessions: '3–5 total', intent: 'Pain relief · QoL', bestFor: 'Advanced disease · SCC', desc: 'When curative treatment is not the goal, palliative radiation reduces tumor burden, relieves pain, and can meaningfully improve a cat\'s comfort and daily life.', href: '/palliative-veterinary-radiation-therapy-florida', featured: false },
+  { id: 'cfrt', eyebrow: 'Curative Intent', title: 'CFRT', sessions: '16–20 daily', intent: 'Curative', bestFor: 'Nasal · Lymphoma · FISS', desc: 'Gold standard for nasal tumors, localized lymphoma, and vaccine-site sarcomas. Fractionated doses allow healthy tissue to recover while maintaining continuous tumor pressure.', href: '/radiation-therapy/#cfrt', featured: false },
+  { id: 'srs', eyebrow: 'Stereotactic · High Precision', title: 'SRS / SRT', sessions: '1–5 total', intent: 'Precision ablative', bestFor: 'Brain tumors · Meningioma', desc: 'Ideal for feline meningiomas. Ultra-precise delivery in as few as one session — maximum accuracy with the fewest anesthetic events, important for older cats.', href: '/radiation-therapy/#srs-srt', featured: true },
+  { id: 'pal', eyebrow: 'Comfort-Focused', title: 'Palliative Radiation', sessions: '3–5 total', intent: 'Pain relief · QoL', bestFor: 'Advanced disease · SCC', desc: 'When curative treatment is not the goal, palliative radiation reduces tumor burden, relieves pain, and can meaningfully improve a cat\'s comfort and daily life.', href: '/radiation-therapy/#palliative', featured: false },
 ]
 
 export default function CatCancerPage() {

@@ -22,9 +22,9 @@ const CANCER_TYPES = [
 ]
 
 const PROTOCOLS = [
-  { id: 'cfrt', eyebrow: 'Curative Intent', title: 'CFRT', sessions: '16–20 daily', intent: 'Curative', bestFor: 'Nasal · Brain · MCT · STS', desc: 'Gold standard for most solid tumors. Fractionated doses allow healthy tissue to recover between sessions while maintaining maximum tumor pressure.', href: '/cfrt-veterinary-radiation-therapy-florida', featured: false },
-  { id: 'srs', eyebrow: 'Stereotactic · High Precision', title: 'SRS / SRT', sessions: '1–5 total', intent: 'Precision ablative', bestFor: 'Brain tumors · Focal lesions', desc: 'Ultra-precise delivery of high-dose radiation in as few as one session. Ideal for small, well-defined tumors — extreme accuracy with the fewest anesthetic events.', href: '/srs-srt-veterinary-radiation-therapy-florida', featured: true },
-  { id: 'pal', eyebrow: 'Comfort-Focused', title: 'Palliative Radiation', sessions: '3–5 total', intent: 'Pain relief · QoL', bestFor: 'OSA · Advanced disease', desc: 'Focused on quality of life. Particularly effective for bone cancer — most dogs show meaningful improvement in pain and mobility within 1–2 weeks of treatment.', href: '/palliative-veterinary-radiation-therapy-florida', featured: false },
+  { id: 'cfrt', eyebrow: 'Curative Intent', title: 'CFRT', sessions: '16–20 daily', intent: 'Curative', bestFor: 'Nasal · Brain · MCT · STS', desc: 'Gold standard for most solid tumors. Fractionated doses allow healthy tissue to recover between sessions while maintaining maximum tumor pressure.', href: '/radiation-therapy/#cfrt', featured: false },
+  { id: 'srs', eyebrow: 'Stereotactic · High Precision', title: 'SRS / SRT', sessions: '1–5 total', intent: 'Precision ablative', bestFor: 'Brain tumors · Focal lesions', desc: 'Ultra-precise delivery of high-dose radiation in as few as one session. Ideal for small, well-defined tumors — extreme accuracy with the fewest anesthetic events.', href: '/radiation-therapy/#srs-srt', featured: true },
+  { id: 'pal', eyebrow: 'Comfort-Focused', title: 'Palliative Radiation', sessions: '3–5 total', intent: 'Pain relief · QoL', bestFor: 'OSA · Advanced disease', desc: 'Focused on quality of life. Particularly effective for bone cancer — most dogs show meaningful improvement in pain and mobility within 1–2 weeks of treatment.', href: '/radiation-therapy/#palliative', featured: false },
 ]
 
 export default function DogCancerPage() {
