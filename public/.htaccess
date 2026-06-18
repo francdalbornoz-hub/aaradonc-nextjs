@@ -1,0 +1,75 @@
+# AARADONC — Apache configuration for Next.js static export on Hostinger
+# Place this file in public_html/ (it will be copied there by the build output)
+
+Options -Indexes
+Options +FollowSymLinks
+
+# ── Charset & MIME ────────────────────────────────────────────────────────────
+AddDefaultCharset UTF-8
+AddType application/javascript .js .mjs
+AddType text/css .css
+AddType image/webp .webp
+AddType image/svg+xml .svg
+
+# ── Gzip compression ──────────────────────────────────────────────────────────
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript application/json image/svg+xml
+</IfModule>
+
+# ── Browser caching ───────────────────────────────────────────────────────────
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/html                 "access plus 1 hour"
+  ExpiresByType text/css                  "access plus 1 year"
+  ExpiresByType application/javascript    "access plus 1 year"
+  ExpiresByType image/webp                "access plus 1 year"
+  ExpiresByType image/png                 "access plus 1 year"
+  ExpiresByType image/jpeg                "access plus 1 year"
+  ExpiresByType image/svg+xml             "access plus 1 year"
+  ExpiresByType font/woff2                "access plus 1 year"
+</IfModule>
+
+# ── Rewrite rules — clean URLs for Next.js static export ─────────────────────
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Serve existing files and directories as-is
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # Next.js static export with trailingSlash: true
+  # /about → /about/index.html
+  RewriteCond %{REQUEST_FILENAME}/index.html -f
+  RewriteRule ^(.+[^/])$ %{REQUEST_URI}/ [R=301,L]
+
+  # Remove trailing slash from files with extensions
+  RewriteRule ^(.+)/$ /$1 [R=301,L,NC]
+
+  # Serve index.html for clean directory paths
+  RewriteCond %{REQUEST_URI} /$
+  RewriteCond %{REQUEST_FILENAME}index.html -f
+  RewriteRule ^(.*)$ $1index.html [L]
+
+  # 404 fallback — Next.js generates 404/index.html
+  RewriteRule ^ 404/index.html [L]
+</IfModule>
+
+# ── Security headers ──────────────────────────────────────────────────────────
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(self)"
+
+  # Long-term cache for hashed Next.js assets
+  <FilesMatch "\.(js|css|woff2|webp|png|jpg|jpeg|svg)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # No cache for HTML (trailingSlash index.html pages)
+  <FilesMatch "index\.html$">
+    Header set Cache-Control "public, max-age=3600, must-revalidate"
+  </FilesMatch>
+</IfModule>
