@@ -81,7 +81,7 @@ export const ORGANIZATION = {
   // NAP — kept identical to CONTACT_INFO (header/footer/Contact pages) per the consistency rule.
   telephone: process.env.NEXT_PUBLIC_PHONE ?? '(561) 557-2565',
   address: {
-    streetAddress: process.env.NEXT_PUBLIC_ADDRESS_STREET ?? '12993 Southern Blvd, Unit A',
+    streetAddress: process.env.NEXT_PUBLIC_ADDRESS_STREET ?? '12993 Southern Blvd, Suite A',
     addressLocality: process.env.NEXT_PUBLIC_ADDRESS_CITY ?? 'Loxahatchee',
     addressRegion: 'FL',
     postalCode: process.env.NEXT_PUBLIC_ADDRESS_ZIP ?? '33470',

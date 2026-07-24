@@ -211,7 +211,7 @@ export const CONTACT_INFO = {
   phoneHref: `tel:${(process.env.NEXT_PUBLIC_PHONE ?? '5615572565').replace(/\D/g, '')}`,
   email: process.env.NEXT_PUBLIC_EMAIL ?? 'info@aaradonc.com',
   // Full NAP address — must stay identical across header, footer, Contact pages, and schema.
-  address: '12993 Southern Blvd, Unit A · Loxahatchee, FL 33470',
+  address: '12993 Southern Blvd, Suite A · Loxahatchee, FL 33470',
   // Google Business / Maps profile (opened in a new tab from any address element).
   mapsUrl: 'https://maps.app.goo.gl/cjkQDyYLqLpjTadv5',
   // Social
