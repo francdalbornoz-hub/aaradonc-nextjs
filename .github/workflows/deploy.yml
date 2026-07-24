@@ -27,7 +27,7 @@ jobs:
           # so only secrets that must stay out of git are passed here.
           NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL || 'https://aaradonc.com' }}
           NEXT_PUBLIC_WEB3FORMS_KEY: ${{ secrets.NEXT_PUBLIC_WEB3FORMS_KEY }}
-          NEXT_PUBLIC_GTM_ID: ${{ secrets.NEXT_PUBLIC_GTM_ID }}
+          NEXT_PUBLIC_GTM_ID: ${{ secrets.NEXT_PUBLIC_GTM_ID || 'GTM-5JMWKGPC' }}
         run: npm run build
 
       - name: Deploy to Hostinger via FTP
