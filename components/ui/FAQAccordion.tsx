@@ -1,7 +1,7 @@
 'use client'
 
 import type { ReactNode } from 'react'
-import { useState } from 'react'
+import { isValidElement, useState } from 'react'
 
 interface FAQItem {
   q: string
@@ -13,11 +13,46 @@ interface FAQAccordionProps {
   className?: string
 }
 
+// Flatten any answer (plain string or JSX like <>…<strong>…</strong></>) into
+// the plain text Schema.org FAQPage requires. Recurses through fragments and
+// elements, collecting only their text content.
+function nodeToPlainText(node: ReactNode): string {
+  if (node == null || typeof node === 'boolean') return ''
+  if (typeof node === 'string') return node
+  if (typeof node === 'number') return String(node)
+  if (Array.isArray(node)) return node.map(nodeToPlainText).join('')
+  if (isValidElement(node)) {
+    return nodeToPlainText((node.props as { children?: ReactNode }).children)
+  }
+  return ''
+}
+
 export default function FAQAccordion({ items, className = 'rt-faq' }: FAQAccordionProps) {
   const [open, setOpen] = useState<number | null>(0)
 
+  // ── FAQPage structured data (JSON-LD) ──────────────────────────────────────
+  // Built from the same items the accordion renders, so the schema can never
+  // drift from the visible content. Powers rich results + GEO (AI answer
+  // engines: ChatGPT, Perplexity, Google AI Overviews).
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: items.map((item) => ({
+      '@type': 'Question',
+      name: nodeToPlainText(item.q),
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: nodeToPlainText(item.a),
+      },
+    })),
+  }
+
   return (
     <div className={className}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       {items.map((item, i) => (
         <div key={i} className={`rt-faq-item${open === i ? ' rt-faq-item--open' : ''}`}>
           <button

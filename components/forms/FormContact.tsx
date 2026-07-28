@@ -5,6 +5,11 @@ import { submitForm } from '@/lib/submit-form'
 
 type Species = 'dog' | 'cat' | 'other' | ''
 
+// Sentinel value submitted when the visitor has no confirmed diagnosis yet.
+// Keeps the field meaningful in the notification email while removing the
+// friction of forcing a diagnosis they may not have.
+const NO_DIAGNOSIS = "Don't have a diagnosis yet"
+
 type ContactData = {
   website: string  // honeypot
   fullName: string
@@ -100,7 +105,15 @@ export default function FormContact({ variant = 'light' }: Props) {
         <div className="ff-el-input--label"><label htmlFor="fc-diagnosis">Diagnosis / Tumor Type</label></div>
         <input id="fc-diagnosis" type="text" name="diagnosis"
           placeholder="e.g. Brain tumor, Mast cell tumor"
-          value={data.diagnosis} onChange={(e) => update('diagnosis', e.target.value)} />
+          value={data.diagnosis === NO_DIAGNOSIS ? '' : data.diagnosis}
+          disabled={data.diagnosis === NO_DIAGNOSIS}
+          onChange={(e) => update('diagnosis', e.target.value)} />
+        <label className="ff-el-form-check-label" style={{ marginTop: 8, display: 'inline-flex', alignItems: 'center', gap: 6 }}>
+          <input type="checkbox" className="ff-el-form-check-input"
+            checked={data.diagnosis === NO_DIAGNOSIS}
+            onChange={(e) => update('diagnosis', e.target.checked ? NO_DIAGNOSIS : '')} />
+          I don&apos;t have a diagnosis yet
+        </label>
       </div>
 
       <div className="ff-el-group">
