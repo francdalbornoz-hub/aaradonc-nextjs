@@ -3,10 +3,24 @@ import Link from 'next/link'
 import { getPageSeo } from '@/lib/seo-config'
 import { CONTACT_INFO } from '@/lib/nav-config'
 import FormContact from '@/components/forms/FormContact'
+import FAQAccordion from '@/components/ui/FAQAccordion'
 
 // ─── SEO ──────────────────────────────────────────────────────────────────────
 
 const pageSeo = getPageSeo('/contact-pet-owners')
+
+// ─── Data ─────────────────────────────────────────────────────────────────────
+
+const FAQ_ITEMS = [
+  {
+    q: 'Do I need a referral from my veterinarian, or can I contact you directly without a confirmed diagnosis?',
+    a: 'No referral is required — pet owners can contact us directly, and you do not need a confirmed diagnosis to reach out. If your pet has a suspected or confirmed tumor, we can help you understand whether radiation therapy is an option. We coordinate with your primary care veterinarian throughout the entire process.',
+  },
+  {
+    q: 'How is this center different from a general veterinary oncology clinic?',
+    a: 'We are the only center in Florida 100% dedicated to radiation oncology. Treatment is delivered by a board-certified radiation oncologist on site — not a general practitioner or a rotating specialist. Because our focus is exclusively radiation therapy, we bring dedicated equipment, protocols, and expertise to this single discipline. Your pet returns to your primary veterinarian for all other care — we complement your existing veterinary team rather than replace it.',
+  },
+]
 
 export const metadata: Metadata = {
   title: pageSeo.title,
@@ -203,6 +217,21 @@ export default function ContactPetOwnersPage() {
           </div>
         </div>
       </div>
+
+      {/* ══════════════════════════════════════════════════════════════════════
+          FAQ
+      ══════════════════════════════════════════════════════════════════════ */}
+      <section className="seccion" aria-labelledby="faq-heading">
+        <div className="contenedor">
+          <div style={{ textAlign: 'center', maxWidth: 580, margin: '0 auto' }}>
+            <div className="eyebrow" style={{ justifyContent: 'center' }}>Common Questions</div>
+            <h2 id="faq-heading" className="titulo-seccion">
+              What pet owners<br /><em>ask us most.</em>
+            </h2>
+          </div>
+          <FAQAccordion items={FAQ_ITEMS} />
+        </div>
+      </section>
 
       {/* ══════════════════════════════════════════════════════════════════════
           REFERRING VETS CTA STRIP
