@@ -131,7 +131,7 @@ export default function RadiationOncologistPage() {
                 is not one service among many — it is the sole focus of the entire center.
               </p>
               <p>
-                Pet owners and referring veterinarians throughout Palm Beach County and across Florida
+                Pet families and referring veterinarians throughout Palm Beach County and across Florida
                 choose Dr. DiBernardi for her expertise, her clear communication, and her commitment to
                 building individualized treatment plans that prioritize both tumor control and quality of life.
               </p>
@@ -226,7 +226,7 @@ export default function RadiationOncologistPage() {
               <div className="onc-pillar__title">Patient &amp; family centered</div>
               <p className="onc-pillar__text">
                 Dr. DiBernardi takes time with every family to explain the treatment plan clearly,
-                answer all questions, and ensure pet owners feel informed and confident — at every
+                answer all questions, and ensure pet families feel informed and confident — at every
                 step of the process.
               </p>
             </div>
@@ -252,7 +252,7 @@ export default function RadiationOncologistPage() {
       ══════════════════════════════════════════════════════════════════════ */}
       <div className="onc-cta">
         <div className="onc-cta__col onc-cta__col--owners">
-          <div className="onc-cta__pretitle">For Pet Owners</div>
+          <div className="onc-cta__pretitle">For Pet Families</div>
           <div className="onc-cta__title">
             Meet the Doctor.<br /><em>Start your consultation.</em>
           </div>

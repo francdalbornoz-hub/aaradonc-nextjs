@@ -69,7 +69,7 @@ const CONDITIONS = [
 ]
 
 const BADGES = [
-  'Board-Certified Radiation Oncologist On Site',
+  'Board-Certified Radiation Oncologist on site',
   '3D CT-Based Treatment Planning',
   'Outpatient · Same-Day Home',
   'Same-Day Response',
@@ -176,7 +176,7 @@ export default function RadiationTherapyPage() {
                   </svg>
                 </div>
                 <div className="rt-intro__badge-text">
-                  <strong>Board-Certified Specialist On Site</strong>
+                  <strong>Board-Certified Specialist on site</strong>
                   <span>Dual board certification · 20+ years experience</span>
                 </div>
               </div>
@@ -193,7 +193,7 @@ export default function RadiationTherapyPage() {
           <div style={{ textAlign: 'center', maxWidth: 680, margin: '0 auto 60px' }}>
             <div className="eyebrow eyebrow--claro" style={{ justifyContent: 'center' }}>Our Technology</div>
             <h2 id="tech-heading" className="titulo-seccion titulo-seccion--claro">
-              Varian TrueBeam® —<br /><em>human-level technology</em> for veterinary patients.
+              Varian TrueBeam —<br /><em>Human Cancer Center Technology</em> for Veterinary Patients.
             </h2>
             <p className="bajada bajada--claro" style={{ margin: '0 auto' }}>
               Our center is equipped with the <strong style={{ color: '#fff' }}>Varian TrueBeam® linear accelerator</strong>,
@@ -215,7 +215,7 @@ export default function RadiationTherapyPage() {
               />
               <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '20px 24px', background: 'linear-gradient(to top, rgba(7,18,50,.9) 0%, transparent 100%)' }}>
                 <div style={{ fontSize: 13, fontWeight: 700, color: '#7EC8E3', marginBottom: 2 }}>Varian TrueBeam®</div>
-                <div style={{ fontSize: 12, color: 'rgba(255,255,255,.6)' }}>Linear Accelerator · On Site</div>
+                <div style={{ fontSize: 12, color: 'rgba(255,255,255,.6)' }}>Linear Accelerator · on site</div>
               </div>
             </div>
 
@@ -225,25 +225,25 @@ export default function RadiationTherapyPage() {
                 {
                   icon: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><line x1="7" y1="12" x2="17" y2="12"/></svg>,
                   title: 'Image-Guided Radiation Therapy (IGRT)',
-                  text: 'Cone Beam CT imaging before every treatment confirms exact tumor position and adjusts positioning before radiation delivery. Daily image guidance improves accuracy, safety, and outcomes.',
+                  text: 'Every treatment begins with Cone Beam CT (CBCT) imaging to confirm accurate tumor positioning, allowing radiation to be delivered with exceptional precision while minimizing exposure to surrounding healthy tissue.',
                   note: 'Critical for: brain, nasal, spinal, and tumors near critical organs.',
                 },
                 {
                   icon: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><line x1="2" y1="12" x2="22" y2="12"/></svg>,
                   title: 'VMAT / RapidArc',
-                  text: 'Volumetric Modulated Arc Therapy delivers highly conformal radiation while rotating around the patient. Shorter treatment times, shorter anesthesia time, better protection of healthy tissue.',
+                  text: 'The machine rotates around the patient while continuously delivering radiation — highly conformal treatments, better tissue protection, shorter treatment times, and shorter anesthesia for our patients.',
                   note: 'Shorter anesthesia time is a key advantage for veterinary patients.',
                 },
                 {
                   icon: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>,
                   title: 'Precision Beam Shaping – MLC',
-                  text: 'High-resolution multileaf collimator shapes the beam to match the exact tumor geometry. Enables IMRT, VMAT, conformal RT, and stereotactic treatments with submillimeter precision.',
+                  text: "A high-resolution multileaf collimator (MLC) precisely shapes the radiation beam to match each tumor's unique geometry, enabling our advanced radiation therapy treatment techniques while minimizing radiation exposure to surrounding healthy tissue.",
                   note: 'Maximum dose to tumor, minimum exposure to healthy tissue.',
                 },
                 {
                   icon: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>,
-                  title: 'Multiple Radiation Energies',
-                  text: 'Multiple photon and electron energies for treating both deep and superficial tumors — brain, nasal, oral, spinal, soft tissue, and skin tumors.',
+                  title: 'Multiple Radiation Energies — Treating a Wide Range of Tumors',
+                  text: 'Multiple beam energies allows precise treatment of both deep-seated and superficial tumors, including brain, nasal, spinal, oral, skin, and soft tissue cancers.',
                   note: 'Technology used in leading human cancer centers worldwide.',
                 },
               ].map(({ icon, title, text, note }) => (
@@ -525,9 +525,9 @@ export default function RadiationTherapyPage() {
             </h2>
           </div>
           <div className="rt-dual__grid">
-            {/* Pet Owners */}
+            {/* Pet Families */}
             <div className="rt-dual-card" id="pet-owners">
-              <span className="rt-dual-card__tag">For Pet Owners</span>
+              <span className="rt-dual-card__tag">For Pet Families</span>
               <div className="rt-dual-card__title">Your pet&apos;s care,<br />in specialist hands.</div>
               <p className="rt-dual-card__text">
                 Whether you&apos;ve been referred by your veterinarian or are reaching out directly,

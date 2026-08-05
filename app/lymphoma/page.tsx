@@ -38,7 +38,7 @@ const FAQ_ITEMS = [
   },
   {
     q: 'Does my pet need a referral to see you?',
-    a: 'No referral is required. Pet owners can contact us directly. We collaborate closely with your primary care veterinarian and any oncologist managing the systemic component of your pet\'s lymphoma.',
+    a: 'No referral is required. Pet families can contact us directly. We collaborate closely with your primary care veterinarian and any oncologist managing the systemic component of your pet\'s lymphoma.',
   },
 ]
 
@@ -283,7 +283,7 @@ export default function LymphomaPage() {
           <div style={{ textAlign: 'center', maxWidth: 580, margin: '0 auto' }}>
             <div className="eyebrow" style={{ justifyContent: 'center' }}>Common Questions</div>
             <h2 id="faq-heading" className="titulo-seccion">
-              What pet owners<br /><em>ask us most.</em>
+              What pet families<br /><em>ask us most.</em>
             </h2>
           </div>
           <FAQAccordion items={FAQ_ITEMS} />
@@ -292,7 +292,7 @@ export default function LymphomaPage() {
 
       <div className="cond-cta">
         <div className="cond-cta__col cond-cta__col--owners">
-          <div className="cond-cta__label">For Pet Owners</div>
+          <div className="cond-cta__label">For Pet Families</div>
           <div className="cond-cta__title">
             Get a specialist review.<br /><em>Same-day response.</em>
           </div>

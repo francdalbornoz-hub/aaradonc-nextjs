@@ -78,7 +78,7 @@ const PET_CANCER_DROPDOWN: NavDropdownEntry[] = [
 // ─── Contact dropdown ─────────────────────────────────────────────────────────
 
 const CONTACT_DROPDOWN: NavDropdownEntry[] = [
-  { label: 'For Pet Owners', href: '/contact-pet-owners', featured: true },
+  { label: 'For Pet Families', href: '/contact-pet-owners', featured: true },
   { label: 'For Veterinarians', href: '/contact-referrers', featured: true },
 ]
 

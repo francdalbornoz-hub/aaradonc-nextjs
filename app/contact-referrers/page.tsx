@@ -219,7 +219,7 @@ export default function ContactReferrersPage() {
       </div>
 
       {/* ══════════════════════════════════════════════════════════════════════
-          PET OWNERS CTA STRIP
+          PET FAMILIES CTA STRIP
       ══════════════════════════════════════════════════════════════════════ */}
       <div style={{
         background: 'linear-gradient(90deg, #1240a8 0%, #1A4FBF 50%, #1240a8 100%)',
@@ -229,7 +229,7 @@ export default function ContactReferrersPage() {
       }}>
         <div style={{ maxWidth: 1408, margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 16 }}>
           <p style={{ fontSize: 15, color: 'rgba(255,255,255,.85)', fontWeight: 500 }}>
-            <strong style={{ fontWeight: 700 }}>Are you a pet owner?</strong>{' '}
+            <strong style={{ fontWeight: 700 }}>Are you a pet family?</strong>{' '}
             Use our consultation form — we respond the same day with clarity and no pressure.
           </p>
           <Link

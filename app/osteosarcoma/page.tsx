@@ -396,7 +396,7 @@ export default function OsteosarcomaPage() {
         <div className="contenedor" style={{ maxWidth: 820 }}>
           <div className="eyebrow-label" style={{ marginBottom: 8 }}>Frequently Asked Questions</div>
           <h2 id="faq-heading" className="titulo-seccion" style={{ marginBottom: 40 }}>
-            Osteosarcoma treatment —<br />what pet owners ask us most.
+            Osteosarcoma treatment —<br />what pet families ask us most.
           </h2>
           <FAQAccordion items={FAQ_ITEMS} />
         </div>
@@ -407,7 +407,7 @@ export default function OsteosarcomaPage() {
       ══════════════════════════════════════════════════════════════════════ */}
       <div className="cond-cta">
         <div className="cond-cta__col cond-cta__col--owners">
-          <div className="cond-cta__label">For Pet Owners</div>
+          <div className="cond-cta__label">For Pet Families</div>
           <div className="cond-cta__title">
             Your pet doesn&apos;t have to live<br /><em>with osteosarcoma pain.</em>
           </div>

@@ -42,7 +42,7 @@ export default function FormContact({ variant = 'light' }: Props) {
     setSubmitting(true)
     setStatus('idle')
     try {
-      await submitForm('New Consultation Request — Pet Owner', data)
+      await submitForm('New Consultation Request — Pet Family', data)
       setStatus('success')
       setData(INITIAL)
     } catch {

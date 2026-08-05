@@ -74,7 +74,7 @@ const FOOTER_NAV = [
     ],
   },
   {
-    heading: 'Pet Owners',
+    heading: 'Pet Families',
     links: [
       { label: 'Pet Cancer', href: '/pet-cancer' },
       { label: 'Dog Cancer', href: '/dog-cancer' },

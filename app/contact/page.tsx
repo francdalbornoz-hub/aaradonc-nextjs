@@ -70,7 +70,7 @@ export default function ContactPage() {
             Get in touch.<br /><em>We are here.</em>
           </h1>
           <p className="ct-hero__sub">
-            Whether you are a pet owner exploring options or a veterinarian looking to refer a
+            Whether you are a pet family exploring options or a veterinarian looking to refer a
             patient — our team responds the same day.
           </p>
           <div className="ct-hero__pills">
@@ -96,7 +96,7 @@ export default function ContactPage() {
       <div className="ct-main">
         {/* Left: Form */}
         <div className="ct-form-col">
-          <div className="eyebrow" style={{ marginBottom: 20 }}>For Pet Owners</div>
+          <div className="eyebrow" style={{ marginBottom: 20 }}>For Pet Families</div>
           <div className="ct-form__title">
             Request a <em>Consultation</em>
           </div>

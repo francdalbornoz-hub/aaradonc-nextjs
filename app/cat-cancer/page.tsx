@@ -175,7 +175,7 @@ export default function CatCancerPage() {
       {/* CTA */}
       <div className="sp-cta">
         <div className="sp-cta__col sp-cta__col--a">
-          <div className="sp-cta__pretitle">For Pet Owners</div>
+          <div className="sp-cta__pretitle">For Pet Families</div>
           <div className="sp-cta__title">Your cat deserves<br />a <em>specialist opinion.</em></div>
           <p className="sp-cta__text">Whether you&apos;ve been referred by your veterinarian or are reaching out directly, Dr. DiBernardi will personally review your cat&apos;s case and provide a clear, honest recommendation.</p>
           <Link href="/contact-pet-owners" className="sp-cta__btn-light">Request a Consultation →</Link>

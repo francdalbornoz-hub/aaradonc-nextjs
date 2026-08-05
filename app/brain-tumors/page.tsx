@@ -40,7 +40,7 @@ const FAQ_ITEMS = [
   },
   {
     q: 'Does my pet need a referral to see you?',
-    a: 'No referral is required. Pet owners can contact us directly. We welcome both self-referred cases and cases referred by veterinarians. We will coordinate with your primary care veterinarian throughout the entire process.',
+    a: 'No referral is required. Pet families can contact us directly. We welcome both self-referred cases and cases referred by veterinarians. We will coordinate with your primary care veterinarian throughout the entire process.',
   },
 ]
 
@@ -321,7 +321,7 @@ export default function BrainTumorsPage() {
           <div style={{ textAlign: 'center', maxWidth: 580, margin: '0 auto' }}>
             <div className="eyebrow" style={{ justifyContent: 'center' }}>Common Questions</div>
             <h2 id="faq-heading" className="titulo-seccion">
-              What pet owners<br /><em>ask us most.</em>
+              What pet families<br /><em>ask us most.</em>
             </h2>
           </div>
           <FAQAccordion items={FAQ_ITEMS} />
@@ -333,7 +333,7 @@ export default function BrainTumorsPage() {
       ══════════════════════════════════════════════════════════════════════ */}
       <div className="cond-cta">
         <div className="cond-cta__col cond-cta__col--owners">
-          <div className="cond-cta__label">For Pet Owners</div>
+          <div className="cond-cta__label">For Pet Families</div>
           <div className="cond-cta__title">
             Get a specialist review.<br /><em>Same-day response.</em>
           </div>

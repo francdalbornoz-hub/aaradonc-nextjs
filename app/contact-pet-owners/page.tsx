@@ -14,7 +14,7 @@ const pageSeo = getPageSeo('/contact-pet-owners')
 const FAQ_ITEMS = [
   {
     q: 'Do I need a referral from my veterinarian, or can I contact you directly without a confirmed diagnosis?',
-    a: 'No referral is required — pet owners can contact us directly, and you do not need a confirmed diagnosis to reach out. If your pet has a suspected or confirmed tumor, we can help you understand whether radiation therapy is an option. We coordinate with your primary care veterinarian throughout the entire process.',
+    a: 'No referral is required — pet families can contact us directly, and you do not need a confirmed diagnosis to reach out. If your pet has a suspected or confirmed tumor, we can help you understand whether radiation therapy is an option. We coordinate with your primary care veterinarian throughout the entire process.',
   },
   {
     q: 'How is this center different from a general veterinary oncology clinic?',
@@ -78,7 +78,7 @@ export default function ContactPetOwnersPage() {
 
         <div className="ct-hero__inner">
           <div className="eyebrow eyebrow--claro" style={{ justifyContent: 'center', marginBottom: 24 }}>
-            For Pet Owners · Loxahatchee, FL
+            For Pet Families · Loxahatchee, FL
           </div>
           <h1 className="ct-hero__h1">
             Get in touch.<br /><em>We respond</em><br />same day. Always.
@@ -106,7 +106,7 @@ export default function ContactPetOwnersPage() {
       <div className="ct-main">
         {/* Left: Form */}
         <div className="ct-form-col">
-          <div className="eyebrow" style={{ marginBottom: 20 }}>For Pet Owners</div>
+          <div className="eyebrow" style={{ marginBottom: 20 }}>For Pet Families</div>
           <div className="ct-form__title">
             Request a <em>Consultation</em>
           </div>
@@ -226,7 +226,7 @@ export default function ContactPetOwnersPage() {
           <div style={{ textAlign: 'center', maxWidth: 580, margin: '0 auto' }}>
             <div className="eyebrow" style={{ justifyContent: 'center' }}>Common Questions</div>
             <h2 id="faq-heading" className="titulo-seccion">
-              What pet owners<br /><em>ask us most.</em>
+              What pet families<br /><em>ask us most.</em>
             </h2>
           </div>
           <FAQAccordion items={FAQ_ITEMS} />

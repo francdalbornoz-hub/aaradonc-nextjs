@@ -38,15 +38,15 @@ export default function HomePage() {
           </div>
 
           <h1 className="hero__h1">
-            Precision <em>radiation therapy</em>
-            <br />for dogs and cats
+            Precision radiation therapy
+            <br />for animals
             <br />with cancer.
           </h1>
 
           <p className="hero__bajada">
             Animal Alliance Radiation Oncology is a dedicated veterinary radiation oncology center
             serving families and referring veterinarians across Florida. One specialty. One focus.
-            Every treatment plan designed personally by our Board Certified Radiation Oncologist.
+            Every treatment plan is personally designed by our on-site Board Certified Radiation Oncologist.
           </p>
 
           <div className="hero__acciones">
@@ -68,7 +68,7 @@ export default function HomePage() {
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>
               </svg>
-              Board-Certified Radiation Oncologist On Site
+              Board-Certified Radiation Oncologist on site
             </div>
             <div className="htl-sep" aria-hidden="true" />
             <div className="htl-item">
@@ -108,13 +108,14 @@ export default function HomePage() {
           <div className="why__header">
             <div className="eyebrow">Why Animal Alliance</div>
             <h2 id="why-heading" className="titulo-seccion">
-              One specialty.<br /><em>Entirely</em> dedicated to it.
+              One specialty. One focus.<br /><em>Entirely dedicated.</em>
             </h2>
             <p className="bajada why__bajada">
-              <strong>The only center in Florida focused 100% on veterinary radiation oncology.</strong>{' '}
-              For pet owners, that means a specialist who knows this field in depth.
-              For referring veterinarians, it means a partner who does one thing — and returns
-              your patient to you.
+              <strong>The only Veterinary Radiation Oncology Center in Florida focused 100% to radiation oncology.</strong>{' '}
+              For pet families, this translates to specialist care whose expertise is devoted entirely to
+              radiation oncology. Referring veterinarians gain a trusted partner dedicated to providing advanced
+              radiation therapy while maintaining open communication and seamlessly transitioning your
+              patient&apos;s ongoing care back to your practice.
             </p>
           </div>
 
@@ -141,8 +142,8 @@ export default function HomePage() {
               </div>
               <div className="why-card__titulo">Personalized Plans</div>
               <p className="why-card__texto">
-                No two tumors — and no two pets — are the same. Each treatment plan is carefully
-                designed for the individual patient.
+                No two tumors — and no two patients — are the same. Each treatment plan is carefully
+                designed for the individual.
               </p>
             </div>
 
@@ -155,8 +156,9 @@ export default function HomePage() {
               </div>
               <div className="why-card__titulo">Collaborative Care</div>
               <p className="why-card__texto">
-                Pet owners stay informed at every step. Referring veterinarians receive written
-                updates and a full treatment summary — your patient returns to your care.
+                Clear, compassionate communication keeps pet families informed throughout treatment.
+                Referring veterinarians, you will receive regular updates and a complete treatment
+                summary, ensuring a seamless transition back to your care.
               </p>
             </div>
 
@@ -166,10 +168,10 @@ export default function HomePage() {
                   <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
                 </svg>
               </div>
-              <div className="why-card__titulo">Accessible & Local</div>
+              <div className="why-card__titulo">Accessible</div>
               <p className="why-card__texto">
-                Located in Royal Palm Beach, serving all of Florida. Same-day response for pet
-                owners and referring veterinarians — because timing matters in oncology.
+                Same-day responses for pet families and referring veterinarians — because timely
+                communication matters.
               </p>
             </div>
           </div>
@@ -185,7 +187,7 @@ export default function HomePage() {
         <div className="contenedor">
           <div className="eyebrow">Conditions We Treat</div>
           <h2 id="conditions-heading" className="titulo-seccion">
-            Conditions we treat<br />with <em>radiation therapy.</em>
+            Conditions that may benefit<br />from <em>radiation therapy.</em>
           </h2>
 
           <div className="condiciones__grid">
@@ -307,7 +309,7 @@ export default function HomePage() {
               <div className="tech__header">
                 <div className="eyebrow eyebrow--claro">Our Technology</div>
                 <h2 id="tech-heading" className="titulo-seccion titulo-seccion--claro">
-                  Varian TrueBeam® —<br /><em>human-level technology</em><br />for veterinary patients.
+                  Varian TrueBeam —<br /><em>Human Cancer Center Technology</em><br />for Veterinary Patients.
                 </h2>
                 <p className="bajada bajada--claro">
                   Our center is equipped with the <strong style={{ color: '#fff' }}>Varian TrueBeam® linear accelerator</strong>,
@@ -327,7 +329,7 @@ export default function HomePage() {
                   </div>
                   <div>
                     <div className="tech-feature__titulo">IGRT — Image-Guided Radiation Therapy</div>
-                    <p className="tech-feature__texto">Cone Beam CT (CBCT) imaging before every treatment confirms exact tumor position and adjusts patient positioning. Daily image guidance improves accuracy, safety, and outcomes.</p>
+                    <p className="tech-feature__texto">Every treatment begins with Cone Beam CT (CBCT) imaging to confirm accurate tumor positioning, allowing radiation to be delivered with exceptional precision while minimizing exposure to surrounding healthy tissue.</p>
                   </div>
                 </div>
 
@@ -351,7 +353,7 @@ export default function HomePage() {
                   </div>
                   <div>
                     <div className="tech-feature__titulo">Precision Beam Shaping — MLC</div>
-                    <p className="tech-feature__texto">High-resolution multileaf collimator shapes the beam to match the exact tumor geometry — enabling IMRT, VMAT, conformal RT, and stereotactic-type treatments while protecting healthy tissue.</p>
+                    <p className="tech-feature__texto">A high-resolution multileaf collimator (MLC) precisely shapes the radiation beam to match each tumor&apos;s unique geometry, enabling our advanced radiation therapy treatment techniques while minimizing radiation exposure to surrounding healthy tissue.</p>
                   </div>
                 </div>
 
@@ -362,8 +364,8 @@ export default function HomePage() {
                     </svg>
                   </div>
                   <div>
-                    <div className="tech-feature__titulo">Multiple Energies — Many Tumor Types</div>
-                    <p className="tech-feature__texto">Multiple photon and electron energies allow treatment of both deep and superficial tumors — brain, nasal, spinal, oral, skin, soft tissue sarcomas, and more.</p>
+                    <div className="tech-feature__titulo">Multiple Radiation Energies — Treating a Wide Range of Tumors</div>
+                    <p className="tech-feature__texto">Multiple beam energies allows precise treatment of both deep-seated and superficial tumors, including brain, nasal, spinal, oral, skin, and soft tissue cancers.</p>
                   </div>
                 </div>
               </div>
@@ -511,7 +513,7 @@ export default function HomePage() {
               From diagnosis<br />to <em>treatment.</em>
             </h2>
             <p className="bajada">
-              From the first referral to the final treatment summary — we coordinate with pet owners
+              From the first referral to the final treatment summary — we coordinate with pet families
               and referring veterinarians at every step. Clear communication, no gaps.
             </p>
           </div>
@@ -530,7 +532,7 @@ export default function HomePage() {
               </div>
               <div className="paso__cuerpo">
                 <div className="paso__titulo">Referral &amp; Consultation</div>
-                <p className="paso__texto">We review imaging, pathology, and clinical history. Options are discussed directly with the pet owner — and coordinated with the referring veterinarian.</p>
+                <p className="paso__texto">We review imaging, pathology, and clinical history. Options are discussed directly with the pet family — and coordinated with the referring veterinarian.</p>
               </div>
             </div>
 
@@ -578,7 +580,7 @@ export default function HomePage() {
               </div>
               <div className="paso__cuerpo">
                 <div className="paso__titulo">Follow-Up &amp; Communication</div>
-                <p className="paso__texto">Pet owners receive a clear summary of everything completed. The referring veterinarian receives a full written report — and resumes primary care of the patient from that point forward.</p>
+                <p className="paso__texto">Pet families receive a clear summary of everything completed. The referring veterinarian receives a full written report — and resumes primary care of the patient from that point forward.</p>
               </div>
             </div>
           </div>
@@ -598,7 +600,7 @@ export default function HomePage() {
           <div className="contacto__grid">
             <div className="contacto__left">
               <p className="bajada bajada--claro">
-                Whether you&apos;re a pet owner with questions or a veterinarian ready to refer — we
+                Whether you&apos;re a pet family with questions or a veterinarian ready to refer — we
                 respond same day. Dr. DiBernardi reviews every case personally.
               </p>
 
@@ -661,7 +663,7 @@ export default function HomePage() {
 
             <div className="contacto__form-wrap">
               <div className="form__titulo">Request a Consultation</div>
-              <p className="form__subtitulo">We respond same day — for pet owners and referring veterinarians.</p>
+              <p className="form__subtitulo">We respond same day — for pet families and referring veterinarians.</p>
               <FormContact variant="light" />
             </div>
           </div>

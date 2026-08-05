@@ -245,7 +245,7 @@ export default function FibrosarcomaPage() {
           <div style={{ textAlign: 'center', maxWidth: 580, margin: '0 auto' }}>
             <div className="eyebrow" style={{ justifyContent: 'center' }}>Common Questions</div>
             <h2 id="faq-heading" className="titulo-seccion">
-              What pet owners<br /><em>ask us most.</em>
+              What pet families<br /><em>ask us most.</em>
             </h2>
           </div>
           <FAQAccordion items={FAQ_ITEMS} />
@@ -254,7 +254,7 @@ export default function FibrosarcomaPage() {
 
       <div className="cond-cta">
         <div className="cond-cta__col cond-cta__col--owners">
-          <div className="cond-cta__label">For Pet Owners</div>
+          <div className="cond-cta__label">For Pet Families</div>
           <div className="cond-cta__title">
             Get a specialist review.<br /><em>Same-day response.</em>
           </div>

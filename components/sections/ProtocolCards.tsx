@@ -113,7 +113,7 @@ export default function ProtocolCards({ showFooter = true }: ProtocolCardsProps)
         <div className="protocols__footer">
           <p>
             Not sure which protocol applies? Every case is reviewed personally by Dr. DiBernardi —
-            pet owners and referring veterinarians are welcome to reach out directly.
+            pet families and referring veterinarians are welcome to reach out directly.
           </p>
           <Link href="/radiation-therapy" className="protocols__footer-cta">
             Learn more about our radiation therapy →

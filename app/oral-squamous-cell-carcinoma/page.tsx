@@ -165,7 +165,7 @@ export default function OralSquamousCellCarcinomaPage() {
               At AARADONC, <strong>Dr. Lisa DiBernardi</strong> personally reviews every oral SCC
               case and provides a clear, honest prognosis before any treatment begins. Treatment
               goals — curative intent vs. quality-of-life focus — are established together with
-              the pet owner at the outset.
+              the pet family at the outset.
             </div>
           </div>
         </div>
@@ -244,7 +244,7 @@ export default function OralSquamousCellCarcinomaPage() {
           <div style={{ textAlign: 'center', maxWidth: 580, margin: '0 auto' }}>
             <div className="eyebrow" style={{ justifyContent: 'center' }}>Common Questions</div>
             <h2 id="faq-heading" className="titulo-seccion">
-              What pet owners<br /><em>ask us most.</em>
+              What pet families<br /><em>ask us most.</em>
             </h2>
           </div>
           <FAQAccordion items={FAQ_ITEMS} />
@@ -253,7 +253,7 @@ export default function OralSquamousCellCarcinomaPage() {
 
       <div className="cond-cta">
         <div className="cond-cta__col cond-cta__col--owners">
-          <div className="cond-cta__label">For Pet Owners</div>
+          <div className="cond-cta__label">For Pet Families</div>
           <div className="cond-cta__title">
             Get a specialist review.<br /><em>Same-day response.</em>
           </div>

@@ -32,8 +32,8 @@ const CHECK_ICON = (
 
 const FAQ_ITEMS = [
   {
-    q: 'Do pet owners need a referral from me to contact AARADONC?',
-    a: <>No. <strong>Pet owners can contact us directly.</strong> However, when you refer a patient, we coordinate everything with your practice — keeping you fully informed and involved throughout the process.</>,
+    q: 'Do pet families need a referral from me to contact AARADONC?',
+    a: <>No. <strong>Pet families can contact us directly.</strong> However, when you refer a patient, we coordinate everything with your practice — keeping you fully informed and involved throughout the process.</>,
   },
   {
     q: 'What information should I include in the referral?',
@@ -83,7 +83,7 @@ export default function ForVeterinariansPage() {
             </div>
             <div className="hero__badges" style={{ marginTop: 36 }}>
               {[
-                'Board-Certified Radiation Oncologist On Site',
+                'Board-Certified Radiation Oncologist on site',
                 'Same-Day Referral Response',
                 'Detailed Written Reports for Every Case',
                 'You Keep the Patient',
@@ -285,7 +285,7 @@ export default function ForVeterinariansPage() {
               </div>
               <div className="paso__cuerpo">
                 <div className="paso__titulo">Consultation &amp; Treatment Plan</div>
-                <p className="paso__texto">We meet with the pet owner and review all available records. A full written consultation report — including protocol recommendation and rationale — is sent directly to your practice.</p>
+                <p className="paso__texto">We meet with the pet family and review all available records. A full written consultation report — including protocol recommendation and rationale — is sent directly to your practice.</p>
               </div>
             </div>
 

@@ -412,7 +412,7 @@ export default function SoftTissueSarcomasPage() {
         <div className="contenedor" style={{ maxWidth: 820 }}>
           <div className="eyebrow-label" style={{ marginBottom: 8 }}>Frequently Asked Questions</div>
           <h2 id="faq-heading" className="titulo-seccion" style={{ marginBottom: 40 }}>
-            Soft tissue sarcoma radiation —<br />what pet owners ask us most.
+            Soft tissue sarcoma radiation —<br />what pet families ask us most.
           </h2>
           <FAQAccordion items={FAQ_ITEMS} />
         </div>
@@ -423,7 +423,7 @@ export default function SoftTissueSarcomasPage() {
       ══════════════════════════════════════════════════════════════════════ */}
       <div className="cond-cta">
         <div className="cond-cta__col cond-cta__col--owners">
-          <div className="cond-cta__label">For Pet Owners</div>
+          <div className="cond-cta__label">For Pet Families</div>
           <div className="cond-cta__title">
             Incomplete margins?<br /><em>Don&apos;t wait.</em>
           </div>
