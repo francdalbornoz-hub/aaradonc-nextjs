@@ -26,14 +26,14 @@ const PROTOCOLS: Protocol[] = [
   {
     id: 'cfrt',
     name: 'CFRT',
-    subtitle: 'Curative · Adjuvant intent',
+    subtitle: 'Curative or Adjuvant Treatment',
     stats: [
-      { label: 'Sessions', value: '16–20' },
-      { label: 'Schedule', value: 'Mon–Fri' },
-      { label: 'Duration', value: '3–4 weeks' },
+      { label: 'Sessions', value: '10–20' },
+      { label: 'Schedule', value: 'Mon–Thu' },
+      { label: 'Duration', value: '3–5 weeks' },
     ],
     description:
-      'Standard fractionated radiation for curative or adjuvant intent. The most common protocol for post-surgical cases, oral tumors, nasal tumors, and brain tumors. Each session is outpatient — your pet goes home the same day.',
+      'The most common protocol for post-surgical cases, spinal and brain tumors. Each session is outpatient — your pet goes home the same day.',
     ctaLabel: 'Learn about CFRT',
     ctaHref: '/radiation-therapy#cfrt',
   },
@@ -45,25 +45,25 @@ const PROTOCOLS: Protocol[] = [
     featured: true,
     stats: [
       { label: 'Sessions', value: '1–5' },
-      { label: 'Schedule', value: 'Every other day' },
+      { label: 'Schedule', value: 'Daily or every other day' },
       { label: 'Precision', value: 'Submillimeter' },
     ],
     description:
-      'High-dose stereotactic radiation delivered with submillimeter accuracy in fewer sessions. Preferred for brain tumors, spinal tumors, and cases where maximum precision and minimal treatment time matter most.',
+      'High-dose stereotactic radiation is delivered with submillimeter accuracy in fewer sessions. Preferred in cases when maximum precision and minimal treatment time matter most.',
     ctaLabel: 'Learn about SRS / SRT',
     ctaHref: '/radiation-therapy#srs-srt',
   },
   {
     id: 'palliative',
     name: 'Palliative',
-    subtitle: 'Quality of life · Symptom relief',
+    subtitle: 'Improve quality of life · Alleviate pain',
     stats: [
-      { label: 'Sessions', value: '3–5' },
+      { label: 'Sessions', value: '3–6' },
       { label: 'Schedule', value: 'Weekly' },
       { label: 'Intent', value: 'Comfort · Control' },
     ],
     description:
-      'Lower-intensity radiation focused on pain relief, tumor control, and quality of life for advanced or inoperable disease. Fewer sessions, weekly schedule — meaningful improvement without an intensive treatment course.',
+      'Lower-intensity radiation focused on pain relief, improvement of function, and tumor control. Maximize quality of life for advanced or inoperable disease. Fewer sessions, weekly schedule — meaningful improvement without an intensive treatment course.',
     ctaLabel: 'Learn about Palliative Radiation',
     ctaHref: '/radiation-therapy#palliative',
   },

@@ -399,7 +399,7 @@ export default function HomePage() {
         <div className="contenedor">
           <div className="eyebrow">For Referring Veterinarians</div>
           <h2 id="vets-heading" className="titulo-seccion">
-            A dedicated referral<br /><em>partner.</em>
+            A dedicated radiation oncology<br /><em>referral partner.</em>
           </h2>
 
           <div className="vets__grid">
@@ -407,8 +407,8 @@ export default function HomePage() {
               <div className="vets-feature">
                 <div className="vets-feature__dot" aria-hidden="true" />
                 <div>
-                  <strong>Just Radiation Oncology — you keep the patient</strong>
-                  <p>Our role is to deliver specialized radiation therapy and return the patient to your care. No overlap. We complement your practice, not compete with it.</p>
+                  <strong>Just Radiation Oncology — A True Extension of Your Practice</strong>
+                  <p>We focus exclusively on radiation therapy, providing specialized treatment while you continue managing your patient&apos;s overall care. Our goal is collaboration — complementing your practice, not competing with it.</p>
                 </div>
               </div>
               <div className="vets-feature">
@@ -422,14 +422,14 @@ export default function HomePage() {
                 <div className="vets-feature__dot" aria-hidden="true" />
                 <div>
                   <strong>Rapid Case Review</strong>
-                  <p>Send records and imaging — we respond same day with a preliminary assessment and our recommendation on whether radiation is indicated.</p>
+                  <p>Send records and imaging — we respond same day with a preliminary assessment and our recommendations.</p>
                 </div>
               </div>
               <div className="vets-feature">
                 <div className="vets-feature__dot" aria-hidden="true" />
                 <div>
                   <strong>Coordinated Treatment Planning</strong>
-                  <p>We handle the radiation plan. You keep the client and patient relationship. Every plan is coordinated with your clinical notes — and the patient returns to your practice at the end of treatment.</p>
+                  <p>We handle the radiation plan. You keep the client and patient relationship. Every plan is coordinated with your clinical notes — and the patient continues care with you at the end of treatment.</p>
                 </div>
               </div>
             </div>
@@ -493,9 +493,10 @@ export default function HomePage() {
                 Precision radiation therapy.<br /><em>Close to home.</em>
               </p>
               <p className="banda-emocional__texto" style={{ marginLeft: 'auto' }}>
-                We understand what a cancer diagnosis means — for the family living with that pet,
-                and for the veterinarian managing their care. Advanced radiation therapy, available in
-                Palm Beach County, with a specialist dedicated to this and nothing else.
+                A cancer diagnosis affects everyone. We understand the concerns of both pet families and
+                the veterinarians guiding their care. Our Palm Beach County center offers advanced radiation
+                therapy delivered by a board-certified specialist focused exclusively on veterinary radiation
+                oncology — providing expert, compassionate treatment close to home.
               </p>
             </div>
           </div>

@@ -552,7 +552,7 @@ export default function RadiationTherapyPage() {
                 you&apos;ve built remains intact.
               </p>
               <div className="rt-dual-card__list">
-                {['Same-day referral response', 'Detailed treatment reports and case summaries', 'Direct oncologist communication', 'Just Radiation Oncology — you keep the patient'].map((item) => (
+                {['Same-day referral response', 'Detailed treatment reports and case summaries', 'Direct oncologist communication', 'Just Radiation Oncology — A True Extension of Your Practice'].map((item) => (
                   <div key={item} className="rt-dual-card__item">{CHECK_ICON}{item}</div>
                 ))}
               </div>

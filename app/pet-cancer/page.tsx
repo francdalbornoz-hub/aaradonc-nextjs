@@ -234,7 +234,7 @@ export default function PetCancerPage() {
             <div className="pc-contact-vet__left">
               <div className="eyebrow eyebrow--claro">For Referring Veterinarians</div>
               <div className="pc-contact-vet__title">A referral partner<br />you can <em>count on.</em></div>
-              <p className="pc-contact-vet__text">We respond same day, keep you fully informed, and return the patient to your care when radiation therapy is complete. Just Radiation Oncology — you keep the patient.</p>
+              <p className="pc-contact-vet__text">We respond same day, keep you fully informed, and return the patient to your care when radiation therapy is complete. Just Radiation Oncology — A True Extension of Your Practice.</p>
               <div className="pc-contact-vet__pills">
                 {['Same-day acknowledgment', 'Full written reports', 'Direct oncologist access', 'You keep the patient'].map((p) => (
                   <div key={p} className="pc-contact-vet__pill">
