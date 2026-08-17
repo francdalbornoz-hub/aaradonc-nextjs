@@ -86,7 +86,7 @@ export default function ForVeterinariansPage() {
                 'Board-Certified Radiation Oncologist on site',
                 'Same-Day Referral Response',
                 'Detailed Written Reports for Every Case',
-                'You Keep the Patient',
+                'A True Extension of Your Practice',
               ].map((b) => (
                 <div key={b} className="hero__badge">
                   {CHECK_ICON}
@@ -203,7 +203,7 @@ export default function ForVeterinariansPage() {
               },
               {
                 icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>,
-                title: 'You Keep the Patient',
+                title: 'A True Extension of Your Practice',
                 text: <>Our scope is <strong>exclusively radiation oncology.</strong> Your patient returns to your practice for all primary care. The relationship you&apos;ve built with your client <strong>stays exactly where it belongs.</strong></>,
               },
               {
