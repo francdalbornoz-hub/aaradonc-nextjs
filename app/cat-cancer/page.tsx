@@ -64,8 +64,8 @@ export default function CatCancerPage() {
             </div>
             <div className="sp-stat__divider" />
             <div className="sp-stat">
-              <div className="sp-stat__val">50<em>%+</em></div>
-              <div className="sp-stat__label">of feline cancers respond to radiation therapy</div>
+              <div className="sp-stat__val" style={{ fontSize: 28, lineHeight: 1.2 }}><em>Most</em></div>
+              <div className="sp-stat__label">common feline cancers respond to radiation therapy</div>
             </div>
             <div className="sp-stat__divider" />
             <div className="sp-stat">

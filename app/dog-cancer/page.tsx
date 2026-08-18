@@ -54,18 +54,18 @@ export default function DogCancerPage() {
           <div className="sp-hero__panel">
             <div className="sp-hero__panel-title">Why it matters</div>
             <div className="sp-stat">
-              <div className="sp-stat__val">1 <em>in 3</em></div>
+              <div className="sp-stat__val">1 <em>in 4</em></div>
               <div className="sp-stat__label">dogs will develop cancer during their lifetime</div>
             </div>
             <div className="sp-stat__divider" />
             <div className="sp-stat">
-              <div className="sp-stat__val">#<em>1</em></div>
-              <div className="sp-stat__label">cause of death in dogs over age 10</div>
+              <div className="sp-stat__val">50<em>%</em></div>
+              <div className="sp-stat__label">of dogs 10 years of age or older — cancer is the cause of death</div>
             </div>
             <div className="sp-stat__divider" />
             <div className="sp-stat">
-              <div className="sp-stat__val">60<em>%+</em></div>
-              <div className="sp-stat__label">of canine cancers respond to radiation therapy</div>
+              <div className="sp-stat__val" style={{ fontSize: 28, lineHeight: 1.2 }}><em>Most</em></div>
+              <div className="sp-stat__label">canine cancers respond to radiation therapy</div>
             </div>
             <div className="sp-stat__divider" />
             <div className="sp-stat">
