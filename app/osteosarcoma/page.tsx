@@ -3,10 +3,22 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { getPageSeo } from '@/lib/seo-config'
 import FAQAccordion from '@/components/ui/FAQAccordion'
+import References, { type Reference } from '@/components/ui/References'
 
 // ─── SEO ──────────────────────────────────────────────────────────────────────
 
 const pageSeo = getPageSeo('/osteosarcoma')
+
+// Peer-reviewed sources supporting the claims on this page (>90% palliative
+// response, 3–5 session protocol, survival ranges). Verified against the
+// clinic's approved literature base.
+const REFERENCES: Reference[] = [
+  { authors: 'Coomer AR, et al.', year: '2009', title: 'Radiation therapy for canine appendicular osteosarcoma', source: 'Vet Comp Oncol' },
+  { authors: 'Martin TW, Griffin L, Custis J, et al.', year: '2021', title: 'Outcome and prognosis for canine appendicular osteosarcoma treated with stereotactic body radiation therapy in 123 dogs', source: 'Vet Comp Oncol' },
+  { authors: 'Ramirez O III, Dodge RK, Page RL, et al.', year: '1999', title: 'Palliative radiotherapy of appendicular osteosarcoma in 95 dogs', source: 'Vet Radiol Ultrasound. 40(5):517' },
+  { authors: 'Duffy ME, Anderson CL, Choy K, Fidel JL', year: '2018', title: 'Metronomic administration of lomustine following palliative radiation therapy for appendicular osteosarcoma in dogs', source: 'Can Vet J. 59:136' },
+  { authors: 'Swift KE, LaRue SM', year: '2017', title: 'Outcome of 9 dogs treated with stereotactic radiation therapy for primary or metastatic vertebral osteosarcoma', source: 'Vet Comp Oncol' },
+]
 
 export const metadata: Metadata = {
   title: pageSeo.title,
@@ -58,7 +70,7 @@ const FAQ_ITEMS = [
   },
   {
     q: 'How quickly does radiation relieve osteosarcoma pain?',
-    a: 'Most pets begin showing meaningful osteosarcoma pain reduction within 24–72 hours of the first palliative radiation session. Over 90% of treated pets show a positive response. The effect typically provides several months of improved comfort, and in some cases the protocol can be repeated if the initial response was good.',
+    a: 'Most pets begin showing meaningful osteosarcoma pain reduction within the first few sessions of palliative radiation — relief often comes early as the treatment calms tumor-associated inflammation. Over 90% of treated pets show a positive response. The effect typically provides several months of improved comfort, and in some cases the protocol can be repeated if the initial response was good.',
   },
   {
     q: 'How many radiation sessions does osteosarcoma treatment require?',
@@ -195,7 +207,7 @@ export default function OsteosarcomaPage() {
           <p className="cond-editorial__body">
             Palliative radiation for osteosarcoma reduces tumor-associated inflammation and slows local
             bone destruction — the primary drivers of pain. Over 90% of treated pets show meaningful
-            pain reduction, often within 24–72 hours of the first session. This is not curative, but
+            pain reduction, often within the first few sessions. This is not curative, but
             the improvement in comfort and mobility is clinically significant and well-documented.
           </p>
           <div className="cond-editorial__fact">
@@ -401,6 +413,8 @@ export default function OsteosarcomaPage() {
           <FAQAccordion items={FAQ_ITEMS} />
         </div>
       </section>
+
+      <References items={REFERENCES} />
 
       {/* ══════════════════════════════════════════════════════════════════════
           DUAL CTA
