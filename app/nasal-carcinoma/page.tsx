@@ -3,8 +3,21 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { getPageSeo } from '@/lib/seo-config'
 import FAQAccordion from '@/components/ui/FAQAccordion'
+import References, { type Reference } from '@/components/ui/References'
 
 const pageSeo = getPageSeo('/nasal-carcinoma')
+
+// Peer-reviewed sources supporting the claims on this page (SBRT as standard,
+// 1–5 session protocol, 12–19 month median survival). Verified against the
+// clinic's approved literature base.
+const REFERENCES: Reference[] = [
+  { authors: 'Fox-Alvarez S, Shiomitsu K, Lejeune AT, Szivek A, Kubicek L', year: '2020', title: 'Outcome of intensity-modulated radiation therapy–based stereotactic radiation therapy for treatment of canine nasal carcinomas', source: 'Vet Radiol Ultrasound' },
+  { authors: 'Mayer MN, et al.', year: '2019', title: 'Outcomes and adverse effects associated with stereotactic body radiation therapy in dogs with nasal tumors: 28 cases (2011–2016)', source: 'J Am Vet Med Assoc. 254(5):602' },
+  { authors: 'Gieger TL, Nolan MW', year: '2018', title: 'Linac-based stereotactic radiation therapy for canine non-lymphomatous nasal tumours: 29 cases (2013–2016)', source: 'Vet Comp Oncol' },
+  { authors: 'Hunley DW, Mauldin GN, Shiomitsu K, Mauldin GE', year: '2010', title: 'Clinical outcome in dogs with nasal tumors treated with intensity-modulated radiation therapy', source: 'Can Vet J. 51:293' },
+  { authors: 'Czichon F, Rohrer Bley C, Meier V', year: '2021', title: 'Relative tumor volume has prognostic relevance in canine sinonasal tumors treated with radiation therapy: a retrospective study', source: 'PLoS ONE' },
+  { authors: 'Fu D-R, et al.', year: '2023', title: 'Retrospective comparison of side effects and outcomes of three-dimensional conformal vs. intensity-modulated radiation therapy for canine nasal tumors', source: 'Front Vet Sci. 10:1011949' },
+]
 
 export const metadata: Metadata = {
   title: pageSeo.title,
@@ -34,7 +47,7 @@ const FAQ_ITEMS = [
   },
   {
     q: 'How many radiation sessions are required?',
-    a: 'The number of sessions depends on the protocol your Radiation Oncologist selects. SBRT (stereotactic radiation therapy) delivers treatment in a small number of highly precise sessions; palliative protocols (3–5 sessions) are available for pets where curative intent is not the goal. Each session requires short general anesthesia (15–20 minutes) and the pet is discharged the same day.',
+    a: 'The number of sessions depends on the protocol your Radiation Oncologist selects. SBRT (stereotactic radiation therapy) delivers treatment in just 1–5 high-precision sessions; palliative protocols (3–5 sessions) are available for pets where curative intent is not the goal. Each session requires short general anesthesia (15–20 minutes) and the pet is discharged the same day.',
   },
   {
     q: 'What workup is needed before starting radiation?',
@@ -212,7 +225,7 @@ export default function NasalCarcinomaPage() {
             SBRT is the <em>standard of care</em> for nasal carcinoma.
           </h3>
           {[
-            { tag: 'Primary — Curative Intent', name: 'SBRT', sessions: 'Fewer sessions', note: 'Stereotactic · high-precision · outpatient · same-day home', href: '/radiation-therapy/#srs-srt', dark: true },
+            { tag: 'Primary — Curative Intent', name: 'SBRT', sessions: '1–5 sessions', note: 'Stereotactic · high-precision · outpatient · same-day home', href: '/radiation-therapy/#srs-srt', dark: true },
             { tag: 'Comfort-Focused Option', name: 'Palliative Radiation', sessions: '3–5 sessions', note: 'Symptom relief · quality of life · outpatient', href: '/radiation-therapy/#palliative', dark: false },
           ].map(({ tag, name, sessions, note, href, dark }) => (
             <Link key={name} href={href} className={`cond-proto-card${dark ? ' cond-proto-card--dark' : ''}`}>
@@ -239,6 +252,8 @@ export default function NasalCarcinomaPage() {
           <FAQAccordion items={FAQ_ITEMS} />
         </div>
       </section>
+
+      <References items={REFERENCES} />
 
       <div className="cond-cta">
         <div className="cond-cta__col cond-cta__col--owners">
