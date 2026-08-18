@@ -34,7 +34,7 @@ const FAQ_ITEMS = [
   },
   {
     q: 'How many radiation sessions are required?',
-    a: 'Definitive CFRT involves 16–20 daily sessions Monday through Friday over 3–4 weeks. Each session requires short general anesthesia (15–20 minutes) and the pet is discharged the same day. Palliative protocols (3–5 sessions) are available for pets where curative intent is not the goal.',
+    a: 'The number of sessions depends on the protocol your Radiation Oncologist selects. SBRT (stereotactic radiation therapy) delivers treatment in a small number of highly precise sessions; palliative protocols (3–5 sessions) are available for pets where curative intent is not the goal. Each session requires short general anesthesia (15–20 minutes) and the pet is discharged the same day.',
   },
   {
     q: 'What workup is needed before starting radiation?',
@@ -68,7 +68,7 @@ export default function NasalCarcinomaPage() {
           </h1>
           <p className="cond-hero__sub">
             Nasal adenocarcinoma is the most common nasal tumor in dogs — and one of the most
-            radiation-responsive. Definitive CFRT is the established standard of care, with consistent
+            radiation-responsive. SBRT is the established standard of care, with consistent
             survival results that surgery alone cannot match.
           </p>
           <div className="cond-hero__ctas">
@@ -132,7 +132,7 @@ export default function NasalCarcinomaPage() {
           <h3 className="cond-editorial__h3">What the evidence shows</h3>
           <p className="cond-editorial__body">
             Multiple prospective and retrospective studies in veterinary oncology have documented that
-            definitive CFRT produces median survival times of 12–19 months in dogs with nasal
+            SBRT produces median survival times of 12–19 months in dogs with nasal
             carcinoma — consistently longer than rhinotomy (3–6 months) or supportive care alone.
             The addition of chemotherapy in select cases may further improve outcomes.
           </p>
@@ -170,8 +170,8 @@ export default function NasalCarcinomaPage() {
           <div className="cond-bridge__label">Median survival — consistently longer than supportive care alone</div>
         </div>
         <div className="cond-bridge__stat">
-          <div className="cond-bridge__val">16–<em>20</em></div>
-          <div className="cond-bridge__label">Outpatient sessions — pet goes home same day</div>
+          <div className="cond-bridge__val">Same<em> day</em></div>
+          <div className="cond-bridge__label">Home after each session — outpatient treatment</div>
         </div>
       </div>
 
@@ -189,7 +189,7 @@ export default function NasalCarcinomaPage() {
           <div className="rt-bullets">
             {[
               { title: 'Varian TrueBeam® + IGRT.', text: 'Cone Beam CT before every session confirms exact tumor position — critical for nasal carcinoma given proximity to the brain and orbits. Our Varian TrueBeam® delivers VMAT/RapidArc for shorter anesthesia per session.' },
-              { title: 'Definitive CFRT as standard.', text: '16–20 fractionated sessions deliver precise, cumulative doses — maximizing tumor control while protecting the brain, eyes, and oral cavity.' },
+              { title: 'SBRT as standard.', text: 'SBRT (stereotactic radiation therapy) delivers precise, targeted doses in fewer sessions — maximizing tumor control while protecting the brain, eyes, and oral cavity.' },
               { title: 'Palliative option when appropriate.', text: 'For pets where curative intent is not feasible, 3–5 session palliative protocols achieve meaningful symptom relief and improved quality of life.' },
             ].map(({ title, text }) => (
               <div key={title} className="rt-bullet">
@@ -209,10 +209,10 @@ export default function NasalCarcinomaPage() {
         <div className="cond-treat__right">
           <div className="eyebrow" style={{ color: '#1A4FBF' }}>Protocol Options</div>
           <h3 className="titulo-seccion" style={{ fontSize: 24, marginBottom: 24 }}>
-            CFRT is the <em>standard of care</em> for nasal carcinoma.
+            SBRT is the <em>standard of care</em> for nasal carcinoma.
           </h3>
           {[
-            { tag: 'Primary — Curative Intent', name: 'CFRT', sessions: '16–20 sessions', note: 'Daily Mon–Fri · outpatient · same-day home', href: '/radiation-therapy/#cfrt', dark: true },
+            { tag: 'Primary — Curative Intent', name: 'SBRT', sessions: 'Fewer sessions', note: 'Stereotactic · high-precision · outpatient · same-day home', href: '/radiation-therapy/#srs-srt', dark: true },
             { tag: 'Comfort-Focused Option', name: 'Palliative Radiation', sessions: '3–5 sessions', note: 'Symptom relief · quality of life · outpatient', href: '/radiation-therapy/#palliative', dark: false },
           ].map(({ tag, name, sessions, note, href, dark }) => (
             <Link key={name} href={href} className={`cond-proto-card${dark ? ' cond-proto-card--dark' : ''}`}>

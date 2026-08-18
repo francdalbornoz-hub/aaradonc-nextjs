@@ -30,7 +30,7 @@ const FAQ_ITEMS = [
   },
   {
     q: 'How many sessions does nasal tumor radiation take?',
-    a: 'Definitive (curative-intent) CFRT typically involves 16–20 daily sessions over 3–4 weeks. Each session is performed under short general anesthesia and the pet goes home the same day. Palliative protocols require 3–5 sessions for pets where quality of life is the primary goal.',
+    a: 'The number of sessions depends on the protocol your Radiation Oncologist selects. SBRT (stereotactic radiation therapy) delivers treatment in a small number of highly precise sessions, while palliative protocols use 3–5 sessions for pets where quality of life is the primary goal. Each session is performed under short general anesthesia and the pet goes home the same day.',
   },
   {
     q: 'What survival times can we expect?',
@@ -89,8 +89,8 @@ export default function NasalTumorsPage() {
             <div className="cond-hero__stat-label">Median survival with SBRT</div>
           </div>
           <div className="cond-hero__stat">
-            <div className="cond-hero__stat-val">16–<em>20</em></div>
-            <div className="cond-hero__stat-label">Sessions with curative-intent CFRT — outpatient</div>
+            <div className="cond-hero__stat-val">Same<em> day</em></div>
+            <div className="cond-hero__stat-label">Home after every session — outpatient treatment</div>
           </div>
           <div className="cond-hero__stat">
             <div className="cond-hero__stat-val">Only<em> 1</em></div>
@@ -131,8 +131,8 @@ export default function NasalTumorsPage() {
           <h3 className="cond-editorial__h3">Why radiation outperforms surgery for nasal tumors</h3>
           <p className="cond-editorial__body">
             Multiple studies in veterinary oncology have consistently shown that definitive radiation
-            therapy produces significantly longer median survival times than surgery or supportive care
-            alone. Dogs and cats treated with CFRT regularly achieve median survival of 12–19 months,
+            therapy produces significantly longer median survival times than supportive care
+            alone. Dogs and cats treated with SBRT regularly achieve median survival of 12–19 months,
             with a meaningful percentage living 2 years or more. Quality of life is typically
             well-preserved throughout.
           </p>
@@ -146,8 +146,8 @@ export default function NasalTumorsPage() {
           </div>
           <h3 className="cond-editorial__h3">What to expect during treatment</h3>
           <p className="cond-editorial__body">
-            Nasal radiation with CFRT involves daily outpatient sessions over 3–4 weeks. Each session
-            requires short general anesthesia — typically 15–20 minutes — and the animal goes home the
+            Nasal radiation is delivered as outpatient sessions under short general anesthesia —
+            typically 15–20 minutes — and the animal goes home the
             same day. Acute side effects are manageable and temporary, and most patients maintain
             normal activity and appetite throughout the treatment course.
           </p>
@@ -174,11 +174,11 @@ export default function NasalTumorsPage() {
           </div>
           <div className="cond-types__grid">
             {[
-              { href: '/nasal-carcinoma', species: 'Primarily Dogs', name: 'Nasal Carcinoma', desc: 'Adenocarcinoma is the most common nasal tumor in dogs. Highly responsive to definitive CFRT. Diagnosis requires CT staging and histopathology.', tag: '★ Most radiation-responsive' },
-              { href: null, species: 'Dogs & Cats', name: 'Nasal Squamous Cell Carcinoma', desc: 'SCC of the nasal planum and nasal cavity responds well to radiation. Cats with nasal SCC are candidates for both CFRT and palliative protocols.', tag: 'CFRT · Palliative' },
+              { href: '/nasal-carcinoma', species: 'Primarily Dogs', name: 'Nasal Carcinoma', desc: 'Adenocarcinoma is the most common nasal tumor in dogs. Highly responsive to SBRT. Diagnosis requires CT staging and histopathology.', tag: '★ Most radiation-responsive' },
+              { href: null, species: 'Dogs & Cats', name: 'Nasal Squamous Cell Carcinoma', desc: 'SCC of the nasal planum and nasal cavity responds well to radiation. Cats with nasal SCC are candidates for both definitive and palliative protocols.', tag: 'Radiation · Palliative' },
               { href: null, species: 'Primarily Cats', name: 'Nasal Lymphoma', desc: 'The most common nasal tumor in cats. Radiation combined with chemotherapy achieves excellent local control and long-term remission in many cases.', tag: 'Radiation + Chemo' },
-              { href: null, species: 'Dogs', name: 'Nasal Sarcoma', desc: 'Chondrosarcomas and fibrosarcomas of the nasal cavity are less common but respond to radiation when surgery is not feasible or incomplete.', tag: 'CFRT · Post-surgical' },
-              { href: null, species: 'Dogs', name: 'Nasal Transitional Carcinoma', desc: 'A rare but radiation-responsive nasal tumor variant. Treated with the same definitive CFRT approach as other carcinomas.', tag: 'CFRT · Definitive' },
+              { href: null, species: 'Dogs', name: 'Nasal Sarcoma', desc: 'Chondrosarcomas and fibrosarcomas of the nasal cavity are less common but respond to radiation when surgery is not feasible or incomplete.', tag: 'Radiation · Post-surgical' },
+              { href: null, species: 'Dogs', name: 'Nasal Transitional Carcinoma', desc: 'A rare but radiation-responsive nasal tumor variant. Treated with the same definitive SBRT approach as other carcinomas.', tag: 'SBRT · Definitive' },
               { href: null, species: 'Ask us', name: 'Other nasal tumors', desc: 'Every case is evaluated individually. Our Radiation Oncologist reviews all nasal cavity tumor types and determines whether radiation therapy is appropriate.', tag: 'Case-by-case evaluation' },
             ].map(({ href, species, name, desc, tag }) => (
               href ? (
@@ -227,7 +227,7 @@ export default function NasalTumorsPage() {
           <div className="rt-bullets">
             {[
               { title: 'Varian TrueBeam® + IGRT.', text: 'Cone Beam CT imaging before every session confirms exact tumor position. Daily image guidance is especially important for nasal tumors given proximity to the brain, orbits, and critical structures.' },
-              { title: 'CFRT as the standard of care.', text: 'Definitive CFRT with VMAT/RapidArc delivers precise fractionated doses over 3–4 weeks — shorter anesthesia time per session, maximizing tumor control.' },
+              { title: 'SBRT as the standard of care.', text: 'SBRT (stereotactic radiation therapy) with VMAT/RapidArc delivers precise, targeted doses in fewer sessions — shorter anesthesia time, maximizing tumor control while protecting the brain, eyes, and nasal structures.' },
               { title: 'Palliative option available.', text: 'When curative treatment is not the goal, 3–5 session palliative protocols relieve symptoms and improve quality of life meaningfully.' },
             ].map(({ title, text }) => (
               <div key={title} className="rt-bullet">
@@ -247,10 +247,10 @@ export default function NasalTumorsPage() {
         <div className="cond-treat__right">
           <div className="eyebrow" style={{ color: '#1A4FBF' }}>Protocol Options</div>
           <h3 className="titulo-seccion" style={{ fontSize: 24, marginBottom: 24 }}>
-            CFRT is the <em>standard of care</em> for nasal tumors.
+            SBRT is the <em>standard of care</em> for nasal tumors.
           </h3>
           {[
-            { tag: 'Primary — Curative Intent', name: 'CFRT', sessions: '16–20 sessions', note: 'Daily Mon–Fri · outpatient · same-day home', href: '/radiation-therapy/#cfrt', dark: true },
+            { tag: 'Primary — Curative Intent', name: 'SBRT', sessions: 'Fewer sessions', note: 'Stereotactic · high-precision · outpatient · same-day home', href: '/radiation-therapy/#srs-srt', dark: true },
             { tag: 'Comfort-Focused Option', name: 'Palliative Radiation', sessions: '3–5 sessions', note: 'Symptom relief · quality of life · outpatient', href: '/radiation-therapy/#palliative', dark: false },
           ].map(({ tag, name, sessions, note, href, dark }) => (
             <Link key={name} href={href} className={`cond-proto-card${dark ? ' cond-proto-card--dark' : ''}`}>
