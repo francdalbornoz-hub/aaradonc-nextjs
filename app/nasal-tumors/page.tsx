@@ -26,7 +26,7 @@ const FAQ_ITEMS = [
   },
   {
     q: 'Is radiation the standard of care for nasal tumors?',
-    a: 'Yes. Radiation therapy is the established primary treatment for nasal tumors in dogs and cats. Multiple studies have shown that definitive CFRT produces significantly longer median survival than surgery or supportive care alone. Surgery alone is rarely curative due to the complex anatomy of the nasal cavity.',
+    a: 'Yes. Radiation therapy is the established primary treatment for nasal tumors in dogs and cats. Multiple studies have shown that SBRT (stereotactic radiation therapy) produces significantly longer median survival than supportive care alone. Surgery alone is rarely curative due to the complex anatomy of the nasal cavity.',
   },
   {
     q: 'How many sessions does nasal tumor radiation take?',
@@ -34,7 +34,7 @@ const FAQ_ITEMS = [
   },
   {
     q: 'What survival times can we expect?',
-    a: 'Dogs with nasal tumors treated with definitive CFRT consistently achieve median survival times of 12–19 months, with a meaningful percentage surviving 2 years or more. Cats with nasal lymphoma treated with radiation and chemotherapy can achieve remission of 1–2+ years. Results depend on tumor histology, staging, and timing of diagnosis.',
+    a: 'Dogs with nasal tumors treated with SBRT consistently achieve median survival times of 12–19 months, with a meaningful percentage surviving 2 years or more. Cats with nasal lymphoma treated with radiation and chemotherapy can achieve remission of 1–2+ years. Results depend on tumor histology, staging, and timing of diagnosis.',
   },
   {
     q: 'Does my pet need a referral?',
@@ -85,12 +85,8 @@ export default function NasalTumorsPage() {
         </div>
         <div className="cond-hero__stats" aria-label="Key statistics">
           <div className="cond-hero__stat">
-            <div className="cond-hero__stat-val">80<em>%+</em></div>
-            <div className="cond-hero__stat-label">Response rate for nasal carcinomas treated with definitive CFRT</div>
-          </div>
-          <div className="cond-hero__stat">
             <div className="cond-hero__stat-val">12–<em>19</em>mo</div>
-            <div className="cond-hero__stat-label">Median survival with definitive radiation therapy</div>
+            <div className="cond-hero__stat-label">Median survival with SBRT</div>
           </div>
           <div className="cond-hero__stat">
             <div className="cond-hero__stat-val">16–<em>20</em></div>
@@ -208,12 +204,8 @@ export default function NasalTumorsPage() {
 
       <div className="cond-bridge" aria-label="Key outcomes">
         <div className="cond-bridge__stat">
-          <div className="cond-bridge__val">80<em>%+</em></div>
-          <div className="cond-bridge__label">Response rate for nasal carcinomas with CFRT</div>
-        </div>
-        <div className="cond-bridge__stat">
           <div className="cond-bridge__val">12–<em>19</em>mo</div>
-          <div className="cond-bridge__label">Median survival with definitive radiation therapy</div>
+          <div className="cond-bridge__label">Median survival with SBRT</div>
         </div>
         <div className="cond-bridge__stat">
           <div className="cond-bridge__val">Same<em> day</em></div>

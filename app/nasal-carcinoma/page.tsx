@@ -26,11 +26,11 @@ const FAQ_ITEMS = [
   },
   {
     q: 'Why is radiation the primary treatment — not surgery?',
-    a: 'The nasal cavity\'s complex anatomy — proximity to the brain, orbits, and hard palate — makes complete surgical resection very difficult and often disfiguring without meaningful survival benefit. Radiation therapy targets the tumor volume precisely within this confined space, achieving local control that surgery cannot. Multiple studies confirm that definitive CFRT produces significantly longer survival than rhinotomy alone.',
+    a: 'The nasal cavity\'s complex anatomy — proximity to the brain, orbits, and hard palate — makes complete surgical resection very difficult and often disfiguring without meaningful survival benefit. Radiation therapy targets the tumor volume precisely within this confined space, achieving local control that surgery cannot. Multiple studies confirm that SBRT (stereotactic radiation therapy) produces significantly longer survival than rhinotomy alone.',
   },
   {
     q: 'What survival time can we expect with radiation for nasal carcinoma?',
-    a: 'Dogs treated with definitive CFRT for nasal adenocarcinoma consistently achieve median survival times of 12–19 months. Approximately 30–40% of dogs survive 2 years or more. Cats with nasal carcinoma also respond well to radiation, with good local control in most cases. Results are best when treatment begins before significant bone invasion or brain involvement.',
+    a: 'Dogs treated with SBRT for nasal adenocarcinoma consistently achieve median survival times of 12–19 months. Approximately 30–40% of dogs survive 2 years or more. Cats with nasal carcinoma also respond well to radiation, with good local control in most cases. Results are best when treatment begins before significant bone invasion or brain involvement.',
   },
   {
     q: 'How many radiation sessions are required?',
@@ -85,16 +85,12 @@ export default function NasalCarcinomaPage() {
         </div>
         <div className="cond-hero__stats" aria-label="Key statistics">
           <div className="cond-hero__stat">
-            <div className="cond-hero__stat-val">80<em>%+</em></div>
-            <div className="cond-hero__stat-label">Response rate for nasal carcinoma with definitive CFRT</div>
-          </div>
-          <div className="cond-hero__stat">
             <div className="cond-hero__stat-val">12–<em>19</em>mo</div>
-            <div className="cond-hero__stat-label">Median survival for dogs treated with definitive CFRT</div>
+            <div className="cond-hero__stat-label">Median survival for dogs treated with SBRT</div>
           </div>
           <div className="cond-hero__stat">
             <div className="cond-hero__stat-val">2<em>x</em></div>
-            <div className="cond-hero__stat-label">Longer survival with radiation vs. surgery or supportive care</div>
+            <div className="cond-hero__stat-label">Longer survival with radiation vs. supportive care</div>
           </div>
           <div className="cond-hero__stat">
             <div className="cond-hero__stat-val">Same<em> day</em></div>
@@ -170,12 +166,8 @@ export default function NasalCarcinomaPage() {
 
       <div className="cond-bridge" aria-label="Key outcomes">
         <div className="cond-bridge__stat">
-          <div className="cond-bridge__val">80<em>%+</em></div>
-          <div className="cond-bridge__label">Response rate for nasal carcinoma with definitive CFRT</div>
-        </div>
-        <div className="cond-bridge__stat">
           <div className="cond-bridge__val">12–<em>19</em>mo</div>
-          <div className="cond-bridge__label">Median survival — consistently longer than surgery alone</div>
+          <div className="cond-bridge__label">Median survival — consistently longer than supportive care alone</div>
         </div>
         <div className="cond-bridge__stat">
           <div className="cond-bridge__val">16–<em>20</em></div>
