@@ -3,6 +3,16 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { getPageSeo } from '@/lib/seo-config'
 import FAQAccordion from '@/components/ui/FAQAccordion'
+import References, { type Reference } from '@/components/ui/References'
+
+// Peer-reviewed sources supporting the claims on this page (definitive-intent
+// radiation for canine oral/gingival SCC; local control for rostral tumors).
+const REFERENCES: Reference[] = [
+  { authors: 'van der Steen F, Zandvliet M', year: '2020', title: 'Treatment of canine oral papillary squamous cell carcinoma using definitive-intent radiation as a monotherapy: a case series', source: 'Vet Comp Oncol' },
+  { authors: 'Mosca S, et al.', year: '2021', title: 'A possible role of coarse fractionated radiotherapy in the management of gingival squamous cell carcinoma in dogs: a retrospective study', source: 'J Vet Med Sci' },
+  { authors: 'Børresen B, et al.', year: '2023', title: 'Evaluation of single-fraction high dose FLASH radiotherapy in a cohort of canine oral cancer patients', source: 'Front Oncol' },
+  { authors: 'Brooks MB, et al.', year: '1988', title: 'Chemotherapy versus chemotherapy plus radiotherapy in the treatment of tonsillar squamous cell carcinoma in the dog', source: 'J Vet Intern Med' },
+]
 
 const pageSeo = getPageSeo('/oral-squamous-cell-carcinoma')
 
@@ -250,6 +260,8 @@ export default function OralSquamousCellCarcinomaPage() {
           <FAQAccordion items={FAQ_ITEMS} />
         </div>
       </section>
+
+      <References items={REFERENCES} />
 
       <div className="cond-cta">
         <div className="cond-cta__col cond-cta__col--owners">

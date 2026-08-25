@@ -3,6 +3,17 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { getPageSeo } from '@/lib/seo-config'
 import FAQAccordion from '@/components/ui/FAQAccordion'
+import References, { type Reference } from '@/components/ui/References'
+
+// Peer-reviewed sources supporting the claims on this page (adjuvant RT after
+// incomplete excision; 1-year local control ~85–90% for grade II/low-grade MCT).
+const REFERENCES: Reference[] = [
+  { authors: 'Lejeune A, et al.', year: '2015', title: 'Aggressive local therapy combined with systemic chemotherapy provides long-term control in grade II stage 2 canine mast cell tumours', source: 'Vet Comp Oncol' },
+  { authors: 'Al-Sarraf R, et al.', year: '1996', title: 'A prospective study of radiation therapy for the treatment of grade 2 mast cell tumors in 32 dogs', source: 'J Vet Intern Med' },
+  { authors: 'Mason SL, et al.', year: '2020', title: 'Outcomes of adjunctive radiation therapy for the treatment of mast cell tumors in dogs and assessment of toxicity: a multicentre observational study', source: 'Vet Comp Oncol' },
+  { authors: 'Chaffin K, Thrall DE', year: '2002', title: 'Results of radiation therapy in 19 dogs with cutaneous mast cell tumor and regional lymph node metastasis', source: 'Vet Radiol Ultrasound' },
+  { authors: 'Hahn KA, King GK, Carreras JK', year: '2004', title: 'Efficacy of radiation therapy for incompletely resected grade III mast cell tumors in dogs: 31 cases', source: 'J Am Vet Med Assoc. 224(1):79' },
+]
 
 const pageSeo = getPageSeo('/mast-cell-tumors')
 
@@ -249,6 +260,8 @@ export default function MastCellTumorsPage() {
           <FAQAccordion items={FAQ_ITEMS} />
         </div>
       </section>
+
+      <References items={REFERENCES} />
 
       <div className="cond-cta">
         <div className="cond-cta__col cond-cta__col--owners">

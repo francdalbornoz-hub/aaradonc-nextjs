@@ -3,6 +3,17 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { getPageSeo } from '@/lib/seo-config'
 import FAQAccordion from '@/components/ui/FAQAccordion'
+import References, { type Reference } from '@/components/ui/References'
+
+// Peer-reviewed sources supporting the claims on this page (melanoma is
+// radiosensitive to large-fraction protocols; survival by stage with RT ±
+// immunotherapy/chemotherapy).
+const REFERENCES: Reference[] = [
+  { authors: 'Baja AJ, et al.', year: '2022', title: 'A retrospective study of 101 dogs with oral melanoma treated with a weekly or biweekly 6 Gy × 6 radiotherapy protocol', source: 'Vet Comp Oncol' },
+  { authors: 'Cancedda S, et al.', year: '2014', title: 'Efficacy and side effects of radiation therapy in comparison with radiation therapy and temozolomide in the treatment of measurable oral canine melanoma', source: 'Vet Comp Oncol' },
+  { authors: 'Cunha SC, et al.', year: '2018', title: 'Radiation therapy for oral melanoma in dogs: a retrospective study', source: 'Ciência Rural. 48(4)' },
+  { authors: 'Bateman KE, et al.', year: '1994', title: 'Radiation therapy for the treatment of canine oral melanoma', source: 'J Vet Intern Med' },
+]
 
 const pageSeo = getPageSeo('/oral-melanoma')
 
@@ -248,6 +259,8 @@ export default function OralMelanomaPage() {
           <FAQAccordion items={FAQ_ITEMS} />
         </div>
       </section>
+
+      <References items={REFERENCES} />
 
       <div className="cond-cta">
         <div className="cond-cta__col cond-cta__col--owners">
