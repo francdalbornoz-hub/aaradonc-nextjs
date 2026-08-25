@@ -3,6 +3,15 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { getPageSeo } from '@/lib/seo-config'
 import FAQAccordion from '@/components/ui/FAQAccordion'
+import References, { type Reference } from '@/components/ui/References'
+
+// Peer-reviewed sources supporting the claims on this page (chemodectoma /
+// aortic body tumors are radiation-responsive; SBRT/SRT and 3D-CRT outcomes).
+const REFERENCES: Reference[] = [
+  { authors: 'Kruckman-Gatesy JC, et al.', year: '2020', title: 'A retrospective analysis of stereotactic body radiation therapy for canine heart base tumors', source: 'J Vet Cardiol' },
+  { authors: 'Magestro L, et al.', year: '2018', title: 'Stereotactic body radiation therapy for heart base tumors in six dogs', source: 'J Vet Cardiol' },
+  { authors: 'Maeda S, et al.', year: '2020', title: 'Three-dimensional conformal radiation therapy for canine aortic body tumour: 6 cases', source: 'J Small Anim Pract' },
+]
 
 const pageSeo = getPageSeo('/heart-base-tumors')
 
@@ -289,6 +298,8 @@ export default function HeartBaseTumorsPage() {
           <FAQAccordion items={FAQ_ITEMS} />
         </div>
       </section>
+
+      <References items={REFERENCES} />
 
       <div className="cond-cta">
         <div className="cond-cta__col cond-cta__col--owners">

@@ -3,6 +3,16 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { getPageSeo } from '@/lib/seo-config'
 import FAQAccordion from '@/components/ui/FAQAccordion'
+import References, { type Reference } from '@/components/ui/References'
+
+// Peer-reviewed sources supporting the claims on this page (ASAC survival with
+// surgery + adjuvant/hypofractionated/stereotactic radiation; nodal disease).
+const REFERENCES: Reference[] = [
+  { authors: 'McQuown B, et al.', year: '2016', title: 'Treatment of advanced canine anal sac adenocarcinoma with hypofractionated radiation therapy: 77 cases', source: 'Vet Comp Oncol' },
+  { authors: 'Swan M, et al.', year: '2021', title: 'Pilot study evaluating the feasibility of stereotactic body radiation therapy for canine anal sac adenocarcinoma', source: 'Vet Radiol Ultrasound' },
+  { authors: 'Williams J, et al.', year: '2021', title: 'Minimal late radiation toxicity and transient early toxicity following postoperative definitive-intent radiation therapy for canine anal sac adenocarcinoma', source: 'Vet Radiol Ultrasound' },
+  { authors: 'Faletti A, et al.', year: '2024', title: 'Stereotactic radiotherapy for advanced canine anal sac adenocarcinoma: an exploratory study', source: 'Vet Radiol Ultrasound' },
+]
 
 const pageSeo = getPageSeo('/anal-sac-carcinoma')
 
@@ -248,6 +258,8 @@ export default function AnalSacCarcinomaPage() {
           <FAQAccordion items={FAQ_ITEMS} />
         </div>
       </section>
+
+      <References items={REFERENCES} />
 
       <div className="cond-cta">
         <div className="cond-cta__col cond-cta__col--owners">

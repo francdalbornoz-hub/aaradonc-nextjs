@@ -3,6 +3,15 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { getPageSeo } from '@/lib/seo-config'
 import FAQAccordion from '@/components/ui/FAQAccordion'
+import References, { type Reference } from '@/components/ui/References'
+
+// Peer-reviewed sources supporting the claims on this page (TCC/urothelial
+// carcinoma; multimodal RT + systemic therapy; IMRT/IGRT and adaptive RT).
+const REFERENCES: Reference[] = [
+  { authors: 'Nolan MW, et al.', year: '2012', title: 'Intensity-modulated and image-guided radiation therapy for treatment of genitourinary carcinomas in dogs', source: 'J Vet Intern Med' },
+  { authors: 'Ahrens M, et al.', year: '2024', title: 'Radiation toxicity grading after chemoradiotherapy of canine urinary tract carcinomas', source: 'Vet Comp Oncol' },
+  { authors: 'Nieset JR, et al.', year: '2014', title: 'Comparison of adaptive radiotherapy techniques for external radiation therapy of canine bladder cancer', source: 'Vet Radiol Ultrasound' },
+]
 
 const pageSeo = getPageSeo('/bladder-cancer')
 
@@ -250,6 +259,8 @@ export default function BladderCancerPage() {
           <FAQAccordion items={FAQ_ITEMS} />
         </div>
       </section>
+
+      <References items={REFERENCES} />
 
       <div className="cond-cta">
         <div className="cond-cta__col cond-cta__col--owners">
