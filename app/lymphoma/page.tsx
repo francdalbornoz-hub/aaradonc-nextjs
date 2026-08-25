@@ -3,6 +3,14 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { getPageSeo } from '@/lib/seo-config'
 import FAQAccordion from '@/components/ui/FAQAccordion'
+import References, { type Reference } from '@/components/ui/References'
+
+// Peer-reviewed sources supporting the claims on this page (nasal lymphoma in
+// cats is highly radiation-responsive; survival with radiation ± chemotherapy).
+const REFERENCES: Reference[] = [
+  { authors: 'Haney SM, et al.', year: '2009', title: 'Survival analysis of 97 cats with nasal lymphoma: a multi-institutional retrospective study (1986–2006)', source: 'J Vet Intern Med' },
+  { authors: 'Reczynska AI, LaRue SM, et al.', year: '2022', title: 'Outcome of stereotactic body radiation for treatment of nasal and nasopharyngeal lymphoma in 32 cats', source: 'J Vet Intern Med' },
+]
 
 const pageSeo = getPageSeo('/lymphoma')
 
@@ -289,6 +297,8 @@ export default function LymphomaPage() {
           <FAQAccordion items={FAQ_ITEMS} />
         </div>
       </section>
+
+      <References items={REFERENCES} />
 
       <div className="cond-cta">
         <div className="cond-cta__col cond-cta__col--owners">
