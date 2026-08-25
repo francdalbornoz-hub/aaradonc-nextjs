@@ -3,6 +3,15 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { getPageSeo } from '@/lib/seo-config'
 import FAQAccordion from '@/components/ui/FAQAccordion'
+import References, { type Reference } from '@/components/ui/References'
+
+// Peer-reviewed sources supporting the claims on this page (definitive/
+// stereotactic radiation for pituitary macroadenomas; survival and outcomes).
+const REFERENCES: Reference[] = [
+  { authors: 'Rapastella S, et al.', year: '2023', title: 'Effect of pituitary-dependent hypercortisolism on the survival of dogs treated with radiotherapy for pituitary macroadenomas', source: 'J Vet Intern Med' },
+  { authors: 'Mayer MN, Treuil PL', year: '2007', title: 'Radiation therapy for pituitary tumors in the dog and cat', source: 'Can Vet J. 48:316' },
+  { authors: 'Wormhoudt TL, et al.', year: '2018', title: 'Stereotactic radiation therapy for the treatment of functional pituitary adenomas', source: 'J Vet Intern Med' },
+]
 
 const pageSeo = getPageSeo('/pituitary-tumors')
 
@@ -248,6 +257,8 @@ export default function PituitaryTumorsPage() {
           <FAQAccordion items={FAQ_ITEMS} />
         </div>
       </section>
+
+      <References items={REFERENCES} />
 
       <div className="cond-cta">
         <div className="cond-cta__col cond-cta__col--owners">

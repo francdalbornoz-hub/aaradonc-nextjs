@@ -3,6 +3,15 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { getPageSeo } from '@/lib/seo-config'
 import FAQAccordion from '@/components/ui/FAQAccordion'
+import References, { type Reference } from '@/components/ui/References'
+
+// Peer-reviewed sources supporting the claims on this page (stereotactic and
+// fractionated radiation for spinal/vertebral and CNS tumors).
+const REFERENCES: Reference[] = [
+  { authors: 'Swift KE, LaRue SM', year: '2017', title: 'Outcome of 9 dogs treated with stereotactic radiation therapy for primary or metastatic vertebral osteosarcoma', source: 'Vet Comp Oncol' },
+  { authors: 'Kelsey KL, Gieger TL, Nolan MW', year: '2018', title: 'Single fraction stereotactic radiation therapy (stereotactic radiosurgery) is a feasible method for treating intracranial meningiomas in dogs', source: 'Vet Radiol Ultrasound' },
+  { authors: 'Schwarz P, et al.', year: '2018', title: 'Comparative evaluation of a novel, moderately hypofractionated radiation protocol in 56 dogs with symptomatic intracranial neoplasia', source: 'J Vet Intern Med' },
+]
 
 const pageSeo = getPageSeo('/spinal-tumors')
 
@@ -247,6 +256,8 @@ export default function SpinalTumorsPage() {
           <FAQAccordion items={FAQ_ITEMS} />
         </div>
       </section>
+
+      <References items={REFERENCES} />
 
       <div className="cond-cta">
         <div className="cond-cta__col cond-cta__col--owners">

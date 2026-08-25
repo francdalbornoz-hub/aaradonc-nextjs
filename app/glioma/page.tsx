@@ -3,6 +3,15 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { getPageSeo } from '@/lib/seo-config'
 import FAQAccordion from '@/components/ui/FAQAccordion'
+import References, { type Reference } from '@/components/ui/References'
+
+// Peer-reviewed sources supporting the claims on this page (radiation as
+// primary treatment for canine gliomas; reported median survival by protocol).
+const REFERENCES: Reference[] = [
+  { authors: 'Debreuque M, et al.', year: '2020', title: 'Definitive-intent uniform megavoltage fractionated radiotherapy protocol for presumed canine intracranial gliomas: retrospective analysis of survival and prognostic factors in 38 cases (2013–2019)', source: 'BMC Vet Res' },
+  { authors: 'Treggiari E, et al.', year: '2016', title: 'Retrospective comparison of three-dimensional conformal radiation therapy vs. prednisolone alone in 30 cases of canine infratentorial brain tumors', source: 'Vet Radiol Ultrasound' },
+  { authors: 'Schwarz P, et al.', year: '2018', title: 'Comparative evaluation of a novel, moderately hypofractionated radiation protocol in 56 dogs with symptomatic intracranial neoplasia', source: 'J Vet Intern Med' },
+]
 
 const pageSeo = getPageSeo('/glioma')
 
@@ -247,6 +256,8 @@ export default function GliomaPage() {
           <FAQAccordion items={FAQ_ITEMS} />
         </div>
       </section>
+
+      <References items={REFERENCES} />
 
       <div className="cond-cta">
         <div className="cond-cta__col cond-cta__col--owners">

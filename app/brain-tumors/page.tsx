@@ -3,6 +3,15 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { getPageSeo } from '@/lib/seo-config'
 import FAQAccordion from '@/components/ui/FAQAccordion'
+import References, { type Reference } from '@/components/ui/References'
+
+// Peer-reviewed sources supporting the claims on this page (intracranial
+// tumors respond to definitive/stereotactic radiation; meningioma in cats).
+const REFERENCES: Reference[] = [
+  { authors: 'Schwarz P, et al.', year: '2018', title: 'Comparative evaluation of a novel, moderately hypofractionated radiation protocol in 56 dogs with symptomatic intracranial neoplasia', source: 'J Vet Intern Med' },
+  { authors: 'Treggiari E, et al.', year: '2016', title: 'Retrospective comparison of three-dimensional conformal radiation therapy vs. prednisolone alone in 30 cases of canine infratentorial brain tumors', source: 'Vet Radiol Ultrasound' },
+  { authors: 'Kelsey KL, Gieger TL, Nolan MW', year: '2018', title: 'Single fraction stereotactic radiation therapy (stereotactic radiosurgery) is a feasible method for treating intracranial meningiomas in dogs', source: 'Vet Radiol Ultrasound' },
+]
 
 // ─── SEO ──────────────────────────────────────────────────────────────────────
 
@@ -327,6 +336,8 @@ export default function BrainTumorsPage() {
           <FAQAccordion items={FAQ_ITEMS} />
         </div>
       </section>
+
+      <References items={REFERENCES} />
 
       {/* ══════════════════════════════════════════════════════════════════════
           CTA DUAL

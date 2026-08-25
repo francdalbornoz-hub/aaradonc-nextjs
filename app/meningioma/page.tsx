@@ -3,6 +3,15 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { getPageSeo } from '@/lib/seo-config'
 import FAQAccordion from '@/components/ui/FAQAccordion'
+import References, { type Reference } from '@/components/ui/References'
+
+// Peer-reviewed sources supporting the claims on this page (feline meningioma
+// long-term control with SRS/SRT; 3D-CRT outcomes).
+const REFERENCES: Reference[] = [
+  { authors: 'Körner M, et al.', year: '2019', title: 'Radiation therapy for intracranial tumours in cats with neurological signs', source: 'J Feline Med Surg. 21(8):765' },
+  { authors: 'Kelsey KL, Gieger TL, Nolan MW', year: '2018', title: 'Single fraction stereotactic radiation therapy (stereotactic radiosurgery) is a feasible method for treating intracranial meningiomas in dogs', source: 'Vet Radiol Ultrasound' },
+  { authors: 'Berlato D, et al.', year: '2018', title: 'Canine meningiomas treated with three-dimensional conformal radiation therapy require magnetic resonance imaging restaging', source: 'Vet Radiol Ultrasound' },
+]
 
 const pageSeo = getPageSeo('/meningioma')
 
@@ -246,6 +255,8 @@ export default function MeningiomaPage() {
           <FAQAccordion items={FAQ_ITEMS} />
         </div>
       </section>
+
+      <References items={REFERENCES} />
 
       <div className="cond-cta">
         <div className="cond-cta__col cond-cta__col--owners">
