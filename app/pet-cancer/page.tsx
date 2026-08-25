@@ -4,6 +4,14 @@ import Link from 'next/link'
 import { getPageSeo, ORGANIZATION } from '@/lib/seo-config'
 import { CONTACT_INFO } from '@/lib/nav-config'
 import FormContact from '@/components/forms/FormContact'
+import References, { type Reference } from '@/components/ui/References'
+
+// Peer-reviewed sources grounding the radiation-therapy context on this page.
+const REFERENCES: Reference[] = [
+  { authors: 'Farrelly J, et al.', year: '2017', title: 'Retrospective analysis of non-radiation complications in dogs undergoing radiation therapy', source: 'Vet Radiol Ultrasound' },
+  { authors: 'Bley CR, et al.', year: '2022', title: 'Dose- and volume-limiting late toxicity of FLASH radiotherapy in cats with squamous cell carcinoma', source: 'Clin Cancer Res' },
+  { authors: 'Fonti N, et al.', year: '2026', title: 'Factors influencing malignant tumor development in cats from a multicenter retrospective study', source: 'Sci Rep' },
+]
 
 const pageSeo = getPageSeo('/pet-cancer')
 
@@ -317,6 +325,8 @@ export default function PetCancerPage() {
         </div>
 
       </section>
+
+      <References items={REFERENCES} />
     </>
   )
 }

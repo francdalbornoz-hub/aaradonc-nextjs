@@ -7,6 +7,15 @@ import { CONTACT_INFO } from '@/lib/nav-config'
 import ProtocolCards from '@/components/sections/ProtocolCards'
 import FormContact from '@/components/forms/FormContact'
 import FAQAccordion from '@/components/ui/FAQAccordion'
+import References, { type Reference } from '@/components/ui/References'
+
+// Peer-reviewed sources grounding the radiation-therapy claims on this page
+// (technique, safety, and toxicity in companion-animal radiation oncology).
+const REFERENCES: Reference[] = [
+  { authors: 'Farrelly J, et al.', year: '2017', title: 'Retrospective analysis of non-radiation complications in dogs undergoing radiation therapy', source: 'Vet Radiol Ultrasound' },
+  { authors: 'Soukup A, et al.', year: '2018', title: 'A prospective pilot study on early toxicity from a simultaneously integrated boost technique for canine nasal tumors', source: 'Vet Comp Oncol' },
+  { authors: 'Bley CR, et al.', year: '2022', title: 'Dose- and volume-limiting late toxicity of FLASH radiotherapy in cats with squamous cell carcinoma', source: 'Clin Cancer Res' },
+]
 
 // ─── SEO ──────────────────────────────────────────────────────────────────────
 
@@ -578,6 +587,8 @@ export default function RadiationTherapyPage() {
           <FAQAccordion items={FAQ_ITEMS} />
         </div>
       </section>
+
+      <References items={REFERENCES} />
 
       {/* ══════════════════════════════════════════════════════════════════════
           CONTACT

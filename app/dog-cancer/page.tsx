@@ -2,8 +2,15 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { getPageSeo } from '@/lib/seo-config'
+import References, { type Reference } from '@/components/ui/References'
 
 const pageSeo = getPageSeo('/dog-cancer')
+
+// Peer-reviewed sources grounding the radiation-therapy context on this page.
+const REFERENCES: Reference[] = [
+  { authors: 'Farrelly J, et al.', year: '2017', title: 'Retrospective analysis of non-radiation complications in dogs undergoing radiation therapy', source: 'Vet Radiol Ultrasound' },
+  { authors: 'Soukup A, et al.', year: '2018', title: 'A prospective pilot study on early toxicity from a simultaneously integrated boost technique for canine nasal tumors', source: 'Vet Comp Oncol' },
+]
 
 export const metadata: Metadata = {
   title: pageSeo.title,
@@ -171,6 +178,8 @@ export default function DogCancerPage() {
           </div>
         </div>
       </section>
+
+      <References items={REFERENCES} />
 
       {/* CTA */}
       <div className="sp-cta">

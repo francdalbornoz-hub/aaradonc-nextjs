@@ -2,8 +2,16 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { getPageSeo } from '@/lib/seo-config'
+import References, { type Reference } from '@/components/ui/References'
 
 const pageSeo = getPageSeo('/cat-cancer')
+
+// Peer-reviewed sources supporting the feline cancer claims on this page.
+const REFERENCES: Reference[] = [
+  { authors: 'Kent MS, et al.', year: '2022', title: 'Longevity and mortality in cats: a single institution necropsy study of 3108 cases (1989–2019)', source: 'J Feline Med Surg' },
+  { authors: 'Fonti N, et al.', year: '2026', title: 'Factors influencing malignant tumor development in cats from a multicenter retrospective study', source: 'Sci Rep' },
+  { authors: 'Bley CR, et al.', year: '2022', title: 'Dose- and volume-limiting late toxicity of FLASH radiotherapy in cats with squamous cell carcinoma', source: 'Clin Cancer Res' },
+]
 
 export const metadata: Metadata = {
   title: pageSeo.title,
@@ -171,6 +179,8 @@ export default function CatCancerPage() {
           </div>
         </div>
       </section>
+
+      <References items={REFERENCES} />
 
       {/* CTA */}
       <div className="sp-cta">
