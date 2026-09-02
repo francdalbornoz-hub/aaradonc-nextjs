@@ -100,7 +100,7 @@ export default function DogCancerPage() {
           <div style={{ paddingTop: 28, borderTop: '1px solid rgba(13,59,142,.08)' }}>
             <div style={{ fontSize: 12, color: 'var(--texto-suave)', lineHeight: 1.6, marginBottom: 8 }}>Board-certified specialist on-site</div>
             <div style={{ fontFamily: '\'Plus Jakarta Sans\', sans-serif', fontSize: 15, fontWeight: 700, color: 'var(--texto)' }}>Dr. Lisa DiBernardi</div>
-            <div style={{ fontSize: 13, color: 'var(--azul-acento)', marginTop: 2 }}>DVM · DACVR-RO · ACVIM (Oncology)</div>
+            <div style={{ fontSize: 13, color: 'var(--azul-acento)', marginTop: 2 }}>DVM · Diplomate ACVR (Radiation Oncology) · Diplomate ACVIM (Oncology)</div>
           </div>
         </div>
         <div className="sp-editorial__main">

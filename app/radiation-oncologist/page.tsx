@@ -38,7 +38,7 @@ export default function RadiationOncologistPage() {
           />
           <div className="onc-hero__name-float">
             <div className="onc-hero__name">Dr. Lisa DiBernardi</div>
-            <div className="onc-hero__creds">DVM · DACVR-RO · Diplomate ACVIM (Oncology)</div>
+            <div className="onc-hero__creds">DVM · Diplomate ACVR (Radiation Oncology) · Diplomate ACVIM (Oncology)</div>
           </div>
         </div>
 
@@ -52,9 +52,11 @@ export default function RadiationOncologistPage() {
               Board Certified<br /><em>Veterinary Radiation</em><br />Oncologist on site.
             </h1>
             <p className="onc-hero__intro">
-              AARADONC is Florida&apos;s only center 100% dedicated to veterinary radiation oncology.
-              Dr. Lisa DiBernardi brings over 20 years of specialized experience — delivering precision
-              radiation therapy for dogs and cats with a deeply individualized approach to every case.
+              AARADONC is 100% dedicated to veterinary radiation oncology — focused exclusively on the
+              specialized care of pets with cancer. Dr. Lisa DiBernardi brings more than 20 years of
+              oncology experience and dual board certification in radiation and medical oncology,
+              combining advanced radiation technology with individualized, evidence-based treatment
+              planning for every patient.
             </p>
             <div className="onc-hero__badges">
               <div className="onc-hero__badge">
@@ -117,12 +119,12 @@ export default function RadiationOncologistPage() {
                 technology, clinical precision, and a genuinely individualized approach to each case.
               </p>
               <p>
-                Dr. DiBernardi&apos;s primary certification is in{' '}
-                <strong>radiation oncology (DACVR-RO)</strong> — the specialized credential for
-                veterinary radiation therapy. She also holds an additional board certification in{' '}
-                <strong>medical oncology (ACVIM)</strong>, a distinction that deepens her understanding
-                of cancer biology and enables close collaboration with referring veterinarians, surgeons,
-                and internal medicine specialists across Florida.
+                Dr. DiBernardi is <strong>board-certified in Radiation Oncology (DACVR-RO)</strong>, the
+                specialized veterinary credential dedicated to radiation therapy. She also holds board
+                certification in <strong>Medical Oncology (DACVIM)</strong>, providing an added depth of
+                expertise in cancer biology and treatment. This dual-specialty perspective supports
+                comprehensive treatment planning and close collaboration with referring primary
+                veterinarians and veterinary specialists throughout Florida.
               </p>
               <p>
                 Her career has spanned <strong>specialty referral hospitals</strong> and collaborative
@@ -153,7 +155,7 @@ export default function RadiationOncologistPage() {
                 <div className="onc-bio__card-title">Certifications</div>
                 {[
                   { icon: 'check', text: 'DACVR-RO — Radiation Oncology' },
-                  { icon: 'check', text: 'ACVIM — Medical Oncology (additional)' },
+                  { icon: 'check', text: 'ACVIM — Oncology' },
                   { icon: 'check', text: 'DVM' },
                 ].map(({ text }) => (
                   <div key={text} className="onc-bio__card-item">
@@ -167,9 +169,9 @@ export default function RadiationOncologistPage() {
               <div className="onc-bio__card">
                 <div className="onc-bio__card-title">Clinical Focus</div>
                 {[
-                  'CFRT · Palliative Radiation · SRS/SRT',
-                  'Dogs & Cats · Small Animal Oncology',
-                  'Zoological & Wildlife Oncology',
+                  'Conventional Fractionated Radiation (CFRT) · Palliative Radiation (pRT) · Stereotactic Radiation (SRS/SBRT/SRT)',
+                  'Small Animal Oncology · Dogs & Cats',
+                  'Zoological Radiation Oncology',
                 ].map((text) => (
                   <div key={text} className="onc-bio__card-item">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -238,9 +240,11 @@ export default function RadiationOncologistPage() {
               </div>
               <div className="onc-pillar__title">Collaborative by design</div>
               <p className="onc-pillar__text">
-                Radiation oncology works best as part of a coordinated care team. Dr. DiBernardi
-                works closely with referring veterinarians, surgeons, and internists throughout
-                Florida to build cohesive, evidence-based treatment strategies.
+                Radiation oncology is most effective when integrated into a coordinated care team.
+                Dr. DiBernardi works closely with referring primary veterinarians and specialists
+                throughout Florida to develop individualized, evidence-based treatment plans. Your
+                veterinary team remains at the center of your pet&apos;s care, while we provide
+                specialized radiation oncology expertise as a dedicated partner.
               </p>
             </div>
           </div>
