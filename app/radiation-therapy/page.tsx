@@ -249,12 +249,6 @@ export default function RadiationTherapyPage() {
                   text: "A high-resolution multileaf collimator (MLC) precisely shapes the radiation beam to match each tumor's unique geometry, enabling our advanced radiation therapy treatment techniques while minimizing radiation exposure to surrounding healthy tissue.",
                   note: 'Maximum dose to tumor, minimum exposure to healthy tissue.',
                 },
-                {
-                  icon: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>,
-                  title: 'Multiple Radiation Energies — Treating a Wide Range of Tumors',
-                  text: 'Multiple beam energies allows precise treatment of both deep-seated and superficial tumors, including brain, nasal, spinal, oral, skin, and soft tissue cancers.',
-                  note: 'Technology used in leading human cancer centers worldwide.',
-                },
               ].map(({ icon, title, text, note }) => (
                 <div key={title} style={{
                   background: 'rgba(255,255,255,.06)',
@@ -275,7 +269,7 @@ export default function RadiationTherapyPage() {
             <div>
               <div style={{ fontSize: 11, letterSpacing: '.14em', textTransform: 'uppercase', fontWeight: 700, color: '#7EC8E3', marginBottom: 8 }}>Varian TrueBeam® — Key Benefits</div>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px 24px' }}>
-                {['Varian TrueBeam® linear accelerator', 'IGRT — Cone Beam CT before every session', 'VMAT / RapidArc — shorter anesthesia', 'High-resolution MLC precision', 'Multiple photon & electron energies', 'Technology used in leading human cancer centers'].map((item) => (
+                {['Varian TrueBeam® linear accelerator', 'IGRT — Cone Beam CT before every session', 'VMAT / RapidArc — shorter anesthesia', 'High-resolution MLC precision', 'Technology used in leading human cancer centers'].map((item) => (
                   <div key={item} style={{ fontSize: 13, color: 'rgba(255,255,255,.75)', display: 'flex', alignItems: 'center', gap: 8 }}>
                     <span style={{ width: 5, height: 5, borderRadius: '50%', background: '#7EC8E3', flexShrink: 0 }} />
                     {item}

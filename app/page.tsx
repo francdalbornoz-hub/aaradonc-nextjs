@@ -357,17 +357,6 @@ export default function HomePage() {
                   </div>
                 </div>
 
-                <div className="tech-feature">
-                  <div className="tech-feature__icono" aria-hidden="true">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-                      <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
-                    </svg>
-                  </div>
-                  <div>
-                    <div className="tech-feature__titulo">Multiple Radiation Energies — Treating a Wide Range of Tumors</div>
-                    <p className="tech-feature__texto">Multiple beam energies allows precise treatment of both deep-seated and superficial tumors, including brain, nasal, spinal, oral, skin, and soft tissue cancers.</p>
-                  </div>
-                </div>
               </div>
 
               <div>
