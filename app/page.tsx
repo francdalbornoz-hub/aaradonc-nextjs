@@ -170,7 +170,7 @@ export default function HomePage() {
               </div>
               <div className="why-card__titulo">Accessible</div>
               <p className="why-card__texto">
-                Same-day responses for pet families and referring veterinarians — because timely
+                Prompt responses for pet families and referring veterinarians — because timely
                 communication matters.
               </p>
             </div>
@@ -422,7 +422,7 @@ export default function HomePage() {
                 <div className="vets-feature__dot" aria-hidden="true" />
                 <div>
                   <strong>Rapid Case Review</strong>
-                  <p>Send records and imaging — we respond same day with a preliminary assessment and our recommendations.</p>
+                  <p>Send records and imaging — we respond promptly with a preliminary assessment and our recommendations.</p>
                 </div>
               </div>
               <div className="vets-feature">
@@ -602,7 +602,7 @@ export default function HomePage() {
             <div className="contacto__left">
               <p className="bajada bajada--claro">
                 Whether you&apos;re a pet family with questions or a veterinarian ready to refer — we
-                respond same day. Dr. DiBernardi reviews every case personally.
+                respond promptly. Dr. DiBernardi reviews every case personally.
               </p>
 
               <div className="contacto__info">
@@ -664,7 +664,7 @@ export default function HomePage() {
 
             <div className="contacto__form-wrap">
               <div className="form__titulo">Request a Consultation</div>
-              <p className="form__subtitulo">We respond same day — for pet families and referring veterinarians.</p>
+              <p className="form__subtitulo">We respond promptly — for pet families and referring veterinarians.</p>
               <FormContact variant="light" />
             </div>
           </div>

@@ -440,7 +440,7 @@ export default function OsteosarcomaPage() {
           </div>
           <p className="cond-cta__text">
             Palliative RT for osteosarcoma is most effective when started before pain becomes severe.
-            We acknowledge all referrals the same day and coordinate directly with your existing pain
+            We acknowledge all referrals promptly and coordinate directly with your existing pain
             management protocol.
           </p>
           <Link href="/contact-referrers" className="cond-cta__btn-secondary">Submit a Referral →</Link>

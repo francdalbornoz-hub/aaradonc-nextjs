@@ -63,26 +63,12 @@ export default function ContactReferrersPage() {
             For Veterinarians · Loxahatchee, FL
           </div>
           <h1 className="ct-hero__h1">
-            Refer a Patient.<br /><em>We respond</em><br />same day. Always.
+            Refer a Patient.<br /><em>We respond</em><br />promptly. Always.
           </h1>
           <p className="ct-hero__sub">
             Submit your patient&apos;s information below and Dr. DiBernardi will
-            follow up the same day to coordinate next steps with you.
+            follow up promptly to coordinate next steps with you.
           </p>
-          <div className="ct-hero__pills">
-            <div className="ct-hero__pill">
-              <span className="ct-hero__pill-dot" aria-hidden="true" />
-              Same-day response
-            </div>
-            <div className="ct-hero__pill">
-              <span className="ct-hero__pill-dot" aria-hidden="true" />
-              Board Certified Radiation Oncologist
-            </div>
-            <div className="ct-hero__pill">
-              <span className="ct-hero__pill-dot" aria-hidden="true" />
-              Confidential &amp; secure
-            </div>
-          </div>
         </div>
       </section>
 
@@ -137,7 +123,7 @@ export default function ContactReferrersPage() {
             </div>
             <div>
               <div className="crf-info-card__label">Response</div>
-              <div className="crf-info-card__val">Same day. Always.</div>
+              <div className="crf-info-card__val">Promptly. Always.</div>
             </div>
           </div>
         </div>
@@ -166,7 +152,7 @@ export default function ContactReferrersPage() {
                 </p>
               </div>
               <div className="crf-form-header__badge">
-                Same-day response
+                Prompt response
               </div>
             </div>
 
@@ -230,7 +216,7 @@ export default function ContactReferrersPage() {
         <div style={{ maxWidth: 1408, margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 16 }}>
           <p style={{ fontSize: 15, color: 'rgba(255,255,255,.85)', fontWeight: 500 }}>
             <strong style={{ fontWeight: 700 }}>Are you a pet family?</strong>{' '}
-            Use our consultation form — we respond the same day with clarity and no pressure.
+            Use our consultation form — we respond promptly with clarity and no pressure.
           </p>
           <Link
             href="/contact-pet-owners"

@@ -258,7 +258,7 @@ export default function RadiationOncologistPage() {
           </div>
           <p className="onc-cta__text">
             Dr. DiBernardi will personally review your pet&apos;s case and provide a clear, honest
-            recommendation — with same-day response.
+            recommendation — with a prompt response.
           </p>
           <Link href="/contact-pet-owners" className="onc-cta__btn-primary">Meet the Doctor →</Link>
         </div>

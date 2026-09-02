@@ -128,7 +128,7 @@ export default function FormReferralCompact() {
 
       {status === 'success' && (
         <div className="ff-response-message ff_success_response" role="status">
-          Referral received. Dr. DiBernardi will follow up the same day.
+          Referral received. Dr. DiBernardi will follow up promptly.
         </div>
       )}
       {status === 'error' && (

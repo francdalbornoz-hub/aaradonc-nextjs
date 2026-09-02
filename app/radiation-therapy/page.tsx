@@ -81,7 +81,7 @@ const BADGES = [
   'Board-Certified Radiation Oncologist on site',
   '3D CT-Based Treatment Planning',
   'Outpatient · Same-Day Home',
-  'Same-Day Response',
+  'Prompt Response',
 ]
 
 const CHECK_ICON = (
@@ -544,7 +544,7 @@ export default function RadiationTherapyPage() {
                 guide you through all available options — with honesty and no pressure.
               </p>
               <div className="rt-dual-card__list">
-                {['Personalized case review', 'Clear answers, no medical jargon', 'Same-day response', 'Coordinated care with your veterinary team'].map((item) => (
+                {['Personalized case review', 'Clear answers, no medical jargon', 'Prompt response', 'Coordinated care with your veterinary team'].map((item) => (
                   <div key={item} className="rt-dual-card__item">{CHECK_ICON}{item}</div>
                 ))}
               </div>
@@ -561,7 +561,7 @@ export default function RadiationTherapyPage() {
                 you&apos;ve built remains intact.
               </p>
               <div className="rt-dual-card__list">
-                {['Same-day referral response', 'Detailed treatment reports and case summaries', 'Direct oncologist communication', 'Just Radiation Oncology — A True Extension of Your Practice'].map((item) => (
+                {['Prompt referral response', 'Detailed treatment reports and case summaries', 'Direct oncologist communication', 'Just Radiation Oncology — A True Extension of Your Practice'].map((item) => (
                   <div key={item} className="rt-dual-card__item">{CHECK_ICON}{item}</div>
                 ))}
               </div>
@@ -651,7 +651,7 @@ export default function RadiationTherapyPage() {
             </div>
             <div className="contacto__form-wrap">
               <div className="form__titulo">Request a Consultation</div>
-              <div className="form__subtitulo">We&apos;ll respond the same day.</div>
+              <div className="form__subtitulo">We&apos;ll respond promptly.</div>
               <FormContact variant="light" />
             </div>
           </div>

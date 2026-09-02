@@ -47,7 +47,7 @@ const FAQ_ITEMS = [
   },
   {
     q: 'Does my dog need a referral?',
-    a: 'No referral is required. Pet families can contact us directly. We coordinate with your primary care veterinarian and any oncologist managing systemic therapy throughout the process.',
+    a: 'No referral is required. Pet families may contact us directly. We coordinate with your primary care veterinarian and any oncologist managing systemic therapy throughout the process.',
   },
 ]
 
@@ -266,11 +266,11 @@ export default function BladderCancerPage() {
         <div className="cond-cta__col cond-cta__col--owners">
           <div className="cond-cta__label">For Pet Families</div>
           <div className="cond-cta__title">
-            Get a specialist review.<br /><em>Same-day response.</em>
+            Get a specialist review.<br /><em>Prompt response.</em>
           </div>
           <p className="cond-cta__text">
             Dr. DiBernardi personally reviews every case. Tell us about your dog and we&apos;ll
-            respond the same day with a clear, honest recommendation.
+            respond promptly with a clear, honest recommendation.
           </p>
           <Link href="/contact-pet-owners" className="cond-cta__btn-primary">Request a Consultation</Link>
         </div>
@@ -280,7 +280,7 @@ export default function BladderCancerPage() {
             Refer a patient with<br /><em>bladder cancer.</em>
           </div>
           <p className="cond-cta__text">
-            Submit a referral and receive same-day acknowledgment. We coordinate radiation with
+            Submit a referral and receive prompt acknowledgment. We coordinate radiation with
             your systemic oncology plan throughout treatment.
           </p>
           <Link href="/for-veterinarians" className="cond-cta__btn-secondary">Referral Information →</Link>

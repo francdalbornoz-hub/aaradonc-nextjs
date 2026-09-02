@@ -193,7 +193,7 @@ export default function CatCancerPage() {
         <div className="sp-cta__col sp-cta__col--b">
           <div className="sp-cta__pretitle">For Veterinarians</div>
           <div className="sp-cta__title">Refer a feline<br /><em>oncology case.</em></div>
-          <p className="sp-cta__text">We acknowledge all referrals the same day. Full written reports throughout treatment. Direct oncologist access — no intermediaries.</p>
+          <p className="sp-cta__text">We acknowledge all referrals promptly. Full written reports throughout treatment. Direct oncologist access — no intermediaries.</p>
           <Link href="/contact-referrers" className="sp-cta__btn-dark">Submit a Referral →</Link>
         </div>
       </div>

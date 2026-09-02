@@ -14,11 +14,11 @@ const pageSeo = getPageSeo('/contact-pet-owners')
 const FAQ_ITEMS = [
   {
     q: 'Do I need a referral from my veterinarian, or can I contact you directly without a confirmed diagnosis?',
-    a: 'No referral is required — pet families can contact us directly, and you do not need a confirmed diagnosis to reach out. If your pet has a suspected or confirmed tumor, we can help you understand whether radiation therapy is an option. We coordinate with your primary care veterinarian throughout the entire process.',
+    a: 'No referral is required — pet families may contact us directly, and you do not need a confirmed diagnosis to reach out. If your pet has a suspected or confirmed tumor, we may help you understand whether radiation therapy is an option. We coordinate with your primary care veterinarian throughout the entire process.',
   },
   {
     q: 'How is this center different from a general veterinary oncology clinic?',
-    a: 'We are the only center in Florida 100% dedicated to radiation oncology. Treatment is delivered by a board-certified radiation oncologist on site — not a general practitioner or a rotating specialist. Because our focus is exclusively radiation therapy, we bring dedicated equipment, protocols, and expertise to this single discipline. Your pet returns to your primary veterinarian for all other care — we complement your existing veterinary team rather than replace it.',
+    a: 'We are the only center in Florida 100% dedicated to radiation oncology. Because radiation oncology is our sole focus, we bring dedicated equipment, specialized protocols, and deep expertise to every treatment. We work alongside your primary veterinarian, providing advanced radiation therapy while your pet\'s other medical needs remain with the veterinary team who knows them best. We complement your existing veterinary care—we don\'t replace it.',
   },
 ]
 
@@ -81,22 +81,8 @@ export default function ContactPetOwnersPage() {
             For Pet Families · Loxahatchee, FL
           </div>
           <h1 className="ct-hero__h1">
-            Get in touch.<br /><em>We respond</em><br />same day. Always.
+            Get in touch.<br /><em>We respond</em><br />promptly. Always.
           </h1>
-          <div className="ct-hero__pills">
-            <div className="ct-hero__pill">
-              <span className="ct-hero__pill-dot" aria-hidden="true" />
-              Same-day response
-            </div>
-            <div className="ct-hero__pill">
-              <span className="ct-hero__pill-dot" aria-hidden="true" />
-              Board Certified Radiation Oncologist on site
-            </div>
-            <div className="ct-hero__pill">
-              <span className="ct-hero__pill-dot" aria-hidden="true" />
-              Palm Beach County, FL
-            </div>
-          </div>
         </div>
       </section>
 
@@ -111,7 +97,7 @@ export default function ContactPetOwnersPage() {
             Request a <em>Consultation</em>
           </div>
           <p className="ct-form__sub">
-            Tell us about your pet and we will get back to you the same day — with clarity and no pressure.
+            Tell us about your pet and we will get back to you promptly — with clarity and no pressure.
           </p>
           {/* GTM: form_submit / consultation */}
           <FormContact variant="light" />
@@ -168,8 +154,12 @@ export default function ContactPetOwnersPage() {
             <div className="ct-info__section-title">Hours</div>
             <div className="ct-hours">
               <div className="ct-hour">
-                <span className="ct-hour__day">Monday – Friday</span>
+                <span className="ct-hour__day">Monday – Thursday</span>
                 <span className="ct-hour__time">8:00 AM – 5:00 PM</span>
+              </div>
+              <div className="ct-hour">
+                <span className="ct-hour__day">Friday</span>
+                <span className="ct-hour__time">Closed</span>
               </div>
               <div className="ct-hour">
                 <span className="ct-hour__day">Saturday</span>
@@ -192,7 +182,7 @@ export default function ContactPetOwnersPage() {
             <div className="ct-info__section-title">Response Time</div>
             <p style={{ fontSize: 16, color: 'rgba(255,255,255,.55)', lineHeight: 1.65 }}>
               We respond to all inquiries{' '}
-              <span style={{ color: 'rgba(255,255,255,.85)', fontWeight: 600 }}>the same day.</span>{' '}
+              <span style={{ color: 'rgba(255,255,255,.85)', fontWeight: 600 }}>promptly.</span>{' '}
               For urgent cases, call us directly.
             </p>
           </div>

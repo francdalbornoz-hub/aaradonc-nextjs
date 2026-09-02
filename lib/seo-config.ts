@@ -91,7 +91,7 @@ export const ORGANIZATION = {
     latitude: process.env.NEXT_PUBLIC_GEO_LAT ?? '26.6826731',
     longitude: process.env.NEXT_PUBLIC_GEO_LNG ?? '-80.2507762',
   },
-  openingHours: process.env.NEXT_PUBLIC_HOURS ?? 'Mo-Fr 08:00-17:00',
+  openingHours: process.env.NEXT_PUBLIC_HOURS ?? 'Mo-Th 08:00-17:00',
   sameAs: [
     'https://www.instagram.com/aaradonc/',
     'https://maps.app.goo.gl/cjkQDyYLqLpjTadv5',
@@ -115,7 +115,7 @@ const RAW_PAGES: Record<string, RawPageData> = {
   '/': {
     title: `Precision Radiation Therapy for Dogs and Cats in Florida | ${SITE_NAME}`,
     description:
-      'The only center 100% dedicated to Radiation Oncology in Florida. Board Certified Radiation Oncologist ON SITE. Advanced technology. Same day response. Always.',
+      'The only center 100% dedicated to Radiation Oncology in Florida. Board Certified Radiation Oncologist ON SITE. Advanced technology. Prompt response. Always.',
     sitemap: { priority: 1.0, changefreq: 'weekly' },
     schema: { localBusiness: true },
   },
@@ -131,7 +131,7 @@ const RAW_PAGES: Record<string, RawPageData> = {
   '/for-veterinarians': {
     title: `Refer a Patient — Veterinary Radiation Oncology | ${SITE_NAME}`,
     description:
-      'Refer a patient simply and fast. We respond same day. Always. Board Certified Radiation Oncologist ON SITE. No overlap — we return every patient to your care.',
+      'Refer a patient simply and fast. We respond promptly. Always. Board Certified Radiation Oncologist ON SITE. No overlap — we return every patient to your care.',
     sitemap: { priority: 0.9, changefreq: 'monthly' },
     schema: {
       localBusiness: true,
@@ -203,7 +203,7 @@ const RAW_PAGES: Record<string, RawPageData> = {
   '/contact-pet-owners': {
     title: `Contact — Request a Consultation | ${SITE_NAME}`,
     description:
-      "Request a consultation for your pet. We respond same day. Always. Florida's only center 100% dedicated to Radiation Oncology.",
+      "Request a consultation for your pet. We respond promptly. Always. Florida's only center 100% dedicated to Radiation Oncology.",
     sitemap: { priority: 0.7, changefreq: 'yearly' },
     schema: {
       localBusiness: true,
@@ -217,7 +217,7 @@ const RAW_PAGES: Record<string, RawPageData> = {
   '/contact-referrers': {
     title: `Refer a Patient — Contact for Veterinarians | ${SITE_NAME}`,
     description:
-      "Refer a patient to Florida's only center 100% dedicated to Radiation Oncology. Simple and fast. Board Certified Radiation Oncologist ON SITE. Same day. Always.",
+      "Refer a patient to Florida's only center 100% dedicated to Radiation Oncology. Simple and fast. Board Certified Radiation Oncologist ON SITE. Promptly. Always.",
     sitemap: { priority: 0.7, changefreq: 'yearly' },
     schema: {
       localBusiness: true,
@@ -731,7 +731,7 @@ const RAW_PAGES: Record<string, RawPageData> = {
   '/bladder-cancer': {
     title: `Bladder Cancer Radiation Therapy for Dogs | ${SITE_NAME}`,
     description:
-      'Bladder cancer radiation therapy for dogs in Florida. Advanced protocols. Board Certified Radiation Oncologist ON SITE. Same day. Always.',
+      'Bladder cancer radiation therapy for dogs in Florida. Advanced protocols. Board Certified Radiation Oncologist ON SITE. Promptly. Always.',
     sitemap: { priority: 0.8, changefreq: 'monthly' },
     schema: {
       localBusiness: true,

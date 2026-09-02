@@ -263,11 +263,11 @@ export default function SpinalTumorsPage() {
         <div className="cond-cta__col cond-cta__col--owners">
           <div className="cond-cta__label">For Pet Families</div>
           <div className="cond-cta__title">
-            Get a specialist review.<br /><em>Same-day response.</em>
+            Get a specialist review.<br /><em>Prompt response.</em>
           </div>
           <p className="cond-cta__text">
             Dr. DiBernardi personally reviews every case. Tell us about your pet and we&apos;ll
-            respond the same day with a clear, honest recommendation.
+            respond promptly with a clear, honest recommendation.
           </p>
           <Link href="/contact-pet-owners" className="cond-cta__btn-primary">Request a Consultation</Link>
         </div>
@@ -277,7 +277,7 @@ export default function SpinalTumorsPage() {
             Refer a patient with<br /><em>a spinal tumor.</em>
           </div>
           <p className="cond-cta__text">
-            Submit a referral and receive same-day acknowledgment. We coordinate directly with
+            Submit a referral and receive prompt acknowledgment. We coordinate directly with
             your practice throughout treatment and provide full written reports.
           </p>
           <Link href="/for-veterinarians" className="cond-cta__btn-secondary">Referral Information →</Link>

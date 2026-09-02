@@ -71,22 +71,8 @@ export default function ContactPage() {
           </h1>
           <p className="ct-hero__sub">
             Whether you are a pet family exploring options or a veterinarian looking to refer a
-            patient — our team responds the same day.
+            patient — our team responds promptly.
           </p>
-          <div className="ct-hero__pills">
-            <div className="ct-hero__pill">
-              <span className="ct-hero__pill-dot" aria-hidden="true" />
-              Same-day response
-            </div>
-            <div className="ct-hero__pill">
-              <span className="ct-hero__pill-dot" aria-hidden="true" />
-              Board Certified Radiation Oncologist on site
-            </div>
-            <div className="ct-hero__pill">
-              <span className="ct-hero__pill-dot" aria-hidden="true" />
-              Palm Beach County, FL
-            </div>
-          </div>
         </div>
       </section>
 
@@ -101,7 +87,7 @@ export default function ContactPage() {
             Request a <em>Consultation</em>
           </div>
           <p className="ct-form__sub">
-            Tell us about your pet and we will get back to you the same day — with clarity and no pressure.
+            Tell us about your pet and we will get back to you promptly — with clarity and no pressure.
           </p>
           {/* GTM: form_submit / consultation */}
           <FormContact variant="light" />
@@ -158,12 +144,16 @@ export default function ContactPage() {
             <div className="ct-info__section-title">Hours</div>
             <div className="ct-hours">
               <div className="ct-hour">
-                <span className="ct-hour__day">Monday – Friday</span>
+                <span className="ct-hour__day">Monday – Thursday</span>
                 <span className="ct-hour__time">8:00 AM – 5:00 PM</span>
               </div>
               <div className="ct-hour">
+                <span className="ct-hour__day">Friday</span>
+                <span className="ct-hour__time">Closed</span>
+              </div>
+              <div className="ct-hour">
                 <span className="ct-hour__day">Saturday</span>
-                <span className="ct-hour__time">By appointment</span>
+                <span className="ct-hour__time">Closed</span>
               </div>
               <div className="ct-hour">
                 <span className="ct-hour__day">Sunday</span>
@@ -182,7 +172,7 @@ export default function ContactPage() {
             <div className="ct-info__section-title">Response Time</div>
             <p style={{ fontSize: 16, color: 'rgba(255,255,255,.55)', lineHeight: 1.65 }}>
               We respond to all inquiries{' '}
-              <span style={{ color: 'rgba(255,255,255,.85)', fontWeight: 600 }}>the same day.</span>{' '}
+              <span style={{ color: 'rgba(255,255,255,.85)', fontWeight: 600 }}>promptly.</span>{' '}
               For urgent cases, call us directly.
             </p>
           </div>

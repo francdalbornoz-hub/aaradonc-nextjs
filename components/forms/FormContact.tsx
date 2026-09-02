@@ -125,7 +125,7 @@ export default function FormContact({ variant = 'light' }: Props) {
 
       {status === 'success' && (
         <div className="ff-response-message ff_success_response" role="status">
-          Thank you. We&apos;ll be in touch the same day.
+          Thank you. We&apos;ll be in touch promptly.
         </div>
       )}
       {status === 'error' && (
@@ -139,7 +139,7 @@ export default function FormContact({ variant = 'light' }: Props) {
       </button>
 
       <div className="ff-el-tc">
-        We respond the same day. No pressure, no commitment.
+        We respond promptly. No pressure, no commitment.
       </div>
     </form>
   )

@@ -364,7 +364,7 @@ export default function FormReferral() {
       {/* ── SUBMIT ──────────────────────────────────────────────── */}
       {status === 'success' && (
         <div className="ff-response-message ff_success_response" role="status">
-          Referral received. Dr. DiBernardi will follow up the same day. Please email medical records and imaging to <strong>info@aaradonc.com</strong>.
+          Referral received. Dr. DiBernardi will follow up promptly. Please email medical records and imaging to <strong>info@aaradonc.com</strong>.
         </div>
       )}
       {status === 'error' && (

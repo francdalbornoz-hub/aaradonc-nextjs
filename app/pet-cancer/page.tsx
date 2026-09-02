@@ -45,7 +45,7 @@ const PROTOCOLS = [
 ]
 
 const STEPS = [
-  { num: 1, title: 'First Contact', text: 'Call or email us. We\'ll listen and let you know quickly whether radiation therapy could help your pet — no pressure, no obligation.', tags: ['Same day. Always.'] },
+  { num: 1, title: 'First Contact', text: 'Call or email us. We\'ll listen and let you know quickly whether radiation therapy could help your pet — no pressure, no obligation.', tags: ['Promptly. Always.'] },
   { num: 2, title: 'Medical Review & Consultation', text: 'We review your pet\'s imaging, pathology, and full history. You\'ll receive a clear, honest recommendation — no jargon, no pressure.', tags: ['In-person', 'Remote consultation available'] },
   { num: 3, title: 'Personalized Treatment Plan', text: 'Our Radiation Oncologist designs a custom plan using advanced imaging and dosimetry. The right protocol is selected based on your pet\'s specific cancer, anatomy, and goals.', tags: ['CFRT', 'Palliative Radiation', 'SRS / SRT'] },
   { num: 4, title: 'Treatment & Ongoing Care', text: 'Outpatient sessions, regular check-ins, and complete coordination with your veterinarian — from first treatment to final follow-up and beyond.', tags: ['1–20 sessions', 'Outpatient', 'Vet coordination'] },
@@ -82,7 +82,7 @@ export default function PetCancerPage() {
             <div className="htl-sep" />
             <div className="htl-item">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              Same-Day Response. Always.
+              Prompt Response. Always.
             </div>
             <div className="htl-sep" />
             <div className="htl-item">
@@ -242,9 +242,9 @@ export default function PetCancerPage() {
             <div className="pc-contact-vet__left">
               <div className="eyebrow eyebrow--claro">For Referring Veterinarians</div>
               <div className="pc-contact-vet__title">A referral partner<br />you can <em>count on.</em></div>
-              <p className="pc-contact-vet__text">We respond same day, keep you fully informed, and return the patient to your care when radiation therapy is complete. Just Radiation Oncology — A True Extension of Your Practice.</p>
+              <p className="pc-contact-vet__text">We respond promptly, keep you fully informed, and return the patient to your care when radiation therapy is complete. Just Radiation Oncology — A True Extension of Your Practice.</p>
               <div className="pc-contact-vet__pills">
-                {['Same-day acknowledgment', 'Full written reports', 'Direct oncologist access', 'You keep the patient'].map((p) => (
+                {['Prompt acknowledgment', 'Full written reports', 'Direct oncologist access', 'You keep the patient'].map((p) => (
                   <div key={p} className="pc-contact-vet__pill">
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#7EC8E3" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
                     {p}
@@ -270,7 +270,7 @@ export default function PetCancerPage() {
               </h2>
               <p className="pc-contact-info__sub">
                 Have questions about pet cancer treatment? Ready to explore radiation therapy for your dog or cat?
-                We respond same day — Our Radiation Oncologist reviews every case personally.
+                We respond promptly — Our Radiation Oncologist reviews every case personally.
               </p>
 
               <div className="pc-contact-info__items">
@@ -317,7 +317,7 @@ export default function PetCancerPage() {
                 <span className="pc-contact-form__label">Request a Consultation</span>
               </div>
               <div className="pc-contact-form__title">Let&apos;s talk about<br />your pet&apos;s options.</div>
-              <p className="pc-contact-form__sub">Same day. Always.</p>
+              <p className="pc-contact-form__sub">Promptly. Always.</p>
               <FormContact variant="light" />
             </div>
 

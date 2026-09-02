@@ -104,7 +104,7 @@ export default function Footer() {
       <div className="footer-cta">
         <div className="footer-cta__inner">
           <div className="footer-cta__copy">
-            <p className="footer-cta__label">Same day. Always.</p>
+            <p className="footer-cta__label">Promptly. Always.</p>
             <h2 className="footer-cta__heading">
               Ready to take the next step<br />
               for your pet?

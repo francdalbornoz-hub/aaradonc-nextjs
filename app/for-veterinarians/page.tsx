@@ -33,7 +33,7 @@ const CHECK_ICON = (
 const FAQ_ITEMS = [
   {
     q: 'Do pet families need a referral from me to contact AARADONC?',
-    a: <>No. <strong>Pet families can contact us directly.</strong> However, when you refer a patient, we coordinate everything with your practice — keeping you fully informed and involved throughout the process.</>,
+    a: <>No. <strong>Pet families may contact us directly.</strong> However, when you refer a patient, we coordinate everything with your practice — keeping you fully informed and involved throughout the process.</>,
   },
   {
     q: 'What information should I include in the referral?',
@@ -41,7 +41,7 @@ const FAQ_ITEMS = [
   },
   {
     q: 'How quickly will I hear back after submitting a referral?',
-    a: <><strong>Same day.</strong> Dr. DiBernardi personally reviews every referral and we acknowledge receipt the same day. A consultation is typically scheduled <strong>within the week</strong> — sooner for urgent cases.</>,
+    a: <><strong>Promptly.</strong> Dr. DiBernardi personally reviews every referral and we acknowledge receipt promptly. A consultation is typically scheduled <strong>within the week</strong> — sooner for urgent cases.</>,
   },
   {
     q: 'Will I receive updates on my patient during treatment?',
@@ -84,7 +84,7 @@ export default function ForVeterinariansPage() {
             <div className="hero__badges" style={{ marginTop: 36 }}>
               {[
                 'Board-Certified Radiation Oncologist on site',
-                'Same-Day Referral Response',
+                'Prompt Referral Response',
                 'Detailed Written Reports for Every Case',
                 'A True Extension of Your Practice',
               ].map((b) => (
@@ -104,7 +104,7 @@ export default function ForVeterinariansPage() {
                 <span className="vet-hero-form__label">Quick Referral</span>
               </div>
               <div className="vet-hero-form__title">Submit a Patient Referral</div>
-              <p className="vet-hero-form__sub">We respond same day — no paperwork required.</p>
+              <p className="vet-hero-form__sub">We respond promptly — no paperwork required.</p>
               <FormReferralCompact />
             </div>
           </div>
@@ -119,7 +119,7 @@ export default function ForVeterinariansPage() {
         <div className="pos-strip__inner">
           <p className="pos-strip__text">
             <strong>Florida&apos;s only center 100% dedicated to veterinary radiation oncology</strong> —
-            Dr. DiBernardi personally reviews every referral and responds the same day.
+            Dr. DiBernardi personally reviews every referral and responds promptly.
           </p>
         </div>
       </div>
@@ -193,8 +193,8 @@ export default function ForVeterinariansPage() {
               },
               {
                 icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.36 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.86a16 16 0 0 0 6.23 6.23l1.22-1.22a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>,
-                title: 'Same-Day Response',
-                text: <>We acknowledge every referral <strong>the same day</strong> and schedule a consultation within the week. For urgent cases, <strong>we move faster.</strong> Time matters — our process reflects that.</>,
+                title: 'Prompt Response',
+                text: <>We acknowledge every referral <strong>promptly</strong> and schedule a consultation within the week. For urgent cases, <strong>we move faster.</strong> Time matters — our process reflects that.</>,
               },
               {
                 icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>,
@@ -269,8 +269,8 @@ export default function ForVeterinariansPage() {
                 </div>
               </div>
               <div className="paso__cuerpo">
-                <div className="paso__titulo">Same-Day Case Review</div>
-                <p className="paso__texto">Dr. DiBernardi personally reviews every referral the same day. You receive an acknowledgment the same day and a consultation is scheduled within the week — often sooner for urgent cases.</p>
+                <div className="paso__titulo">Prompt Case Review</div>
+                <p className="paso__texto">Dr. DiBernardi personally reviews every referral promptly. You receive an acknowledgment promptly and a consultation is scheduled within the week — often sooner for urgent cases.</p>
               </div>
             </div>
 
@@ -354,7 +354,7 @@ export default function ForVeterinariansPage() {
             </h2>
             <p className="vet-form-section__sub">
               Fill in the basics — name, clinic, and patient info. We will acknowledge
-              same day and schedule a consultation within the week.
+              your referral promptly and schedule a consultation within the week.
             </p>
 
             <div className="vet-form-section__contacts">

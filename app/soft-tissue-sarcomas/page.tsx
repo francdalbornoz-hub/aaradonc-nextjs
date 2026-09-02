@@ -452,7 +452,7 @@ export default function SoftTissueSarcomasPage() {
           </div>
           <p className="cond-cta__text">
             Send pathology, surgical notes, and imaging. We prioritize post-surgical STS cases and
-            acknowledge all referrals the same day. Pre-surgical consultation available when RT
+            acknowledge all referrals promptly. Pre-surgical consultation available when RT
             planning benefits from coordinating with the surgical approach.
           </p>
           <Link href="/contact-referrers" className="cond-cta__btn-secondary">Submit a Referral →</Link>
