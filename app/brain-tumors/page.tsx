@@ -89,9 +89,9 @@ export default function BrainTumorsPage() {
             Brain tumor radiation<br />therapy for pets<br /><em>in Florida.</em>
           </h1>
           <p className="cond-hero__sub">
-            For most brain tumors in dogs and cats, radiation therapy is not a last resort — it is
-            the primary treatment. Delivered by a board-certified radiation oncologist at
-            Florida&apos;s only center 100% dedicated to radiation oncology.
+            Radiation therapy is often a primary treatment option for most brain tumors in dogs and
+            cats. At AARADONC, treatment is delivered by a board-certified Radiation Oncologist at
+            Florida&apos;s only center 100% dedicated to veterinary radiation oncology.
           </p>
           <div className="cond-hero__ctas">
             <Link href="/contact-pet-owners" className="cta-primario">Request a Consultation</Link>
@@ -106,10 +106,6 @@ export default function BrainTumorsPage() {
           </div>
         </div>
         <div className="cond-hero__stats" aria-label="Key statistics">
-          <div className="cond-hero__stat">
-            <div className="cond-hero__stat-val">#<em>1</em></div>
-            <div className="cond-hero__stat-label">Most common intracranial tumor in cats: meningioma</div>
-          </div>
           <div className="cond-hero__stat">
             <div className="cond-hero__stat-val">2<em>x</em></div>
             <div className="cond-hero__stat-label">Median survival with radiation vs. supportive care alone</div>
@@ -149,50 +145,40 @@ export default function BrainTumorsPage() {
             Why brain tumors in pets<br />are <em>different — and treatable.</em>
           </h2>
           <p className="cond-editorial__lead">
-            Brain tumors are among the most challenging diagnoses in veterinary oncology — but also
-            among the most responsive to radiation therapy. For many dogs and cats, radiation therapy is not
-            a last resort. It is the primary treatment.
+            Brain tumors can be a challenging diagnosis in veterinary oncology — but fortunately, many
+            brain tumors are responsive to radiation therapy. For dogs and cats, radiation therapy is not
+            a last resort — it may be the primary treatment.
           </p>
           <p className="cond-editorial__body">
-            The most common brain tumors in dogs and cats — meningiomas, gliomas, and choroid plexus
-            tumors — originate in or adjacent to the brain and grow slowly at first. Because the skull
-            contains the tumor within a fixed space, even gradual growth produces neurological symptoms
-            that tend to appear suddenly and worsen quickly.
-          </p>
-          <h3 className="cond-editorial__h3">Why surgery alone is rarely enough</h3>
-          <p className="cond-editorial__body">
-            Unlike tumors in other parts of the body, brain tumors cannot always be safely removed in
-            their entirety. The brain&apos;s complex anatomy means that aggressive surgical resection
-            carries serious risk of permanent neurological damage. In many cases, surgery can relieve
-            pressure and provide a tissue diagnosis, but it cannot eliminate the tumor completely.
-          </p>
-          <p className="cond-editorial__body">
-            This is where radiation therapy becomes essential. Radiation targets the tumor volume
-            precisely, destroying cancer cells while sparing the surrounding healthy brain tissue —
-            a balance that surgery alone cannot always achieve.
+            The most common brain tumor types in the dog and cat are meningiomas, gliomas, and choroid
+            plexus tumors. Because the skull is a fixed space, even gradual growth may produce
+            neurological symptoms which seem to appear suddenly and worsen quickly.
           </p>
           <div className="cond-editorial__fact">
             <div className="cond-editorial__fact-icon" aria-hidden="true">{INFO_ICON}</div>
             <div className="cond-editorial__fact-text">
-              <strong>Meningiomas in cats</strong> are the most successfully treated brain tumor in
-              veterinary oncology. Cats treated with SRS/SRT consistently achieve median survival
-              times of <strong>24 months or more</strong> — with excellent quality of life throughout.
+              <strong>In cats, meningiomas are often surgically accessible</strong>, and surgery can
+              achieve the best long-term outcomes. When surgery is not feasible, stereotactic radiation
+              (SRS/SRT) offers an effective alternative for local control and quality of life. Surgery
+              may also be appropriate to obtain a diagnosis, reduce tumor volume, or relieve pressure —
+              though complete surgical removal is not always possible.
             </div>
           </div>
-          <h3 className="cond-editorial__h3">When symptoms appear — what to expect</h3>
+          <h3 className="cond-editorial__h3">When neurological symptoms appear</h3>
           <p className="cond-editorial__body">
-            Neurological symptoms — seizures, circling, head tilt, behavioral changes, loss of
-            coordination, vision changes — can escalate quickly once they begin. Early evaluation
-            by a specialist is important: the sooner radiation begins, the less neurological
-            compromise has occurred, and the better the response typically is.
+            Signs of a brain tumor may include seizures, changes in behavior or personality, circling
+            or altered awareness, head tilt, loss of coordination, weakness, vision changes, and
+            difficulty walking. Neurological signs can progress as a tumor grows — early evaluation
+            allows your veterinary team to determine the diagnosis, assess treatment options, and
+            establish an appropriate plan before additional neurological function is lost.
           </p>
           <div className="cond-editorial__fact">
             <div className="cond-editorial__fact-icon" aria-hidden="true">{INFO_ICON}</div>
             <div className="cond-editorial__fact-text">
-              At AARADONC, every brain tumor case is reviewed personally by{' '}
-              <strong>Dr. Lisa DiBernardi</strong> — Board Certified Radiation Oncologist on site.
-              We provide a complete specialist evaluation including treatment planning, realistic
-              prognosis, and clear guidance at every stage.
+              Every brain tumor case at AARADONC is personally evaluated by{' '}
+              <strong>Dr. Lisa DiBernardi, DACVR-RO</strong> — our onsite board-certified Radiation
+              Oncologist. We provide specialized radiation oncology consultation, treatment planning,
+              prognosis, and clear communication and guidance.
             </div>
           </div>
         </div>
@@ -213,7 +199,7 @@ export default function BrainTumorsPage() {
           </div>
           <div className="cond-types__grid">
             {[
-              { href: '/meningioma', species: 'Dogs & Cats', name: 'Meningioma', desc: 'Most common intracranial tumor in cats. Arises from the meninges surrounding the brain. Highly responsive to radiation — especially SRS/SRT.', tag: '★ Best prognosis with RT' },
+              { href: '/meningioma', species: 'Dogs & Cats', name: 'Meningioma', desc: 'Most common intracranial tumor in cats. Arises from the meninges surrounding the brain. In cats, often surgically accessible; stereotactic radiation (SRS/SRT) is an effective option when surgery is not feasible.', tag: 'SRS/SRT · or surgery' },
               { href: '/glioma', species: 'Primarily Dogs', name: 'Glioma', desc: 'Includes astrocytomas and oligodendrogliomas. More common in brachycephalic breeds. Radiation is the primary treatment — surgery is often not feasible.', tag: 'Radiation as primary Tx' },
               { href: '/pituitary-tumors', species: 'Dogs & Cats', name: 'Pituitary Tumors', desc: 'Can cause neurological signs and hormonal disorders. Radiation targets the tumor directly, controlling both structural and hormonal effects.', tag: 'Hormonal + neurological control' },
               { href: '/spinal-tumors', species: 'Dogs & Cats', name: 'Spinal Tumors', desc: 'Intramedullary and extramedullary spinal tumors causing progressive weakness or paralysis. Radiation can relieve compression and restore function.', tag: 'Nerve preservation' },
@@ -246,8 +232,8 @@ export default function BrainTumorsPage() {
       ══════════════════════════════════════════════════════════════════════ */}
       <div className="cond-bridge" aria-label="Key outcomes">
         <div className="cond-bridge__stat">
-          <div className="cond-bridge__val">24<em>mo+</em></div>
-          <div className="cond-bridge__label">Median survival for feline meningioma with SRS/SRT</div>
+          <div className="cond-bridge__val">2<em>x</em></div>
+          <div className="cond-bridge__label">Median survival with radiation vs. supportive care alone</div>
         </div>
         <div className="cond-bridge__stat">
           <div className="cond-bridge__val">60<em>%+</em></div>

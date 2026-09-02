@@ -35,11 +35,11 @@ const FAQ_ITEMS = [
   },
   {
     q: 'Is meningioma curable in cats?',
-    a: 'Meningioma in cats is one of the most successfully treated tumors in veterinary oncology. Cats treated with SRS/SRT consistently achieve median survival times of 24 months or longer, with many living 3–4 years with excellent quality of life. Surgery alone carries high recurrence rates. Radiation — especially stereotactic RT — achieves durable local control that surgery cannot match.',
+    a: 'Meningioma is one of the more treatable brain tumors in cats. In cats, meningiomas are often well-encapsulated and surgically accessible, and surgery can achieve excellent long-term outcomes — frequently the best option. When surgery is not feasible, or for residual or recurrent disease, stereotactic radiation (SRS/SRT) provides effective local control with good quality of life. Dr. DiBernardi reviews each case to recommend the most appropriate approach.',
   },
   {
     q: 'What is the difference between surgery and radiation for meningioma?',
-    a: 'Surgery can debulk or remove a meningioma, but complete resection is rarely achieved and recurrence is common — typically within 6–12 months. Radiation therapy (especially SRS/SRT) targets the tumor with submillimeter precision, destroying residual cells and preventing regrowth. Post-surgical radiation is also used when resection is incomplete. Many cats and dogs achieve better long-term outcomes with radiation than with surgery alone.',
+    a: 'It depends on the species and the individual tumor. In cats, meningiomas are frequently well-encapsulated and surgically accessible, and surgery can offer the best long-term outcomes. In dogs, meningiomas tend to be more infiltrative and complete surgical removal is often not feasible, so radiation frequently plays the primary role. Radiation therapy (especially SRS/SRT) is also used after incomplete resection or when surgery is not an option. Dr. DiBernardi will discuss the best approach for your pet.',
   },
   {
     q: 'How many radiation sessions does my pet need?',
@@ -76,9 +76,10 @@ export default function MeningiomaPage() {
             Radiation therapy<br />for meningioma<br /><em>in pets — Florida.</em>
           </h1>
           <p className="cond-hero__sub">
-            Meningioma is the most common brain tumor in cats — and one of the most successfully treated
-            tumors in veterinary oncology. SRS/SRT delivers ablative doses in 1–5 sessions, achieving
-            durable control that surgery alone cannot match.
+            Meningioma is the most common brain tumor in cats — and one of the more treatable. In cats,
+            meningiomas are often surgically accessible, and surgery can offer the best long-term
+            outcomes. When surgery is not feasible, stereotactic radiation (SRS/SRT) delivers targeted
+            treatment in just 1–5 sessions.
           </p>
           <div className="cond-hero__ctas">
             <Link href="/contact-pet-owners" className="cta-primario">Request a Consultation</Link>
@@ -95,7 +96,7 @@ export default function MeningiomaPage() {
         <div className="cond-hero__stats" aria-label="Key statistics">
           <div className="cond-hero__stat">
             <div className="cond-hero__stat-val">24<em>mo+</em></div>
-            <div className="cond-hero__stat-label">Median survival for feline meningioma with SRS/SRT</div>
+            <div className="cond-hero__stat-label">Median survival for feline meningioma with surgery</div>
           </div>
           <div className="cond-hero__stat">
             <div className="cond-hero__stat-val">#<em>1</em></div>
@@ -141,13 +142,14 @@ export default function MeningiomaPage() {
             slowly growing tumor eventually compresses surrounding brain tissue — producing symptoms
             that escalate quickly once they begin.
           </p>
-          <h3 className="cond-editorial__h3">Why SRS/SRT outperforms surgery alone</h3>
+          <h3 className="cond-editorial__h3">The roles of surgery and radiation</h3>
           <p className="cond-editorial__body">
-            Surgical resection of meningioma carries significant recurrence risk — most tumors return
-            within 6–12 months after surgery alone. Stereotactic radiation (SRS/SRT) targets the
-            entire tumor volume with ablative precision, eliminating the microscopic cells that surgery
-            misses. Post-surgical SRS/SRT is also highly effective when resection is incomplete.
-            Studies consistently show median survivals of 24 months or longer in cats treated with RT.
+            In cats, meningiomas are frequently well-encapsulated and surgically accessible — surgery
+            can achieve excellent long-term outcomes and is often the best option. In dogs, meningiomas
+            tend to be more infiltrative and complete resection is often not feasible, so radiation
+            frequently plays the primary role. Stereotactic radiation (SRS/SRT) targets the tumor volume
+            with ablative precision and is also valuable after incomplete resection or when surgery is
+            not an option. Dr. DiBernardi reviews each case to recommend the most appropriate approach.
           </p>
           <div className="cond-editorial__fact">
             <div className="cond-editorial__fact-icon" aria-hidden="true">{INFO_ICON}</div>
@@ -179,7 +181,7 @@ export default function MeningiomaPage() {
       <div className="cond-bridge" aria-label="Key outcomes">
         <div className="cond-bridge__stat">
           <div className="cond-bridge__val">24<em>mo+</em></div>
-          <div className="cond-bridge__label">Median survival for feline meningioma with SRS/SRT</div>
+          <div className="cond-bridge__label">Median survival for feline meningioma with surgery</div>
         </div>
         <div className="cond-bridge__stat">
           <div className="cond-bridge__val">1–<em>5</em></div>

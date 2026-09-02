@@ -292,9 +292,10 @@ export default function RadiationTherapyPage() {
               Radiation therapy plays a key role<br />across <em>many cancer types.</em>
             </h2>
             <p className="bajada">
-              From brain tumors to soft tissue sarcomas, radiation therapy is an effective option across
-              a wide range of diagnoses in dogs and cats. Our Radiation Oncologist will evaluate whether
-              radiation therapy is appropriate for your pet&apos;s specific case.
+              From skin tumors to brain tumors, radiation therapy can be an effective treatment option
+              for a wide range of cancers. Our board-certified Radiation Oncologist will evaluate the
+              medical records and individual circumstances to determine whether radiation therapy is
+              appropriate, and develop a treatment plan tailored to each patient.
             </p>
           </div>
           <div className="rt-cond__grid">
