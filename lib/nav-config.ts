@@ -216,5 +216,5 @@ export const CONTACT_INFO = {
   mapsUrl: 'https://maps.app.goo.gl/cjkQDyYLqLpjTadv5',
   // Social
   instagram: 'https://www.instagram.com/aaradonc/',
-  hours: 'Mon–Fri 8:00 AM – 5:00 PM',
+  hours: 'Mon–Thu 8:00 AM – 5:00 PM',
 } as const
