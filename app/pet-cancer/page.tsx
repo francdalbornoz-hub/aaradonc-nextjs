@@ -305,8 +305,8 @@ export default function PetCancerPage() {
 
               <div className="pc-contact-hours">
                 <div className="pc-contact-hours__title">Hours of Operation</div>
-                <div className="pc-contact-hours__row"><span>Monday – Friday</span><span>8:00 AM – 5:00 PM</span></div>
-                <div className="pc-contact-hours__row"><span>Saturday – Sunday</span><span className="pc-contact-hours__closed">Closed</span></div>
+                <div className="pc-contact-hours__row"><span>Monday – Thursday</span><span>8:00 AM – 5:00 PM</span></div>
+                <div className="pc-contact-hours__row"><span>Friday – Sunday</span><span className="pc-contact-hours__closed">Closed</span></div>
               </div>
             </div>
 

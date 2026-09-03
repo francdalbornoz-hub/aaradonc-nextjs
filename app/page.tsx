@@ -637,8 +637,12 @@ export default function HomePage() {
               <div className="horario" aria-label="Hours of operation">
                 <div className="horario__titulo">Hours of Operation</div>
                 <div className="horario__fila">
-                  <span className="horario__dia">Monday – Friday</span>
+                  <span className="horario__dia">Monday – Thursday</span>
                   <span className="horario__hora">8:00 AM – 5:00 PM</span>
+                </div>
+                <div className="horario__fila">
+                  <span className="horario__dia">Friday</span>
+                  <span className="horario__hora horario__hora--cerrado">Closed</span>
                 </div>
                 <div className="horario__fila">
                   <span className="horario__dia">Saturday</span>
