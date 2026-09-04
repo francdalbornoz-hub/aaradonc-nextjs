@@ -169,10 +169,6 @@ export default function ContactPetOwnersPage() {
                 <span className="ct-hour__day">Sunday</span>
                 <span className="ct-hour__time">Closed</span>
               </div>
-              <div className="ct-hour">
-                <span className="ct-hour__day">Consultations</span>
-                <span className="ct-hour__badge">Same-week available</span>
-              </div>
             </div>
           </div>
 
