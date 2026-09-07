@@ -47,7 +47,7 @@ const FAQ_ITEMS = [
   },
   {
     q: 'Does my pet need a referral?',
-    a: 'No referral is required. Pet families may contact us directly. We welcome self-referred cases and collaborate with your primary care veterinarian throughout treatment.',
+    a: 'Pet families may contact us directly. We welcome self-referred cases and collaborate with your primary care veterinarian throughout treatment.',
   },
 ]
 
@@ -82,32 +82,11 @@ export default function OralTumorsPage() {
           </p>
           <div className="cond-hero__ctas">
             <Link href="/contact-pet-owners" className="cta-primario">Request a Consultation</Link>
-            <a href="#how-we-treat" className="cta-secundario" style={{ color: 'rgba(255,255,255,.8)', borderColor: 'rgba(255,255,255,.2)' }}>
-              See Treatment Options ↓
-            </a>
           </div>
           <div className="cond-hero__badges">
             <div className="cond-hero__badge">Board Certified Radiation Oncologist on site</div>
             <div className="cond-hero__badge">Palm Beach County, FL</div>
             <div className="cond-hero__badge">Same-week consultations</div>
-          </div>
-        </div>
-        <div className="cond-hero__stats" aria-label="Key statistics">
-          <div className="cond-hero__stat">
-            <div className="cond-hero__stat-val">#<em>4</em></div>
-            <div className="cond-hero__stat-label">Most common cancer site in dogs</div>
-          </div>
-          <div className="cond-hero__stat">
-            <div className="cond-hero__stat-val">6<em>mo+</em></div>
-            <div className="cond-hero__stat-label">Median survival for oral melanoma with radiation + immunotherapy</div>
-          </div>
-          <div className="cond-hero__stat">
-            <div className="cond-hero__stat-val">90<em>%+</em></div>
-            <div className="cond-hero__stat-label">Local control for acanthomatous epulis with CFRT</div>
-          </div>
-          <div className="cond-hero__stat">
-            <div className="cond-hero__stat-val">Same<em> day</em></div>
-            <div className="cond-hero__stat-label">Home after every session — outpatient treatment</div>
           </div>
         </div>
       </section>
@@ -232,58 +211,6 @@ export default function OralTumorsPage() {
         </div>
       </div>
 
-      <div className="cond-treat" id="how-we-treat">
-        <div className="cond-treat__left">
-          <div className="eyebrow">Treatment at AARADONC</div>
-          <h2 className="titulo-seccion">
-            Precision radiation.<br /><em>Tailored to your pet.</em>
-          </h2>
-          <p className="bajada">
-            Oral tumor treatment at AARADONC begins with a complete specialist review. Dr. DiBernardi
-            personally evaluates histopathology, CT imaging, surgical reports, and your goals before
-            recommending a protocol. No two plans are the same.
-          </p>
-          <div className="rt-bullets">
-            {[
-              { title: 'CT simulation and target definition.', text: 'CT-guided planning maps the gross tumor volume and surgical bed with precision — ensuring the right tissue is treated and critical structures are spared.' },
-              { title: 'Post-surgical CFRT.', text: 'When surgical margins are incomplete or narrow, adjuvant CFRT significantly reduces local recurrence and extends disease-free survival.' },
-              { title: 'Palliative radiation for pain relief.', text: 'When curative intent is not the goal, 3–5 session protocols reduce tumor burden, relieve oral pain, and restore your pet\'s ability to eat and function.' },
-            ].map(({ title, text }) => (
-              <div key={title} className="rt-bullet">
-                <div className="rt-bullet__dot" aria-hidden="true">
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <polyline points="20 6 9 17 4 12"/>
-                  </svg>
-                </div>
-                <p className="rt-bullet__text"><strong>{title}</strong> {text}</p>
-              </div>
-            ))}
-          </div>
-          <Link href="/radiation-therapy" style={{ color: '#1A4FBF', fontWeight: 600, fontSize: 15 }}>
-            Learn more about our protocols →
-          </Link>
-        </div>
-        <div className="cond-treat__right">
-          <div className="eyebrow" style={{ color: '#1A4FBF' }}>Protocol Options</div>
-          <h3 className="titulo-seccion" style={{ fontSize: 24, marginBottom: 24 }}>
-            Protocol is chosen <em>by tumor type</em> and your goals.
-          </h3>
-          {[
-            { tag: 'Curative Intent — Post-surgical', name: 'CFRT', sessions: '16–20 sessions', note: 'Daily Mon–Fri · outpatient · same-day home', href: '/radiation-therapy/#cfrt', dark: true },
-            { tag: 'Comfort-Focused Option', name: 'Palliative Radiation', sessions: '3–5 sessions', note: 'Pain relief · function restoration · outpatient', href: '/radiation-therapy/#palliative', dark: false },
-          ].map(({ tag, name, sessions, note, href, dark }) => (
-            <Link key={name} href={href} className={`cond-proto-card${dark ? ' cond-proto-card--dark' : ''}`}>
-              <div className="cond-proto-card__tag">{tag}</div>
-              <div className="cond-proto-card__name">{name}</div>
-              <div className="cond-proto-card__sessions">
-                <div className="cond-proto-card__sessions-val">{sessions}</div>
-                <div className="cond-proto-card__sessions-note">{note}</div>
-              </div>
-              <div className="cond-proto-card__cta">Learn more →</div>
-            </Link>
-          ))}
-        </div>
-      </div>
 
       <section className="seccion" aria-labelledby="faq-heading">
         <div className="contenedor">

@@ -14,7 +14,7 @@ const pageSeo = getPageSeo('/contact-pet-owners')
 const FAQ_ITEMS = [
   {
     q: 'Do I need a referral from my veterinarian, or can I contact you directly without a confirmed diagnosis?',
-    a: 'No referral is required — pet families may contact us directly, and you do not need a confirmed diagnosis to reach out. If your pet has a suspected or confirmed tumor, we may help you understand whether radiation therapy is an option. We coordinate with your primary care veterinarian throughout the entire process.',
+    a: 'Pet families may contact us directly, and you do not need a confirmed diagnosis to reach out. If your pet has a suspected or confirmed tumor, we may help you understand whether radiation therapy is an option. We coordinate with your primary care veterinarian throughout the entire process.',
   },
   {
     q: 'How is this center different from a general veterinary oncology clinic?',

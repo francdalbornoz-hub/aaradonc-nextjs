@@ -49,7 +49,7 @@ export default function RadiationOncologistPage() {
               Our Radiation Oncologist · Royal Palm Beach, Florida
             </div>
             <h1 className="onc-hero__tagline">
-              Board Certified<br /><em>Veterinary Radiation</em><br />Oncologist on site.
+              Board Certified<br /><em>Radiation Oncologist</em><br />on site.
             </h1>
             <p className="onc-hero__intro">
               AARADONC is 100% dedicated to veterinary radiation oncology — focused exclusively on the

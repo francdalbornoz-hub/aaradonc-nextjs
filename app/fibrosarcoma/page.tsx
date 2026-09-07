@@ -82,32 +82,11 @@ export default function FibrosarcomaPage() {
           </p>
           <div className="cond-hero__ctas">
             <Link href="/contact-pet-owners" className="cta-primario">Request a Consultation</Link>
-            <a href="#how-we-treat" className="cta-secundario" style={{ color: 'rgba(255,255,255,.8)', borderColor: 'rgba(255,255,255,.2)' }}>
-              See Treatment Options ↓
-            </a>
           </div>
           <div className="cond-hero__badges">
             <div className="cond-hero__badge">Board Certified Radiation Oncologist on site</div>
             <div className="cond-hero__badge">Palm Beach County, FL</div>
             <div className="cond-hero__badge">Same-week consultations</div>
-          </div>
-        </div>
-        <div className="cond-hero__stats" aria-label="Key statistics">
-          <div className="cond-hero__stat">
-            <div className="cond-hero__stat-val">12–<em>24</em>mo</div>
-            <div className="cond-hero__stat-label">Median survival for oral fibrosarcoma with surgery + RT</div>
-          </div>
-          <div className="cond-hero__stat">
-            <div className="cond-hero__stat-val">60–<em>75</em>%</div>
-            <div className="cond-hero__stat-label">Local control with surgery + adjuvant CFRT</div>
-          </div>
-          <div className="cond-hero__stat">
-            <div className="cond-hero__stat-val">16–<em>20</em></div>
-            <div className="cond-hero__stat-label">Sessions of adjuvant or definitive CFRT</div>
-          </div>
-          <div className="cond-hero__stat">
-            <div className="cond-hero__stat-val">Same<em> day</em></div>
-            <div className="cond-hero__stat-label">Home after every session — outpatient treatment</div>
           </div>
         </div>
       </section>
@@ -195,59 +174,6 @@ export default function FibrosarcomaPage() {
         </div>
       </div>
 
-      <div className="cond-treat" id="how-we-treat">
-        <div className="cond-treat__left">
-          <div className="eyebrow">Treatment at AARADONC</div>
-          <h2 className="titulo-seccion">
-            Adjuvant radiation —<br /><em>standard of care for fibrosarcoma.</em>
-          </h2>
-          <p className="bajada">
-            Fibrosarcoma treatment at AARADONC starts with a complete staging review — CT imaging,
-            biopsy results, surgical history, and margins. Dr. DiBernardi designs the radiation
-            field to cover the surgical bed plus appropriate margins, maximizing local control
-            while protecting adjacent structures.
-          </p>
-          <div className="rt-bullets">
-            {[
-              { title: 'Varian TrueBeam® + IGRT.', text: 'Cone Beam CT before every session confirms patient and tumor positioning — essential for oral and head/neck fibrosarcomas where adjacent bone, teeth, and salivary glands require precise dose management.' },
-              { title: 'Adjuvant CFRT after surgery.', text: '16–20 fractionated sessions targeting the surgical bed plus margin — the standard approach when resection has been performed. Delivered daily Mon–Fri, outpatient, same-day home.' },
-              { title: 'Definitive CFRT for unresectable disease.', text: 'When surgery is not feasible, CFRT as the primary treatment achieves meaningful local control and extends progression-free survival significantly.' },
-            ].map(({ title, text }) => (
-              <div key={title} className="rt-bullet">
-                <div className="rt-bullet__dot" aria-hidden="true">
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <polyline points="20 6 9 17 4 12"/>
-                  </svg>
-                </div>
-                <p className="rt-bullet__text"><strong>{title}</strong> {text}</p>
-              </div>
-            ))}
-          </div>
-          <Link href="/radiation-therapy" style={{ color: '#1A4FBF', fontWeight: 600, fontSize: 15 }}>
-            Learn more about our protocols →
-          </Link>
-        </div>
-        <div className="cond-treat__right">
-          <div className="eyebrow" style={{ color: '#1A4FBF' }}>Protocol Options</div>
-          <h3 className="titulo-seccion" style={{ fontSize: 24, marginBottom: 24 }}>
-            CFRT — <em>adjuvant or definitive.</em>
-          </h3>
-          {[
-            { tag: 'Standard — Adjuvant or Primary', name: 'CFRT', sessions: '16–20 sessions', note: 'Post-surgical or primary · daily Mon–Fri · outpatient', href: '/radiation-therapy#cfrt', dark: true },
-            { tag: 'Comfort-Focused Option', name: 'Palliative Radiation', sessions: '4–6 sessions', note: 'Symptom relief · QoL focus · outpatient', href: '/radiation-therapy#palliative', dark: false },
-          ].map(({ tag, name, sessions, note, href, dark }) => (
-            <Link key={name} href={href} className={`cond-proto-card${dark ? ' cond-proto-card--dark' : ''}`}>
-              <div className="cond-proto-card__tag">{tag}</div>
-              <div className="cond-proto-card__name">{name}</div>
-              <div className="cond-proto-card__sessions">
-                <div className="cond-proto-card__sessions-val">{sessions}</div>
-                <div className="cond-proto-card__sessions-note">{note}</div>
-              </div>
-              <div className="cond-proto-card__cta">Learn more →</div>
-            </Link>
-          ))}
-        </div>
-      </div>
 
       <section className="seccion" aria-labelledby="faq-heading">
         <div className="contenedor">

@@ -126,36 +126,11 @@ export default function OsteosarcomaPage() {
           </p>
           <div className="cond-hero__ctas">
             <Link href="/contact-pet-owners" className="cta-primario">Request a Consultation</Link>
-            <Link
-              href="#how-we-treat"
-              className="cta-secundario"
-              style={{ color: 'rgba(255,255,255,0.8)', borderColor: 'rgba(255,255,255,0.2)' }}
-            >
-              See Treatment Options ↓
-            </Link>
           </div>
           <div className="cond-hero__badges">
             <div className="cond-hero__badge">Board Certified Radiation Oncologist on site</div>
             <div className="cond-hero__badge">Palm Beach County, FL</div>
             <div className="cond-hero__badge">Palliative &amp; curative options</div>
-          </div>
-        </div>
-        <div className="cond-hero__stats">
-          <div className="cond-hero__stat">
-            <div className="cond-hero__stat-val"><em>90</em>%+</div>
-            <div className="cond-hero__stat-label">Of pets show significant pain reduction after palliative RT for osteosarcoma</div>
-          </div>
-          <div className="cond-hero__stat">
-            <div className="cond-hero__stat-val">4–<em>7</em>mo</div>
-            <div className="cond-hero__stat-label">Additional median survival with palliative radiation + medical management</div>
-          </div>
-          <div className="cond-hero__stat">
-            <div className="cond-hero__stat-val">3–<em>5</em></div>
-            <div className="cond-hero__stat-label">Sessions required for the full palliative protocol</div>
-          </div>
-          <div className="cond-hero__stat">
-            <div className="cond-hero__stat-val"><em>Only</em></div>
-            <div className="cond-hero__stat-label">Center 100% dedicated to radiation oncology in Florida</div>
           </div>
         </div>
       </section>
@@ -305,101 +280,6 @@ export default function OsteosarcomaPage() {
       {/* ══════════════════════════════════════════════════════════════════════
           HOW WE TREAT
       ══════════════════════════════════════════════════════════════════════ */}
-      <div className="cond-treat" id="how-we-treat">
-        <div className="cond-treat__left">
-          <div className="eyebrow" style={{ marginBottom: 8 }}>How We Treat Osteosarcoma</div>
-          <h2 className="titulo-seccion" style={{ marginBottom: 16 }}>
-            Pain relief first.<br /><em>Quality of life always.</em>
-          </h2>
-          <p style={{ fontSize: 16, color: 'var(--texto-suave)', lineHeight: 1.8, margin: '0 0 24px' }}>
-            For most osteosarcoma cases, palliative radiation is the recommended protocol.
-            Curative-intent CFRT may be indicated for select axial osteosarcoma in dogs and cats.
-            Dr. DiBernardi reviews every case individually before recommending a plan.
-          </p>
-          <div style={{ position: 'relative', width: '100%', aspectRatio: '16/9', borderRadius: 12, overflow: 'hidden', marginBottom: 12 }}>
-            <Image
-              src="/images/team-workstation.webp"
-              alt="Veterinary radiation oncologist reviewing osteosarcoma case at AARADONC Florida"
-              fill
-              style={{ objectFit: 'cover' }}
-            />
-          </div>
-          <p style={{ fontSize: 13, color: 'var(--texto-suave)', lineHeight: 1.6, margin: 0 }}>
-            Radiographic and CT imaging is used to assess osteosarcoma extent, cortical involvement,
-            and pathologic fracture risk before treatment planning.
-          </p>
-        </div>
-        <div className="cond-treat__right">
-          {/* Palliative — primary card */}
-          <Link href="/radiation-therapy/#palliative" className="cond-proto-card cond-proto-card--primary">
-            <div className="cond-proto-card__glow" aria-hidden="true" />
-            <div className="cond-proto-card__eyebrow">★ First-line for osteosarcoma pain</div>
-            <div className="cond-proto-card__title">Palliative Radiation</div>
-            <div className="cond-proto-card__specs">
-              <div className="cond-proto-card__spec">
-                <div className="cond-proto-card__spec-key">Sessions</div>
-                <div className="cond-proto-card__spec-val">3–5 total</div>
-              </div>
-              <div className="cond-proto-card__spec">
-                <div className="cond-proto-card__spec-key">Schedule</div>
-                <div className="cond-proto-card__spec-val">1–2x per week</div>
-              </div>
-              <div className="cond-proto-card__spec">
-                <div className="cond-proto-card__spec-key">Intent</div>
-                <div className="cond-proto-card__spec-val">Pain relief · QoL</div>
-              </div>
-              <div className="cond-proto-card__spec">
-                <div className="cond-proto-card__spec-key">Best for</div>
-                <div className="cond-proto-card__spec-val">Appendicular · Axial OSA</div>
-              </div>
-            </div>
-            <p className="cond-proto-card__desc">
-              The most effective non-surgical option for osteosarcoma pain management. Reduces
-              tumor-associated inflammation and bone destruction — over 90% of pets respond within
-              days of the first session.
-            </p>
-            <div className="cond-proto-card__link">
-              Learn about Palliative Radiation{' '}
-              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
-              </svg>
-            </div>
-          </Link>
-          {/* CFRT — secondary card */}
-          <Link href="/radiation-therapy/#cfrt" className="cond-proto-card cond-proto-card--secondary">
-            <div className="cond-proto-card__eyebrow">For select axial osteosarcoma cases</div>
-            <div className="cond-proto-card__title">CFRT</div>
-            <div className="cond-proto-card__specs">
-              <div className="cond-proto-card__spec">
-                <div className="cond-proto-card__spec-key">Sessions</div>
-                <div className="cond-proto-card__spec-val">16–20 daily</div>
-              </div>
-              <div className="cond-proto-card__spec">
-                <div className="cond-proto-card__spec-key">Schedule</div>
-                <div className="cond-proto-card__spec-val">Mon–Fri</div>
-              </div>
-              <div className="cond-proto-card__spec">
-                <div className="cond-proto-card__spec-key">Intent</div>
-                <div className="cond-proto-card__spec-val">Curative intent</div>
-              </div>
-              <div className="cond-proto-card__spec">
-                <div className="cond-proto-card__spec-key">Best for</div>
-                <div className="cond-proto-card__spec-val">Axial OSA · Skull · Spine</div>
-              </div>
-            </div>
-            <p className="cond-proto-card__desc">
-              Definitive fractionated RT for axial osteosarcoma where surgery is not feasible. Aims
-              for durable local control at anatomically challenging sites in dogs and cats.
-            </p>
-            <div className="cond-proto-card__link">
-              Learn about CFRT{' '}
-              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
-              </svg>
-            </div>
-          </Link>
-        </div>
-      </div>
 
       {/* ══════════════════════════════════════════════════════════════════════
           FAQ

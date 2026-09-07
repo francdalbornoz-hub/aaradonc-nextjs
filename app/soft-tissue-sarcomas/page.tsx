@@ -139,36 +139,11 @@ export default function SoftTissueSarcomasPage() {
           </p>
           <div className="cond-hero__ctas">
             <Link href="/contact-pet-owners" className="cta-primario">Request a Consultation</Link>
-            <Link
-              href="#how-we-treat"
-              className="cta-secundario"
-              style={{ color: 'rgba(255,255,255,0.8)', borderColor: 'rgba(255,255,255,0.2)' }}
-            >
-              See Treatment Options ↓
-            </Link>
           </div>
           <div className="cond-hero__badges">
             <div className="cond-hero__badge">Board Certified Radiation Oncologist on site</div>
             <div className="cond-hero__badge">Palm Beach County, FL</div>
             <div className="cond-hero__badge">Adjuvant RT · Post-surgical standard</div>
-          </div>
-        </div>
-        <div className="cond-hero__stats">
-          <div className="cond-hero__stat">
-            <div className="cond-hero__stat-val"><em>70</em>%+</div>
-            <div className="cond-hero__stat-label">Reduction in local recurrence with adjuvant RT after incomplete STS excision</div>
-          </div>
-          <div className="cond-hero__stat">
-            <div className="cond-hero__stat-val">2–<em>3</em>cm</div>
-            <div className="cond-hero__stat-label">STS extends beyond visible tumor borders — clean margins are rarely achievable</div>
-          </div>
-          <div className="cond-hero__stat">
-            <div className="cond-hero__stat-val">4–<em>6</em>wk</div>
-            <div className="cond-hero__stat-label">Optimal window to start post-surgical radiation after STS excision</div>
-          </div>
-          <div className="cond-hero__stat">
-            <div className="cond-hero__stat-val"><em>Only</em></div>
-            <div className="cond-hero__stat-label">Center 100% dedicated to radiation oncology in Florida</div>
           </div>
         </div>
       </section>
@@ -317,102 +292,6 @@ export default function SoftTissueSarcomasPage() {
       {/* ══════════════════════════════════════════════════════════════════════
           HOW WE TREAT
       ══════════════════════════════════════════════════════════════════════ */}
-      <div className="cond-treat" id="how-we-treat">
-        <div className="cond-treat__left">
-          <div className="eyebrow" style={{ marginBottom: 8 }}>How We Treat Soft Tissue Sarcomas</div>
-          <h2 className="titulo-seccion" style={{ marginBottom: 16 }}>
-            Pathology in hand.<br /><em>Plan built around it.</em>
-          </h2>
-          <p style={{ fontSize: 16, color: 'var(--texto-suave)', lineHeight: 1.8, margin: '0 0 24px' }}>
-            Every STS radiation plan at AARADONC starts with a full review of the pathology report,
-            grade, margin status, mitotic index, and imaging. Dr. DiBernardi determines the optimal
-            protocol for each dog or cat individually — adjuvant CFRT is the standard for most cases.
-          </p>
-          <div style={{ position: 'relative', width: '100%', aspectRatio: '16/9', borderRadius: 12, overflow: 'hidden', marginBottom: 12 }}>
-            <Image
-              src="/images/team-workstation.webp"
-              alt="Veterinary radiation oncologist reviewing soft tissue sarcoma case at AARADONC Florida"
-              fill
-              style={{ objectFit: 'cover' }}
-            />
-          </div>
-          <p style={{ fontSize: 13, color: 'var(--texto-suave)', lineHeight: 1.6, margin: 0 }}>
-            Surgical margin status and tumor grade on histopathology are the foundation of every STS
-            radiation plan at AARADONC.
-          </p>
-        </div>
-        <div className="cond-treat__right">
-          {/* CFRT — primary card */}
-          <Link href="/radiation-therapy/#cfrt" className="cond-proto-card cond-proto-card--primary">
-            <div className="cond-proto-card__glow" aria-hidden="true" />
-            <div className="cond-proto-card__eyebrow">★ Standard post-surgical STS protocol</div>
-            <div className="cond-proto-card__title">CFRT</div>
-            <div className="cond-proto-card__specs">
-              <div className="cond-proto-card__spec">
-                <div className="cond-proto-card__spec-key">Sessions</div>
-                <div className="cond-proto-card__spec-val">16–20 daily</div>
-              </div>
-              <div className="cond-proto-card__spec">
-                <div className="cond-proto-card__spec-key">Schedule</div>
-                <div className="cond-proto-card__spec-val">Mon–Fri</div>
-              </div>
-              <div className="cond-proto-card__spec">
-                <div className="cond-proto-card__spec-key">Intent</div>
-                <div className="cond-proto-card__spec-val">Adjuvant · Curative</div>
-              </div>
-              <div className="cond-proto-card__spec">
-                <div className="cond-proto-card__spec-key">Best for</div>
-                <div className="cond-proto-card__spec-val">All STS · Post-surgical</div>
-              </div>
-            </div>
-            <p className="cond-proto-card__desc">
-              The standard adjuvant protocol for incomplete STS excision in dogs and cats. Targets
-              the full surgical bed and at-risk margins to eliminate microscopic residual disease.
-              16–20 outpatient sessions over 3–4 weeks.
-            </p>
-            <div className="cond-proto-card__link">
-              Learn about CFRT{' '}
-              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
-              </svg>
-            </div>
-          </Link>
-          {/* Palliative — secondary card */}
-          <Link href="/radiation-therapy/#palliative" className="cond-proto-card cond-proto-card--secondary">
-            <div className="cond-proto-card__eyebrow">Inoperable or recurrent STS</div>
-            <div className="cond-proto-card__title">Palliative Radiation</div>
-            <div className="cond-proto-card__specs">
-              <div className="cond-proto-card__spec">
-                <div className="cond-proto-card__spec-key">Sessions</div>
-                <div className="cond-proto-card__spec-val">3–5 total</div>
-              </div>
-              <div className="cond-proto-card__spec">
-                <div className="cond-proto-card__spec-key">Schedule</div>
-                <div className="cond-proto-card__spec-val">Weekly</div>
-              </div>
-              <div className="cond-proto-card__spec">
-                <div className="cond-proto-card__spec-key">Intent</div>
-                <div className="cond-proto-card__spec-val">Tumor control · QoL</div>
-              </div>
-              <div className="cond-proto-card__spec">
-                <div className="cond-proto-card__spec-key">Best for</div>
-                <div className="cond-proto-card__spec-val">Inoperable · Recurrent STS</div>
-              </div>
-            </div>
-            <p className="cond-proto-card__desc">
-              For soft tissue sarcomas that cannot be surgically removed, or recurrent STS where
-              re-excision is not an option. Achieves local tumor control and reduces mass effect with
-              fewer sessions.
-            </p>
-            <div className="cond-proto-card__link">
-              Learn about Palliative Radiation{' '}
-              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
-              </svg>
-            </div>
-          </Link>
-        </div>
-      </div>
 
       {/* ══════════════════════════════════════════════════════════════════════
           FAQ

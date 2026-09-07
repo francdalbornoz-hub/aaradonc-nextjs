@@ -49,7 +49,7 @@ const FAQ_ITEMS = [
   },
   {
     q: 'Does my pet need a referral to see you?',
-    a: 'No referral is required. Pet families may contact us directly. We welcome both self-referred cases and cases referred by veterinarians. We will coordinate with your primary care veterinarian throughout the entire process.',
+    a: 'Pet families may contact us directly. We welcome both self-referred cases and cases referred by veterinarians. We will coordinate with your primary care veterinarian throughout the entire process.',
   },
 ]
 
@@ -95,28 +95,11 @@ export default function BrainTumorsPage() {
           </p>
           <div className="cond-hero__ctas">
             <Link href="/contact-pet-owners" className="cta-primario">Request a Consultation</Link>
-            <a href="#how-we-treat" className="cta-secundario" style={{ color: 'rgba(255,255,255,.8)', borderColor: 'rgba(255,255,255,.2)' }}>
-              See Treatment Options ↓
-            </a>
           </div>
           <div className="cond-hero__badges">
             <div className="cond-hero__badge">Board Certified Radiation Oncologist on site</div>
             <div className="cond-hero__badge">Palm Beach County, FL</div>
             <div className="cond-hero__badge">Same-week consultations</div>
-          </div>
-        </div>
-        <div className="cond-hero__stats" aria-label="Key statistics">
-          <div className="cond-hero__stat">
-            <div className="cond-hero__stat-val">2<em>x</em></div>
-            <div className="cond-hero__stat-label">Median survival with radiation vs. supportive care alone</div>
-          </div>
-          <div className="cond-hero__stat">
-            <div className="cond-hero__stat-val">1–<em>5</em></div>
-            <div className="cond-hero__stat-label">Sessions with SRS/SRT stereotactic protocol</div>
-          </div>
-          <div className="cond-hero__stat">
-            <div className="cond-hero__stat-val">60<em>%+</em></div>
-            <div className="cond-hero__stat-label">Of patients show neurological improvement after RT</div>
           </div>
         </div>
       </section>
@@ -178,7 +161,8 @@ export default function BrainTumorsPage() {
               Every brain tumor case at AARADONC is personally evaluated by{' '}
               <strong>Dr. Lisa DiBernardi, DACVR-RO</strong> — our onsite board-certified Radiation
               Oncologist. We provide specialized radiation oncology consultation, treatment planning,
-              prognosis, and clear communication and guidance.
+              prognosis, and clear communication and guidance. Our goal is straightforward: precise
+              treatment, thoughtful planning, and the best possible quality of life for your family.
             </div>
           </div>
         </div>
@@ -248,65 +232,6 @@ export default function BrainTumorsPage() {
       {/* ══════════════════════════════════════════════════════════════════════
           HOW WE TREAT
       ══════════════════════════════════════════════════════════════════════ */}
-      <div className="cond-treat" id="how-we-treat">
-        <div className="cond-treat__left">
-          <div className="eyebrow">Treatment at AARADONC</div>
-          <h2 className="titulo-seccion">
-            Precision radiation.<br /><em>Tailored to your pet.</em>
-          </h2>
-          <p className="bajada">
-            Brain tumor treatment at AARADONC begins with a complete specialist review. Dr. DiBernardi
-            personally evaluates every case — imaging, pathology, and clinical history — before
-            recommending a protocol. Every treatment plan is built from scratch.
-          </p>
-          <div className="rt-bullets">
-            {[
-              { title: 'Varian TrueBeam® + IGRT.', text: 'Our Varian TrueBeam® linear accelerator performs Cone Beam CT imaging before every session — confirming exact tumor position before delivering radiation. Daily image guidance is especially critical for brain tumors.' },
-              { title: 'SRS/SRT for most brain tumors.', text: 'Stereotactic radiation is the preferred protocol for most brain tumors — 1–5 sessions, submillimeter accuracy, outpatient. Delivered with VMAT/RapidArc for shorter anesthesia time.' },
-              { title: 'Quality assurance at every step.', text: 'Before each session, our team verifies positioning, dosimetry, and delivery accuracy. Precision is confirmed, not assumed.' },
-            ].map(({ title, text }) => (
-              <div key={title} className="rt-bullet">
-                <div className="rt-bullet__dot" aria-hidden="true">
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <polyline points="20 6 9 17 4 12"/>
-                  </svg>
-                </div>
-                <p className="rt-bullet__text"><strong>{title}</strong> {text}</p>
-              </div>
-            ))}
-          </div>
-          <Link href="/radiation-therapy" style={{ color: '#1A4FBF', fontWeight: 600, fontSize: 15 }}>
-            Learn more about our protocols →
-          </Link>
-        </div>
-        <div className="cond-treat__right">
-          <div className="eyebrow" style={{ color: '#1A4FBF' }}>Protocol Options</div>
-          <h3 className="titulo-seccion" style={{ fontSize: 24, marginBottom: 24 }}>
-            SRS/SRT is the <em>preferred protocol</em> for most brain tumors.
-          </h3>
-          {[
-            { tag: 'Preferred — Most Brain Tumors', name: 'SRS / SRT', sessions: '1–5 sessions', note: 'Submillimeter precision · outpatient · same-day home', href: '/radiation-therapy#srs-srt', dark: true },
-            { tag: 'Also Available', name: 'CFRT', sessions: '15–20 sessions', note: 'Curative intent · daily Mon–Fri · outpatient', href: '/radiation-therapy#cfrt', dark: false },
-          ].map(({ tag, name, sessions, note, href, dark }) => (
-            <Link key={name} href={href} style={{
-              background: dark ? 'linear-gradient(135deg, #0D3B8E, #1a4fbf)' : '#fff',
-              border: dark ? 'none' : '1.5px solid rgba(13,59,142,.1)',
-              borderRadius: 16, padding: '28px 32px',
-              display: 'flex', flexDirection: 'column', gap: 12,
-              textDecoration: 'none', transition: 'transform .3s',
-              boxShadow: dark ? '0 12px 40px rgba(13,59,142,.3)' : '0 4px 16px rgba(13,59,142,.07)',
-            }}>
-              <div style={{ fontSize: 10, fontWeight: 800, letterSpacing: '.12em', textTransform: 'uppercase', color: dark ? 'rgba(126,200,227,.7)' : '#1A4FBF' }}>{tag}</div>
-              <div style={{ fontFamily: '\'Plus Jakarta Sans\', sans-serif', fontSize: 22, fontWeight: 800, color: dark ? '#fff' : '#0B1F44' }}>{name}</div>
-              <div style={{ background: dark ? 'rgba(0,0,0,.15)' : '#EEF2FF', borderRadius: 8, padding: '10px 12px' }}>
-                <div style={{ fontSize: 13, fontWeight: 700, color: dark ? '#fff' : '#0B1F44' }}>{sessions}</div>
-                <div style={{ fontSize: 12, color: dark ? 'rgba(255,255,255,.5)' : '#4A6080' }}>{note}</div>
-              </div>
-              <div style={{ fontSize: 12, fontWeight: 700, color: dark ? '#7EC8E3' : '#1A4FBF' }}>Learn more →</div>
-            </Link>
-          ))}
-        </div>
-      </div>
 
       {/* ══════════════════════════════════════════════════════════════════════
           FAQ

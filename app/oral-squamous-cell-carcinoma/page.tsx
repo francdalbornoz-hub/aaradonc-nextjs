@@ -83,32 +83,11 @@ export default function OralSquamousCellCarcinomaPage() {
           </p>
           <div className="cond-hero__ctas">
             <Link href="/contact-pet-owners" className="cta-primario">Request a Consultation</Link>
-            <a href="#how-we-treat" className="cta-secundario" style={{ color: 'rgba(255,255,255,.8)', borderColor: 'rgba(255,255,255,.2)' }}>
-              See Treatment Options ↓
-            </a>
           </div>
           <div className="cond-hero__badges">
             <div className="cond-hero__badge">Board Certified Radiation Oncologist on site</div>
             <div className="cond-hero__badge">Palm Beach County, FL</div>
             <div className="cond-hero__badge">Same-week consultations</div>
-          </div>
-        </div>
-        <div className="cond-hero__stats" aria-label="Key statistics">
-          <div className="cond-hero__stat">
-            <div className="cond-hero__stat-val">#<em>1</em></div>
-            <div className="cond-hero__stat-label">Most common oral malignancy in cats</div>
-          </div>
-          <div className="cond-hero__stat">
-            <div className="cond-hero__stat-val">50–<em>70</em>%</div>
-            <div className="cond-hero__stat-label">Local control rate with CFRT for rostral mandibular SCC in dogs</div>
-          </div>
-          <div className="cond-hero__stat">
-            <div className="cond-hero__stat-val">4–<em>20</em></div>
-            <div className="cond-hero__stat-label">Sessions — palliative or definitive based on goals</div>
-          </div>
-          <div className="cond-hero__stat">
-            <div className="cond-hero__stat-val">Same<em> day</em></div>
-            <div className="cond-hero__stat-label">Home after every session — outpatient treatment</div>
           </div>
         </div>
       </section>
@@ -196,58 +175,6 @@ export default function OralSquamousCellCarcinomaPage() {
         </div>
       </div>
 
-      <div className="cond-treat" id="how-we-treat">
-        <div className="cond-treat__left">
-          <div className="eyebrow">Treatment at AARADONC</div>
-          <h2 className="titulo-seccion">
-            Honest goals.<br /><em>Precise treatment.</em>
-          </h2>
-          <p className="bajada">
-            Every oral SCC case at AARADONC starts with a complete specialist review — CT imaging,
-            staging, and a frank conversation about goals of care. Dr. DiBernardi designs
-            every plan personally, with treatment intent established clearly from the start.
-          </p>
-          <div className="rt-bullets">
-            {[
-              { title: 'Varian TrueBeam® + IGRT.', text: 'Cone Beam CT before every session confirms tumor and patient positioning — especially important in the oral cavity, where adjacent structures (mandible, palate, tongue, salivary glands) require precise dose management.' },
-              { title: 'Definitive CFRT for dogs with curative intent.', text: '16–20 fractionated sessions deliver precise cumulative doses to the oral tumor volume — used as primary treatment or adjuvant after surgery with incomplete margins.' },
-              { title: 'Palliative radiation for cats and select dogs.', text: '4–6 session hypofractionated protocols prioritize pain control, tumor reduction, and quality of life over total dose — the appropriate approach for feline oral SCC and advanced canine disease.' },
-            ].map(({ title, text }) => (
-              <div key={title} className="rt-bullet">
-                <div className="rt-bullet__dot" aria-hidden="true">
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <polyline points="20 6 9 17 4 12"/>
-                  </svg>
-                </div>
-                <p className="rt-bullet__text"><strong>{title}</strong> {text}</p>
-              </div>
-            ))}
-          </div>
-          <Link href="/radiation-therapy" style={{ color: '#1A4FBF', fontWeight: 600, fontSize: 15 }}>
-            Learn more about our protocols →
-          </Link>
-        </div>
-        <div className="cond-treat__right">
-          <div className="eyebrow" style={{ color: '#1A4FBF' }}>Protocol Options</div>
-          <h3 className="titulo-seccion" style={{ fontSize: 24, marginBottom: 24 }}>
-            Protocol chosen by <em>species, location, and goals.</em>
-          </h3>
-          {[
-            { tag: 'Dogs — Curative Intent', name: 'CFRT', sessions: '16–20 sessions', note: 'Adjuvant or primary · daily Mon–Fri · outpatient', href: '/radiation-therapy#cfrt', dark: true },
-            { tag: 'Cats & Palliative Cases', name: 'Palliative Radiation', sessions: '4–6 sessions', note: 'Pain relief · QoL focus · outpatient', href: '/radiation-therapy#palliative', dark: false },
-          ].map(({ tag, name, sessions, note, href, dark }) => (
-            <Link key={name} href={href} className={`cond-proto-card${dark ? ' cond-proto-card--dark' : ''}`}>
-              <div className="cond-proto-card__tag">{tag}</div>
-              <div className="cond-proto-card__name">{name}</div>
-              <div className="cond-proto-card__sessions">
-                <div className="cond-proto-card__sessions-val">{sessions}</div>
-                <div className="cond-proto-card__sessions-note">{note}</div>
-              </div>
-              <div className="cond-proto-card__cta">Learn more →</div>
-            </Link>
-          ))}
-        </div>
-      </div>
 
       <section className="seccion" aria-labelledby="faq-heading">
         <div className="contenedor">

@@ -46,7 +46,7 @@ const FAQ_ITEMS = [
   },
   {
     q: 'Does my pet need a referral to see you?',
-    a: 'No referral is required. Pet families may contact us directly. We collaborate closely with your primary care veterinarian and any oncologist managing the systemic component of your pet\'s lymphoma.',
+    a: 'Pet families may contact us directly. We collaborate closely with your primary care veterinarian and any oncologist managing the systemic component of your pet\'s lymphoma.',
   },
 ]
 
@@ -81,32 +81,11 @@ export default function LymphomaPage() {
           </p>
           <div className="cond-hero__ctas">
             <Link href="/contact-pet-owners" className="cta-primario">Request a Consultation</Link>
-            <a href="#how-we-treat" className="cta-secundario" style={{ color: 'rgba(255,255,255,.8)', borderColor: 'rgba(255,255,255,.2)' }}>
-              See Treatment Options ↓
-            </a>
           </div>
           <div className="cond-hero__badges">
             <div className="cond-hero__badge">Board Certified Radiation Oncologist on site</div>
             <div className="cond-hero__badge">Palm Beach County, FL</div>
             <div className="cond-hero__badge">Same-week consultations</div>
-          </div>
-        </div>
-        <div className="cond-hero__stats" aria-label="Key statistics">
-          <div className="cond-hero__stat">
-            <div className="cond-hero__stat-val">#<em>1</em></div>
-            <div className="cond-hero__stat-label">Most common cancer in cats</div>
-          </div>
-          <div className="cond-hero__stat">
-            <div className="cond-hero__stat-val">1–<em>2</em>yr</div>
-            <div className="cond-hero__stat-label">Median survival for nasal lymphoma in cats with radiation</div>
-          </div>
-          <div className="cond-hero__stat">
-            <div className="cond-hero__stat-val">High<em> CR</em></div>
-            <div className="cond-hero__stat-label">Complete response rate for localized lymphoma with CFRT</div>
-          </div>
-          <div className="cond-hero__stat">
-            <div className="cond-hero__stat-val">Same<em> day</em></div>
-            <div className="cond-hero__stat-label">Home after every session — outpatient treatment</div>
           </div>
         </div>
       </section>
@@ -233,58 +212,6 @@ export default function LymphomaPage() {
         </div>
       </div>
 
-      <div className="cond-treat" id="how-we-treat">
-        <div className="cond-treat__left">
-          <div className="eyebrow">Treatment at AARADONC</div>
-          <h2 className="titulo-seccion">
-            Precision radiation<br /><em>integrated with your team.</em>
-          </h2>
-          <p className="bajada">
-            Lymphoma treatment at AARADONC begins with a complete review of pathology, immunophenotyping,
-            staging, and systemic treatment history. Dr. DiBernardi personally designs the radiation
-            component and coordinates with your oncologist for full multimodal planning.
-          </p>
-          <div className="rt-bullets">
-            {[
-              { title: 'Complete staging review.', text: 'Anatomic site, immunophenotype, grade, and systemic extent all inform how and whether radiation should be integrated.' },
-              { title: 'CFRT for localized disease.', text: 'Definitive CFRT achieves high complete response rates for nasal, mediastinal, and other anatomically confined lymphoma.' },
-              { title: 'Palliative RT for urgent or bulky disease.', text: 'Rapid tumor reduction with 3–5 session palliative protocols — especially useful for mediastinal or spinal compression cases.' },
-            ].map(({ title, text }) => (
-              <div key={title} className="rt-bullet">
-                <div className="rt-bullet__dot" aria-hidden="true">
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <polyline points="20 6 9 17 4 12"/>
-                  </svg>
-                </div>
-                <p className="rt-bullet__text"><strong>{title}</strong> {text}</p>
-              </div>
-            ))}
-          </div>
-          <Link href="/radiation-therapy" style={{ color: '#1A4FBF', fontWeight: 600, fontSize: 15 }}>
-            Learn more about our protocols →
-          </Link>
-        </div>
-        <div className="cond-treat__right">
-          <div className="eyebrow" style={{ color: '#1A4FBF' }}>Protocol Options</div>
-          <h3 className="titulo-seccion" style={{ fontSize: 24, marginBottom: 24 }}>
-            CFRT or palliative RT — chosen by <em>site and urgency.</em>
-          </h3>
-          {[
-            { tag: 'Localized Disease — Curative Intent', name: 'CFRT', sessions: '16–20 sessions', note: 'Daily Mon–Fri · outpatient · same-day home', href: '/radiation-therapy/#cfrt', dark: true },
-            { tag: 'Bulky Disease / Comfort-Focused', name: 'Palliative Radiation', sessions: '3–5 sessions', note: 'Rapid tumor reduction · symptom relief · outpatient', href: '/radiation-therapy/#palliative', dark: false },
-          ].map(({ tag, name, sessions, note, href, dark }) => (
-            <Link key={name} href={href} className={`cond-proto-card${dark ? ' cond-proto-card--dark' : ''}`}>
-              <div className="cond-proto-card__tag">{tag}</div>
-              <div className="cond-proto-card__name">{name}</div>
-              <div className="cond-proto-card__sessions">
-                <div className="cond-proto-card__sessions-val">{sessions}</div>
-                <div className="cond-proto-card__sessions-note">{note}</div>
-              </div>
-              <div className="cond-proto-card__cta">Learn more →</div>
-            </Link>
-          ))}
-        </div>
-      </div>
 
       <section className="seccion" aria-labelledby="faq-heading">
         <div className="contenedor">

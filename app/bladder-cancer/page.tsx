@@ -47,7 +47,7 @@ const FAQ_ITEMS = [
   },
   {
     q: 'Does my dog need a referral?',
-    a: 'No referral is required. Pet families may contact us directly. We coordinate with your primary care veterinarian and any oncologist managing systemic therapy throughout the process.',
+    a: 'Pet families may contact us directly. We coordinate with your primary care veterinarian and any oncologist managing systemic therapy throughout the process.',
   },
 ]
 
@@ -83,32 +83,11 @@ export default function BladderCancerPage() {
           </p>
           <div className="cond-hero__ctas">
             <Link href="/contact-pet-owners" className="cta-primario">Request a Consultation</Link>
-            <a href="#how-we-treat" className="cta-secundario" style={{ color: 'rgba(255,255,255,.8)', borderColor: 'rgba(255,255,255,.2)' }}>
-              See Treatment Options ↓
-            </a>
           </div>
           <div className="cond-hero__badges">
             <div className="cond-hero__badge">Board Certified Radiation Oncologist on site</div>
             <div className="cond-hero__badge">Palm Beach County, FL</div>
             <div className="cond-hero__badge">Same-week consultations</div>
-          </div>
-        </div>
-        <div className="cond-hero__stats" aria-label="Key statistics">
-          <div className="cond-hero__stat">
-            <div className="cond-hero__stat-val">6–<em>12</em>mo</div>
-            <div className="cond-hero__stat-label">Median survival with multimodal treatment</div>
-          </div>
-          <div className="cond-hero__stat">
-            <div className="cond-hero__stat-val">Trigone<em> loc.</em></div>
-            <div className="cond-hero__stat-label">Most TCC arises here — making surgery non-curative</div>
-          </div>
-          <div className="cond-hero__stat">
-            <div className="cond-hero__stat-val">3–<em>5</em></div>
-            <div className="cond-hero__stat-label">Sessions with palliative radiation protocols</div>
-          </div>
-          <div className="cond-hero__stat">
-            <div className="cond-hero__stat-val">Same<em> day</em></div>
-            <div className="cond-hero__stat-label">Home after every session — outpatient treatment</div>
           </div>
         </div>
       </section>
@@ -194,59 +173,6 @@ export default function BladderCancerPage() {
         </div>
       </div>
 
-      <div className="cond-treat" id="how-we-treat">
-        <div className="cond-treat__left">
-          <div className="eyebrow">Treatment at AARADONC</div>
-          <h2 className="titulo-seccion">
-            Precision targeting<br /><em>for a difficult location.</em>
-          </h2>
-          <p className="bajada">
-            Bladder TCC treatment at AARADONC begins with a complete staging review — CT of abdomen
-            and thorax, urinalysis, and systemic treatment history. Dr. DiBernardi designs a
-            conformal radiation plan that maximizes tumor dose while strictly limiting exposure to
-            adjacent bowel, rectum, and urethra.
-          </p>
-          <div className="rt-bullets">
-            {[
-              { title: 'Varian TrueBeam® + IGRT.', text: 'Cone Beam CT imaging before every session confirms bladder and tumor position — critical for this anatomical location where adjacent organ protection is the primary constraint.' },
-              { title: 'Palliative radiation as the primary RT approach.', text: '3–5 session protocols reduce tumor burden, relieve obstruction, and decrease hematuria — integrated with NSAID and chemotherapy as indicated.' },
-              { title: 'Multimodal coordination.', text: 'Dr. DiBernardi coordinates radiation with your oncologist\'s systemic treatment plan — NSAIDs, vinblastine, or mitoxantrone — for the best combined outcome.' },
-            ].map(({ title, text }) => (
-              <div key={title} className="rt-bullet">
-                <div className="rt-bullet__dot" aria-hidden="true">
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <polyline points="20 6 9 17 4 12"/>
-                  </svg>
-                </div>
-                <p className="rt-bullet__text"><strong>{title}</strong> {text}</p>
-              </div>
-            ))}
-          </div>
-          <Link href="/radiation-therapy" style={{ color: '#1A4FBF', fontWeight: 600, fontSize: 15 }}>
-            Learn more about our protocols →
-          </Link>
-        </div>
-        <div className="cond-treat__right">
-          <div className="eyebrow" style={{ color: '#1A4FBF' }}>Protocol Options</div>
-          <h3 className="titulo-seccion" style={{ fontSize: 24, marginBottom: 24 }}>
-            Palliative radiation — <em>quality of life is the goal.</em>
-          </h3>
-          {[
-            { tag: 'Primary — Tumor Control & QoL', name: 'Palliative Radiation', sessions: '3–5 sessions', note: 'Tumor reduction · obstruction relief · outpatient', href: '/radiation-therapy/#palliative', dark: true },
-            { tag: 'Combined with Systemic Therapy', name: 'CFRT (select cases)', sessions: '16–20 sessions', note: 'Higher cumulative dose · combined with chemo/NSAIDs', href: '/radiation-therapy/#cfrt', dark: false },
-          ].map(({ tag, name, sessions, note, href, dark }) => (
-            <Link key={name} href={href} className={`cond-proto-card${dark ? ' cond-proto-card--dark' : ''}`}>
-              <div className="cond-proto-card__tag">{tag}</div>
-              <div className="cond-proto-card__name">{name}</div>
-              <div className="cond-proto-card__sessions">
-                <div className="cond-proto-card__sessions-val">{sessions}</div>
-                <div className="cond-proto-card__sessions-note">{note}</div>
-              </div>
-              <div className="cond-proto-card__cta">Learn more →</div>
-            </Link>
-          ))}
-        </div>
-      </div>
 
       <section className="seccion" aria-labelledby="faq-heading">
         <div className="contenedor">

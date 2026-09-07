@@ -84,32 +84,11 @@ export default function OralMelanomaPage() {
           </p>
           <div className="cond-hero__ctas">
             <Link href="/contact-pet-owners" className="cta-primario">Request a Consultation</Link>
-            <a href="#how-we-treat" className="cta-secundario" style={{ color: 'rgba(255,255,255,.8)', borderColor: 'rgba(255,255,255,.2)' }}>
-              See Treatment Options ↓
-            </a>
           </div>
           <div className="cond-hero__badges">
             <div className="cond-hero__badge">Board Certified Radiation Oncologist on site</div>
             <div className="cond-hero__badge">Palm Beach County, FL</div>
             <div className="cond-hero__badge">Same-week consultations</div>
-          </div>
-        </div>
-        <div className="cond-hero__stats" aria-label="Key statistics">
-          <div className="cond-hero__stat">
-            <div className="cond-hero__stat-val">#<em>1</em></div>
-            <div className="cond-hero__stat-label">Most common malignant oral tumor in dogs</div>
-          </div>
-          <div className="cond-hero__stat">
-            <div className="cond-hero__stat-val">10–<em>14</em>mo</div>
-            <div className="cond-hero__stat-label">Median survival with radiation + immunotherapy (Stage I/II)</div>
-          </div>
-          <div className="cond-hero__stat">
-            <div className="cond-hero__stat-val">4–<em>6</em></div>
-            <div className="cond-hero__stat-label">Sessions with hypofractionated palliative protocol</div>
-          </div>
-          <div className="cond-hero__stat">
-            <div className="cond-hero__stat-val">Same<em> day</em></div>
-            <div className="cond-hero__stat-label">Home after every session — outpatient treatment</div>
           </div>
         </div>
       </section>
@@ -195,58 +174,6 @@ export default function OralMelanomaPage() {
         </div>
       </div>
 
-      <div className="cond-treat" id="how-we-treat">
-        <div className="cond-treat__left">
-          <div className="eyebrow">Treatment at AARADONC</div>
-          <h2 className="titulo-seccion">
-            Local control starts<br /><em>with radiation.</em>
-          </h2>
-          <p className="bajada">
-            Oral melanoma treatment at AARADONC begins with complete staging — CT skull and thorax,
-            lymph node evaluation — followed by a personalized protocol designed by Dr. DiBernardi.
-            Every plan accounts for stage, tumor extent, and your goals.
-          </p>
-          <div className="rt-bullets">
-            {[
-              { title: 'Complete staging before treatment.', text: 'CT imaging and lymph node evaluation define stage, guide target volume, and determine whether immunotherapy should be combined with radiation.' },
-              { title: 'Hypofractionated palliative protocol.', text: 'Melanoma responds well to large-fraction radiation — 4–6 sessions achieve excellent local control with fewer anesthetic events.' },
-              { title: 'Definitive CFRT when appropriate.', text: 'For select cases, 16–20 session CFRT provides maximum local tumor control with precise fractionation.' },
-            ].map(({ title, text }) => (
-              <div key={title} className="rt-bullet">
-                <div className="rt-bullet__dot" aria-hidden="true">
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <polyline points="20 6 9 17 4 12"/>
-                  </svg>
-                </div>
-                <p className="rt-bullet__text"><strong>{title}</strong> {text}</p>
-              </div>
-            ))}
-          </div>
-          <Link href="/radiation-therapy" style={{ color: '#1A4FBF', fontWeight: 600, fontSize: 15 }}>
-            Learn more about our protocols →
-          </Link>
-        </div>
-        <div className="cond-treat__right">
-          <div className="eyebrow" style={{ color: '#1A4FBF' }}>Protocol Options</div>
-          <h3 className="titulo-seccion" style={{ fontSize: 24, marginBottom: 24 }}>
-            Palliative RT is the <em>most common</em> approach for oral melanoma.
-          </h3>
-          {[
-            { tag: 'Primary — Local Control', name: 'Palliative Radiation', sessions: '4–6 sessions', note: 'Hypofractionated · outpatient · same-day home', href: '/radiation-therapy/#palliative', dark: true },
-            { tag: 'Also Available — Select Cases', name: 'CFRT', sessions: '16–20 sessions', note: 'Curative intent · daily Mon–Fri · outpatient', href: '/radiation-therapy/#cfrt', dark: false },
-          ].map(({ tag, name, sessions, note, href, dark }) => (
-            <Link key={name} href={href} className={`cond-proto-card${dark ? ' cond-proto-card--dark' : ''}`}>
-              <div className="cond-proto-card__tag">{tag}</div>
-              <div className="cond-proto-card__name">{name}</div>
-              <div className="cond-proto-card__sessions">
-                <div className="cond-proto-card__sessions-val">{sessions}</div>
-                <div className="cond-proto-card__sessions-note">{note}</div>
-              </div>
-              <div className="cond-proto-card__cta">Learn more →</div>
-            </Link>
-          ))}
-        </div>
-      </div>
 
       <section className="seccion" aria-labelledby="faq-heading">
         <div className="contenedor">
