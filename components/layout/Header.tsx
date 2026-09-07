@@ -1,7 +1,8 @@
 'use client'
 
 import Link from 'next/link'
-import { useState } from 'react'
+import { usePathname } from 'next/navigation'
+import { useEffect, useState } from 'react'
 import {
   MAIN_NAV,
   CONTACT_INFO,
@@ -265,6 +266,44 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [openSections, setOpenSections] = useState<Record<string, boolean>>({})
   const [openDesktopItem, setOpenDesktopItem] = useState<string | null>(null)
+  // Tras hacer clic en un link del menú, el mouse sigue sobre el nav-item y el
+  // :hover mantendría el panel abierto encima de la página nueva. Esto lo
+  // suprime hasta que el cursor sale del item.
+  const [suppressHover, setSuppressHover] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+  const pathname = usePathname()
+
+  // Al cambiar de ruta, cerrar el menú desktop y suprimir el :hover (el cursor
+  // suele quedar sobre el nav-item tras el clic). La supresión se limpia sola
+  // cuando el mouse entra o sale de un item. Cubre cualquier forma de navegar.
+  useEffect(() => {
+    setOpenDesktopItem(null)
+    setSuppressHover(true)
+    closeMobile()
+    // Quitar el foco del link clickeado: si no, :focus-within reabre el panel
+    // sobre la página nueva aunque el mouse ya no esté encima.
+    const active = document.activeElement as HTMLElement | null
+    if (active && active.closest('.site-header')) active.blur()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pathname])
+
+  // Header compacto al scrollear: la topbar colapsa una vez que se pasó su
+  // altura (44px). Solo ocurre cuando ya no estás arriba, así que nunca deja
+  // hueco: el padding superior del body queda fuera de vista.
+  useEffect(() => {
+    let ticking = false
+    const onScroll = () => {
+      if (ticking) return
+      ticking = true
+      window.requestAnimationFrame(() => {
+        setScrolled(window.scrollY > 44)
+        ticking = false
+      })
+    }
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
   function toggleSection(key: string) {
     setOpenSections((prev) => ({ ...prev, [key]: !prev[key] }))
@@ -277,6 +316,7 @@ export default function Header() {
 
   function closeDesktop() {
     setOpenDesktopItem(null)
+    setSuppressHover(true)
   }
 
   return (
@@ -287,7 +327,7 @@ export default function Header() {
       </a>
 
       {/* ── Fixed header wrapper ─────────────────────────────────────────────── */}
-      <header id="site-header" className="site-header">
+      <header id="site-header" className={`site-header${scrolled ? ' site-header--scrolled' : ''}`}>
 
         {/* ── Topbar ────────────────────────────────────────────────────────── */}
         <div className="topbar">
@@ -361,10 +401,18 @@ export default function Header() {
                 return (
                   <div
                     key={item.label}
-                    className={`nav-item${hasMega ? ' nav-item--mega' : ''}${isOpen ? ' nav-item--open' : ''}`}
+                    className={`nav-item${hasMega ? ' nav-item--mega' : ''}${isOpen ? ' nav-item--open' : ''}${suppressHover ? ' nav-item--suppress' : ''}`}
                     role="none"
-                    onMouseEnter={() => hasMenu && setOpenDesktopItem(item.label)}
-                    onMouseLeave={() => hasMenu && setOpenDesktopItem(null)}
+                    onMouseEnter={() => {
+                      if (suppressHover) setSuppressHover(false)
+                      if (hasMenu) setOpenDesktopItem(item.label)
+                    }}
+                    onMouseLeave={() => {
+                      // No limpiamos la supresión acá: al ocultarse el panel el
+                      // cursor "cae" a la página y este leave se dispararía,
+                      // reactivando el :hover/:focus-within. Se limpia al entrar.
+                      if (hasMenu) setOpenDesktopItem(null)
+                    }}
                   >
                     {item.href ? (
                       <Link

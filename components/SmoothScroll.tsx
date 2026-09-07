@@ -2,24 +2,20 @@
 
 import { useEffect, useRef } from 'react'
 import { usePathname } from 'next/navigation'
-import Lenis from 'lenis'
+import type Lenis from 'lenis'
+
+// Offset para que las anclas no queden tapadas por el header fijo.
+const ANCHOR_OFFSET = 96
 
 export default function SmoothScroll() {
   const lenisRef = useRef<Lenis | null>(null)
   const pathname = usePathname()
 
   useEffect(() => {
-    const lenis = new Lenis({
-      duration: 1.4,
-      easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      touchMultiplier: 1.8,
-      wheelMultiplier: 0.9,
-      smoothWheel: true,
-    })
-    lenisRef.current = lenis
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
-    // Lenis needs to handle anchor links — stop native scroll-behavior
-    // so it can intercept hash navigation too
+    // Salto a un ancla respetando el offset del header. Sirve para ambos modos:
+    // con Lenis (suave) o nativo (movimiento reducido).
     function handleAnchorClick(e: MouseEvent) {
       const target = e.target as HTMLElement
       const anchor = target.closest('a[href^="#"]') as HTMLAnchorElement | null
@@ -29,27 +25,59 @@ export default function SmoothScroll() {
       const el = document.querySelector(id)
       if (!el) return
       e.preventDefault()
-      lenis.scrollTo(el as HTMLElement, { offset: -88, duration: 1.6 })
+      const lenis = lenisRef.current
+      if (lenis) {
+        lenis.scrollTo(el as HTMLElement, { offset: -ANCHOR_OFFSET, duration: 1.2 })
+      } else {
+        const y =
+          (el as HTMLElement).getBoundingClientRect().top +
+          window.scrollY -
+          ANCHOR_OFFSET
+        window.scrollTo({ top: y, behavior: reduced ? 'auto' : 'smooth' })
+      }
     }
 
     document.addEventListener('click', handleAnchorClick)
 
-    function raf(time: number) {
-      lenis.raf(time)
-      requestAnimationFrame(raf)
+    // Movimiento reducido: nada de Lenis, scroll nativo del navegador.
+    if (reduced) {
+      return () => document.removeEventListener('click', handleAnchorClick)
     }
-    requestAnimationFrame(raf)
+
+    let frame = 0
+    let cancelled = false
+
+    // Import dinámico: Lenis no bloquea la carga inicial ni el primer paint.
+    import('lenis').then(({ default: LenisCtor }) => {
+      if (cancelled) return
+      const lenis = new LenisCtor({
+        // lerp da un suavizado ágil e independiente del frame-rate (como CORV).
+        lerp: 0.1,
+        smoothWheel: true,
+        wheelMultiplier: 1,
+        // Sin smooth en touch: mantiene el gesto nativo del móvil.
+        syncTouch: false,
+      })
+      lenisRef.current = lenis
+
+      const raf = (time: number) => {
+        lenis.raf(time)
+        frame = requestAnimationFrame(raf)
+      }
+      frame = requestAnimationFrame(raf)
+    })
 
     return () => {
+      cancelled = true
+      cancelAnimationFrame(frame)
       document.removeEventListener('click', handleAnchorClick)
-      lenis.destroy()
+      lenisRef.current?.destroy()
       lenisRef.current = null
     }
   }, [])
 
-  // Start every new page at the top. Lenis keeps its own scroll position, so
-  // Next's default scroll-to-top is overridden — reset Lenis on route change.
-  // Skip when navigating to a hash target so anchor scrolling still works.
+  // Cada ruta nueva arranca arriba. Lenis mantiene su propia posición, así que
+  // reseteamos al cambiar de ruta — salvo cuando se navega a un ancla.
   useEffect(() => {
     if (typeof window !== 'undefined' && window.location.hash) return
     const lenis = lenisRef.current

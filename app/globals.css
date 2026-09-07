@@ -3286,3 +3286,121 @@
   .vet-form-section__card { padding: 32px 24px; }
   .vet-form-section__h2 { font-size: 30px; }
 }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   MOTION SYSTEM — mejoras de microinteracción/velocidad tomadas del sitio de
+   CORV. Reglas fuera de @layer para que ganen sin pelear especificidad.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ── Scroll reveal ──────────────────────────────────────────────────────────
+   Estado por defecto VISIBLE (el HTML se sirve así). La clase `.reveal` la
+   agrega JS solo si hay IntersectionObserver y no se pidió movimiento reducido
+   (ver components/ui/Reveal.tsx). El stagger sale de --i por elemento. */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 600ms var(--ease-spring),
+    transform 600ms var(--ease-spring);
+  transition-delay: calc(var(--i, 0) * 70ms);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ── Header compacto al scrollear ───────────────────────────────────────────
+   La topbar colapsa una vez pasada su altura. Solo ocurre estando ya
+   scrolleado, así que el padding superior del body queda fuera de vista y no
+   se produce ningún hueco. */
+.site-header .topbar {
+  overflow: hidden;
+  transition:
+    height 280ms var(--ease-spring),
+    opacity 220ms var(--ease-spring),
+    padding 280ms var(--ease-spring);
+}
+.site-header .navbar {
+  transition: box-shadow 280ms var(--ease-spring);
+}
+.site-header--scrolled .topbar {
+  height: 0 !important;
+  padding-top: 0;
+  padding-bottom: 0;
+  opacity: 0;
+  border-bottom-color: transparent;
+}
+.site-header--scrolled .navbar {
+  box-shadow: 0 10px 34px rgba(0, 0, 0, 0.38);
+}
+
+/* ── Cerrar el desplegable al navegar ───────────────────────────────────────
+   Tras clickear un link, el mouse sigue sobre el item y el :hover reabriría el
+   panel encima de la página nueva. Esta supresión (limpiada al salir el mouse)
+   lo fuerza oculto con prioridad sobre :hover / :focus-within. */
+.nav-item--suppress .desktop-dropdown,
+.nav-item--suppress .mega-menu {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transform: translateY(8px) !important;
+}
+
+/* ── Shimmer en los CTA primarios ───────────────────────────────────────────
+   Un brillo sutil que barre el botón al pasar el mouse (como los .btn--primary
+   de CORV). Solo agrega un pseudo-elemento; no cambia el layout ni el color. */
+.cta-primario,
+.footer-btn--primary {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.cta-primario::after,
+.footer-btn--primary::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(
+    100deg,
+    transparent,
+    rgba(255, 255, 255, 0.55),
+    transparent
+  );
+  transform: translateX(0) skewX(-18deg);
+  opacity: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+.cta-primario:hover::after,
+.footer-btn--primary:hover::after {
+  opacity: 1;
+  transform: translateX(360%) skewX(-18deg);
+  transition: transform 720ms var(--ease-spring), opacity 200ms linear;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   PREFERS-REDUCED-MOTION — no es opcional (accesibilidad)
+   Neutraliza reveals, transiciones largas, el fade-up de página y el shimmer.
+   Lenis ya se desactiva por JS en este modo (ver SmoothScroll.tsx).
+   ═══════════════════════════════════════════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .cta-primario::after,
+  .footer-btn--primary::after {
+    display: none;
+  }
+}

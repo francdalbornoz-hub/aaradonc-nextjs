@@ -2,6 +2,7 @@
 
 import { usePathname } from 'next/navigation'
 import { useEffect, useRef } from 'react'
+import Reveal from '@/components/ui/Reveal'
 
 export default function PageTransition({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
@@ -19,6 +20,8 @@ export default function PageTransition({ children }: { children: React.ReactNode
 
   return (
     <div ref={ref} className="page-enter">
+      {/* key={pathname} → el reveal re-descubre los bloques de la ruta nueva */}
+      <Reveal key={pathname} />
       {children}
     </div>
   )
