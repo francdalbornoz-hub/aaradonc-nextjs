@@ -209,7 +209,7 @@ export default function ForVeterinariansPage() {
               {
                 icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>,
                 title: 'Advanced Technology',
-                text: <><strong>Varian TrueBeam® linear accelerator</strong> — the same platform used in leading human cancer centers. IGRT, VMAT/RapidArc, high-resolution MLC, multiple energies. <strong>Shorter anesthesia time for every patient.</strong></>,
+                text: <><strong>Varian TrueBeam® linear accelerator</strong> — the same platform used in leading human cancer centers. IGRT, VMAT/RapidArc, high-resolution MLC. <strong>Shorter anesthesia time for every patient.</strong></>,
               },
               {
                 icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>,

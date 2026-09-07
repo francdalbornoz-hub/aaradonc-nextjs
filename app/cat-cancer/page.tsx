@@ -68,7 +68,7 @@ export default function CatCancerPage() {
             <div className="sp-stat__divider" />
             <div className="sp-stat">
               <div className="sp-stat__val">#<em>1</em></div>
-              <div className="sp-stat__label">cause of death in cats over age 10</div>
+              <div className="sp-stat__label">cause of death in cats, at any age</div>
             </div>
             <div className="sp-stat__divider" />
             <div className="sp-stat">
