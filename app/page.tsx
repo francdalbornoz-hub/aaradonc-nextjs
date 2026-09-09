@@ -641,15 +641,7 @@ export default function HomePage() {
                   <span className="horario__hora">8:00 AM – 5:00 PM</span>
                 </div>
                 <div className="horario__fila">
-                  <span className="horario__dia">Friday</span>
-                  <span className="horario__hora horario__hora--cerrado">Closed</span>
-                </div>
-                <div className="horario__fila">
-                  <span className="horario__dia">Saturday</span>
-                  <span className="horario__hora horario__hora--cerrado">Closed</span>
-                </div>
-                <div className="horario__fila">
-                  <span className="horario__dia">Sunday</span>
+                  <span className="horario__dia">Friday – Sunday</span>
                   <span className="horario__hora horario__hora--cerrado">Closed</span>
                 </div>
               </div>

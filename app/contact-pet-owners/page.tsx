@@ -158,15 +158,7 @@ export default function ContactPetOwnersPage() {
                 <span className="ct-hour__time">8:00 AM – 5:00 PM</span>
               </div>
               <div className="ct-hour">
-                <span className="ct-hour__day">Friday</span>
-                <span className="ct-hour__time">Closed</span>
-              </div>
-              <div className="ct-hour">
-                <span className="ct-hour__day">Saturday</span>
-                <span className="ct-hour__time">Closed</span>
-              </div>
-              <div className="ct-hour">
-                <span className="ct-hour__day">Sunday</span>
+                <span className="ct-hour__day">Friday – Sunday</span>
                 <span className="ct-hour__time">Closed</span>
               </div>
             </div>
