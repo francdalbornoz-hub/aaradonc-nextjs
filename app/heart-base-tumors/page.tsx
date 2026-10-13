@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { getPageSeo } from '@/lib/seo-config'
-import FAQAccordion from '@/components/ui/FAQAccordion'
 import References, { type Reference } from '@/components/ui/References'
 
 // Peer-reviewed sources supporting the claims on this page (chemodectoma /
@@ -27,29 +26,6 @@ const INFO_ICON = (
     <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
   </svg>
 )
-
-const FAQ_ITEMS = [
-  {
-    q: 'What is a heart base tumor in dogs?',
-    a: 'Heart base tumors arise from chemoreceptor cells near the aorta and pulmonary artery — these are called chemodectomas or aortic body tumors. They are locally invasive but slow-growing and rarely metastasize. Brachycephalic breeds (Boxers, Boston Terriers, Bulldogs) are significantly overrepresented. Cardiac hemangiosarcoma, which arises from the right atrium, is the other primary cardiac tumor and has very different biology and prognosis.',
-  },
-  {
-    q: 'Why is surgery not possible for most heart base tumors?',
-    a: 'Chemodectomas arise at the base of the heart, intimately associated with the aorta, pulmonary artery, and major cardiac structures. Surgical resection carries prohibitive cardiovascular risk in most cases. Radiation therapy targets the tumor precisely without requiring open-chest surgery, making it the only meaningful local treatment option for the vast majority of patients.',
-  },
-  {
-    q: 'How well do heart base tumors respond to radiation?',
-    a: 'Chemodectomas are radiation-responsive tumors. Multiple case series have documented tumor shrinkage and stabilization with radiation therapy, with median survival times of 12–24 months reported in dogs treated with stereotactic or conventional radiation. Because these tumors grow slowly, even stable disease with good quality of life represents a meaningful outcome.',
-  },
-  {
-    q: 'What protocols are used for heart base tumors?',
-    a: 'SRS/SRT (stereotactic radiation) is well-suited for heart base tumors — it delivers high, precise doses in 1–5 sessions with submillimeter accuracy, minimizing radiation to the adjacent heart, great vessels, and lungs. CFRT (16–20 sessions) is also used. The choice depends on tumor size, location relative to critical structures, and cardiac status.',
-  },
-  {
-    q: 'What are the signs of a heart base tumor?',
-    a: 'Many heart base tumors are found incidentally on cardiac imaging during workup for an unrelated condition. When symptomatic, signs include coughing, exercise intolerance, respiratory distress, syncope (fainting), and pericardial effusion (fluid around the heart causing cardiac tamponade). Pericardial effusion is the most common acute presentation and is managed with pericardiocentesis before radiation planning.',
-  },
-]
 
 export default function HeartBaseTumorsPage() {
   return (
@@ -76,28 +52,16 @@ export default function HeartBaseTumorsPage() {
             Heart base tumor radiation<br />therapy for dogs<br /><em>in Florida.</em>
           </h1>
           <p className="cond-hero__sub">
-            Chemodectomas of the heart base are not surgically accessible. Radiation therapy is
-            the only meaningful local treatment option — targeting the tumor with precision while
+            Heart base tumors are rarely removable with surgery. Radiation therapy is
+            an important local treatment option and can be combined with procedures such as
+            pericardiectomy — targeting the tumor with precision while
             protecting the adjacent heart, aorta, and lungs.
           </p>
           <div className="cond-hero__ctas">
             <Link href="/contact-pet-owners" className="cta-primario">Request a Consultation</Link>
           </div>
-          <div className="cond-hero__badges">
-            <div className="cond-hero__badge">Board Certified Radiation Oncologist on site</div>
-            <div className="cond-hero__badge">Palm Beach County, FL</div>
-            <div className="cond-hero__badge">Same-week consultations</div>
-          </div>
         </div>
       </section>
-
-      <div className="pos-strip">
-        <div className="pos-strip__inner">
-          <p className="pos-strip__text">
-            <strong>&ldquo;The only center 100% dedicated to Radiation Oncology in Florida&rdquo;</strong>
-          </p>
-        </div>
-      </div>
 
       <section style={{ background: '#fff' }} aria-labelledby="editorial-heading">
         <div className="cond-editorial">
@@ -106,21 +70,19 @@ export default function HeartBaseTumorsPage() {
             <div className="cond-editorial__kicker-text">Understanding Heart Base Tumors in Dogs</div>
           </div>
           <h2 id="editorial-heading" className="cond-editorial__h2">
-            When surgery is not possible,<br /><em>radiation therapy is the treatment.</em>
+            When surgery is not possible,<br /><em>radiation therapy is an important option.</em>
           </h2>
           <p className="cond-editorial__lead">
             Chemodectomas of the heart base are intimately adherent to the aorta, pulmonary artery,
             and the heart itself. Surgical resection — already technically demanding — carries
-            prohibitive cardiovascular risk in nearly all cases. Radiation therapy is the only
-            meaningful local treatment option, and it works: multiple case series document tumor
-            stabilization and meaningful survival extension.
+            prohibitive cardiovascular risk in nearly all cases. Radiation therapy is an important
+            local treatment option and can be combined with procedures such as pericardiectomy:
+            case series document tumor stabilization, with a median survival of about 13 months after SBRT (Kruckman-Gatesy et al., 2020).
           </p>
           <p className="cond-editorial__body">
             Chemodectomas are slow-growing tumors that arise from chemoreceptor cells in the aortic
-            body near the heart base. They grow locally and rarely metastasize — which means a dog
-            with a chemodectoma has no systemic cancer burden, just a local problem in a difficult
-            location. This is a situation where radiation therapy, delivered with sufficient
-            precision, can convert a fatal diagnosis into a manageable chronic condition.
+            body near the heart base. They grow locally and rarely metastasize — which means the
+            main challenge is usually local.
           </p>
           <h3 className="cond-editorial__h3">Pericardial effusion — the most common acute presentation</h3>
           <p className="cond-editorial__body">
@@ -143,11 +105,11 @@ export default function HeartBaseTumorsPage() {
           </div>
           <h3 className="cond-editorial__h3">Why precision matters most here</h3>
           <p className="cond-editorial__body">
-            The heart base is surrounded by the most radiation-sensitive structures in the body —
+            The heart base is surrounded by radiation-sensitive structures —
             the heart, aorta, pulmonary artery, lungs, and esophagus. Treatment planning requires
             strict dose constraints on all adjacent organs while delivering adequate dose to the
-            tumor volume. This is exactly the kind of case where stereotactic precision (SRS/SRT)
-            demonstrates its greatest advantage over conventional techniques.
+            tumor volume. This is exactly the kind of case where precise, image-guided delivery is
+            especially valuable.
           </p>
           <div className="cond-editorial__fact">
             <div className="cond-editorial__fact-icon" aria-hidden="true">{INFO_ICON}</div>
@@ -161,70 +123,7 @@ export default function HeartBaseTumorsPage() {
         </div>
       </section>
 
-      <section className="cond-types" aria-labelledby="types-heading">
-        <div className="cond-types__inner">
-          <div className="cond-types__header">
-            <div className="eyebrow-label">Cardiac Tumor Types We Treat</div>
-            <h2 id="types-heading" className="titulo-seccion">Primary cardiac tumors<br />in dogs — <em>and their differences.</em></h2>
-            <p className="cond-types__sub">
-              The two most common primary cardiac tumors in dogs have very different biology,
-              location, and prognosis. Understanding which tumor type is present is essential
-              to any treatment discussion.
-            </p>
-          </div>
-          <div className="cond-types__grid" style={{ gridTemplateColumns: 'repeat(2, 1fr)' }}>
-            {[
-              { href: null, species: 'Boxers & Brachycephalic Breeds', name: 'Chemodectoma (Aortic Body Tumor)', desc: 'Slow-growing, rarely metastatic. Arises at the heart base from chemoreceptor cells. Not surgically accessible — radiation therapy is the primary treatment option. Median survival 12–24 months with radiation therapy.', tag: '★ Radiation-responsive · SRS/SRT preferred' },
-              { href: null, species: 'German Shepherds & Large Breeds', name: 'Cardiac Hemangiosarcoma', desc: 'Arises from the right atrium or auricle. Highly aggressive with rapid growth and high metastatic potential. Prognosis is more guarded than chemodectoma. Radiation and chemotherapy may be used palliatively.', tag: 'Palliative · Poor prognosis' },
-            ].map(({ href, species, name, desc, tag }) => (
-              href ? (
-                <Link key={name} href={href} className="cond-type-card">
-                  <div className="cond-type-card__species">{species}</div>
-                  <div className="cond-type-card__name">{name}</div>
-                  <div className="cond-type-card__desc">{desc}</div>
-                  <div className="cond-type-card__tag">{tag}</div>
-                  <div className="cond-type-card__link">Learn more →</div>
-                </Link>
-              ) : (
-                <div key={name} className="cond-type-card cond-type-card--muted">
-                  <div className="cond-type-card__species">{species}</div>
-                  <div className="cond-type-card__name">{name}</div>
-                  <div className="cond-type-card__desc">{desc}</div>
-                  <div className="cond-type-card__tag">{tag}</div>
-                </div>
-              )
-            ))}
-          </div>
-        </div>
-      </section>
 
-      <div className="cond-bridge" aria-label="Key outcomes">
-        <div className="cond-bridge__stat">
-          <div className="cond-bridge__val">12–<em>24</em>mo</div>
-          <div className="cond-bridge__label">Median survival for chemodectoma with radiation</div>
-        </div>
-        <div className="cond-bridge__stat">
-          <div className="cond-bridge__val">1–<em>5</em></div>
-          <div className="cond-bridge__label">Sessions with SRS/SRT — maximum precision at the heart base</div>
-        </div>
-        <div className="cond-bridge__stat">
-          <div className="cond-bridge__val">Same<em> day</em></div>
-          <div className="cond-bridge__label">Home after every session — outpatient treatment</div>
-        </div>
-      </div>
-
-
-      <section className="seccion" aria-labelledby="faq-heading">
-        <div className="contenedor">
-          <div style={{ textAlign: 'center', maxWidth: 580, margin: '0 auto' }}>
-            <div className="eyebrow" style={{ justifyContent: 'center' }}>Common Questions</div>
-            <h2 id="faq-heading" className="titulo-seccion">
-              What pet families<br /><em>ask us most.</em>
-            </h2>
-          </div>
-          <FAQAccordion items={FAQ_ITEMS} />
-        </div>
-      </section>
 
       <References items={REFERENCES} />
 
@@ -236,7 +135,7 @@ export default function HeartBaseTumorsPage() {
           </div>
           <p className="cond-cta__text">
             Dr. DiBernardi personally reviews every case. Tell us about your dog and we&apos;ll
-            respond promptly with a clear, honest recommendation.
+            respond promptly with a clear recommendation.
           </p>
           <Link href="/contact-pet-owners" className="cond-cta__btn-primary">Request a Consultation</Link>
         </div>

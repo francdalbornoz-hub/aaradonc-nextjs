@@ -24,24 +24,14 @@ export const metadata: Metadata = {
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
-const CHECK_ICON = (
-  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-    <polyline points="20 6 9 17 4 12"/>
-  </svg>
-)
-
 const FAQ_ITEMS = [
-  {
-    q: 'Do pet families need a referral from me to contact AARADONC?',
-    a: <>No. <strong>Pet families may contact us directly.</strong> However, when you refer a patient, we coordinate everything with your practice — keeping you fully informed and involved throughout the process.</>,
-  },
   {
     q: 'What information should I include in the referral?',
     a: <>Send whatever you have. Ideally: <strong>histopathology report, available imaging (CT/MRI/X-ray), recent clinical notes, and staging information.</strong> If you don&apos;t have everything, send what you have — we will coordinate the rest.</>,
   },
   {
     q: 'How quickly will I hear back after submitting a referral?',
-    a: <><strong>Promptly.</strong> Dr. DiBernardi personally reviews every referral and we acknowledge receipt promptly. A consultation is typically scheduled <strong>within the week</strong> — sooner for urgent cases.</>,
+    a: <><strong>Promptly.</strong> Dr. DiBernardi personally reviews every referral and we acknowledge receipt promptly. We then coordinate the consultation with your practice.</>,
   },
   {
     q: 'Will I receive updates on my patient during treatment?',
@@ -81,19 +71,6 @@ export default function ForVeterinariansPage() {
               <a href="#referral-form" className="cta-primario">Submit a Referral →</a>
               <Link href="/radiation-therapy" className="cta-secundario">View Our Protocols</Link>
             </div>
-            <div className="hero__badges" style={{ marginTop: 36 }}>
-              {[
-                'Board-Certified Radiation Oncologist on site',
-                'Prompt Referral Response',
-                'Detailed Written Reports for Every Case',
-                'A True Extension of Your Practice',
-              ].map((b) => (
-                <div key={b} className="hero__badge">
-                  {CHECK_ICON}
-                  {b}
-                </div>
-              ))}
-            </div>
           </div>
 
           {/* Right: quick referral form card */}
@@ -104,7 +81,7 @@ export default function ForVeterinariansPage() {
                 <span className="vet-hero-form__label">Quick Referral</span>
               </div>
               <div className="vet-hero-form__title">Submit a Patient Referral</div>
-              <p className="vet-hero-form__sub">We respond promptly — no paperwork required.</p>
+              <p className="vet-hero-form__sub">We respond promptly.</p>
               <FormReferralCompact />
             </div>
           </div>
@@ -150,8 +127,6 @@ export default function ForVeterinariansPage() {
           </p>
           <div className="vet-approach__list">
             {[
-              'You are copied on all case communications',
-              'We never solicit your clients for non-oncology care',
               'Post-treatment care returns to your clinic',
               'Available for case discussions before you refer',
             ].map((item) => (
@@ -189,12 +164,12 @@ export default function ForVeterinariansPage() {
               {
                 icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>,
                 title: 'Dedicated Specialist',
-                text: <><strong>Board-certified radiation oncologist with over 20 years of clinical experience</strong> in veterinary radiation oncology. Every referral is personally reviewed by Dr. DiBernardi — not delegated.</>,
+                text: <><strong>Board-certified radiation oncologist with more than 20 years of oncology experience.</strong> Every referral is personally reviewed by Dr. DiBernardi — not delegated.</>,
               },
               {
                 icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.36 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.86a16 16 0 0 0 6.23 6.23l1.22-1.22a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>,
                 title: 'Prompt Response',
-                text: <>We acknowledge every referral <strong>promptly</strong> and schedule a consultation within the week. For urgent cases, <strong>we move faster.</strong> Time matters — our process reflects that.</>,
+                text: <>We acknowledge every referral <strong>promptly</strong> and coordinate the consultation with you.</>,
               },
               {
                 icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>,
@@ -209,12 +184,12 @@ export default function ForVeterinariansPage() {
               {
                 icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>,
                 title: 'Advanced Technology',
-                text: <><strong>Varian TrueBeam® linear accelerator</strong> — the same platform used in leading human cancer centers. IGRT, VMAT/RapidArc, high-resolution MLC. <strong>Shorter anesthesia time for every patient.</strong></>,
+                text: <><strong>Varian TrueBeam® linear accelerator</strong> — the same platform used in leading human cancer centers. IGRT, VMAT/RapidArc, high-resolution MLC. <strong>Shorter anesthesia times.</strong></>,
               },
               {
                 icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>,
                 title: 'Direct Oncologist Access',
-                text: <>You have <strong>direct access to Dr. DiBernardi</strong> throughout the case — not a receptionist, not a coordinator. Questions and case updates handled <strong>directly between colleagues.</strong></>,
+                text: <>Direct communication with our radiation oncologist throughout the case. Questions and case updates handled <strong>directly between colleagues.</strong></>,
               },
             ].map(({ icon, title, text }) => (
               <div key={title} className="rt-why-card">
@@ -270,7 +245,7 @@ export default function ForVeterinariansPage() {
               </div>
               <div className="paso__cuerpo">
                 <div className="paso__titulo">Prompt Case Review</div>
-                <p className="paso__texto">Dr. DiBernardi personally reviews every referral promptly. You receive an acknowledgment promptly and a consultation is scheduled within the week — often sooner for urgent cases.</p>
+                <p className="paso__texto">Dr. DiBernardi personally reviews every referral promptly. You receive an acknowledgment promptly and we coordinate the consultation with your practice.</p>
               </div>
             </div>
 
@@ -354,7 +329,7 @@ export default function ForVeterinariansPage() {
             </h2>
             <p className="vet-form-section__sub">
               Fill in the basics — name, clinic, and patient info. We will acknowledge
-              your referral promptly and schedule a consultation within the week.
+              your referral promptly and coordinate the consultation with you.
             </p>
 
             <div className="vet-form-section__contacts">

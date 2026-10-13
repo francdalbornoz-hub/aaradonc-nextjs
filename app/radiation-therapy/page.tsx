@@ -7,15 +7,6 @@ import { CONTACT_INFO } from '@/lib/nav-config'
 import ProtocolCards from '@/components/sections/ProtocolCards'
 import FormContact from '@/components/forms/FormContact'
 import FAQAccordion from '@/components/ui/FAQAccordion'
-import References, { type Reference } from '@/components/ui/References'
-
-// Peer-reviewed sources grounding the radiation-therapy claims on this page
-// (technique, safety, and toxicity in companion-animal radiation oncology).
-const REFERENCES: Reference[] = [
-  { authors: 'Farrelly J, et al.', year: '2017', title: 'Retrospective analysis of non-radiation complications in dogs undergoing radiation therapy', source: 'Vet Radiol Ultrasound' },
-  { authors: 'Soukup A, et al.', year: '2018', title: 'A prospective pilot study on early toxicity from a simultaneously integrated boost technique for canine nasal tumors', source: 'Vet Comp Oncol' },
-  { authors: 'Bley CR, et al.', year: '2022', title: 'Dose- and volume-limiting late toxicity of FLASH radiotherapy in cats with squamous cell carcinoma', source: 'Clin Cancer Res' },
-]
 
 // ─── SEO ──────────────────────────────────────────────────────────────────────
 
@@ -41,11 +32,11 @@ const FAQ_ITEMS = [
   },
   {
     q: 'How many sessions will my dog or cat need?',
-    a: <>It depends on the protocol selected. <strong>Palliative radiation: 3–5 sessions.</strong> Conventional fractionated radiation therapy: <strong>15–20 sessions.</strong> Stereotactic treatment: <strong>just 1–5 high-precision sessions.</strong> Our Radiation Oncologist determines the right approach after a thorough personal case review.</>,
+    a: <>It depends on the protocol selected. <strong>Palliative radiation: 3–6 sessions.</strong> Conventional fractionated radiation therapy (CFRT): <strong>10–20 sessions.</strong> Stereotactic treatment (SRS/SRT): <strong>1–5 sessions.</strong> Our Radiation Oncologist determines the right approach after a thorough personal case review.</>,
   },
   {
     q: 'How do I get started with a consultation?',
-    a: <>You can <strong>reach out directly by phone, email, or through our contact form</strong> — no referral required. We recommend bringing your pet&apos;s most recent medical records, imaging (if available), and any pathology reports. Our team coordinates with your veterinary care team throughout the entire process.</>,
+    a: <>Contact us by phone, email, or through our contact form. We recommend bringing your pet&apos;s most recent medical records, imaging (if available), and any pathology reports. Our team coordinates with your veterinary care team throughout the entire process.</>,
   },
   {
     q: 'What are the side effects of pet radiation therapy?',
@@ -53,7 +44,7 @@ const FAQ_ITEMS = [
   },
   {
     q: 'Is radiation therapy available for both dogs and cats?',
-    a: <>Yes. We provide veterinary radiation therapy for <strong>both dogs and cats.</strong> Treatment planning accounts for each species&apos; unique anatomy and physiology. Radiation therapy for cats requires careful dose and fractionation adjustments — expertise our team brings from <strong>over 20 years of dedicated practice in veterinary radiation oncology.</strong></>,
+    a: <>Yes. We provide veterinary radiation therapy for <strong>both dogs and cats.</strong> Treatment planning accounts for each species&apos; unique anatomy and physiology. Radiation therapy for cats requires careful dose and fractionation adjustments — expertise our team brings from <strong>more than 20 years of oncology experience.</strong></>,
   },
   {
     q: 'What happens after radiation therapy is complete?',
@@ -75,13 +66,6 @@ const CONDITIONS = [
   { label: 'Bladder Cancer', href: '/bladder-cancer' },
   { label: 'Meningioma', href: '/meningioma' },
   { label: 'Other tumor types — ask us →', href: '/contact-pet-owners', accent: true },
-]
-
-const BADGES = [
-  'Board-Certified Radiation Oncologist on site',
-  '3D CT-Based Treatment Planning',
-  'Outpatient · Same-Day Home',
-  'Prompt Response',
 ]
 
 const CHECK_ICON = (
@@ -115,14 +99,6 @@ export default function RadiationTherapyPage() {
           <div className="hero__acciones">
             <a href="#contact" className="cta-primario">Request a Consultation →</a>
             <a href="#protocols" className="cta-secundario">See Our Protocols</a>
-          </div>
-          <div className="hero__badges">
-            {BADGES.map((b) => (
-              <div key={b} className="hero__badge">
-                {CHECK_ICON}
-                {b}
-              </div>
-            ))}
           </div>
         </div>
       </section>
@@ -207,15 +183,14 @@ export default function RadiationTherapyPage() {
             <p className="bajada bajada--claro" style={{ margin: '0 auto' }}>
               Our center is equipped with the <strong style={{ color: '#fff' }}>Varian TrueBeam® linear accelerator</strong>,
               an advanced radiation therapy platform used in leading human cancer centers around the world,
-              adapted for veterinary radiation oncology. Precision, safety, and shorter anesthesia times —
-              for every patient.
+              adapted for veterinary radiation oncology. Precision, safety, and shorter anesthesia times.
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '380px 1fr', gap: 52, alignItems: 'start', marginTop: 60 }}>
+          <div className="tech-layout">
 
             {/* Equipment photo — 3:4 */}
-            <div style={{ borderRadius: 24, overflow: 'hidden', position: 'relative', aspectRatio: '3/4', boxShadow: '0 32px 80px rgba(0,0,0,.35), 0 0 0 1px rgba(126,200,227,.2)', flexShrink: 0 }}>
+            <div className="tech-photo">
               <Image
                 src="/images/linac-room.webp"
                 alt="Varian TrueBeam linear accelerator at Animal Alliance Radiation Oncology"
@@ -229,7 +204,7 @@ export default function RadiationTherapyPage() {
             </div>
 
             {/* Tech cards 2×2 */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 20 }}>
+            <div className="tech-cards">
               {[
                 {
                   icon: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><line x1="7" y1="12" x2="17" y2="12"/></svg>,
@@ -265,19 +240,6 @@ export default function RadiationTherapyPage() {
             </div>
           </div>
 
-          <div style={{ marginTop: 48, padding: '28px 32px', background: 'rgba(126,200,227,.08)', border: '1px solid rgba(126,200,227,.2)', borderRadius: 16, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 32, flexWrap: 'wrap' }}>
-            <div>
-              <div style={{ fontSize: 11, letterSpacing: '.14em', textTransform: 'uppercase', fontWeight: 700, color: '#7EC8E3', marginBottom: 8 }}>Varian TrueBeam® — Key Benefits</div>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px 24px' }}>
-                {['Varian TrueBeam® linear accelerator', 'IGRT — Cone Beam CT before every session', 'VMAT / RapidArc — shorter anesthesia', 'High-resolution MLC precision', 'Technology used in leading human cancer centers'].map((item) => (
-                  <div key={item} style={{ fontSize: 13, color: 'rgba(255,255,255,.75)', display: 'flex', alignItems: 'center', gap: 8 }}>
-                    <span style={{ width: 5, height: 5, borderRadius: '50%', background: '#7EC8E3', flexShrink: 0 }} />
-                    {item}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -464,7 +426,7 @@ export default function RadiationTherapyPage() {
               </div>
               <div className="paso__cuerpo">
                 <div className="paso__titulo">Case Review &amp; Consultation</div>
-                <p className="paso__texto">Our Radiation Oncologist personally reviews your pet&apos;s imaging, pathology, and medical history. You receive a clear, honest recommendation — with no jargon and no pressure.</p>
+                <p className="paso__texto">Our Radiation Oncologist personally reviews your pet&apos;s imaging, pathology, and medical history. You receive a clear recommendation in plain language.</p>
               </div>
             </div>
 
@@ -494,7 +456,7 @@ export default function RadiationTherapyPage() {
               </div>
               <div className="paso__cuerpo">
                 <div className="paso__titulo">Treatment Delivery</div>
-                <p className="paso__texto">Each session is delivered under short general anesthesia. The radiation beam is shaped and directed at the tumor with submillimeter precision. Your pet goes home the same day.</p>
+                <p className="paso__texto">Each session is delivered under short general anesthesia. The radiation beam is shaped and directed at the tumor with image-guided precision. Your pet goes home the same day.</p>
               </div>
             </div>
 
@@ -534,9 +496,8 @@ export default function RadiationTherapyPage() {
               <span className="rt-dual-card__tag">For Pet Families</span>
               <div className="rt-dual-card__title">Your pet&apos;s care,<br />in specialist hands.</div>
               <p className="rt-dual-card__text">
-                Whether you&apos;ve been referred by your veterinarian or are reaching out directly,
-                we&apos;re here to help. Our Radiation Oncologist reviews every case personally and will
-                guide you through all available options — with honesty and no pressure.
+                We&apos;re here to help. Our Radiation Oncologist reviews every case personally and will
+                guide you through all available options.
               </p>
               <div className="rt-dual-card__list">
                 {['Personalized case review', 'Clear answers, no medical jargon', 'Prompt response', 'Coordinated care with your veterinary team'].map((item) => (
@@ -583,8 +544,6 @@ export default function RadiationTherapyPage() {
         </div>
       </section>
 
-      <References items={REFERENCES} />
-
       {/* ══════════════════════════════════════════════════════════════════════
           CONTACT
       ══════════════════════════════════════════════════════════════════════ */}
@@ -599,7 +558,7 @@ export default function RadiationTherapyPage() {
               <p className="bajada">
                 Have questions about radiation therapy for your dog or cat? Our Radiation Oncologist
                 reviews every case personally. Reach out and we&apos;ll guide you through the next
-                steps — with clarity and no pressure.
+                steps.
               </p>
               <div className="contacto__info">
                 <a href={CONTACT_INFO.phoneHref} className="contacto-item">
@@ -608,7 +567,7 @@ export default function RadiationTherapyPage() {
                       <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.36 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.86a16 16 0 0 0 6.23 6.23l1.22-1.22a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
                     </svg>
                   </div>
-                  <div><strong>Phone</strong><a href={CONTACT_INFO.phoneHref}>{CONTACT_INFO.phone}</a></div>
+                  <div><strong>Phone</strong><span>{CONTACT_INFO.phone}</span></div>
                 </a>
                 <a href={`mailto:${CONTACT_INFO.email}`} className="contacto-item">
                   <div className="contacto-item__icono" aria-hidden="true">

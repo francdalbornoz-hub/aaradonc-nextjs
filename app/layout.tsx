@@ -4,6 +4,7 @@ import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 import PageTransition from '@/components/layout/PageTransition'
 import SmoothScroll from '@/components/SmoothScroll'
+import LangFab from '@/components/layout/LangFab'
 import { getPageSeo, ORGANIZATION } from '@/lib/seo-config'
 
 // ─── Default metadata (home page) ────────────────────────────────────────────
@@ -85,6 +86,17 @@ export default function RootLayout({
             - CTA click → GTM trigger: event 'cta_click', label 'request_consultation' | 'refer_patient'
             - Phone click → GTM trigger: event 'phone_click'
             Replace GTM-XXXXXXX with real ID before go-live. */}
+        {/* dataLayer + gtag stub — defined BEFORE GTM loads so any tag in the
+            container that calls gtag() has the function available (prevents the
+            "gtag is not defined" ReferenceError). This is Google's standard
+            gtag.js bootstrap; GTM reads from the same dataLayer. */}
+        {GTM_ID && (
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());`,
+            }}
+          />
+        )}
         {/* eslint-disable-next-line @next/next/next-script-for-ga */}
         {GTM_ID && (
           <script
@@ -132,6 +144,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
         {/* ── Site footer ─────────────────────────────────────────────────── */}
         <Footer />
+
+        {/* ── Floating language switch (bottom-left flag) ─────────────────── */}
+        <LangFab />
       </body>
     </html>
   )

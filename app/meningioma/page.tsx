@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { getPageSeo } from '@/lib/seo-config'
-import FAQAccordion from '@/components/ui/FAQAccordion'
 import References, { type Reference } from '@/components/ui/References'
 
 // Peer-reviewed sources supporting the claims on this page (feline meningioma
@@ -27,29 +26,6 @@ const INFO_ICON = (
     <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
   </svg>
 )
-
-const FAQ_ITEMS = [
-  {
-    q: 'What is a meningioma in dogs and cats?',
-    a: 'Meningioma is a tumor arising from the meninges — the protective layers surrounding the brain and spinal cord. It is the most common intracranial tumor in cats and one of the most frequent in dogs. Meningiomas are typically slow-growing and well-defined, which makes them ideal candidates for radiation therapy — particularly stereotactic SRS/SRT.',
-  },
-  {
-    q: 'Is meningioma curable in cats?',
-    a: 'Meningioma is one of the more treatable brain tumors in cats. In cats, meningiomas are often well-encapsulated and surgically accessible, and surgery can achieve excellent long-term outcomes — frequently the best option. When surgery is not feasible, or for residual or recurrent disease, stereotactic radiation (SRS/SRT) provides effective local control with good quality of life. Dr. DiBernardi reviews each case to recommend the most appropriate approach.',
-  },
-  {
-    q: 'What is the difference between surgery and radiation for meningioma?',
-    a: 'It depends on the species and the individual tumor. In cats, meningiomas are frequently well-encapsulated and surgically accessible, and surgery can offer the best long-term outcomes. In dogs, meningiomas tend to be more infiltrative and complete surgical removal is often not feasible, so radiation frequently plays the primary role. Radiation therapy (especially SRS/SRT) is also used after incomplete resection or when surgery is not an option. Dr. DiBernardi will discuss the best approach for your pet.',
-  },
-  {
-    q: 'How many radiation sessions does my pet need?',
-    a: 'For most meningiomas, SRS/SRT is the preferred protocol — 1–5 sessions with submillimeter accuracy. Each session requires short general anesthesia (15–25 minutes) and your pet goes home the same day. Conventional CFRT (15–20 sessions daily) is used when the tumor is larger or when higher total dose is needed.',
-  },
-  {
-    q: 'Does my pet need a referral?',
-    a: 'Pet families may contact us directly. We coordinate with your primary care veterinarian and any neurologist or surgeon involved in your pet\'s care throughout the entire treatment process.',
-  },
-]
 
 export default function MeningiomaPage() {
   return (
@@ -78,27 +54,14 @@ export default function MeningiomaPage() {
           <p className="cond-hero__sub">
             Meningioma is the most common brain tumor in cats — and one of the more treatable. In cats,
             meningiomas are often surgically accessible, and surgery can offer the best long-term
-            outcomes. When surgery is not feasible, stereotactic radiation (SRS/SRT) delivers targeted
-            treatment in just 1–5 sessions.
+            outcomes. When surgery is not feasible, radiation therapy delivers targeted
+            treatment.
           </p>
           <div className="cond-hero__ctas">
             <Link href="/contact-pet-owners" className="cta-primario">Request a Consultation</Link>
           </div>
-          <div className="cond-hero__badges">
-            <div className="cond-hero__badge">Board Certified Radiation Oncologist on site</div>
-            <div className="cond-hero__badge">Palm Beach County, FL</div>
-            <div className="cond-hero__badge">Same-week consultations</div>
-          </div>
         </div>
       </section>
-
-      <div className="pos-strip">
-        <div className="pos-strip__inner">
-          <p className="pos-strip__text">
-            <strong>&ldquo;The only center 100% dedicated to Radiation Oncology in Florida&rdquo;</strong>
-          </p>
-        </div>
-      </div>
 
       <section style={{ background: '#fff' }} aria-labelledby="editorial-heading">
         <div className="cond-editorial">
@@ -107,11 +70,11 @@ export default function MeningiomaPage() {
             <div className="cond-editorial__kicker-text">Understanding Meningioma in Pets</div>
           </div>
           <h2 id="editorial-heading" className="cond-editorial__h2">
-            The most treatable<br />brain tumor in veterinary oncology — <em>with radiation.</em>
+            A treatable brain tumor —<br /><em>with surgery, radiation, or both.</em>
           </h2>
           <p className="cond-editorial__lead">
             Meningioma arises from the meninges — the membranes enveloping the brain and spinal cord.
-            It grows slowly and remains well-defined, which makes it ideal for stereotactic radiation.
+            It grows slowly and remains well-defined.
             In cats, it is the most common intracranial tumor. In dogs, it typically occurs in older,
             large-breed animals and grows along the brain&apos;s surface.
           </p>
@@ -126,16 +89,14 @@ export default function MeningiomaPage() {
             In cats, meningiomas are frequently well-encapsulated and surgically accessible — surgery
             can achieve excellent long-term outcomes and is often the best option. In dogs, meningiomas
             tend to be more infiltrative and complete resection is often not feasible, so radiation
-            frequently plays the primary role. Stereotactic radiation (SRS/SRT) targets the tumor volume
-            with ablative precision and is also valuable after incomplete resection or when surgery is
+            frequently plays the primary role. Radiation therapy targets the tumor volume
+            precisely and is also valuable after incomplete resection or when surgery is
             not an option. Dr. DiBernardi reviews each case to recommend the most appropriate approach.
           </p>
           <div className="cond-editorial__fact">
             <div className="cond-editorial__fact-icon" aria-hidden="true">{INFO_ICON}</div>
             <div className="cond-editorial__fact-text">
-              <strong>Feline meningioma is among the best prognosis cases in veterinary oncology.</strong>{' '}
-              Cats treated with SRS/SRT often maintain excellent quality of life throughout — eating,
-              grooming, and interacting normally — with durable tumor control lasting years, not months.
+              When surgery is not feasible, cats treated with radiation therapy often maintain good quality of life.
             </div>
           </div>
           <h3 className="cond-editorial__h3">What imaging is required before treatment</h3>
@@ -143,47 +104,21 @@ export default function MeningiomaPage() {
             MRI is the gold standard for meningioma diagnosis and treatment planning — it defines
             tumor boundaries, location relative to critical structures, and degree of brain compression.
             CT may also be used for radiation planning. Dr. DiBernardi reviews all imaging personally
-            before designing each treatment plan, selecting between SRS/SRT and CFRT based on
+            before designing each treatment plan, selecting the appropriate protocol based on
             tumor size, location, and clinical picture.
           </p>
           <div className="cond-editorial__fact">
             <div className="cond-editorial__fact-icon" aria-hidden="true">{INFO_ICON}</div>
             <div className="cond-editorial__fact-text">
               At AARADONC, <strong>Dr. Lisa DiBernardi</strong> personally reviews every meningioma
-              case before treatment begins. SRS/SRT is typically the first choice — but the protocol
-              is always chosen based on your pet&apos;s specific imaging and clinical history.
+              case before treatment begins. The protocol is chosen based on your pet&apos;s imaging
+              and clinical history.
             </div>
           </div>
         </div>
       </section>
 
-      <div className="cond-bridge" aria-label="Key outcomes">
-        <div className="cond-bridge__stat">
-          <div className="cond-bridge__val">24<em>mo+</em></div>
-          <div className="cond-bridge__label">Median survival for feline meningioma with surgery</div>
-        </div>
-        <div className="cond-bridge__stat">
-          <div className="cond-bridge__val">1–<em>5</em></div>
-          <div className="cond-bridge__label">Sessions with SRS/SRT — submillimeter precision</div>
-        </div>
-        <div className="cond-bridge__stat">
-          <div className="cond-bridge__val">Same<em> day</em></div>
-          <div className="cond-bridge__label">Home after every session — outpatient treatment</div>
-        </div>
-      </div>
 
-
-      <section className="seccion" aria-labelledby="faq-heading">
-        <div className="contenedor">
-          <div style={{ textAlign: 'center', maxWidth: 580, margin: '0 auto' }}>
-            <div className="eyebrow" style={{ justifyContent: 'center' }}>Common Questions</div>
-            <h2 id="faq-heading" className="titulo-seccion">
-              What pet families<br /><em>ask us most.</em>
-            </h2>
-          </div>
-          <FAQAccordion items={FAQ_ITEMS} />
-        </div>
-      </section>
 
       <References items={REFERENCES} />
 
@@ -195,7 +130,7 @@ export default function MeningiomaPage() {
           </div>
           <p className="cond-cta__text">
             Dr. DiBernardi personally reviews every case. Tell us about your pet and we&apos;ll
-            respond promptly with a clear, honest recommendation.
+            respond promptly with a clear recommendation.
           </p>
           <Link href="/contact-pet-owners" className="cond-cta__btn-primary">Request a Consultation</Link>
         </div>

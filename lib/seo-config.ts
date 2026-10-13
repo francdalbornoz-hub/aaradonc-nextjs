@@ -15,6 +15,8 @@
  * All titles extracted from source-content/*.txt files — not generated.
  */
 
+import { esPath } from './i18n'
+
 // ─── Environment ──────────────────────────────────────────────────────────────
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://aaradonc.com'
 const SITE_NAME = 'Animal Alliance Radiation Oncology'
@@ -113,7 +115,7 @@ const RAW_PAGES: Record<string, RawPageData> = {
   // ── Main pages ──────────────────────────────────────────────────────────────
 
   '/': {
-    title: `Precision Radiation Therapy for Dogs and Cats in Florida | ${SITE_NAME}`,
+    title: `Radiation Therapy for Dogs and Cats in Florida | ${SITE_NAME}`,
     description:
       'The only center 100% dedicated to Radiation Oncology in Florida. Board Certified Radiation Oncologist ON SITE. Advanced technology. Prompt response. Always.',
     sitemap: { priority: 1.0, changefreq: 'weekly' },
@@ -157,7 +159,7 @@ const RAW_PAGES: Record<string, RawPageData> = {
   },
 
   '/pet-cancer': {
-    title: `Pet Cancer — Precision Radiation Therapy for Dogs & Cats | ${SITE_NAME}`,
+    title: `Pet Cancer — Radiation Therapy for Dogs & Cats | ${SITE_NAME}`,
     description:
       'Radiation therapy for pet cancer in Florida. Personalized plans for dogs and cats. Board Certified Radiation Oncologist ON SITE. Outpatient treatment.',
     sitemap: { priority: 0.8, changefreq: 'monthly' },
@@ -186,9 +188,9 @@ const RAW_PAGES: Record<string, RawPageData> = {
   },
 
   '/cat-cancer': {
-    title: `Cat Cancer Treatment — Precision Radiation in Florida | ${SITE_NAME}`,
+    title: `Cat Cancer Treatment — Radiation Therapy in Florida | ${SITE_NAME}`,
     description:
-      'Cat cancer treatment in Florida — precision radiation, only. Advanced veterinary radiation therapy for cats by a Board Certified Radiation Oncologist ON SITE.',
+      'Cat cancer treatment in Florida with veterinary radiation therapy for cats by a Board Certified Radiation Oncologist ON SITE.',
     sitemap: { priority: 0.8, changefreq: 'monthly' },
     schema: {
       localBusiness: true,
@@ -917,18 +919,38 @@ export function getAllPageSeo(): Array<{ path: string } & PageSeo> {
 }
 
 /**
- * All paths that should appear in sitemap.xml.
+ * Routes that have a RAW_PAGES entry but NO actual page yet (would 404).
+ * Excluded from the sitemap so Google doesn't flag them as errors.
+ * (Audit 2026-10 technical finding.) Remove a slug from here once its page exists.
+ */
+const SITEMAP_EXCLUDE = new Set<string>([
+  '/chondrosarcoma', '/digit-tumors', '/ear-canal-tumors', '/lung-tumor',
+  '/metastatic-bone-cancer', '/nasal-squamous-cell-carcinoma', '/palliative-radiation',
+  '/post-surgical-radiation', '/salivary-gland-tumors', '/thyroid-tumors',
+  '/transitional-cell-carcinoma',
+])
+
+/**
+ * All paths that should appear in sitemap.xml (excludes routes without a page).
  */
 export function getSitemapPaths(): Array<{
   url: string
   priority: number
   changefreq: PageSeo['sitemap']['changefreq']
 }> {
-  return getAllPageSeo().map(({ canonical, sitemap }) => ({
+  const included = getAllPageSeo().filter(({ path }) => !SITEMAP_EXCLUDE.has(path))
+  const enEntries = included.map(({ canonical, sitemap }) => ({
     url: canonical,
     priority: sitemap.priority,
     changefreq: sitemap.changefreq,
   }))
+  // Spanish mirror: every indexable EN page also has a translated /es counterpart.
+  const esEntries = included.map(({ path, sitemap }) => ({
+    url: `${SITE_URL}${esPath(path)}`,
+    priority: sitemap.priority,
+    changefreq: sitemap.changefreq,
+  }))
+  return [...enEntries, ...esEntries]
 }
 
 /**
@@ -948,3 +970,207 @@ export const CONDITION_PATHS = [
 ] as const
 
 export type ConditionPath = typeof CONDITION_PATHS[number]
+
+// ═══════════════════════════════════════════════════════════════════════════
+// SPANISH SEO (ES) + hreflang alternates
+// EN pages stay at the root; ES pages live under /es/. hreflang is bidirectional
+// (en ↔ es) with x-default → English. Spanish titles/descriptions are keyed by
+// the ENGLISH path (same keys as RAW_PAGES). Missing entries fall back to the
+// English copy so nothing breaks before a page is translated.
+// ═══════════════════════════════════════════════════════════════════════════
+
+type RawEsSeo = { title: string; description: string }
+
+export const RAW_PAGES_ES: Record<string, RawEsSeo> = {
+  '/': {
+    title: `Radioterapia para perros y gatos en Florida | ${SITE_NAME}`,
+    description:
+      'Único centro de Florida dedicado exclusivamente a la radioterapia veterinaria, con atención directa de una radiooncóloga certificada y respuesta rápida.',
+  },
+  '/radiation-therapy': {
+    title: `Radioterapia veterinaria: protocolos y tecnología | ${SITE_NAME}`,
+    description:
+      'Radioterapia fraccionada, SRS/SRT y radioterapia paliativa con tecnología Varian TrueBeam, a cargo de una radiooncóloga certificada.',
+  },
+  '/for-veterinarians': {
+    title: `Derivar un paciente a radioterapia veterinaria | ${SITE_NAME}`,
+    description:
+      'Deriva un paciente a radioterapia veterinaria en Florida, con atención directa de una radiooncóloga certificada. Al terminar, el paciente continúa su seguimiento en tu clínica.',
+  },
+  '/radiation-oncologist': {
+    title: `Radiooncóloga veterinaria certificada en Florida | ${SITE_NAME}`,
+    description:
+      'Conoce a la Dra. Lisa DiBernardi, radiooncóloga veterinaria certificada. Diseña y revisa personalmente el tratamiento de cada paciente.',
+  },
+  '/pet-cancer': {
+    title: `Cáncer en mascotas: radioterapia para perros y gatos | ${SITE_NAME}`,
+    description:
+      'Radioterapia para perros y gatos con cáncer en Florida. Sesiones ambulatorias y atención directa de una radiooncóloga certificada.',
+  },
+  '/dog-cancer': {
+    title: `Cáncer en perros: radioterapia en Florida | ${SITE_NAME}`,
+    description:
+      'Radioterapia para perros con cáncer en Florida, a cargo de una radiooncóloga certificada. Único centro dedicado exclusivamente a la radioterapia veterinaria.',
+  },
+  '/cat-cancer': {
+    title: `Cáncer en gatos: radioterapia en Florida | ${SITE_NAME}`,
+    description:
+      'Radioterapia para gatos con cáncer en Florida, con protocolos pensados para la especie y a cargo de una radiooncóloga certificada.',
+  },
+  '/contact': {
+    title: `Contacto: radioterapia veterinaria en Florida | ${SITE_NAME}`,
+    description:
+      'Contáctanos para agendar una consulta de radioterapia veterinaria en Florida. Atención directa de una radiooncóloga certificada. Respuesta rápida.',
+  },
+  '/contact-pet-owners': {
+    title: `Contacto: agendar una consulta | ${SITE_NAME}`,
+    description:
+      'Agenda una consulta para tu mascota. Te responderemos a la brevedad. Único centro de Florida dedicado exclusivamente a la radioterapia veterinaria.',
+  },
+  '/contact-referrers': {
+    title: `Derivar un paciente: contacto para veterinarios | ${SITE_NAME}`,
+    description:
+      'Deriva un paciente al único centro de Florida dedicado exclusivamente a la radioterapia veterinaria. Nos comunicamos contigo en cuanto recibamos la derivación.',
+  },
+  '/brain-tumors': {
+    title: `Radioterapia para tumores cerebrales en perros y gatos | ${SITE_NAME}`,
+    description:
+      'Radioterapia para tumores cerebrales en perros y gatos en Florida. Tratamiento guiado por imagen con Varian TrueBeam. Radiooncóloga certificada.',
+  },
+  '/meningioma': {
+    title: `Radioterapia para meningioma en perros y gatos | ${SITE_NAME}`,
+    description:
+      'Radioterapia para meningiomas en perros y gatos. Protocolos SRS/SRT y de radioterapia fraccionada. Atención directa de una radiooncóloga certificada en Florida.',
+  },
+  '/glioma': {
+    title: `Radioterapia para glioma en perros | ${SITE_NAME}`,
+    description:
+      'Radioterapia para gliomas en perros. Protocolos personalizados de radioterapia fraccionada y SRS. Atención directa de una radiooncóloga certificada en Florida.',
+  },
+  '/pituitary-tumors': {
+    title: `Radioterapia para tumores de hipófisis en perros y gatos | ${SITE_NAME}`,
+    description:
+      'Radioterapia para tumores de hipófisis en perros y gatos. Tratamiento guiado por imagen. Atención directa de una radiooncóloga certificada en Florida.',
+  },
+  '/spinal-tumors': {
+    title: `Radioterapia para tumores espinales en perros y gatos | ${SITE_NAME}`,
+    description:
+      'Radioterapia para tumores espinales en perros y gatos. Tratamiento guiado por imagen con Varian TrueBeam. Radiooncóloga certificada en Florida.',
+  },
+  '/nasal-tumors': {
+    title: `Radioterapia para tumores nasales en perros y gatos | ${SITE_NAME}`,
+    description:
+      'Radioterapia para tumores nasales en perros y gatos en Florida. Protocolos de radioterapia fraccionada y SRS. Atención directa de una radiooncóloga certificada.',
+  },
+  '/nasal-carcinoma': {
+    title: `Radioterapia para carcinoma nasal en perros | ${SITE_NAME}`,
+    description:
+      'Radioterapia para carcinoma nasal en perros. Tratamiento guiado por imagen. Único centro de Florida dedicado exclusivamente a la radioterapia.',
+  },
+  '/oral-tumors': {
+    title: `Radioterapia para tumores orales en perros y gatos | ${SITE_NAME}`,
+    description:
+      'Radioterapia para tumores orales en perros y gatos: fibrosarcoma, melanoma, carcinoma de células escamosas, entre otros. Radiooncóloga certificada en Florida.',
+  },
+  '/oral-melanoma': {
+    title: `Radioterapia para melanoma oral en perros | ${SITE_NAME}`,
+    description:
+      'Radioterapia para melanoma oral en perros. Tratamiento personalizado. Atención directa de una radiooncóloga certificada en Florida.',
+  },
+  '/oral-squamous-cell-carcinoma': {
+    title: `Radioterapia para carcinoma de células escamosas oral | ${SITE_NAME}`,
+    description:
+      'Radioterapia para carcinoma de células escamosas oral en perros y gatos. Tratamiento con Varian TrueBeam. Atención directa de una radiooncóloga certificada.',
+  },
+  '/fibrosarcoma': {
+    title: `Radioterapia para fibrosarcoma en perros y gatos | ${SITE_NAME}`,
+    description:
+      'Radioterapia para fibrosarcoma en perros y gatos. Protocolos adaptados a cada caso. Atención directa de una radiooncóloga certificada en Florida.',
+  },
+  '/heart-base-tumors': {
+    title: `Radioterapia para tumores de la base del corazón en perros | ${SITE_NAME}`,
+    description:
+      'Radioterapia para tumores de la base del corazón, quimiodectoma y hemangiosarcoma cardíaco en perros. Atención directa de una radiooncóloga certificada en Florida.',
+  },
+  '/soft-tissue-sarcomas': {
+    title: `Radioterapia para sarcomas de tejidos blandos en perros y gatos | ${SITE_NAME}`,
+    description:
+      'Radioterapia para sarcomas de tejidos blandos en perros y gatos en Florida. Radioterapia posquirúrgica y fraccionada. Radiooncóloga certificada.',
+  },
+  '/mast-cell-tumors': {
+    title: `Radioterapia para mastocitomas en perros | ${SITE_NAME}`,
+    description:
+      'Radioterapia para mastocitomas en perros en Florida. Protocolos de radioterapia fraccionada y posquirúrgica. Atención directa de una radiooncóloga certificada.',
+  },
+  '/vaccine-associated-sarcoma': {
+    title: `Radioterapia para sarcoma asociado al punto de inyección | ${SITE_NAME}`,
+    description:
+      'Radioterapia para sarcoma asociado al punto de inyección en gatos, en Florida. Radioterapia antes o después de la cirugía. Atención directa de una radiooncóloga certificada.',
+  },
+  '/osteosarcoma': {
+    title: `Radioterapia para osteosarcoma en perros y gatos | ${SITE_NAME}`,
+    description:
+      'Radioterapia para osteosarcoma en perros y gatos. Protocolos paliativos y con intención curativa. Atención directa de una radiooncóloga certificada en Florida.',
+  },
+  '/lymphoma': {
+    title: `Radioterapia para linfoma en perros y gatos | ${SITE_NAME}`,
+    description:
+      'Radioterapia para linfoma en perros y gatos. Protocolos personalizados. Atención directa de una radiooncóloga certificada en Florida.',
+  },
+  '/bladder-cancer': {
+    title: `Radioterapia para cáncer de vejiga en perros | ${SITE_NAME}`,
+    description:
+      'Radioterapia para cáncer de vejiga en perros en Florida. Protocolos adaptados a cada caso. Atención directa de una radiooncóloga certificada.',
+  },
+  '/anal-sac-carcinoma': {
+    title: `Radioterapia para carcinoma de sacos anales en perros | ${SITE_NAME}`,
+    description:
+      'Radioterapia para carcinoma de sacos anales en perros en Florida. Protocolos personalizados. Atención directa de una radiooncóloga certificada.',
+  },
+  // Remaining Spanish titles/descriptions are added as each page is translated.
+}
+
+/** Absolute EN + ES URLs for an English route (no trailing slash, matching canonical style). */
+function urlsFor(enPath: string): { enUrl: string; esUrl: string } {
+  return { enUrl: `${SITE_URL}${enPath}`, esUrl: `${SITE_URL}${esPath(enPath)}` }
+}
+
+/**
+ * hreflang alternates for a page. `lang` sets which URL is the canonical.
+ * Spread directly into a page's Next `metadata.alternates`.
+ */
+export function i18nAlternates(enPath: string, lang: 'en' | 'es') {
+  const { enUrl, esUrl } = urlsFor(enPath)
+  return {
+    canonical: lang === 'es' ? esUrl : enUrl,
+    languages: {
+      'en-US': enUrl,
+      es: esUrl,
+      'x-default': enUrl,
+    },
+  }
+}
+
+/**
+ * Spanish PageSeo for an English route. Title/description come from RAW_PAGES_ES
+ * (falling back to English), canonical is the /es/ URL, and `alternates` carries
+ * bidirectional hreflang. Use in the Spanish pages under app/es.
+ */
+export function getPageSeoEs(enPath: string): PageSeo & {
+  alternates: ReturnType<typeof i18nAlternates>
+} {
+  const en = getPageSeo(enPath)
+  const es = RAW_PAGES_ES[enPath]
+  const title = es?.title ?? en.title
+  const description = es?.description ?? en.description
+  const url = `${SITE_URL}${esPath(enPath)}`
+  return {
+    title,
+    description,
+    canonical: url,
+    og: { title, description, image: en.og.image, url, type: en.og.type },
+    sitemap: en.sitemap,
+    schema: en.schema,
+    alternates: i18nAlternates(enPath, 'es'),
+  }
+}

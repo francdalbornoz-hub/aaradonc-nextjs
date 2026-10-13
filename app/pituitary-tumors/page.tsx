@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { getPageSeo } from '@/lib/seo-config'
-import FAQAccordion from '@/components/ui/FAQAccordion'
 import References, { type Reference } from '@/components/ui/References'
 
 // Peer-reviewed sources supporting the claims on this page (definitive/
@@ -10,7 +9,7 @@ import References, { type Reference } from '@/components/ui/References'
 const REFERENCES: Reference[] = [
   { authors: 'Rapastella S, et al.', year: '2023', title: 'Effect of pituitary-dependent hypercortisolism on the survival of dogs treated with radiotherapy for pituitary macroadenomas', source: 'J Vet Intern Med' },
   { authors: 'Mayer MN, Treuil PL', year: '2007', title: 'Radiation therapy for pituitary tumors in the dog and cat', source: 'Can Vet J. 48:316' },
-  { authors: 'Wormhoudt TL, et al.', year: '2018', title: 'Stereotactic radiation therapy for the treatment of functional pituitary adenomas', source: 'J Vet Intern Med' },
+  { authors: 'Wormhoudt TL, et al.', year: '2018', title: 'Stereotactic radiation therapy for the treatment of functional pituitary adenomas associated with feline acromegaly', source: 'J Vet Intern Med' },
 ]
 
 const pageSeo = getPageSeo('/pituitary-tumors')
@@ -27,29 +26,6 @@ const INFO_ICON = (
     <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
   </svg>
 )
-
-const FAQ_ITEMS = [
-  {
-    q: 'What is a pituitary tumor in dogs and cats?',
-    a: 'Pituitary tumors arise from the pituitary gland at the base of the brain. They are classified as microadenomas (small, non-invasive) or macroadenomas (large, with neurological compression). In dogs, pituitary-dependent Cushing\'s disease (hyperadrenocorticism) is caused by a pituitary adenoma secreting excess ACTH. As the tumor grows larger — a macroadenoma — it compresses surrounding brain tissue and causes neurological signs in addition to hormonal effects.',
-  },
-  {
-    q: 'Why is radiation used for pituitary tumors?',
-    a: 'Radiation therapy targets the pituitary tumor directly, controlling both structural growth and hormonal overproduction. For macroadenomas causing neurological signs, radiation is often the primary treatment — reversing or halting neurological deficits while simultaneously controlling cortisol excess. For dogs with Cushing\'s disease from a macroadenoma, RT reduces ACTH secretion and improves hormonal control, often allowing a reduction in medical management.',
-  },
-  {
-    q: 'What are the results of radiation for pituitary macroadenomas?',
-    a: 'Dogs with pituitary macroadenomas treated with definitive radiation consistently achieve median survival times of 12–20 months, with many surviving 2 years or more. Neurological improvement is seen in the majority of treated dogs — often within weeks. Hormonal improvement (reduced cortisol, better Cushing\'s control) follows in most cases. Results in cats are similarly favorable.',
-  },
-  {
-    q: 'Does my dog need to stop Cushing\'s medication during radiation?',
-    a: 'Not necessarily. Medical management of Cushing\'s disease (trilostane, mitotane) is typically continued during radiation therapy. Dr. DiBernardi coordinates with your internal medicine specialist or primary veterinarian to optimize hormonal management throughout the radiation course. After treatment is complete, medication doses often require adjustment as the tumor shrinks.',
-  },
-  {
-    q: 'How many sessions does radiation for a pituitary tumor require?',
-    a: 'The protocol depends on tumor size and definition. SRS/SRT (1–5 sessions) is preferred for smaller, well-defined pituitary tumors. CFRT (15–20 sessions) is used for larger macroadenomas. Both are delivered under short general anesthesia with same-day discharge.',
-  },
-]
 
 export default function PituitaryTumorsPage() {
   return (
@@ -77,27 +53,14 @@ export default function PituitaryTumorsPage() {
           </h1>
           <p className="cond-hero__sub">
             Pituitary macroadenomas cause both neurological compression and hormonal overproduction.
-            Radiation therapy targets the tumor directly — controlling growth, reversing neurological
-            deficits, and improving hormonal regulation simultaneously.
+            Radiation therapy targets the tumor directly — controlling its growth and the neurological
+            signs it causes.
           </p>
           <div className="cond-hero__ctas">
             <Link href="/contact-pet-owners" className="cta-primario">Request a Consultation</Link>
           </div>
-          <div className="cond-hero__badges">
-            <div className="cond-hero__badge">Board Certified Radiation Oncologist on site</div>
-            <div className="cond-hero__badge">Palm Beach County, FL</div>
-            <div className="cond-hero__badge">Same-week consultations</div>
-          </div>
         </div>
       </section>
-
-      <div className="pos-strip">
-        <div className="pos-strip__inner">
-          <p className="pos-strip__text">
-            <strong>&ldquo;The only center 100% dedicated to Radiation Oncology in Florida&rdquo;</strong>
-          </p>
-        </div>
-      </div>
 
       <section style={{ background: '#fff' }} aria-labelledby="editorial-heading">
         <div className="cond-editorial">
@@ -106,13 +69,13 @@ export default function PituitaryTumorsPage() {
             <div className="cond-editorial__kicker-text">Understanding Pituitary Tumors in Pets</div>
           </div>
           <h2 id="editorial-heading" className="cond-editorial__h2">
-            One tumor, two problems —<br /><em>radiation addresses both.</em>
+            One tumor, two problems —<br /><em>radiation targets the tumor.</em>
           </h2>
           <p className="cond-editorial__lead">
             The pituitary gland sits at the base of the brain. Tumors here — whether microadenomas or
             macroadenomas — affect two systems simultaneously: they compress brain structures as they
             grow, and they produce excess hormones that disrupt the body&apos;s regulation. Radiation
-            therapy is uniquely positioned to address both problems with a single, well-targeted treatment course.
+            targets the tumor to control its growth and the neurological signs it causes.
           </p>
           <p className="cond-editorial__body">
             In dogs, pituitary tumors are the most common cause of Cushing&apos;s disease
@@ -127,7 +90,7 @@ export default function PituitaryTumorsPage() {
             neurological signs — or dogs with a confirmed pituitary macroadenoma on MRI — are
             candidates for radiation therapy. RT is also considered when medical management of
             Cushing&apos;s becomes difficult due to escalating tumor size. Early intervention —
-            before significant neurological damage has occurred — consistently produces better outcomes.
+            before significant neurological damage has occurred — produces better outcomes.
           </p>
           <div className="cond-editorial__fact">
             <div className="cond-editorial__fact-icon" aria-hidden="true">{INFO_ICON}</div>
@@ -135,16 +98,16 @@ export default function PituitaryTumorsPage() {
               <strong>Cushing&apos;s disease that is difficult to control medically</strong> may signal
               a growing pituitary macroadenoma. MRI evaluation is warranted when hormonal control
               becomes unpredictable — the tumor may be compressing the hypothalamus and affecting
-              feedback regulation, making radiation the most effective next step.
+              feedback regulation, and radiation may be the next step.
             </div>
           </div>
           <h3 className="cond-editorial__h3">What radiation achieves for pituitary tumors</h3>
           <p className="cond-editorial__body">
-            Radiation controls local tumor growth, relieves intracranial compression, and reduces
-            ACTH secretion — leading to improved hormonal control and neurological stabilization.
-            Most dogs treated with definitive radiation for pituitary macroadenoma achieve median
-            survivals of 12–20 months. Neurological improvement is typically seen within weeks of
-            completing treatment, and hormonal improvement often allows reduction in medical management.
+            Radiation controls local tumor growth and relieves intracranial compression. Its effect
+            on hormone levels varies between patients, so medical management of Cushing&apos;s disease
+            usually continues and is adjusted over time. Median survival times of 12–20 months have
+            been reported in dogs treated with radiation for pituitary macroadenoma. Many dogs show
+            neurological improvement after treatment.
           </p>
           <div className="cond-editorial__fact">
             <div className="cond-editorial__fact-icon" aria-hidden="true">{INFO_ICON}</div>
@@ -157,33 +120,7 @@ export default function PituitaryTumorsPage() {
         </div>
       </section>
 
-      <div className="cond-bridge" aria-label="Key outcomes">
-        <div className="cond-bridge__stat">
-          <div className="cond-bridge__val">12–<em>20</em>mo</div>
-          <div className="cond-bridge__label">Median survival for pituitary macroadenoma with RT</div>
-        </div>
-        <div className="cond-bridge__stat">
-          <div className="cond-bridge__val">Neuro<em> + Hormonal</em></div>
-          <div className="cond-bridge__label">Both addressed simultaneously with targeted radiation</div>
-        </div>
-        <div className="cond-bridge__stat">
-          <div className="cond-bridge__val">Same<em> day</em></div>
-          <div className="cond-bridge__label">Home after every session — outpatient treatment</div>
-        </div>
-      </div>
 
-
-      <section className="seccion" aria-labelledby="faq-heading">
-        <div className="contenedor">
-          <div style={{ textAlign: 'center', maxWidth: 580, margin: '0 auto' }}>
-            <div className="eyebrow" style={{ justifyContent: 'center' }}>Common Questions</div>
-            <h2 id="faq-heading" className="titulo-seccion">
-              What pet families<br /><em>ask us most.</em>
-            </h2>
-          </div>
-          <FAQAccordion items={FAQ_ITEMS} />
-        </div>
-      </section>
 
       <References items={REFERENCES} />
 
@@ -195,7 +132,7 @@ export default function PituitaryTumorsPage() {
           </div>
           <p className="cond-cta__text">
             Dr. DiBernardi personally reviews every case. Tell us about your pet and we&apos;ll
-            respond promptly with a clear, honest recommendation.
+            respond promptly with a clear recommendation.
           </p>
           <Link href="/contact-pet-owners" className="cond-cta__btn-primary">Request a Consultation</Link>
         </div>

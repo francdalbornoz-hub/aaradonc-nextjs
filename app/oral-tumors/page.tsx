@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { getPageSeo } from '@/lib/seo-config'
-import FAQAccordion from '@/components/ui/FAQAccordion'
 import References, { type Reference } from '@/components/ui/References'
 
 // Peer-reviewed sources supporting the claims on this page (radiation for oral
@@ -10,7 +9,6 @@ import References, { type Reference } from '@/components/ui/References'
 const REFERENCES: Reference[] = [
   { authors: 'Baja AJ, et al.', year: '2022', title: 'A retrospective study of 101 dogs with oral melanoma treated with a weekly or biweekly 6 Gy × 6 radiotherapy protocol', source: 'Vet Comp Oncol' },
   { authors: 'van der Steen F, Zandvliet M', year: '2020', title: 'Treatment of canine oral papillary squamous cell carcinoma using definitive-intent radiation as a monotherapy: a case series', source: 'Vet Comp Oncol' },
-  { authors: 'Lawrence J, et al.', year: '2008', title: 'Four-fraction radiation therapy for macroscopic soft tissue sarcomas in 16 dogs', source: 'J Am Anim Hosp Assoc' },
 ]
 
 const pageSeo = getPageSeo('/oral-tumors')
@@ -27,29 +25,6 @@ const INFO_ICON = (
     <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
   </svg>
 )
-
-const FAQ_ITEMS = [
-  {
-    q: 'What are the most common oral tumors in dogs and cats?',
-    a: 'In dogs, the most common oral tumors are oral melanoma, squamous cell carcinoma (SCC), fibrosarcoma, and acanthomatous ameloblastoma (epulis). In cats, SCC is by far the most common oral tumor and tends to be highly aggressive. Tumor type determines prognosis, treatment approach, and the role radiation plays.',
-  },
-  {
-    q: 'When is radiation recommended for oral tumors?',
-    a: 'Radiation is recommended when surgery leaves positive or narrow margins (post-surgical CFRT), when the tumor is not surgically resectable due to location or extent, or when palliative symptom control is the primary goal. For oral melanoma, radiation is often the primary local treatment — combined with immunotherapy in some protocols.',
-  },
-  {
-    q: 'Can radiation cure an oral tumor?',
-    a: 'For some tumor types — particularly acanthomatous epulis and some cases of fibrosarcoma treated with CFRT — curative intent is realistic. For oral melanoma, radiation achieves excellent local control, though systemic disease remains a concern. For oral SCC, radiation combined with other modalities can extend meaningful survival, though cure is less common.',
-  },
-  {
-    q: 'How many sessions does oral tumor radiation take?',
-    a: 'Definitive CFRT for curative intent involves 16–20 daily sessions over 3–4 weeks. Palliative protocols involve 3–5 sessions when quality of life is the primary goal. The protocol is determined by Dr. DiBernardi based on tumor type, staging, surgical history, and your goals.',
-  },
-  {
-    q: 'Does my pet need a referral?',
-    a: 'Pet families may contact us directly. We welcome self-referred cases and collaborate with your primary care veterinarian throughout treatment.',
-  },
-]
 
 export default function OralTumorsPage() {
   return (
@@ -76,28 +51,15 @@ export default function OralTumorsPage() {
             Oral tumor radiation<br />therapy for pets<br /><em>in Florida.</em>
           </h1>
           <p className="cond-hero__sub">
-            Oral tumors are the fourth most common cancer in dogs. Radiation plays a critical role —
+            Radiation plays a critical role in oral tumor management —
             as post-surgical treatment to eliminate microscopic disease, as primary therapy when
             surgery is not feasible, or as palliative care to relieve pain and restore function.
           </p>
           <div className="cond-hero__ctas">
             <Link href="/contact-pet-owners" className="cta-primario">Request a Consultation</Link>
           </div>
-          <div className="cond-hero__badges">
-            <div className="cond-hero__badge">Board Certified Radiation Oncologist on site</div>
-            <div className="cond-hero__badge">Palm Beach County, FL</div>
-            <div className="cond-hero__badge">Same-week consultations</div>
-          </div>
         </div>
       </section>
-
-      <div className="pos-strip">
-        <div className="pos-strip__inner">
-          <p className="pos-strip__text">
-            <strong>&ldquo;The only center 100% dedicated to Radiation Oncology in Florida&rdquo;</strong>
-          </p>
-        </div>
-      </div>
 
       <section style={{ background: '#fff' }} aria-labelledby="editorial-heading">
         <div className="cond-editorial">
@@ -112,7 +74,7 @@ export default function OralTumorsPage() {
             Oral tumors in dogs and cats span a wide range of histologies — each with different biology,
             behavior, and response to treatment. What they share is the challenge of location: the
             oral cavity&apos;s proximity to critical structures makes surgery complex, and wide surgical
-            margins are rarely achievable. Radiation addresses this directly.
+            margins can be difficult to achieve. Radiation addresses this directly.
           </p>
           <p className="cond-editorial__body">
             Radiation therapy is used in three distinct contexts for oral tumors: as post-surgical
@@ -126,8 +88,8 @@ export default function OralTumorsPage() {
             very differently. Melanoma requires systemic consideration in addition to local control.
             Fibrosarcoma is locally aggressive and recurrence-prone. SCC in cats is among the most
             challenging cancers in veterinary medicine. Acanthomatous epulis — while locally destructive
-            — has excellent outcomes with CFRT. Treatment planning at AARADONC begins with identifying
-            exactly what the tumor is before deciding how to treat it.
+            — has excellent outcomes with radiation therapy. Treatment planning at AARADONC begins with
+            identifying exactly what the tumor is before deciding how to treat it.
           </p>
           <div className="cond-editorial__fact">
             <div className="cond-editorial__fact-icon" aria-hidden="true">{INFO_ICON}</div>
@@ -156,73 +118,7 @@ export default function OralTumorsPage() {
         </div>
       </section>
 
-      <section className="cond-types" aria-labelledby="types-heading">
-        <div className="cond-types__inner">
-          <div className="cond-types__header">
-            <div className="eyebrow-label">Oral Tumor Types We Treat</div>
-            <h2 id="types-heading" className="titulo-seccion">Common oral tumors<br />in dogs and cats.</h2>
-            <p className="cond-types__sub">
-              Each oral tumor type has different biology, behavior, and treatment priorities.
-              Dr. DiBernardi selects the protocol based on histopathology, CT staging, surgical history, and your goals.
-            </p>
-          </div>
-          <div className="cond-types__grid">
-            {[
-              { href: '/oral-melanoma', species: 'Dogs', name: 'Oral Melanoma', desc: 'The most common malignant oral tumor in dogs. Radiation achieves excellent local control — typically combined with immunotherapy for systemic disease.', tag: 'Palliative · Local control' },
-              { href: '/oral-squamous-cell-carcinoma', species: 'Dogs & Cats', name: 'Squamous Cell Carcinoma', desc: 'SCC is the most common oral tumor in cats and the second most common in dogs. Radiation provides meaningful local control, especially when surgery is not feasible.', tag: 'CFRT · Palliative' },
-              { href: '/fibrosarcoma', species: 'Dogs', name: 'Fibrosarcoma', desc: 'Locally aggressive and prone to recurrence after surgery. CFRT post-resection significantly reduces recurrence rates and extends disease-free intervals.', tag: 'Post-surgical CFRT' },
-              { href: null, species: 'Dogs', name: 'Acanthomatous Epulis', desc: 'While not technically malignant, acanthomatous epulis invades bone aggressively. CFRT achieves >90% long-term local control — often without surgery.', tag: '★ Excellent response to CFRT' },
-              { href: null, species: 'Dogs', name: 'Osteosarcoma of the jaw', desc: 'Oral osteosarcoma carries a different prognosis than appendicular OSA. Radiation is used post-surgically or palliatively for unresectable cases.', tag: 'Post-surgical · Palliative' },
-              { href: null, species: 'Ask us', name: 'Other oral tumors', desc: 'Every oral tumor case is evaluated individually. Our Radiation Oncologist reviews all oral cavity tumor types and determines the appropriate treatment approach.', tag: 'Case-by-case evaluation' },
-            ].map(({ href, species, name, desc, tag }) => (
-              href ? (
-                <Link key={name} href={href} className="cond-type-card">
-                  <div className="cond-type-card__species">{species}</div>
-                  <div className="cond-type-card__name">{name}</div>
-                  <div className="cond-type-card__desc">{desc}</div>
-                  <div className="cond-type-card__tag">{tag}</div>
-                  <div className="cond-type-card__link">Learn more →</div>
-                </Link>
-              ) : (
-                <div key={name} className="cond-type-card cond-type-card--muted">
-                  <div className="cond-type-card__species">{species}</div>
-                  <div className="cond-type-card__name">{name}</div>
-                  <div className="cond-type-card__desc">{desc}</div>
-                  <div className="cond-type-card__tag">{tag}</div>
-                </div>
-              )
-            ))}
-          </div>
-        </div>
-      </section>
 
-      <div className="cond-bridge" aria-label="Key outcomes">
-        <div className="cond-bridge__stat">
-          <div className="cond-bridge__val">90<em>%+</em></div>
-          <div className="cond-bridge__label">Local control for acanthomatous epulis with CFRT</div>
-        </div>
-        <div className="cond-bridge__stat">
-          <div className="cond-bridge__val">3–<em>5</em></div>
-          <div className="cond-bridge__label">Sessions for palliative protocols — pain relief, function</div>
-        </div>
-        <div className="cond-bridge__stat">
-          <div className="cond-bridge__val">Same<em> day</em></div>
-          <div className="cond-bridge__label">Home after every session — outpatient treatment</div>
-        </div>
-      </div>
-
-
-      <section className="seccion" aria-labelledby="faq-heading">
-        <div className="contenedor">
-          <div style={{ textAlign: 'center', maxWidth: 580, margin: '0 auto' }}>
-            <div className="eyebrow" style={{ justifyContent: 'center' }}>Common Questions</div>
-            <h2 id="faq-heading" className="titulo-seccion">
-              What pet families<br /><em>ask us most.</em>
-            </h2>
-          </div>
-          <FAQAccordion items={FAQ_ITEMS} />
-        </div>
-      </section>
 
       <References items={REFERENCES} />
 
@@ -234,7 +130,7 @@ export default function OralTumorsPage() {
           </div>
           <p className="cond-cta__text">
             Dr. DiBernardi personally reviews every case. Tell us about your pet and we&apos;ll
-            respond promptly with a clear, honest recommendation.
+            respond promptly with a clear recommendation.
           </p>
           <Link href="/contact-pet-owners" className="cond-cta__btn-primary">Request a Consultation</Link>
         </div>

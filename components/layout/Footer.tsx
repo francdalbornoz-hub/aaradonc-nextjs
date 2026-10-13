@@ -1,5 +1,17 @@
+'use client'
+
 import Link from 'next/link'
-import { CONTACT_INFO } from '@/lib/nav-config'
+import { usePathname } from 'next/navigation'
+import { getContactInfo } from '@/lib/nav-config'
+import { langFromPath, esPath, type Lang } from '@/lib/i18n'
+import { CONDITION_PATHS } from '@/lib/seo-config'
+
+// Condition pages (EN + ES) already carry their own dual "For Pet Families /
+// For Veterinarians" CTA block, so the global footer CTA strip is hidden there
+// to avoid stacking three CTAs. Built from the single source of condition paths.
+const CONDITION_PATH_SET: ReadonlySet<string> = new Set(
+  CONDITION_PATHS.flatMap((p) => [p, esPath(p)])
+)
 
 // ─── Icons ────────────────────────────────────────────────────────────────────
 
@@ -48,9 +60,14 @@ function InstagramIcon() {
   )
 }
 
-// ─── Footer nav columns ───────────────────────────────────────────────────────
+// ─── Footer nav columns (EN source; ES localized at render) ──────────────────
 
-const FOOTER_NAV = [
+interface FooterCol {
+  heading: string
+  links: { label: string; href: string }[]
+}
+
+const FOOTER_NAV: FooterCol[] = [
   {
     heading: 'Services',
     links: [
@@ -92,34 +109,113 @@ const FOOTER_NAV = [
   },
 ]
 
+// EN → ES for footer headings + link labels.
+const ES_FOOTER: Record<string, string> = {
+  'Services': 'Servicios',
+  'Conditions': 'Tipos de tumores',
+  'Pet Families': 'Familias',
+  'Veterinarians': 'Veterinarios',
+  'Radiation Therapy': 'Radioterapia',
+  'Palliative Radiation': 'Radioterapia paliativa',
+  'Brain Tumors': 'Tumores cerebrales',
+  'Nasal Tumors': 'Tumores nasales',
+  'Soft Tissue Sarcomas': 'Sarcomas de tejidos blandos',
+  'Mast Cell Tumors': 'Mastocitomas',
+  'Oral Tumors': 'Tumores orales',
+  'Lymphoma': 'Linfoma',
+  'View all conditions →': 'Ver todos los tipos de tumores →',
+  'Pet Cancer': 'Cáncer en mascotas',
+  'Dog Cancer': 'Cáncer en perros',
+  'Cat Cancer': 'Cáncer en gatos',
+  'Request a Consultation': 'Agendar una consulta',
+  'For Veterinarians': 'Para veterinarios',
+  'Refer a Patient': 'Derivar un paciente',
+  'Our Radiation Oncologist': 'Nuestra radiooncóloga',
+}
+
+const CHROME = {
+  en: {
+    footerAria: 'Site footer',
+    ctaLabel: 'Promptly. Always.',
+    ctaHeadingA: 'Ready to take the next step',
+    ctaHeadingB: 'for your pet?',
+    requestConsult: 'Request a Consultation',
+    referPatient: 'Refer a Patient',
+    homeAria: 'Animal Alliance Radiation Oncology — Home',
+    logoSub: 'Radiation Oncology · Palm Beach',
+    taglineA: 'The only center 100% dedicated to',
+    taglineB: 'Radiation Oncology in Florida.',
+    cert: 'Board Certified Radiation Oncologist ON SITE',
+    rights: 'All rights reserved.',
+    privacy: 'Privacy Policy',
+    terms: 'Terms of Use',
+  },
+  es: {
+    footerAria: 'Pie de página',
+    ctaLabel: 'Te respondemos a la brevedad',
+    ctaHeadingA: '¿Tienes dudas sobre la radioterapia',
+    ctaHeadingB: 'para tu mascota?',
+    requestConsult: 'Agendar una consulta',
+    referPatient: 'Derivar un paciente',
+    homeAria: 'Ir al inicio de Animal Alliance Radiation Oncology',
+    logoSub: 'Radioterapia veterinaria · Palm Beach',
+    taglineA: 'El único centro de Florida dedicado',
+    taglineB: 'exclusivamente a la radioterapia veterinaria.',
+    cert: 'Atención directa de una radiooncóloga certificada',
+    rights: 'Todos los derechos reservados.',
+    privacy: 'Política de privacidad',
+    terms: 'Términos de uso',
+  },
+} as const
+
+function localizeHref(href: string, lang: Lang): string {
+  if (lang === 'en') return href
+  const [base, hash] = href.split('#')
+  const clean = base === '/' ? '/' : base.replace(/\/$/, '')
+  const mapped = esPath(clean)
+  return hash ? `${mapped}#${hash}` : mapped
+}
+
 // ─── Component ────────────────────────────────────────────────────────────────
 
 export default function Footer() {
+  const pathname = usePathname()
+  const lang = langFromPath(pathname)
+  const t = CHROME[lang]
+  const CONTACT_INFO = getContactInfo(lang)
   const currentYear = new Date().getFullYear()
 
-  return (
-    <footer className="site-footer" aria-label="Site footer">
+  const isConditionPage = CONDITION_PATH_SET.has(pathname.replace(/\/$/, '') || '/')
+  const homeHref = lang === 'es' ? '/es' : '/'
+  const consultHref = localizeHref('/contact-pet-owners', lang)
+  const referHref = localizeHref('/contact-referrers', lang)
+  const tl = (label: string) => (lang === 'es' ? ES_FOOTER[label] ?? label : label)
 
-      {/* ── CTA strip ───────────────────────────────────────────────────────── */}
-      <div className="footer-cta">
-        <div className="footer-cta__inner">
-          <div className="footer-cta__copy">
-            <p className="footer-cta__label">Promptly. Always.</p>
-            <h2 className="footer-cta__heading">
-              Ready to take the next step<br />
-              for your pet?
-            </h2>
-          </div>
-          <div className="footer-cta__actions">
-            <Link href="/contact-pet-owners" className="footer-btn footer-btn--primary">
-              Request a Consultation
-            </Link>
-            <Link href="/contact-referrers" className="footer-btn footer-btn--secondary">
-              Refer a Patient
-            </Link>
+  return (
+    <footer className="site-footer" aria-label={t.footerAria}>
+
+      {/* ── CTA strip (hidden on condition pages — they have their own dual CTA) ─ */}
+      {!isConditionPage && (
+        <div className="footer-cta">
+          <div className="footer-cta__inner">
+            <div className="footer-cta__copy">
+              <p className="footer-cta__label">{t.ctaLabel}</p>
+              <h2 className="footer-cta__heading">
+                {t.ctaHeadingA}<br />
+                {t.ctaHeadingB}
+              </h2>
+            </div>
+            <div className="footer-cta__actions">
+              <Link href={consultHref} className="footer-btn footer-btn--primary">
+                {t.requestConsult}
+              </Link>
+              <Link href={referHref} className="footer-btn footer-btn--secondary">
+                {t.referPatient}
+              </Link>
+            </div>
           </div>
         </div>
-      </div>
+      )}
 
       {/* ── Main footer ─────────────────────────────────────────────────────── */}
       <div className="footer-main">
@@ -127,16 +223,16 @@ export default function Footer() {
 
           {/* Brand column */}
           <div className="footer-brand">
-            <Link href="/" className="logo" aria-label="Animal Alliance Radiation Oncology — Home">
+            <Link href={homeHref} className="logo" aria-label={t.homeAria}>
               <div className="logo__main">Animal <em>Alliance</em></div>
-              <div className="logo__sub">Radiation Oncology · Palm Beach</div>
+              <div className="logo__sub">{t.logoSub}</div>
             </Link>
             <p className="footer-brand__tagline">
-              The only center 100% dedicated to<br />
-              Radiation Oncology in Florida.
+              {t.taglineA}<br />
+              {t.taglineB}
             </p>
             <p className="footer-brand__cert">
-              Board Certified Radiation Oncologist ON SITE
+              {t.cert}
             </p>
 
             {/* Contact info */}
@@ -182,12 +278,12 @@ export default function Footer() {
           <div className="footer-nav">
             {FOOTER_NAV.map((col) => (
               <div key={col.heading} className="footer-nav__col">
-                <h3 className="footer-nav__heading">{col.heading}</h3>
+                <h3 className="footer-nav__heading">{tl(col.heading)}</h3>
                 <ul className="footer-nav__list" role="list">
                   {col.links.map((link) => (
                     <li key={link.href}>
-                      <Link href={link.href} className="footer-nav__link">
-                        {link.label}
+                      <Link href={localizeHref(link.href, lang)} className="footer-nav__link">
+                        {tl(link.label)}
                       </Link>
                     </li>
                   ))}
@@ -202,13 +298,8 @@ export default function Footer() {
       <div className="footer-bottom">
         <div className="footer-bottom__inner">
           <p className="footer-bottom__copy">
-            © {currentYear} Animal Alliance Radiation Oncology. All rights reserved.
+            © {currentYear} Animal Alliance Radiation Oncology. {t.rights}
           </p>
-          <div className="footer-bottom__links">
-            <Link href="/privacy-policy" className="footer-bottom__link">Privacy Policy</Link>
-            <span aria-hidden="true">·</span>
-            <Link href="/terms-of-use" className="footer-bottom__link">Terms of Use</Link>
-          </div>
         </div>
       </div>
     </footer>

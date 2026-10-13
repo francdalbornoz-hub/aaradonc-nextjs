@@ -87,7 +87,7 @@ export default function ContactPage() {
             Request a <em>Consultation</em>
           </div>
           <p className="ct-form__sub">
-            Tell us about your pet and we will get back to you promptly — with clarity and no pressure.
+            Tell us about your pet and we will get back to you promptly.
           </p>
           {/* GTM: form_submit / consultation */}
           <FormContact variant="light" />

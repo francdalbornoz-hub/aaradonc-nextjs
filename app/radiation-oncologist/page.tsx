@@ -114,8 +114,8 @@ export default function RadiationOncologistPage() {
               <p>
                 Dr. Lisa DiBernardi, DVM, is a board-certified veterinary radiation oncologist serving
                 patients throughout Florida from AARADONC&apos;s dedicated center in Royal Palm Beach.
-                With <strong>more than 20 years of experience</strong> in veterinary radiation oncology,
-                she leads every aspect of radiation therapy planning and delivery — bringing advanced
+                With <strong>more than 20 years of oncology experience</strong>,
+                she directs radiation therapy planning and treatment — bringing advanced
                 technology, clinical precision, and a genuinely individualized approach to each case.
               </p>
               <p>
@@ -145,7 +145,7 @@ export default function RadiationOncologistPage() {
             <div className="onc-bio__panel" aria-label="Credentials and clinical focus">
               <div className="onc-bio__stat">
                 <div className="onc-bio__stat-val">20<span>+ yrs</span></div>
-                <div className="onc-bio__stat-label">Dedicated to veterinary radiation oncology</div>
+                <div className="onc-bio__stat-label">Of oncology experience</div>
               </div>
               <div className="onc-bio__stat">
                 <div className="onc-bio__stat-val">2<span>x</span></div>
@@ -261,8 +261,8 @@ export default function RadiationOncologistPage() {
             Meet the Doctor.<br /><em>Start your consultation.</em>
           </div>
           <p className="onc-cta__text">
-            Dr. DiBernardi will personally review your pet&apos;s case and provide a clear, honest
-            recommendation — with a prompt response.
+            Dr. DiBernardi will personally review your pet&apos;s case and provide a clear
+            recommendation, with a prompt response.
           </p>
           <Link href="/contact-pet-owners" className="onc-cta__btn-primary">Meet the Doctor →</Link>
         </div>
@@ -272,8 +272,7 @@ export default function RadiationOncologistPage() {
             Discuss a case<br />with <em>Dr. DiBernardi.</em>
           </div>
           <p className="onc-cta__text">
-            Dr. DiBernardi is available for direct case discussions before you refer. Call or email
-            to speak with her directly — no intermediaries.
+            Dr. DiBernardi is available for case discussions before you refer, and throughout treatment.
           </p>
           <Link href="/for-veterinarians" className="onc-cta__btn-secondary">Referral Information →</Link>
         </div>

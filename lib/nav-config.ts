@@ -11,6 +11,8 @@
  *   isSub: true                       → visually indented (sub-tumor of a parent)
  */
 
+import { esPath as esPathFn, type Lang } from './i18n'
+
 // ─── Types ────────────────────────────────────────────────────────────────────
 
 export interface NavDropdownEntry {
@@ -58,7 +60,7 @@ const RT_DROPDOWN: NavDropdownEntry[] = [
   { label: 'Treatment Intent', href: '/radiation-therapy#treatment-intent' },
   { label: 'Protocols' },
   { label: 'CFRT', href: '/radiation-therapy#cfrt', tag: 'Curative' },
-  { label: 'SRS / SRT', href: '/radiation-therapy#srs-srt', tag: '★ Precision', featured: true },
+  { label: 'SRS / SRT', href: '/radiation-therapy#srs-srt', tag: '★ Stereotactic', featured: true },
   { label: 'Palliative Radiation', href: '/radiation-therapy#palliative', tag: 'QoL' },
   { label: 'More' },
   { label: 'Conditions We Treat', href: '/radiation-therapy#conditions' },
@@ -218,3 +220,150 @@ export const CONTACT_INFO = {
   instagram: 'https://www.instagram.com/aaradonc/',
   hours: 'Mon–Thu 8:00 AM – 5:00 PM',
 } as const
+
+// ═══════════════════════════════════════════════════════════════════════════
+// SPANISH (ES) NAV — built programmatically from the EN structure above.
+// Labels are translated via a dictionary; hrefs are rewritten through the slug
+// map (lib/i18n). This keeps the mega-menu defined once. English exports above
+// stay untouched so the live English site is unaffected.
+// ═══════════════════════════════════════════════════════════════════════════
+
+// EN label / category / tag  →  ES.
+const ES_LABELS: Record<string, string> = {
+  // Main nav
+  'Home': 'Inicio',
+  'Radiation Therapy': 'Radioterapia',
+  'For Veterinarians': 'Para veterinarios',
+  'Our Radiation Oncologist': 'Nuestra radiooncóloga',
+  'Pet Cancer': 'Cáncer en mascotas',
+  'Conditions We Treat': 'Tumores que tratamos',
+  'Contact': 'Contacto',
+  // RT dropdown
+  'Overview': 'Información general',
+  'What Is Radiation Therapy': 'Qué es la radioterapia',
+  'Our Technology': 'Nuestra tecnología',
+  'Treatment Intent': 'Intención del tratamiento',
+  'Protocols': 'Protocolos',
+  'Palliative Radiation': 'Radioterapia paliativa',
+  'More': 'Más',
+  'The Process': 'Cómo es el tratamiento',
+  'Who We Help': 'A quién ayudamos',
+  'FAQ': 'Preguntas frecuentes',
+  // Tags
+  'Curative': 'Con intención curativa',
+  '★ Stereotactic': '★ Estereotáctica',
+  'QoL': 'Calidad de vida',
+  // Pet Cancer dropdown
+  'By Species': 'Por especie',
+  'Dog Cancer': 'Cáncer en perros',
+  'Cat Cancer': 'Cáncer en gatos',
+  // Contact dropdown
+  'For Pet Families': 'Para familias',
+  // Mega-menu categories
+  'Brain & Nervous System': 'Cerebro y sistema nervioso',
+  'Nasal & Sinus': 'Nariz y senos paranasales',
+  'Oral & Head / Neck': 'Boca, cabeza y cuello',
+  'Cardiac': 'Corazón',
+  'Skin & Soft Tissue': 'Piel y tejidos blandos',
+  'Bone': 'Huesos',
+  'Abdominal & Other': 'Abdomen y otros',
+  'Lymphoma / Hematopoietic': 'Linfoma y tumores hematopoyéticos',
+  // Mega-menu items
+  'Brain Tumors': 'Tumores cerebrales',
+  'Pituitary Tumors': 'Tumores de hipófisis',
+  'Brain Stem Tumors': 'Tumores del tronco encefálico',
+  'Ependymoma': 'Ependimoma',
+  'Spinal Tumors': 'Tumores espinales',
+  'Nasal Tumors': 'Tumores nasales',
+  'Nasal Carcinoma': 'Carcinoma nasal',
+  'Nasal SCC': 'Carcinoma de células escamosas nasal',
+  'Oral Tumors': 'Tumores orales',
+  'Oral Melanoma': 'Melanoma oral',
+  'Oral SCC': 'Carcinoma de células escamosas oral',
+  'Acanthomatous Epulis': 'Épulis acantomatoso',
+  'Ear Canal Tumors': 'Tumores del conducto auditivo',
+  'Salivary Gland Tumors': 'Tumores de las glándulas salivales',
+  'Thyroid Tumors': 'Tumores de tiroides',
+  'Heart Base Tumors': 'Tumores de la base del corazón',
+  'Chemodectoma': 'Quimiodectoma',
+  'Cardiac Hemangiosarcoma': 'Hemangiosarcoma cardíaco',
+  'Atrial Tumor': 'Tumor auricular',
+  'Soft Tissue Sarcomas': 'Sarcomas de tejidos blandos',
+  'Mast Cell Tumors': 'Mastocitomas',
+  'Vaccine-Associated Sarcoma': 'Sarcoma asociado al punto de inyección',
+  'Hemangiopericytoma': 'Hemangiopericitoma',
+  'Infiltrative Lipoma': 'Lipoma infiltrativo',
+  'Spindle Cell Tumor': 'Tumor de células fusiformes',
+  'Osteosarcoma': 'Osteosarcoma',
+  'Chondrosarcoma': 'Condrosarcoma',
+  'Metastatic Bone Cancer': 'Cáncer óseo metastásico',
+  'Bladder Cancer': 'Cáncer de vejiga',
+  'Anal Sac Carcinoma': 'Carcinoma de sacos anales',
+  'Lymphoma': 'Linfoma',
+  'Cutaneous Lymphoma': 'Linfoma cutáneo',
+  'CNS Lymphoma': 'Linfoma del sistema nervioso central',
+  'Spinal Lymphoma': 'Linfoma espinal',
+  'Mediastinal Lymphoma': 'Linfoma mediastínico',
+  'Alimentary / GI Lymphoma': 'Linfoma digestivo',
+  'Multicentric': 'Linfoma multicéntrico',
+  // Items that keep the same word in ES (listed for completeness / no-op):
+  // Meningioma, Glioma, Fibrosarcoma
+}
+
+function tl(label: string): string {
+  return ES_LABELS[label] ?? label
+}
+
+function localizeHref(href: string | undefined): string | undefined {
+  if (!href) return href
+  const [base, hash] = href.split('#')
+  const clean = base === '/' ? '/' : base.replace(/\/$/, '')
+  const mapped = esPathFn(clean)
+  return hash ? `${mapped}#${hash}` : mapped
+}
+
+function localizeDropdown(items: NavDropdownEntry[]): NavDropdownEntry[] {
+  return items.map((it) => ({
+    ...it,
+    label: tl(it.label),
+    href: localizeHref(it.href),
+    tag: it.tag ? tl(it.tag) : undefined,
+  }))
+}
+
+function localizeMega(menu: MegaMenuColumn[]): MegaMenuColumn[] {
+  return menu.map((col) => ({
+    groups: col.groups.map((g) => ({
+      category: tl(g.category),
+      items: g.items.map((it) => ({
+        ...it,
+        label: tl(it.label),
+        href: localizeHref(it.href),
+        tag: it.tag ? tl(it.tag) : undefined,
+      })),
+    })),
+  }))
+}
+
+export const MAIN_NAV_ES: NavItem[] = MAIN_NAV.map((item) => ({
+  ...item,
+  label: tl(item.label),
+  href: localizeHref(item.href),
+  dropdown: item.dropdown ? localizeDropdown(item.dropdown) : undefined,
+  megaMenu: item.megaMenu ? localizeMega(item.megaMenu) : undefined,
+}))
+
+export const CONTACT_INFO_ES = {
+  ...CONTACT_INFO,
+  hours: 'Lunes a jueves, 8:00 a. m. a 5:00 p. m.',
+} as const
+
+/** Return the nav for a language. */
+export function getMainNav(lang: Lang): NavItem[] {
+  return lang === 'es' ? MAIN_NAV_ES : MAIN_NAV
+}
+
+/** Return contact info (localized hours) for a language. */
+export function getContactInfo(lang: Lang) {
+  return lang === 'es' ? CONTACT_INFO_ES : CONTACT_INFO
+}

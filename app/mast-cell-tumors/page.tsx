@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { getPageSeo } from '@/lib/seo-config'
-import FAQAccordion from '@/components/ui/FAQAccordion'
 import References, { type Reference } from '@/components/ui/References'
 
 // Peer-reviewed sources supporting the claims on this page (adjuvant RT after
@@ -29,29 +28,6 @@ const INFO_ICON = (
     <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
   </svg>
 )
-
-const FAQ_ITEMS = [
-  {
-    q: 'What is a mast cell tumor in dogs?',
-    a: 'Mast cell tumors (MCTs) are the most common malignant skin tumor in dogs. They arise from mast cells — immune cells normally found in the skin — and range from low-grade, slow-growing tumors to high-grade, aggressive lesions with significant metastatic potential. Grade and location are the primary determinants of prognosis and treatment intensity.',
-  },
-  {
-    q: 'When is radiation used for mast cell tumors?',
-    a: 'Radiation is recommended when surgical margins are incomplete or narrow following excision (adjuvant CFRT), when the tumor is located where wide surgical margins are not achievable — muzzle, digit, prepuce, perianal region — or when the tumor is inoperable. Adjuvant radiation after incomplete excision significantly reduces local recurrence and extends disease-free survival.',
-  },
-  {
-    q: 'What results can radiation achieve for mast cell tumors?',
-    a: 'For dogs receiving adjuvant CFRT after incomplete excision of Patnaik Grade II or Kiupel Low-Grade MCT, 1-year local control rates exceed 85–90% in most studies. Even for high-grade tumors, radiation improves local control significantly compared to surgery alone. Palliative radiation can also provide meaningful tumor reduction and symptom relief for inoperable cases.',
-  },
-  {
-    q: 'Does my dog need chemotherapy in addition to radiation?',
-    a: 'It depends on the grade and staging. Low-grade MCTs with incomplete margins often benefit from radiation alone. High-grade MCTs have significant metastatic risk and typically require systemic therapy — tyrosine kinase inhibitors (toceranib/masitinib) or chemotherapy — in addition to local control. Dr. DiBernardi coordinates with your oncologist to integrate radiation and systemic treatment appropriately.',
-  },
-  {
-    q: 'How many radiation sessions are required?',
-    a: 'Definitive adjuvant CFRT typically involves 16–20 sessions over 3–4 weeks. Each session is performed under short general anesthesia and the dog goes home the same day. Palliative protocols for inoperable cases require 3–5 sessions.',
-  },
-]
 
 export default function MastCellTumorsPage() {
   return (
@@ -85,21 +61,8 @@ export default function MastCellTumorsPage() {
           <div className="cond-hero__ctas">
             <Link href="/contact-pet-owners" className="cta-primario">Request a Consultation</Link>
           </div>
-          <div className="cond-hero__badges">
-            <div className="cond-hero__badge">Board Certified Radiation Oncologist on site</div>
-            <div className="cond-hero__badge">Palm Beach County, FL</div>
-            <div className="cond-hero__badge">Same-week consultations</div>
-          </div>
         </div>
       </section>
-
-      <div className="pos-strip">
-        <div className="pos-strip__inner">
-          <p className="pos-strip__text">
-            <strong>&ldquo;The only center 100% dedicated to Radiation Oncology in Florida&rdquo;</strong>
-          </p>
-        </div>
-      </div>
 
       <section style={{ background: '#fff' }} aria-labelledby="editorial-heading">
         <div className="cond-editorial">
@@ -127,25 +90,24 @@ export default function MastCellTumorsPage() {
           <h3 className="cond-editorial__h3">Grade matters — and so does timing</h3>
           <p className="cond-editorial__body">
             Patnaik Grade II (intermediate) and Kiupel Low-Grade MCTs have the strongest evidence
-            base for adjuvant radiation. 1-year local control rates of 85–90% are consistently
-            reported when CFRT follows incomplete excision. High-grade tumors benefit from local
+            base for adjuvant radiation. 1-year local control rates of 85–90% have been
+            reported when radiation therapy follows incomplete excision. High-grade tumors benefit from local
             control as well, but require attention to systemic therapy because of their significant
-            metastatic risk. Radiation should begin as soon as possible after wound healing from
-            surgery — delay increases recurrence risk.
+            metastatic risk. Radiation usually begins once the surgical wound has healed.
           </p>
           <div className="cond-editorial__fact">
             <div className="cond-editorial__fact-icon" aria-hidden="true">{INFO_ICON}</div>
             <div className="cond-editorial__fact-text">
               <strong>Incomplete surgical margins are not a failure</strong> — they are information.
-              Adjuvant radiation after incomplete excision routinely achieves better long-term local
-              control than re-excision alone, particularly in anatomically constrained locations.
+              Adjuvant radiation after incomplete excision provides long-term local control in most
+              dogs, particularly in anatomically constrained locations.
               Many dogs with incomplete-margin MCT go on to live years with no local recurrence.
             </div>
           </div>
           <h3 className="cond-editorial__h3">Inoperable mast cell tumors</h3>
           <p className="cond-editorial__body">
             When surgery is not possible — due to tumor location, size, or the owner&apos;s preference
-            — radiation can be used as the primary local treatment. Definitive CFRT or palliative
+            — radiation can be used as the primary local treatment. Definitive radiation therapy or palliative
             protocols can achieve meaningful tumor reduction, symptom relief, and local control
             without surgery.
           </p>
@@ -160,33 +122,7 @@ export default function MastCellTumorsPage() {
         </div>
       </section>
 
-      <div className="cond-bridge" aria-label="Key outcomes">
-        <div className="cond-bridge__stat">
-          <div className="cond-bridge__val">85–<em>90</em>%</div>
-          <div className="cond-bridge__label">1-year local control with adjuvant CFRT after incomplete margins</div>
-        </div>
-        <div className="cond-bridge__stat">
-          <div className="cond-bridge__val">16–<em>20</em></div>
-          <div className="cond-bridge__label">Outpatient sessions for adjuvant CFRT</div>
-        </div>
-        <div className="cond-bridge__stat">
-          <div className="cond-bridge__val">Same<em> day</em></div>
-          <div className="cond-bridge__label">Home after every session — outpatient treatment</div>
-        </div>
-      </div>
 
-
-      <section className="seccion" aria-labelledby="faq-heading">
-        <div className="contenedor">
-          <div style={{ textAlign: 'center', maxWidth: 580, margin: '0 auto' }}>
-            <div className="eyebrow" style={{ justifyContent: 'center' }}>Common Questions</div>
-            <h2 id="faq-heading" className="titulo-seccion">
-              What pet families<br /><em>ask us most.</em>
-            </h2>
-          </div>
-          <FAQAccordion items={FAQ_ITEMS} />
-        </div>
-      </section>
 
       <References items={REFERENCES} />
 
@@ -198,7 +134,7 @@ export default function MastCellTumorsPage() {
           </div>
           <p className="cond-cta__text">
             Dr. DiBernardi personally reviews every case. Tell us about your dog and we&apos;ll
-            respond promptly with a clear, honest recommendation.
+            respond promptly with a clear recommendation.
           </p>
           <Link href="/contact-pet-owners" className="cond-cta__btn-primary">Request a Consultation</Link>
         </div>

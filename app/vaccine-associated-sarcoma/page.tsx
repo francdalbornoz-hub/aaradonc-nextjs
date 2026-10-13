@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { getPageSeo } from '@/lib/seo-config'
-import FAQAccordion from '@/components/ui/FAQAccordion'
 import References, { type Reference } from '@/components/ui/References'
 
 // Peer-reviewed sources supporting the claims on this page (feline injection-
@@ -26,29 +25,6 @@ const INFO_ICON = (
     <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
   </svg>
 )
-
-const FAQ_ITEMS = [
-  {
-    q: 'What is vaccine-associated sarcoma in cats?',
-    a: 'Vaccine-associated sarcoma (VAS), also called feline injection-site sarcoma (FISS), is a locally aggressive malignant tumor that develops at the site of prior injections — most commonly vaccines, but also microchips and long-acting injectable medications. It is a serious diagnosis: VAS grows rapidly, infiltrates deeply into surrounding tissue, and recurs at high rates after surgery alone.',
-  },
-  {
-    q: 'Why is radiation an essential part of treatment?',
-    a: 'VAS is notoriously difficult to remove with adequate margins because it infiltrates far beyond its visible boundaries — often invading muscle, fascia, and adjacent bone. Surgery alone has local recurrence rates of 50–90%. Adding radiation therapy — pre-operatively to reduce tumor size and sterilize margins, or post-operatively to treat the surgical bed — significantly reduces recurrence rates and extends disease-free survival.',
-  },
-  {
-    q: 'Should radiation be given before or after surgery?',
-    a: 'Both approaches are used and have evidence supporting them. Pre-operative (neoadjuvant) radiation reduces tumor volume before surgery, potentially allowing wider resection margins and sterilizing the periphery. Post-operative (adjuvant) CFRT targets the surgical bed where microscopic disease remains. The sequencing depends on tumor size, location, and the surgical plan — Dr. DiBernardi discusses this specifically for each case.',
-  },
-  {
-    q: 'What survival times can we expect for VAS?',
-    a: 'With aggressive multimodal treatment — surgery plus radiation — median survival times of 12–24 months are reported in cats with VAS without evidence of metastasis. Without radiation, local recurrence occurs in the majority of cats within 6 months. Early intervention before the tumor becomes very large or unresectable consistently produces the best outcomes.',
-  },
-  {
-    q: 'Does VAS metastasize?',
-    a: 'Yes. VAS has a metastatic rate of approximately 20–25%, most commonly to the lungs and regional lymph nodes. CT of the thorax is standard before treatment to screen for pulmonary metastasis. The combination of aggressive local treatment (surgery + radiation) and systemic therapy (chemotherapy in select cases) is increasingly used in cats with high-risk VAS.',
-  },
-]
 
 export default function VaccineAssociatedSarcomaPage() {
   return (
@@ -77,26 +53,13 @@ export default function VaccineAssociatedSarcomaPage() {
           <p className="cond-hero__sub">
             Feline injection-site sarcoma is one of the most challenging cancers in cats — locally
             aggressive, prone to recurrence after surgery alone. Radiation is a critical part of the
-            multimodal standard of care that dramatically reduces recurrence rates.
+            multimodal standard of care that significantly reduces the risk of recurrence.
           </p>
           <div className="cond-hero__ctas">
             <Link href="/contact-pet-owners" className="cta-primario">Request a Consultation</Link>
           </div>
-          <div className="cond-hero__badges">
-            <div className="cond-hero__badge">Board Certified Radiation Oncologist on site</div>
-            <div className="cond-hero__badge">Palm Beach County, FL</div>
-            <div className="cond-hero__badge">Same-week consultations</div>
-          </div>
         </div>
       </section>
-
-      <div className="pos-strip">
-        <div className="pos-strip__inner">
-          <p className="pos-strip__text">
-            <strong>&ldquo;The only center 100% dedicated to Radiation Oncology in Florida&rdquo;</strong>
-          </p>
-        </div>
-      </div>
 
       <section style={{ background: '#fff' }} aria-labelledby="editorial-heading">
         <div className="cond-editorial">
@@ -105,29 +68,28 @@ export default function VaccineAssociatedSarcomaPage() {
             <div className="cond-editorial__kicker-text">Understanding Vaccine-Associated Sarcoma in Cats</div>
           </div>
           <h2 id="editorial-heading" className="cond-editorial__h2">
-            Surgery alone is not enough.<br /><em>Radiation changes the outcome.</em>
+            Surgery and radiation,<br /><em>together.</em>
           </h2>
           <p className="cond-editorial__lead">
             Vaccine-associated sarcoma infiltrates beyond its visible margins — invading muscle,
             fascia, and adjacent tissue far beyond what can be seen or palpated. This is why surgery
-            alone fails so consistently. Radiation sterilizes the margins that surgery cannot take,
-            dramatically reducing the local recurrence rate that would otherwise occur within months.
+            alone is often followed by recurrence. Radiation treats the microscopic disease beyond
+            the surgical margins, reducing the risk of local recurrence.
           </p>
           <p className="cond-editorial__body">
-            VAS is triggered by an inflammatory response to injected materials — vaccine adjuvants,
-            microchips, long-acting medications. The resulting sarcoma is biologically aggressive:
+            VAS is associated with an inflammatory response at injection sites — most commonly
+            vaccines, and rarely other injected materials. The resulting sarcoma is biologically aggressive:
             it grows rapidly, extends along fascial planes, and can reach surgical margins even with
-            aggressive resection. The Vaccine-Associated Feline Sarcoma Task Force established
-            guidelines recommending 3 cm lateral and one fascial plane deep as minimum margins —
-            guidelines that are rarely achievable without significant morbidity.
+            aggressive resection. Current guidelines recommend wide surgical margins, which are
+            often difficult to achieve without significant morbidity.
           </p>
           <h3 className="cond-editorial__h3">Pre-operative vs. post-operative radiation</h3>
           <p className="cond-editorial__body">
             Neoadjuvant (pre-operative) radiation reduces tumor volume before surgery, potentially
             allowing wider margins and sterilizing the invasive periphery. Post-operative (adjuvant)
-            CFRT targets the surgical bed where microscopic residual disease persists. Both
-            approaches are supported by evidence, and the choice depends on tumor size, location,
-            and surgical planning. Dr. DiBernardi discusses the optimal sequence for each case
+            radiation therapy targets the surgical bed where microscopic residual disease persists. Both
+            approaches are used; the sequence depends on tumor size, location and surgical planning.
+            Dr. DiBernardi discusses the optimal sequence for each case
             individually.
           </p>
           <div className="cond-editorial__fact">
@@ -136,8 +98,7 @@ export default function VaccineAssociatedSarcomaPage() {
               <strong>Any lump at a prior injection site</strong> in a cat should be evaluated
               promptly. The &quot;3-2-1 rule&quot;: any mass that persists for more than 3 months,
               is larger than 2 cm, or is growing 4 weeks after injection should be biopsied
-              immediately. Early diagnosis — before the tumor becomes unresectable — is the most
-              important factor in outcome.
+              immediately. Early diagnosis — before the tumor becomes unresectable — is key to a better outcome.
             </div>
           </div>
           <h3 className="cond-editorial__h3">What CT reveals — and why it matters</h3>
@@ -158,33 +119,7 @@ export default function VaccineAssociatedSarcomaPage() {
         </div>
       </section>
 
-      <div className="cond-bridge" aria-label="Key outcomes">
-        <div className="cond-bridge__stat">
-          <div className="cond-bridge__val">50–<em>90</em>%</div>
-          <div className="cond-bridge__label">Local recurrence with surgery alone — radiation dramatically reduces this</div>
-        </div>
-        <div className="cond-bridge__stat">
-          <div className="cond-bridge__val">12–<em>24</em>mo</div>
-          <div className="cond-bridge__label">Median survival with multimodal treatment (no metastasis)</div>
-        </div>
-        <div className="cond-bridge__stat">
-          <div className="cond-bridge__val">Same<em> day</em></div>
-          <div className="cond-bridge__label">Home after every session — outpatient treatment</div>
-        </div>
-      </div>
 
-
-      <section className="seccion" aria-labelledby="faq-heading">
-        <div className="contenedor">
-          <div style={{ textAlign: 'center', maxWidth: 580, margin: '0 auto' }}>
-            <div className="eyebrow" style={{ justifyContent: 'center' }}>Common Questions</div>
-            <h2 id="faq-heading" className="titulo-seccion">
-              What pet families<br /><em>ask us most.</em>
-            </h2>
-          </div>
-          <FAQAccordion items={FAQ_ITEMS} />
-        </div>
-      </section>
 
       <References items={REFERENCES} />
 
@@ -196,7 +131,7 @@ export default function VaccineAssociatedSarcomaPage() {
           </div>
           <p className="cond-cta__text">
             Dr. DiBernardi personally reviews every case. Tell us about your cat and we&apos;ll
-            respond promptly with a clear, honest recommendation.
+            respond promptly with a clear recommendation.
           </p>
           <Link href="/contact-pet-owners" className="cond-cta__btn-primary">Request a Consultation</Link>
         </div>

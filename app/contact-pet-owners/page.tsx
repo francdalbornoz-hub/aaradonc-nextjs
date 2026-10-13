@@ -13,10 +13,6 @@ const pageSeo = getPageSeo('/contact-pet-owners')
 
 const FAQ_ITEMS = [
   {
-    q: 'Do I need a referral from my veterinarian, or can I contact you directly without a confirmed diagnosis?',
-    a: 'Pet families may contact us directly, and you do not need a confirmed diagnosis to reach out. If your pet has a suspected or confirmed tumor, we may help you understand whether radiation therapy is an option. We coordinate with your primary care veterinarian throughout the entire process.',
-  },
-  {
     q: 'How is this center different from a general veterinary oncology clinic?',
     a: 'We are the only center in Florida 100% dedicated to radiation oncology. Because radiation oncology is our sole focus, we bring dedicated equipment, specialized protocols, and deep expertise to every treatment. We work alongside your primary veterinarian, providing advanced radiation therapy while your pet\'s other medical needs remain with the veterinary team who knows them best. We complement your existing veterinary care—we don\'t replace it.',
   },
@@ -97,7 +93,7 @@ export default function ContactPetOwnersPage() {
             Request a <em>Consultation</em>
           </div>
           <p className="ct-form__sub">
-            Tell us about your pet and we will get back to you promptly — with clarity and no pressure.
+            Tell us about your pet and we will get back to you promptly.
           </p>
           {/* GTM: form_submit / consultation */}
           <FormContact variant="light" />

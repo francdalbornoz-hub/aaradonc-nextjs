@@ -2,12 +2,11 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { getPageSeo } from '@/lib/seo-config'
-import FAQAccordion from '@/components/ui/FAQAccordion'
 import References, { type Reference } from '@/components/ui/References'
 
 // Peer-reviewed sources supporting the claims on this page (melanoma is
 // radiosensitive to large-fraction protocols; survival by stage with RT ±
-// immunotherapy/chemotherapy).
+// chemotherapy).
 const REFERENCES: Reference[] = [
   { authors: 'Baja AJ, et al.', year: '2022', title: 'A retrospective study of 101 dogs with oral melanoma treated with a weekly or biweekly 6 Gy × 6 radiotherapy protocol', source: 'Vet Comp Oncol' },
   { authors: 'Cancedda S, et al.', year: '2014', title: 'Efficacy and side effects of radiation therapy in comparison with radiation therapy and temozolomide in the treatment of measurable oral canine melanoma', source: 'Vet Comp Oncol' },
@@ -29,29 +28,6 @@ const INFO_ICON = (
     <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
   </svg>
 )
-
-const FAQ_ITEMS = [
-  {
-    q: 'What is oral melanoma in dogs?',
-    a: 'Oral melanoma is the most common malignant oral tumor in dogs. It arises from melanocytes in the oral mucosa and tends to behave aggressively — with rapid local growth, bone invasion, and a high rate of lymph node and distant metastasis. Despite its aggressive nature, local control with radiation therapy combined with immunotherapy has significantly improved outcomes.',
-  },
-  {
-    q: 'Why is radiation recommended for oral melanoma?',
-    a: 'Oral melanoma is radiosensitive — it responds well to large-fraction radiation protocols. Radiation is typically used to achieve local control while immunotherapy (melanoma vaccine) addresses systemic disease. This multimodal approach has produced the most meaningful survival improvements in the veterinary literature.',
-  },
-  {
-    q: 'How many radiation sessions are needed?',
-    a: 'Palliative hypofractionated protocols (4–6 large fractions) are commonly used for oral melanoma and achieve excellent local control with fewer anesthetic events. Definitive CFRT (16–20 sessions) may be used in select cases. Dr. DiBernardi determines the appropriate protocol based on tumor stage, extent of bone involvement, and your goals.',
-  },
-  {
-    q: 'What survival time can we expect?',
-    a: 'Median survival for dogs with oral melanoma treated with radiation and immunotherapy ranges from 10–14 months for Stage I/II disease. Stage III (lymph node positive) carries a shorter median survival but radiation still provides meaningful local control. Early treatment — before significant bone invasion or distant metastasis — consistently produces better outcomes.',
-  },
-  {
-    q: 'Does staging matter for melanoma treatment?',
-    a: 'Yes. WHO staging (tumor size, lymph node involvement, distant metastasis) significantly influences prognosis and treatment recommendations. CT of the skull and thorax, and fine-needle aspirate of regional lymph nodes, are standard before starting radiation. Dr. DiBernardi reviews all staging information before finalizing the plan.',
-  },
-]
 
 export default function OralMelanomaPage() {
   return (
@@ -78,28 +54,14 @@ export default function OralMelanomaPage() {
             Radiation therapy<br />for oral melanoma<br /><em>in dogs — Florida.</em>
           </h1>
           <p className="cond-hero__sub">
-            Oral melanoma is the most common malignant oral tumor in dogs. Radiation therapy achieves
-            excellent local control — particularly when combined with immunotherapy to address the
-            systemic component that surgery alone cannot reach.
+            Oral melanoma is the most common malignant oral tumor in dogs. Radiation therapy provides
+            local control of the tumor.
           </p>
           <div className="cond-hero__ctas">
             <Link href="/contact-pet-owners" className="cta-primario">Request a Consultation</Link>
           </div>
-          <div className="cond-hero__badges">
-            <div className="cond-hero__badge">Board Certified Radiation Oncologist on site</div>
-            <div className="cond-hero__badge">Palm Beach County, FL</div>
-            <div className="cond-hero__badge">Same-week consultations</div>
-          </div>
         </div>
       </section>
-
-      <div className="pos-strip">
-        <div className="pos-strip__inner">
-          <p className="pos-strip__text">
-            <strong>&ldquo;The only center 100% dedicated to Radiation Oncology in Florida&rdquo;</strong>
-          </p>
-        </div>
-      </div>
 
       <section style={{ background: '#fff' }} aria-labelledby="editorial-heading">
         <div className="cond-editorial">
@@ -108,36 +70,35 @@ export default function OralMelanomaPage() {
             <div className="cond-editorial__kicker-text">Understanding Oral Melanoma in Dogs</div>
           </div>
           <h2 id="editorial-heading" className="cond-editorial__h2">
-            Local control with radiation.<br /><em>Systemic control with immunotherapy.</em>
+            Local control with radiation.
           </h2>
           <p className="cond-editorial__lead">
             Oral melanoma grows quickly and metastasizes early — to regional lymph nodes and distant
             sites including the lungs. This is why local treatment alone is rarely enough. Radiation
-            controls the primary tumor; immunotherapy addresses microscopic systemic disease.
-            Together, this multimodal approach has produced the most meaningful survival improvements
-            documented in veterinary oncology for this diagnosis.
+            provides local control, and your oncologist can discuss additional treatment options with
+            you.
           </p>
           <p className="cond-editorial__body">
             Oral melanoma arises most commonly from the gingiva, hard palate, and labial mucosa.
-            It grows rapidly and invades adjacent bone in most cases. The first warning signs —
+            It grows rapidly and often invades adjacent bone. The first warning signs —
             facial swelling, difficulty eating, halitosis, or bloody saliva — often appear when
             the tumor is already at a significant size. Rapid progression means that staging and
             treatment should begin as soon as the diagnosis is confirmed.
           </p>
           <h3 className="cond-editorial__h3">Why radiation therapy is highly effective for melanoma</h3>
           <p className="cond-editorial__body">
-            Unlike some tumors that require daily low-dose fractionation to respond, melanoma is
-            particularly sensitive to large-fraction hypofractionated radiation. This means
-            meaningful local control can often be achieved in 4–6 sessions rather than 16–20 —
-            fewer anesthetic events and a shorter treatment window, without compromising efficacy.
-            Definitive CFRT is also an option and may be preferred in select cases.
+            Unlike some tumors that respond best to many small radiation doses, melanoma is
+            particularly sensitive to larger radiation doses. This means
+            meaningful local control can often be achieved with fewer treatments — fewer anesthetic events
+            and a shorter treatment course. Definitive radiation therapy is also an option and may be preferred in
+            select cases.
           </p>
           <div className="cond-editorial__fact">
             <div className="cond-editorial__fact-icon" aria-hidden="true">{INFO_ICON}</div>
             <div className="cond-editorial__fact-text">
               <strong>Stage matters.</strong> CT imaging of the skull and thorax, plus fine-needle
               aspirate of regional lymph nodes, is standard before treatment. Staging determines
-              prognosis and informs whether immunotherapy should be added to the radiation plan.
+              prognosis and helps plan treatment.
             </div>
           </div>
           <h3 className="cond-editorial__h3">What to expect from treatment</h3>
@@ -159,33 +120,7 @@ export default function OralMelanomaPage() {
         </div>
       </section>
 
-      <div className="cond-bridge" aria-label="Key outcomes">
-        <div className="cond-bridge__stat">
-          <div className="cond-bridge__val">10–<em>14</em>mo</div>
-          <div className="cond-bridge__label">Median survival with radiation + immunotherapy (Stage I/II)</div>
-        </div>
-        <div className="cond-bridge__stat">
-          <div className="cond-bridge__val">4–<em>6</em></div>
-          <div className="cond-bridge__label">Sessions with hypofractionated palliative protocol</div>
-        </div>
-        <div className="cond-bridge__stat">
-          <div className="cond-bridge__val">Same<em> day</em></div>
-          <div className="cond-bridge__label">Home after every session — outpatient treatment</div>
-        </div>
-      </div>
 
-
-      <section className="seccion" aria-labelledby="faq-heading">
-        <div className="contenedor">
-          <div style={{ textAlign: 'center', maxWidth: 580, margin: '0 auto' }}>
-            <div className="eyebrow" style={{ justifyContent: 'center' }}>Common Questions</div>
-            <h2 id="faq-heading" className="titulo-seccion">
-              What pet families<br /><em>ask us most.</em>
-            </h2>
-          </div>
-          <FAQAccordion items={FAQ_ITEMS} />
-        </div>
-      </section>
 
       <References items={REFERENCES} />
 
@@ -197,7 +132,7 @@ export default function OralMelanomaPage() {
           </div>
           <p className="cond-cta__text">
             Dr. DiBernardi personally reviews every case. Tell us about your dog and we&apos;ll
-            respond promptly with a clear, honest recommendation.
+            respond promptly with a clear recommendation.
           </p>
           <Link href="/contact-pet-owners" className="cond-cta__btn-primary">Request a Consultation</Link>
         </div>

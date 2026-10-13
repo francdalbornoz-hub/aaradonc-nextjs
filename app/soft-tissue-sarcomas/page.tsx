@@ -2,13 +2,11 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { getPageSeo } from '@/lib/seo-config'
-import FAQAccordion from '@/components/ui/FAQAccordion'
 import References, { type Reference } from '@/components/ui/References'
 
 // Peer-reviewed sources supporting the claims on this page (adjuvant radiation
 // after incomplete STS excision; local control with fractionated protocols).
 const REFERENCES: Reference[] = [
-  { authors: 'Lawrence J, et al.', year: '2008', title: 'Four-fraction radiation therapy for macroscopic soft tissue sarcomas in 16 dogs', source: 'J Am Anim Hosp Assoc' },
   { authors: 'Kung MBJ, et al.', year: '2014', title: 'Hypofractionated radiation therapy for the treatment of microscopic canine soft tissue sarcoma', source: 'Vet Comp Oncol' },
   { authors: 'Mayer MN, Treuil PL, LaRue SM', year: '2009', title: 'Radiotherapy and surgery for feline soft tissue sarcoma', source: 'Vet Radiol Ultrasound' },
 ]
@@ -30,77 +28,6 @@ export const metadata: Metadata = {
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
-const TUMOR_TYPES = [
-  {
-    species: 'Dogs & Cats — Most common STS',
-    name: 'Peripheral Nerve Sheath Tumor (PNST)',
-    desc: 'Also called hemangiopericytoma in older literature. The most common STS in dogs. Locally invasive, rarely metastatic. Adjuvant radiation after incomplete excision is strongly recommended — reduces recurrence from >50% to under 15% in most studies.',
-    tag: '★ Strongest RT evidence',
-    href: '/soft-tissue-sarcomas',
-  },
-  {
-    species: 'Dogs primarily · Cats (injection sites)',
-    name: 'Fibrosarcoma',
-    desc: 'Malignant tumor of fibroblasts. Oral, appendicular, and injection-site variants. Infiltrates along fascial planes well beyond palpable borders. Combined surgery and radiation consistently outperforms surgery alone. Cats: always treated under the FISS multimodal protocol.',
-    tag: 'Surgery + RT combination',
-    href: '/fibrosarcoma',
-  },
-  {
-    species: 'Cats — Injection sites',
-    name: 'Vaccine-Associated Sarcoma (FISS)',
-    desc: 'Feline injection-site sarcoma — one of the most aggressive STS variants in veterinary oncology. Multimodal treatment (surgery + radiation + chemotherapy) is the standard of care. Post-surgical RT is always recommended for FISS regardless of margin status.',
-    tag: 'Multimodal protocol always',
-    href: '/vaccine-associated-sarcoma',
-  },
-  {
-    species: 'Dogs & Cats',
-    name: 'Myxosarcoma & Liposarcoma',
-    desc: 'Myxosarcoma arises from myxoid connective tissue; liposarcoma from adipose. Both are locally invasive with low metastatic potential. Wide surgical excision is the primary treatment — adjuvant RT indicated when margins are incomplete or at constrained anatomical sites.',
-    tag: 'Adjuvant RT for incomplete margins',
-    href: '/soft-tissue-sarcomas',
-  },
-  {
-    species: 'Dogs primarily',
-    name: 'Infiltrative Lipoma',
-    desc: 'Benign in cell type but locally invasive — infiltrates muscle and fascia, making complete excision difficult. Recurrence after surgery alone is common. Radiation is the most effective adjuvant treatment for incompletely excised infiltrative lipoma, particularly at the limbs.',
-    tag: 'RT changes recurrence outcomes',
-    href: '/soft-tissue-sarcomas',
-  },
-  {
-    species: 'Also evaluated',
-    name: 'Other Soft Tissue Sarcomas',
-    desc: 'Synovial cell sarcoma · Rhabdomyosarcoma · Leiomyosarcoma · Undifferentiated sarcoma · Malignant mesenchymoma. Each case reviewed individually for radiation candidacy based on histology, grade, and location.',
-    tag: 'Individualized review',
-    href: null,
-  },
-]
-
-const FAQ_ITEMS = [
-  {
-    q: 'My dog just had a soft tissue sarcoma removed and the margins were incomplete. What should I do?',
-    a: "Contact a radiation oncologist as soon as possible — ideally within 2 weeks of receiving the pathology report. Post-surgical radiation for STS is most effective when started within 4–6 weeks of surgery, before the surgical bed reorganizes. Bring the pathology report, surgical notes, and any imaging. Dr. DiBernardi will review the case and give you a clear recommendation on whether adjuvant RT is indicated and what outcomes to expect.",
-  },
-  {
-    q: 'The pathology says "grade I" STS with complete margins. Does my dog still need radiation?',
-    a: "Not automatically. Grade I STS with truly wide, complete margins has a lower recurrence risk than higher-grade tumors with incomplete margins. However, \"complete\" margins in STS are often narrower than they appear — STS cells extend along fascial planes that may not be captured in standard margin assessment. Dr. DiBernardi reviews each grade I case individually to determine whether the expected recurrence risk at that specific location and tumor size justifies a radiation course.",
-  },
-  {
-    q: 'Can radiation replace surgery for soft tissue sarcomas?',
-    a: "In most cases, surgery remains the primary local treatment for STS — radiation is most effective as an adjuvant after excision. Definitive radiation without surgery is an option for inoperable STS or cases where surgery would cause unacceptable functional deficits, but outcomes are generally less durable than combined surgery + radiation. Dr. DiBernardi evaluates each case to determine the optimal approach based on tumor location, size, and the owner's treatment goals.",
-  },
-  {
-    q: 'My cat has a vaccine-associated sarcoma. Is the treatment the same as for other soft tissue sarcomas?',
-    a: "No — FISS is treated as a distinct entity with a more aggressive multimodal protocol. Post-surgical radiation is always recommended for vaccine-associated sarcoma regardless of margin status, because FISS has a demonstrated tendency to recur even after apparently complete excision. Chemotherapy is also typically incorporated. Dr. DiBernardi evaluates all feline injection-site sarcomas under the FISS-specific protocol.",
-  },
-  {
-    q: 'How many radiation sessions does STS treatment require?',
-    a: 'Adjuvant CFRT for soft tissue sarcoma involves 16–20 outpatient sessions, Mon–Fri over 3–4 weeks. Each session is brief — short anesthesia and your pet goes home the same day. The total number of sessions is determined by tumor location, protocol, and treatment plan design.',
-  },
-  {
-    q: 'Do I need a referral to consult about STS radiation?',
-    a: "Whether you've been referred by your surgeon or are reaching out directly — both are welcome. Bring the pathology report, surgical notes, and any pre- or post-operative imaging to the consultation. We work collaboratively with surgeons and primary care vets throughout the process and provide written updates at every milestone.",
-  },
-]
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
@@ -132,30 +59,16 @@ export default function SoftTissueSarcomasPage() {
             Soft tissue sarcoma<br />radiation therapy for<br /><em>pets in Florida.</em>
           </h1>
           <p className="cond-hero__sub">
-            Soft tissue sarcomas extend far beyond their visible borders. Surgery alone leaves
-            microscopic disease behind in most cases — and local recurrence is the rule, not the
-            exception. Adjuvant radiation after incomplete excision reduces recurrence by more than
-            70% and is the standard of care for STS in dogs and cats.
+            Soft tissue sarcomas can extend beyond their visible borders. Surgery alone may leave
+            microscopic disease behind, especially with narrow or incomplete margins. Adjuvant
+            radiation after incomplete excision significantly reduces the risk
+            of local recurrence.
           </p>
           <div className="cond-hero__ctas">
             <Link href="/contact-pet-owners" className="cta-primario">Request a Consultation</Link>
           </div>
-          <div className="cond-hero__badges">
-            <div className="cond-hero__badge">Board Certified Radiation Oncologist on site</div>
-            <div className="cond-hero__badge">Palm Beach County, FL</div>
-            <div className="cond-hero__badge">Adjuvant RT · Post-surgical standard</div>
-          </div>
         </div>
       </section>
-
-      {/* ══════════════════════════════════════════════════════════════════════
-          POSITIONING STRIP
-      ══════════════════════════════════════════════════════════════════════ */}
-      <div className="pos-strip">
-        <div className="pos-strip__inner">
-          <span className="pos-strip__text">&ldquo;The only center 100% dedicated to Radiation Oncology in Florida&rdquo;</span>
-        </div>
-      </div>
 
       {/* ══════════════════════════════════════════════════════════════════════
           EDITORIAL
@@ -167,31 +80,26 @@ export default function SoftTissueSarcomasPage() {
             <div className="cond-editorial__kicker-text">Understanding Soft Tissue Sarcomas &amp; Radiation in Dogs &amp; Cats</div>
           </div>
           <h2 id="editorial-heading" className="cond-editorial__h2">
-            The tumor looks contained.<br /><em>It never is.</em>
+            The tumor may look contained.<br /><em>Often, it isn&apos;t.</em>
           </h2>
           <p className="cond-editorial__lead">
             Soft tissue sarcomas are a group of malignant tumors arising from connective tissue —
             fat, muscle, fascia, nerves, and blood vessels. In dogs and cats, STS most commonly
             appears as a firm subcutaneous or deep mass on the trunk, limbs, or head and neck. Their
-            defining characteristic: microscopic tumor cells extend 2–3 centimeters beyond the
-            palpable tumor margin in virtually every case.
+            defining characteristic: microscopic tumor cells can extend beyond the
+            palpable margin.
           </p>
           <p className="cond-editorial__body">
             This biological behavior makes complete surgical excision technically demanding even for
             experienced surgeons — and at anatomically constrained sites like the distal limb,
-            digits, face, or perineum, truly wide margins are often impossible. A soft tissue sarcoma
-            that appears to have been fully removed almost always leaves microscopic residual disease
-            in the surgical bed. Without adjuvant treatment, local recurrence is expected in the
-            majority of cases within 6–12 months.
+            digits, face, or perineum, truly wide margins are often impossible.
           </p>
           <h3 className="cond-editorial__h3">Why adjuvant radiation changes outcomes</h3>
           <p className="cond-editorial__body">
             Post-surgical radiation targets the entire surgical bed — including the at-risk tissue
             surrounding it — delivering dose precisely to the zone where microscopic STS cells remain
-            after excision. Multiple veterinary oncology studies document a reduction in local
-            recurrence of more than 70% when adjuvant radiation follows incomplete STS excision,
-            compared to surgery alone. The combination of surgery and radiation also consistently
-            produces longer disease-free intervals than re-excision without radiation.
+            after excision. Adjuvant radiation after incomplete excision significantly reduces the
+            risk of local recurrence.
           </p>
           <div className="cond-editorial__fact">
             <div className="cond-editorial__fact-icon" aria-hidden="true">
@@ -200,17 +108,16 @@ export default function SoftTissueSarcomasPage() {
               </svg>
             </div>
             <div className="cond-editorial__fact-text">
-              <strong>Timing is critical.</strong> Post-surgical radiation for STS should begin
-              within 4–6 weeks of surgery, before scar tissue matures and the surgical bed
-              reorganizes. Early referral — ideally as soon as the pathology report is available —
-              is always in the patient&apos;s best interest. If you know margins will be challenging,
+              <strong>Timing is critical.</strong> Post-surgical radiation usually starts once the
+              surgical wound has healed — early referral, ideally as soon as the pathology report is
+              available, helps us plan it on time. If you know margins will be challenging,
               contact us before surgery.
             </div>
           </div>
           <h3 className="cond-editorial__h3">Grade matters — but incomplete margins matter more</h3>
           <p className="cond-editorial__body">
             High-grade STS (grade II–III) carries elevated recurrence risk even with apparently clean
-            margins, and adjuvant radiation is recommended regardless of reported margin width. For
+            margins, and adjuvant radiation is often recommended. For
             grade I STS with truly wide, clean margins, the benefit of radiation is more nuanced —
             Dr. DiBernardi reviews each case individually to determine whether the expected recurrence
             risk justifies a full radiation course. There is no universal answer: the decision is made
@@ -235,76 +142,13 @@ export default function SoftTissueSarcomasPage() {
       {/* ══════════════════════════════════════════════════════════════════════
           TUMOR TYPES
       ══════════════════════════════════════════════════════════════════════ */}
-      <section className="cond-types" aria-labelledby="types-heading">
-        <div className="cond-types__inner">
-          <div className="cond-types__header">
-            <div className="eyebrow-label">Soft Tissue Sarcoma Types We Treat</div>
-            <h2 id="types-heading" className="titulo-seccion">
-              STS in dogs and cats —<br />by tumor type.
-            </h2>
-            <p className="cond-types__sub">
-              Soft tissue sarcoma is not a single disease — it&apos;s a family of tumors with
-              distinct biology, behavior, and radiation response. Dr. DiBernardi reviews histology
-              and grade for every case before recommending a protocol.
-            </p>
-          </div>
-          <div className="cond-types__grid">
-            {TUMOR_TYPES.map((t) =>
-              t.href ? (
-                <Link key={t.name} href={t.href} className="cond-type-card">
-                  <div className="cond-type-card__species">{t.species}</div>
-                  <div className="cond-type-card__name">{t.name}</div>
-                  <div className="cond-type-card__desc">{t.desc}</div>
-                  <div className="cond-type-card__tag">{t.tag}</div>
-                  <div className="cond-type-card__link">Learn more →</div>
-                </Link>
-              ) : (
-                <div key={t.name} className="cond-type-card cond-type-card--muted">
-                  <div className="cond-type-card__species">{t.species}</div>
-                  <div className="cond-type-card__name">{t.name}</div>
-                  <div className="cond-type-card__desc">{t.desc}</div>
-                  <div className="cond-type-card__tag">{t.tag}</div>
-                </div>
-              )
-            )}
-          </div>
-        </div>
-      </section>
-
       {/* ══════════════════════════════════════════════════════════════════════
           BRIDGE STATS
       ══════════════════════════════════════════════════════════════════════ */}
-      <div className="cond-bridge" role="list" aria-label="Key statistics">
-        <div className="cond-bridge__stat" role="listitem">
-          <div className="cond-bridge__val"><em>70</em>%+</div>
-          <div className="cond-bridge__label">Reduction in local STS recurrence with adjuvant RT vs. surgery alone</div>
-        </div>
-        <div className="cond-bridge__stat" role="listitem">
-          <div className="cond-bridge__val">4–<em>6</em>wk</div>
-          <div className="cond-bridge__label">Optimal post-surgical window — refer before scar tissue matures</div>
-        </div>
-        <div className="cond-bridge__stat" role="listitem">
-          <div className="cond-bridge__val">Same<em>-day</em></div>
-          <div className="cond-bridge__label">Referral acknowledgment — we prioritize post-surgical timing</div>
-        </div>
-      </div>
-
       {/* ══════════════════════════════════════════════════════════════════════
           HOW WE TREAT
       ══════════════════════════════════════════════════════════════════════ */}
 
-      {/* ══════════════════════════════════════════════════════════════════════
-          FAQ
-      ══════════════════════════════════════════════════════════════════════ */}
-      <section className="seccion" aria-labelledby="faq-heading">
-        <div className="contenedor" style={{ maxWidth: 820 }}>
-          <div className="eyebrow-label" style={{ marginBottom: 8 }}>Frequently Asked Questions</div>
-          <h2 id="faq-heading" className="titulo-seccion" style={{ marginBottom: 40 }}>
-            Soft tissue sarcoma radiation —<br />what pet families ask us most.
-          </h2>
-          <FAQAccordion items={FAQ_ITEMS} />
-        </div>
-      </section>
 
       <References items={REFERENCES} />
 
@@ -318,9 +162,8 @@ export default function SoftTissueSarcomasPage() {
             Incomplete margins?<br /><em>Don&apos;t wait.</em>
           </div>
           <p className="cond-cta__text">
-            Post-surgical radiation for soft tissue sarcoma is most effective within 4–6 weeks of
-            surgery. Whether you&apos;ve been referred by your veterinarian or are reaching out
-            directly, request a consultation and Dr. DiBernardi will review the pathology personally.
+            Post-surgical radiation for soft tissue sarcoma usually starts once the surgical wound
+            has healed — early referral helps plan it on time. Request a consultation and Dr. DiBernardi will review the pathology personally.
           </p>
           <Link href="/contact-pet-owners" className="cond-cta__btn-primary">Request a Consultation →</Link>
         </div>
@@ -330,8 +173,8 @@ export default function SoftTissueSarcomasPage() {
             Refer an STS case —<br /><em>pre- or post-surgical.</em>
           </div>
           <p className="cond-cta__text">
-            Send pathology, surgical notes, and imaging. We prioritize post-surgical STS cases and
-            acknowledge all referrals promptly. Pre-surgical consultation available when RT
+            Send pathology, surgical notes, and imaging. We acknowledge all referrals promptly.
+            Pre-surgical consultation available when RT
             planning benefits from coordinating with the surgical approach.
           </p>
           <Link href="/contact-referrers" className="cond-cta__btn-secondary">Submit a Referral →</Link>

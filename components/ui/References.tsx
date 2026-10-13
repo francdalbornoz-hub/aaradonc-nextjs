@@ -16,9 +16,26 @@ export interface Reference {
 
 interface ReferencesProps {
   items: Reference[]
+  lang?: 'en' | 'es'
 }
 
-export default function References({ items }: ReferencesProps) {
+const REF_T = {
+  en: {
+    eyebrow: 'References',
+    heading: <>Scientific <em>references.</em></>,
+    intro:
+      'The clinical information on this page is grounded in peer-reviewed veterinary radiation oncology literature.',
+  },
+  es: {
+    eyebrow: 'Referencias',
+    heading: <>Referencias <em>científicas</em></>,
+    intro:
+      'La información clínica de esta página se basa en literatura científica de radioterapia veterinaria revisada por pares.',
+  },
+} as const
+
+export default function References({ items, lang = 'en' }: ReferencesProps) {
+  const t = REF_T[lang]
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
@@ -36,19 +53,18 @@ export default function References({ items }: ReferencesProps) {
   }
 
   return (
-    <section className="seccion" aria-labelledby="refs-heading">
+    <section className="seccion seccion--gris" style={{ borderTop: '1px solid #E2E8F0' }} aria-labelledby="refs-heading">
       <div className="contenedor">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
         />
-        <div className="eyebrow">References</div>
+        <div className="eyebrow">{t.eyebrow}</div>
         <h2 id="refs-heading" className="titulo-seccion" style={{ fontSize: 28, marginBottom: 12 }}>
-          Scientific <em>references.</em>
+          {t.heading}
         </h2>
         <p className="bajada" style={{ marginBottom: 28, maxWidth: 720 }}>
-          The clinical information on this page is grounded in peer-reviewed veterinary radiation
-          oncology literature.
+          {t.intro}
         </p>
         <ol style={{ margin: 0, paddingLeft: 22, display: 'grid', gap: 12, maxWidth: 900 }}>
           {items.map((r, i) => (

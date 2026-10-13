@@ -2,14 +2,12 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { getPageSeo } from '@/lib/seo-config'
-import FAQAccordion from '@/components/ui/FAQAccordion'
 import References, { type Reference } from '@/components/ui/References'
 
 // Peer-reviewed sources supporting the claims on this page (fibrosarcoma is an
 // infiltrative soft-tissue sarcoma; surgery + adjuvant radiation for control).
 const REFERENCES: Reference[] = [
   { authors: 'Cronin K, et al.', year: '1998', title: 'Radiation therapy and surgery for fibrosarcoma in 33 cats', source: 'Vet Radiol Ultrasound' },
-  { authors: 'Lawrence J, et al.', year: '2008', title: 'Four-fraction radiation therapy for macroscopic soft tissue sarcomas in 16 dogs', source: 'J Am Anim Hosp Assoc' },
   { authors: 'Kung MBJ, et al.', year: '2014', title: 'Hypofractionated radiation therapy for the treatment of microscopic canine soft tissue sarcoma', source: 'Vet Comp Oncol' },
 ]
 
@@ -27,29 +25,6 @@ const INFO_ICON = (
     <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
   </svg>
 )
-
-const FAQ_ITEMS = [
-  {
-    q: 'What is fibrosarcoma in dogs and cats?',
-    a: 'Fibrosarcoma is a malignant tumor arising from fibroblasts — the cells that form connective tissue. It occurs in dogs and cats in several locations: the oral cavity (gingiva, hard palate), subcutaneous tissue, and extremities. Fibrosarcomas are locally invasive with a tendency to infiltrate surrounding tissue and bone, making complete surgical resection difficult. Metastatic rate is moderate — most cases fail locally before distant spread.',
-  },
-  {
-    q: 'Why is radiation important for fibrosarcoma?',
-    a: 'Because fibrosarcomas are infiltrative and surgical margins are frequently incomplete — particularly for oral and facial locations — radiation therapy plays a critical role in achieving local disease control. Adjuvant CFRT after surgery with incomplete margins significantly reduces local recurrence rates and extends disease-free survival. For unresectable tumors, radiation as the primary treatment can achieve meaningful local control.',
-  },
-  {
-    q: 'What are the results of radiation for fibrosarcoma?',
-    a: 'Results depend on location and whether surgery was performed. For oral fibrosarcoma in dogs treated with surgery plus CFRT, median survival times of 12–24 months are reported for rostral tumors. Subcutaneous fibrosarcomas treated with surgery and adjuvant radiation achieve local control rates of 60–75%. Radiation alone for unresectable disease provides meaningful palliation and delays progression.',
-  },
-  {
-    q: 'Is fibrosarcoma the same as vaccine-associated sarcoma in cats?',
-    a: 'Vaccine-associated sarcoma (VAS) in cats is a type of fibrosarcoma — specifically a highly aggressive injection-site sarcoma with distinct biological behavior. VAS is treated with an aggressive surgery + radiation approach (often neoadjuvant radiation before surgery) due to its propensity for rapid local recurrence. Non-injection-site fibrosarcomas in cats follow a more standard protocol. AARADONC has a dedicated page for vaccine-associated sarcoma.',
-  },
-  {
-    q: 'How many radiation sessions are needed for fibrosarcoma?',
-    a: 'Definitive or adjuvant CFRT involves 16–20 daily sessions delivered Monday through Friday. Each session requires short general anesthesia and your pet is discharged the same day. For cases where curative intent is not the primary goal, palliative protocols (4–6 sessions) are also available.',
-  },
-]
 
 export default function FibrosarcomaPage() {
   return (
@@ -76,28 +51,15 @@ export default function FibrosarcomaPage() {
             Radiation therapy<br />for fibrosarcoma<br /><em>in pets — Florida.</em>
           </h1>
           <p className="cond-hero__sub">
-            Fibrosarcomas are infiltrative tumors where incomplete surgical margins are the rule,
-            not the exception. Adjuvant CFRT after surgery is the standard of care — reducing
-            local recurrence and extending disease-free survival significantly.
+            Fibrosarcomas are infiltrative tumors, and complete surgical margins are often
+            difficult to achieve. Adjuvant radiation therapy after surgery is the standard of care —
+            reducing local recurrence and extending disease-free survival significantly.
           </p>
           <div className="cond-hero__ctas">
             <Link href="/contact-pet-owners" className="cta-primario">Request a Consultation</Link>
           </div>
-          <div className="cond-hero__badges">
-            <div className="cond-hero__badge">Board Certified Radiation Oncologist on site</div>
-            <div className="cond-hero__badge">Palm Beach County, FL</div>
-            <div className="cond-hero__badge">Same-week consultations</div>
-          </div>
         </div>
       </section>
-
-      <div className="pos-strip">
-        <div className="pos-strip__inner">
-          <p className="pos-strip__text">
-            <strong>&ldquo;The only center 100% dedicated to Radiation Oncology in Florida&rdquo;</strong>
-          </p>
-        </div>
-      </div>
 
       <section style={{ background: '#fff' }} aria-labelledby="editorial-heading">
         <div className="cond-editorial">
@@ -106,13 +68,13 @@ export default function FibrosarcomaPage() {
             <div className="cond-editorial__kicker-text">Understanding Fibrosarcoma in Pets</div>
           </div>
           <h2 id="editorial-heading" className="cond-editorial__h2">
-            Surgery leaves cells behind.<br /><em>Radiation eliminates them.</em>
+            Surgery and radiation, working together.
           </h2>
           <p className="cond-editorial__lead">
             Fibrosarcomas are defined by their infiltrative growth pattern — microscopic tumor
             extensions reach well beyond what the surgeon can see or feel. This is why even
-            an apparently complete resection is rarely truly complete, and why adjuvant radiation
-            is not optional. It is the treatment that eliminates what surgery leaves behind.
+            an apparently complete resection may leave microscopic disease, and why adjuvant radiation
+            is often recommended. Radiation treats the microscopic disease that may remain after surgery.
           </p>
           <p className="cond-editorial__body">
             In dogs, fibrosarcoma most frequently arises in the oral cavity — gingiva, hard palate,
@@ -124,12 +86,12 @@ export default function FibrosarcomaPage() {
           </p>
           <h3 className="cond-editorial__h3">Adjuvant vs. definitive radiation</h3>
           <p className="cond-editorial__body">
-            Adjuvant CFRT — delivered after surgery — is the standard approach when resection
-            is performed but margins are narrow or incomplete. This is the most common scenario
-            for oral fibrosarcoma. Definitive CFRT is used as the primary treatment when surgery
-            is not feasible due to tumor size, location, or the pet&apos;s overall health.
-            Both achieve meaningful local control — adjuvant radiation produces the best outcomes
-            when combined with surgical debulking.
+            Adjuvant radiation therapy — delivered after surgery — is the standard approach when
+            resection is performed but margins are narrow or incomplete. This is the most common
+            scenario for oral fibrosarcoma. Definitive radiation therapy is used as the primary
+            treatment when surgery is not feasible due to tumor size, location, or the pet&apos;s
+            overall health.
+            Both achieve meaningful local control.
           </p>
           <div className="cond-editorial__fact">
             <div className="cond-editorial__fact-icon" aria-hidden="true">{INFO_ICON}</div>
@@ -159,33 +121,7 @@ export default function FibrosarcomaPage() {
         </div>
       </section>
 
-      <div className="cond-bridge" aria-label="Key outcomes">
-        <div className="cond-bridge__stat">
-          <div className="cond-bridge__val">12–<em>24</em>mo</div>
-          <div className="cond-bridge__label">Median survival — oral fibrosarcoma with surgery + RT</div>
-        </div>
-        <div className="cond-bridge__stat">
-          <div className="cond-bridge__val">16–<em>20</em></div>
-          <div className="cond-bridge__label">Sessions of adjuvant or definitive CFRT</div>
-        </div>
-        <div className="cond-bridge__stat">
-          <div className="cond-bridge__val">Same<em> day</em></div>
-          <div className="cond-bridge__label">Home after every session — outpatient treatment</div>
-        </div>
-      </div>
 
-
-      <section className="seccion" aria-labelledby="faq-heading">
-        <div className="contenedor">
-          <div style={{ textAlign: 'center', maxWidth: 580, margin: '0 auto' }}>
-            <div className="eyebrow" style={{ justifyContent: 'center' }}>Common Questions</div>
-            <h2 id="faq-heading" className="titulo-seccion">
-              What pet families<br /><em>ask us most.</em>
-            </h2>
-          </div>
-          <FAQAccordion items={FAQ_ITEMS} />
-        </div>
-      </section>
 
       <References items={REFERENCES} />
 
@@ -197,7 +133,7 @@ export default function FibrosarcomaPage() {
           </div>
           <p className="cond-cta__text">
             Dr. DiBernardi personally reviews every case. Tell us about your pet and we&apos;ll
-            respond promptly with a clear, honest recommendation.
+            respond promptly with a clear recommendation.
           </p>
           <Link href="/contact-pet-owners" className="cond-cta__btn-primary">Request a Consultation</Link>
         </div>

@@ -4,14 +4,6 @@ import Link from 'next/link'
 import { getPageSeo, ORGANIZATION } from '@/lib/seo-config'
 import { CONTACT_INFO } from '@/lib/nav-config'
 import FormContact from '@/components/forms/FormContact'
-import References, { type Reference } from '@/components/ui/References'
-
-// Peer-reviewed sources grounding the radiation-therapy context on this page.
-const REFERENCES: Reference[] = [
-  { authors: 'Farrelly J, et al.', year: '2017', title: 'Retrospective analysis of non-radiation complications in dogs undergoing radiation therapy', source: 'Vet Radiol Ultrasound' },
-  { authors: 'Bley CR, et al.', year: '2022', title: 'Dose- and volume-limiting late toxicity of FLASH radiotherapy in cats with squamous cell carcinoma', source: 'Clin Cancer Res' },
-  { authors: 'Fonti N, et al.', year: '2026', title: 'Factors influencing malignant tumor development in cats from a multicenter retrospective study', source: 'Sci Rep' },
-]
 
 const pageSeo = getPageSeo('/pet-cancer')
 
@@ -23,14 +15,14 @@ export const metadata: Metadata = {
 }
 
 const WHY_CARDS = [
-  { title: 'Board-Certified Specialist', text: 'Our radiation oncologist holds dual board certification and brings over 20 years of dedicated clinical experience.', icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg> },
+  { title: 'Board-Certified Specialist', text: 'Our radiation oncologist holds dual board certification and brings more than 20 years of oncology experience.', icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg> },
   { title: 'Personalized Plans', text: 'Every treatment plan is designed specifically for your pet\'s tumor type, size, location, and quality-of-life goals.', icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg> },
   { title: 'Collaborative Care', text: 'We work closely with your veterinarian and any other specialists involved — full reports, open communication, always.', icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> },
   { title: 'Quality of Life First', text: 'Radiation therapy is typically outpatient, low-disruption, and designed to keep your pet comfortable throughout treatment.', icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg> },
 ]
 
 const CONDITIONS = [
-  { title: 'Brain Tumors', text: 'Radiation is one of the most effective treatments for intracranial tumors in dogs and cats, often producing significant improvement in neurological signs.', href: '/brain-tumors', icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96-.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2Z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96-.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2Z"/></svg> },
+  { title: 'Brain Tumors', text: 'Radiation is often a primary treatment option for brain tumors and can improve neurological signs.', href: '/brain-tumors', icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96-.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2Z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96-.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2Z"/></svg> },
   { title: 'Nasal Tumors', text: 'Nasal tumors are among the most radiation-responsive cancers in veterinary medicine. Radiation is the treatment of choice.', href: '/nasal-tumors', icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> },
   { title: 'Bone Cancer (OSA)', text: 'Palliative radiation provides meaningful pain relief and improved quality of life for dogs with osteosarcoma.', href: '/osteosarcoma', icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="m18 8-1.5-1.5"/><path d="m5.5 20.5 11-11"/><path d="m6 8 1.5-1.5"/><path d="m18.5 20.5-11-11"/><circle cx="5.5" cy="5.5" r="2.5"/><circle cx="18.5" cy="5.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/><circle cx="5.5" cy="18.5" r="2.5"/></svg> },
   { title: 'Soft Tissue Sarcoma', text: 'Post-surgical radiation significantly reduces local recurrence rates for soft tissue sarcomas with incomplete or close margins.', href: '/soft-tissue-sarcomas', icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/></svg> },
@@ -39,14 +31,14 @@ const CONDITIONS = [
 ]
 
 const PROTOCOLS = [
-  { title: 'Conventional Fractionated RT', tag: 'Full Course', text: 'Multiple smaller daily sessions — typically 15 to 20 treatments — that maximize tumor control while minimizing long-term side effects. The gold standard for curative-intent cases.', href: '/radiation-therapy/#cfrt', featured: false },
-  { title: 'SRS / SRT', tag: '★ Most Searched', text: '1 to 5 ultra-precise, high-dose sessions. Ideal for small, well-defined tumors — extreme accuracy in the fewest anesthetic events possible.', href: '/radiation-therapy/#srs-srt', featured: true },
+  { title: 'Conventional Fractionated RT', tag: 'Full Course', text: 'Multiple smaller sessions — typically 10 to 20, Monday to Thursday — to maximize tumor control while minimizing long-term side effects. Used for curative or adjuvant treatment.', href: '/radiation-therapy/#cfrt', featured: false },
+  { title: 'SRS / SRT', tag: 'Stereotactic', text: '1 to 5 high-dose sessions targeted to the tumor. Ideal for small, well-defined tumors — high accuracy with fewer anesthetic events.', href: '/radiation-therapy/#srs-srt', featured: true },
   { title: 'Palliative Radiation', tag: 'Comfort-Focused', text: 'Fewer, larger sessions aimed at reducing pain, slowing progression, and improving quality of life. Ideal when comfort is the primary goal.', href: '/radiation-therapy/#palliative', featured: false },
 ]
 
 const STEPS = [
-  { num: 1, title: 'First Contact', text: 'Call or email us. We\'ll listen and let you know quickly whether radiation therapy could help your pet — no pressure, no obligation.', tags: ['Promptly. Always.'] },
-  { num: 2, title: 'Medical Review & Consultation', text: 'We review your pet\'s imaging, pathology, and full history. You\'ll receive a clear, honest recommendation — no jargon, no pressure.', tags: ['In-person', 'Remote consultation available'] },
+  { num: 1, title: 'First Contact', text: 'Call or email us. We\'ll listen and let you know quickly whether radiation therapy could help your pet.', tags: ['Promptly. Always.'] },
+  { num: 2, title: 'Medical Review & Consultation', text: 'We review your pet\'s imaging, pathology, and full history. You\'ll receive a clear recommendation in plain language.', tags: ['In-person'] },
   { num: 3, title: 'Personalized Treatment Plan', text: 'Our Radiation Oncologist designs a custom plan using advanced imaging and dosimetry. The right protocol is selected based on your pet\'s specific cancer, anatomy, and goals.', tags: ['CFRT', 'Palliative Radiation', 'SRS / SRT'] },
   { num: 4, title: 'Treatment & Ongoing Care', text: 'Outpatient sessions, regular check-ins, and complete coordination with your veterinarian — from first treatment to final follow-up and beyond.', tags: ['1–20 sessions', 'Outpatient', 'Vet coordination'] },
 ]
@@ -74,22 +66,6 @@ export default function PetCancerPage() {
             <Link href="/contact-pet-owners" className="cta-primario">Request a Consultation →</Link>
             <Link href="/radiation-therapy" className="cta-secundario">How Radiation Works</Link>
           </div>
-          <div className="hero__trust-line">
-            <div className="htl-item">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-              Board-Certified Radiation Oncologist
-            </div>
-            <div className="htl-sep" />
-            <div className="htl-item">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              Prompt Response. Always.
-            </div>
-            <div className="htl-sep" />
-            <div className="htl-item">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              Royal Palm Beach · No Referral Needed
-            </div>
-          </div>
         </div>
       </section>
 
@@ -107,7 +83,7 @@ export default function PetCancerPage() {
             <div>
               <div className="eyebrow">Why Animal Alliance</div>
               <h2 id="why-heading" className="titulo-seccion">Exclusively radiation therapy.<br /><em>Completely focused</em> on your pet.</h2>
-              <p className="bajada">We do one thing: treat cancer in dogs and cats with radiation therapy. That single focus means every protocol, every piece of equipment, every clinical decision is built around the highest standard of veterinary radiation oncology available.</p>
+              <p className="bajada">We do one thing: treat cancer in dogs and cats with radiation therapy. That single focus means every protocol, every piece of equipment, every clinical decision is built around one specialty: veterinary radiation oncology.</p>
               <div className="pc-why__cards">
                 {WHY_CARDS.map((c) => (
                   <div key={c.title} className="pc-card">
@@ -136,7 +112,7 @@ export default function PetCancerPage() {
           <div style={{ textAlign: 'center', maxWidth: 640, margin: '0 auto' }}>
             <div className="eyebrow" style={{ justifyContent: 'center' }}>Cancers We Treat</div>
             <h2 id="conditions-heading" className="titulo-seccion">Radiation therapy for<br /><em>many types of pet cancer.</em></h2>
-            <p className="bajada" style={{ margin: '0 auto' }}>From brain tumors to soft tissue sarcomas, pet cancer responds well to radiation therapy across a wide range of diagnoses. We treat both dogs and cats.</p>
+            <p className="bajada" style={{ margin: '0 auto' }}>From brain tumors to soft tissue sarcomas, radiation therapy can be an effective option for a wide range of diagnoses. We treat both dogs and cats.</p>
           </div>
           <div className="pc-cond__grid">
             {CONDITIONS.map((c) => (
@@ -165,7 +141,6 @@ export default function PetCancerPage() {
                 <span className={`pc-proto-card__tag${p.featured ? ' pc-proto-card__tag--featured' : ''}`}>{p.tag}</span>
                 <div className="pc-proto-card__title">{p.title}</div>
                 <p className="pc-proto-card__text">{p.text}</p>
-                <div className="pc-proto-card__link">Learn more <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
               </Link>
             ))}
           </div>
@@ -192,11 +167,6 @@ export default function PetCancerPage() {
                   <div className="pc-step__body">
                     <div className="pc-step__title">{s.title}</div>
                     <p className="pc-step__text">{s.text}</p>
-                    <div className="pc-step__tags">
-                      {s.tags.map((t) => (
-                        <span key={t} className="pc-step__tag">{t}</span>
-                      ))}
-                    </div>
                   </div>
                 </div>
               ))}
@@ -243,14 +213,6 @@ export default function PetCancerPage() {
               <div className="eyebrow eyebrow--claro">For Referring Veterinarians</div>
               <div className="pc-contact-vet__title">A referral partner<br />you can <em>count on.</em></div>
               <p className="pc-contact-vet__text">We respond promptly, keep you fully informed, and return the patient to your care when radiation therapy is complete. Just Radiation Oncology — A True Extension of Your Practice.</p>
-              <div className="pc-contact-vet__pills">
-                {['Prompt acknowledgment', 'Full written reports', 'Direct oncologist access', 'You keep the patient'].map((p) => (
-                  <div key={p} className="pc-contact-vet__pill">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#7EC8E3" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                    {p}
-                  </div>
-                ))}
-              </div>
             </div>
             <Link href="/for-veterinarians" className="pc-contact-vet__btn">
               View Referral Information →
@@ -326,7 +288,6 @@ export default function PetCancerPage() {
 
       </section>
 
-      <References items={REFERENCES} />
     </>
   )
 }

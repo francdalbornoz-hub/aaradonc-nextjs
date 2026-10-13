@@ -216,7 +216,7 @@ export default function ContactReferrersPage() {
         <div style={{ maxWidth: 1408, margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 16 }}>
           <p style={{ fontSize: 15, color: 'rgba(255,255,255,.85)', fontWeight: 500 }}>
             <strong style={{ fontWeight: 700 }}>Are you a pet family?</strong>{' '}
-            Use our consultation form — we respond promptly with clarity and no pressure.
+            Use our consultation form — we respond promptly.
           </p>
           <Link
             href="/contact-pet-owners"

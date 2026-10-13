@@ -4,11 +4,43 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import {
-  MAIN_NAV,
-  CONTACT_INFO,
+  getMainNav,
+  getContactInfo,
   type NavDropdownEntry,
   type MegaMenuColumn,
 } from '@/lib/nav-config'
+import { langFromPath, counterpartPath, esPath } from '@/lib/i18n'
+import { TargetFlag } from '@/components/ui/Flags'
+
+// Header chrome strings (nav item labels come from nav-config).
+const UI = {
+  en: {
+    skip: 'Skip to main content',
+    requestConsult: 'Request a Consultation',
+    referPatient: 'Refer a Patient',
+    openMenu: 'Open navigation menu',
+    closeMenu: 'Close navigation menu',
+    navMain: 'Main navigation',
+    navMobile: 'Mobile navigation',
+    logoSub: 'Radiation Oncology · Palm Beach',
+    callAria: (p: string) => `Call us at ${p}`,
+    homeAria: 'Animal Alliance Radiation Oncology — Home',
+    switchTo: 'Ver en español',
+  },
+  es: {
+    skip: 'Ir al contenido principal',
+    requestConsult: 'Agendar una consulta',
+    referPatient: 'Derivar un paciente',
+    openMenu: 'Abrir menú de navegación',
+    closeMenu: 'Cerrar menú de navegación',
+    navMain: 'Navegación principal',
+    navMobile: 'Navegación móvil',
+    logoSub: 'Radioterapia veterinaria · Palm Beach',
+    callAria: (p: string) => `Llámanos al ${p}`,
+    homeAria: 'Ir al inicio de Animal Alliance Radiation Oncology',
+    switchTo: 'View in English',
+  },
+} as const
 
 // ─── Icon helpers ─────────────────────────────────────────────────────────────
 
@@ -273,6 +305,18 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false)
   const pathname = usePathname()
 
+  // Language is derived from the URL (/es/… → Spanish). Nav labels/hrefs and
+  // contact info come already localized; reusing the same variable names keeps
+  // the JSX below unchanged.
+  const lang = langFromPath(pathname)
+  const t = UI[lang]
+  const MAIN_NAV = getMainNav(lang)
+  const CONTACT_INFO = getContactInfo(lang)
+  const homeHref = lang === 'es' ? '/es' : '/'
+  const consultHref = lang === 'es' ? esPath('/contact-pet-owners') : '/contact-pet-owners'
+  const referHref = lang === 'es' ? esPath('/contact-referrers') : '/contact-referrers'
+  const otherLangHref = counterpartPath(pathname)
+
   // Al cambiar de ruta, cerrar el menú desktop y suprimir el :hover (el cursor
   // suele quedar sobre el nav-item tras el clic). La supresión se limpia sola
   // cuando el mouse entra o sale de un item. Cubre cualquier forma de navegar.
@@ -323,7 +367,7 @@ export default function Header() {
     <>
       {/* ── Skip to content ─────────────────────────────────────────────────── */}
       <a href="#main-content" className="skip-link">
-        Skip to main content
+        {t.skip}
       </a>
 
       {/* ── Fixed header wrapper ─────────────────────────────────────────────── */}
@@ -358,6 +402,16 @@ export default function Header() {
               </div>
             </div>
             <div className="topbar__ctas">
+              <Link
+                href={otherLangHref}
+                className="lang-switch"
+                aria-label={t.switchTo}
+                hrefLang={lang === 'es' ? 'en' : 'es'}
+              >
+                <TargetFlag currentLang={lang} size={16} />
+                {lang === 'es' ? 'EN' : 'ES'}
+              </Link>
+              <div className="topbar__sep topbar__sep--hide-sm" />
               <a
                 href={CONTACT_INFO.instagram}
                 target="_blank"
@@ -367,27 +421,27 @@ export default function Header() {
               >
                 <InstagramIcon />
               </a>
-              <Link href="/contact-pet-owners" className="topbar-btn topbar-btn--primary">
+              <Link href={consultHref} className="topbar-btn topbar-btn--primary">
                 <CalendarIcon />
-                Request a Consultation
+                {t.requestConsult}
               </Link>
-              <Link href="/contact-referrers" className="topbar-btn topbar-btn--secondary">
-                Refer a Patient
+              <Link href={referHref} className="topbar-btn topbar-btn--secondary">
+                {t.referPatient}
               </Link>
             </div>
           </div>
         </div>
 
         {/* ── Navbar ────────────────────────────────────────────────────────── */}
-        <nav className="navbar" aria-label="Main navigation">
+        <nav className="navbar" aria-label={t.navMain}>
           <div className="navbar__inner">
 
             {/* Logo */}
-            <Link href="/" className="logo" aria-label="Animal Alliance Radiation Oncology — Home">
+            <Link href={homeHref} className="logo" aria-label={t.homeAria}>
               <div className="logo__main">
                 Animal <em>Alliance</em>
               </div>
-              <div className="logo__sub">Radiation Oncology · Palm Beach</div>
+              <div className="logo__sub">{t.logoSub}</div>
             </Link>
 
             {/* Desktop nav */}
@@ -450,7 +504,7 @@ export default function Header() {
 
             {/* Phone */}
             <div className="navbar__phone">
-              <a href={CONTACT_INFO.phoneHref} className="navbar__phone-link" aria-label={`Call us at ${CONTACT_INFO.phone}`}>
+              <a href={CONTACT_INFO.phoneHref} className="navbar__phone-link" aria-label={t.callAria(CONTACT_INFO.phone)}>
                 <PhoneIcon size={16} />
                 <span className="navbar__phone-num">{CONTACT_INFO.phone}</span>
               </a>
@@ -461,7 +515,7 @@ export default function Header() {
               type="button"
               className="hamburger"
               onClick={() => setMobileOpen(true)}
-              aria-label="Open navigation menu"
+              aria-label={t.openMenu}
               aria-expanded={mobileOpen}
               aria-controls="mobile-menu"
             >
@@ -482,24 +536,24 @@ export default function Header() {
         >
           {/* Header row */}
           <div className="mobile-menu__head">
-            <Link href="/" onClick={closeMobile} aria-label="Animal Alliance Radiation Oncology — Home">
+            <Link href={homeHref} onClick={closeMobile} aria-label={t.homeAria}>
               <div className="logo__main" style={{ fontSize: 18 }}>
                 Animal <em>Alliance</em>
               </div>
-              <div className="logo__sub">Radiation Oncology · Palm Beach</div>
+              <div className="logo__sub">{t.logoSub}</div>
             </Link>
             <button
               type="button"
               className="mobile-menu__close"
               onClick={closeMobile}
-              aria-label="Close navigation menu"
+              aria-label={t.closeMenu}
             >
               <CloseIcon />
             </button>
           </div>
 
           {/* Nav items */}
-          <nav className="mobile-menu__body" aria-label="Mobile navigation">
+          <nav className="mobile-menu__body" aria-label={t.navMobile}>
             {MAIN_NAV.map((item) => {
               const key = item.label
               const hasDropdown = !!item.dropdown || !!item.megaMenu
@@ -536,11 +590,11 @@ export default function Header() {
               <ClockIcon size={14} />
               {CONTACT_INFO.hours}
             </div>
-            <Link href="/contact-pet-owners" onClick={closeMobile} className="mobile-btn mobile-btn--primary">
-              Request a Consultation →
+            <Link href={consultHref} onClick={closeMobile} className="mobile-btn mobile-btn--primary">
+              {t.requestConsult} →
             </Link>
-            <Link href="/contact-referrers" onClick={closeMobile} className="mobile-btn mobile-btn--secondary">
-              Refer a Patient →
+            <Link href={referHref} onClick={closeMobile} className="mobile-btn mobile-btn--secondary">
+              {t.referPatient} →
             </Link>
           </div>
         </div>

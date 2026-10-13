@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { getPageSeo } from '@/lib/seo-config'
-import FAQAccordion from '@/components/ui/FAQAccordion'
 import References, { type Reference } from '@/components/ui/References'
 
 // ─── SEO ──────────────────────────────────────────────────────────────────────
@@ -33,62 +32,6 @@ export const metadata: Metadata = {
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
-const TUMOR_TYPES = [
-  {
-    species: 'Dogs primarily · Cats',
-    name: 'Appendicular Osteosarcoma',
-    desc: 'The most common form — affecting the long bones of the limbs. Distal radius and proximal humerus in dogs are the most frequent sites. Palliative radiation is the standard non-surgical treatment for pain management.',
-    tag: '★ Palliative RT first-line',
-    href: '/osteosarcoma',
-  },
-  {
-    species: 'Dogs & Cats',
-    name: 'Axial Osteosarcoma',
-    desc: 'OSA of the skull, spine, ribs, or pelvis. Surgery is rarely feasible. Radiation — palliative or curative-intent CFRT — is the primary treatment modality. Each axial case is evaluated individually based on location and extent.',
-    tag: 'Radiation as primary treatment',
-    href: '/osteosarcoma',
-  },
-  {
-    species: 'Dogs & Cats',
-    name: 'Chondrosarcoma',
-    desc: 'Arises from cartilage — most commonly on the ribs, nasal cavity, or flat bones. Less aggressive than OSA but locally invasive. Radiation is indicated for unresectable cases or after incomplete excision.',
-    tag: 'Radiation for unresectable cases',
-  },
-  {
-    species: 'Also evaluated',
-    name: 'Other Primary Bone Tumors',
-    desc: 'Fibrosarcoma of bone · Hemangiosarcoma of bone · Multilobular osteochondrosarcoma of the skull. Each case reviewed individually for radiation candidacy based on type, location, and extent.',
-    tag: 'Individualized review',
-    href: null,
-  },
-]
-
-const FAQ_ITEMS = [
-  {
-    q: 'Can radiation cure osteosarcoma in dogs or cats?',
-    a: "For appendicular osteosarcoma (limb bones), palliative radiation is not curative — it focuses on pain control and quality of life. For axial osteosarcoma (skull, spine, ribs), curative-intent radiation with CFRT may be appropriate and can achieve meaningful local control. Dr. DiBernardi will discuss realistic goals and expected outcomes for your pet's specific osteosarcoma at the consultation.",
-  },
-  {
-    q: 'How quickly does radiation relieve osteosarcoma pain?',
-    a: 'Most pets begin showing meaningful osteosarcoma pain reduction within the first few sessions of palliative radiation — relief often comes early as the treatment calms tumor-associated inflammation. Over 90% of treated pets show a positive response. The effect typically provides several months of improved comfort, and in some cases the protocol can be repeated if the initial response was good.',
-  },
-  {
-    q: 'How many radiation sessions does osteosarcoma treatment require?',
-    a: "The standard palliative osteosarcoma protocol involves 3–5 sessions, delivered once or twice per week, completing the full course in 2–4 weeks. Each session is outpatient — brief anesthesia and your pet goes home the same day. The low session count minimizes total anesthetic exposure and disruption to your pet's routine.",
-  },
-  {
-    q: 'My pet is not a surgical candidate for osteosarcoma. Is radiation still an option?',
-    a: "Yes. Palliative radiation is specifically designed for osteosarcoma cases where surgery is not indicated — whether due to age, body condition, concurrent disease, tumor location, or owner preference. It does not require prior or planned surgery. Many pets who receive palliative RT for osteosarcoma return to comfortable, mobile daily life for several additional months.",
-  },
-  {
-    q: 'Does radiation work for osteosarcoma in cats?',
-    a: 'Yes. Osteosarcoma in cats is treated with the same evidence-based radiation protocols used in dogs. Feline appendicular osteosarcoma often carries a better prognosis than in dogs. Axial osteosarcoma in cats — including spinal and skull tumors — is evaluated individually for palliative or curative-intent radiation.',
-  },
-  {
-    q: 'Do I need a referral to consult about osteosarcoma treatment?',
-    a: "Whether you've been referred by your veterinarian or are reaching out directly — both are welcome. If you have radiographs, CT images, or pathology confirming osteosarcoma, bring them to the consultation. We work collaboratively with your veterinarian and any other specialists already involved in your pet's care.",
-  },
-]
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
@@ -120,29 +63,15 @@ export default function OsteosarcomaPage() {
             Osteosarcoma<br />radiation therapy<br /><em>for pets in Florida.</em>
           </h1>
           <p className="cond-hero__sub">
-            Osteosarcoma is the most aggressive bone tumor in dogs and cats. When surgery is not an
-            option — or quality of life is the priority — radiation therapy delivers meaningful pain
-            relief and extended survival without amputation.
+            Osteosarcoma is the most common primary bone tumor in dogs. When surgery is not an
+            option — or quality of life is the priority — radiation therapy can deliver meaningful pain
+            relief and better quality of life without amputation.
           </p>
           <div className="cond-hero__ctas">
             <Link href="/contact-pet-owners" className="cta-primario">Request a Consultation</Link>
           </div>
-          <div className="cond-hero__badges">
-            <div className="cond-hero__badge">Board Certified Radiation Oncologist on site</div>
-            <div className="cond-hero__badge">Palm Beach County, FL</div>
-            <div className="cond-hero__badge">Palliative &amp; curative options</div>
-          </div>
         </div>
       </section>
-
-      {/* ══════════════════════════════════════════════════════════════════════
-          POSITIONING STRIP
-      ══════════════════════════════════════════════════════════════════════ */}
-      <div className="pos-strip">
-        <div className="pos-strip__inner">
-          <span className="pos-strip__text">&ldquo;The only center 100% dedicated to Radiation Oncology in Florida&rdquo;</span>
-        </div>
-      </div>
 
       {/* ══════════════════════════════════════════════════════════════════════
           EDITORIAL
@@ -177,12 +106,12 @@ export default function OsteosarcomaPage() {
             dogs when feasible, offering median survival of 10–12 months. But not every pet is a
             surgical candidate — due to age, concurrent orthopedic disease, body condition, or owner
             preference. For these cases, palliative radiation combined with analgesics and
-            bisphosphonates is the most effective non-surgical option for osteosarcoma pain management.
+            bisphosphonates is an effective non-surgical option for osteosarcoma pain management.
           </p>
           <p className="cond-editorial__body">
             Palliative radiation for osteosarcoma reduces tumor-associated inflammation and slows local
-            bone destruction — the primary drivers of pain. Over 90% of treated pets show meaningful
-            pain reduction, often within the first few sessions. This is not curative, but
+            bone destruction — the primary drivers of pain. Most dogs show meaningful pain relief,
+            often within the first few sessions. This is not curative, but
             the improvement in comfort and mobility is clinically significant and well-documented.
           </p>
           <div className="cond-editorial__fact">
@@ -192,8 +121,8 @@ export default function OsteosarcomaPage() {
               </svg>
             </div>
             <div className="cond-editorial__fact-text">
-              <strong>Palliative radiation for osteosarcoma</strong> typically involves 3–5 sessions
-              delivered once or twice per week — a schedule that minimizes total anesthetic exposure
+              <strong>Palliative radiation for osteosarcoma</strong> is delivered as a short
+              outpatient course — a schedule that minimizes total anesthetic exposure
               and disruption to your pet&apos;s routine. Most pets remain comfortable and mobile
               throughout treatment.
             </div>
@@ -201,7 +130,7 @@ export default function OsteosarcomaPage() {
           <h3 className="cond-editorial__h3">Axial osteosarcoma — when radiation therapy is the primary treatment</h3>
           <p className="cond-editorial__body">
             For osteosarcoma of the skull, spine, ribs, or pelvis, surgery is rarely feasible.
-            Radiation — both palliative and sometimes curative-intent CFRT — becomes the primary
+            Radiation — both palliative and sometimes curative-intent radiation therapy — becomes the primary
             treatment modality. Axial osteosarcoma cases at AARADONC are evaluated individually, with
             protocol selection based on tumor location, extent, and patient status.
           </p>
@@ -223,76 +152,13 @@ export default function OsteosarcomaPage() {
       {/* ══════════════════════════════════════════════════════════════════════
           TUMOR TYPES
       ══════════════════════════════════════════════════════════════════════ */}
-      <section className="cond-types" aria-labelledby="types-heading">
-        <div className="cond-types__inner">
-          <div className="cond-types__header">
-            <div className="eyebrow-label">Osteosarcoma Types We Treat</div>
-            <h2 id="types-heading" className="titulo-seccion">
-              Osteosarcoma by location<br />in dogs and cats.
-            </h2>
-            <p className="cond-types__sub">
-              The location of osteosarcoma determines treatment options. Appendicular OSA (limb bones)
-              and axial OSA (skull, spine, ribs, pelvis) require different radiation approaches.
-              Dr. DiBernardi evaluates each case individually.
-            </p>
-          </div>
-          <div className="cond-types__grid">
-            {TUMOR_TYPES.map((t) =>
-              t.href ? (
-                <Link key={t.name} href={t.href} className={`cond-type-card${!t.href ? ' cond-type-card--muted' : ''}`}>
-                  <div className="cond-type-card__species">{t.species}</div>
-                  <div className="cond-type-card__name">{t.name}</div>
-                  <div className="cond-type-card__desc">{t.desc}</div>
-                  <div className="cond-type-card__tag">{t.tag}</div>
-                  <div className="cond-type-card__link">Learn more →</div>
-                </Link>
-              ) : (
-                <div key={t.name} className="cond-type-card cond-type-card--muted">
-                  <div className="cond-type-card__species">{t.species}</div>
-                  <div className="cond-type-card__name">{t.name}</div>
-                  <div className="cond-type-card__desc">{t.desc}</div>
-                  <div className="cond-type-card__tag">{t.tag}</div>
-                </div>
-              )
-            )}
-          </div>
-        </div>
-      </section>
-
       {/* ══════════════════════════════════════════════════════════════════════
           BRIDGE STATS
       ══════════════════════════════════════════════════════════════════════ */}
-      <div className="cond-bridge" role="list" aria-label="Key statistics">
-        <div className="cond-bridge__stat" role="listitem">
-          <div className="cond-bridge__val"><em>90</em>%+</div>
-          <div className="cond-bridge__label">Of pets show significant osteosarcoma pain reduction after palliative RT</div>
-        </div>
-        <div className="cond-bridge__stat" role="listitem">
-          <div className="cond-bridge__val">3–<em>5</em></div>
-          <div className="cond-bridge__label">Sessions total — minimal disruption to your pet&apos;s routine</div>
-        </div>
-        <div className="cond-bridge__stat" role="listitem">
-          <div className="cond-bridge__val">Days</div>
-          <div className="cond-bridge__label">Time to meaningful osteosarcoma pain relief after first session</div>
-        </div>
-      </div>
-
       {/* ══════════════════════════════════════════════════════════════════════
           HOW WE TREAT
       ══════════════════════════════════════════════════════════════════════ */}
 
-      {/* ══════════════════════════════════════════════════════════════════════
-          FAQ
-      ══════════════════════════════════════════════════════════════════════ */}
-      <section className="seccion" aria-labelledby="faq-heading">
-        <div className="contenedor" style={{ maxWidth: 820 }}>
-          <div className="eyebrow-label" style={{ marginBottom: 8 }}>Frequently Asked Questions</div>
-          <h2 id="faq-heading" className="titulo-seccion" style={{ marginBottom: 40 }}>
-            Osteosarcoma treatment —<br />what pet families ask us most.
-          </h2>
-          <FAQAccordion items={FAQ_ITEMS} />
-        </div>
-      </section>
 
       <References items={REFERENCES} />
 
@@ -307,8 +173,7 @@ export default function OsteosarcomaPage() {
           </div>
           <p className="cond-cta__text">
             Palliative radiation for osteosarcoma can make a real difference in your dog&apos;s or
-            cat&apos;s comfort and mobility within days. Whether you&apos;ve been referred by your
-            veterinarian or are reaching out directly — request a consultation and Dr. DiBernardi
+            cat&apos;s comfort and mobility. Request a consultation and Dr. DiBernardi
             will review the case personally.
           </p>
           <Link href="/contact-pet-owners" className="cond-cta__btn-primary">Request a Consultation →</Link>
@@ -319,7 +184,6 @@ export default function OsteosarcomaPage() {
             Refer an osteosarcoma<br /><em>case today.</em>
           </div>
           <p className="cond-cta__text">
-            Palliative RT for osteosarcoma is most effective when started before pain becomes severe.
             We acknowledge all referrals promptly and coordinate directly with your existing pain
             management protocol.
           </p>

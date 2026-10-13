@@ -51,8 +51,8 @@ export default function SmoothScroll() {
     import('lenis').then(({ default: LenisCtor }) => {
       if (cancelled) return
       const lenis = new LenisCtor({
-        // lerp da un suavizado ágil e independiente del frame-rate (como CORV).
-        lerp: 0.1,
+        // lerp más alto = scroll más responsivo y menos "flotante".
+        lerp: 0.12,
         smoothWheel: true,
         wheelMultiplier: 1,
         // Sin smooth en touch: mantiene el gesto nativo del móvil.

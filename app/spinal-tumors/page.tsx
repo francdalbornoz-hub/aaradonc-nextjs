@@ -2,15 +2,12 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { getPageSeo } from '@/lib/seo-config'
-import FAQAccordion from '@/components/ui/FAQAccordion'
 import References, { type Reference } from '@/components/ui/References'
 
 // Peer-reviewed sources supporting the claims on this page (stereotactic and
 // fractionated radiation for spinal/vertebral and CNS tumors).
 const REFERENCES: Reference[] = [
   { authors: 'Swift KE, LaRue SM', year: '2017', title: 'Outcome of 9 dogs treated with stereotactic radiation therapy for primary or metastatic vertebral osteosarcoma', source: 'Vet Comp Oncol' },
-  { authors: 'Kelsey KL, Gieger TL, Nolan MW', year: '2018', title: 'Single fraction stereotactic radiation therapy (stereotactic radiosurgery) is a feasible method for treating intracranial meningiomas in dogs', source: 'Vet Radiol Ultrasound' },
-  { authors: 'Schwarz P, et al.', year: '2018', title: 'Comparative evaluation of a novel, moderately hypofractionated radiation protocol in 56 dogs with symptomatic intracranial neoplasia', source: 'J Vet Intern Med' },
 ]
 
 const pageSeo = getPageSeo('/spinal-tumors')
@@ -27,29 +24,6 @@ const INFO_ICON = (
     <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
   </svg>
 )
-
-const FAQ_ITEMS = [
-  {
-    q: 'What types of spinal tumors occur in dogs and cats?',
-    a: 'Spinal tumors are classified by location: extradural (outside the dural sac — most common, often vertebral tumors or metastatic disease), intradural-extramedullary (within the dural sac but outside the spinal cord — meningiomas, nerve sheath tumors), and intramedullary (within the spinal cord itself — astrocytomas, ependymomas). Location determines which treatment approach is most appropriate.',
-  },
-  {
-    q: 'When is radiation recommended for a spinal tumor?',
-    a: 'Radiation is recommended when surgery is not possible due to tumor location or extent, when surgical resection is incomplete and residual disease requires treatment, or when the goal is palliative — relieving spinal cord compression, reducing pain, and restoring neurological function. For many spinal tumors, especially at surgically challenging locations, radiation is the primary treatment.',
-  },
-  {
-    q: 'Can radiation improve my pet\'s neurological function?',
-    a: 'Yes, in many cases. Radiation can reduce tumor volume and relieve spinal cord compression — which directly translates to neurological improvement. The degree of recovery depends on the severity and duration of neurological compromise before treatment and the tumor type. Early intervention — before permanent spinal cord damage occurs — consistently produces better outcomes.',
-  },
-  {
-    q: 'What protocols are used for spinal tumors?',
-    a: 'Both SRS/SRT and CFRT are used for spinal tumors, depending on tumor type, location, and whether surgery has been performed. SRS/SRT (1–5 sessions) is highly precise and preferred for well-defined tumors. CFRT (16–20 sessions) provides dose fractionation for tumors requiring prolonged treatment. Dr. DiBernardi determines the appropriate protocol after complete case review.',
-  },
-  {
-    q: 'How soon after diagnosis should we start radiation?',
-    a: 'As soon as possible. Neurological compromise from spinal cord compression tends to worsen progressively — and permanent damage can occur if decompression is delayed. Once a spinal tumor is confirmed on MRI or CT, radiation planning should begin promptly. We offer same-week consultations for urgent cases.',
-  },
-]
 
 export default function SpinalTumorsPage() {
   return (
@@ -77,27 +51,14 @@ export default function SpinalTumorsPage() {
           </h1>
           <p className="cond-hero__sub">
             Spinal tumors cause progressive neurological compromise — weakness, paralysis, and pain.
-            Radiation therapy can relieve spinal cord compression, halt progression, and restore
+            Radiation therapy can relieve spinal cord compression, slow progression and may improve
             function when surgery is not possible or incomplete.
           </p>
           <div className="cond-hero__ctas">
             <Link href="/contact-pet-owners" className="cta-primario">Request a Consultation</Link>
           </div>
-          <div className="cond-hero__badges">
-            <div className="cond-hero__badge">Board Certified Radiation Oncologist on site</div>
-            <div className="cond-hero__badge">Palm Beach County, FL</div>
-            <div className="cond-hero__badge">Same-week consultations</div>
-          </div>
         </div>
       </section>
-
-      <div className="pos-strip">
-        <div className="pos-strip__inner">
-          <p className="pos-strip__text">
-            <strong>&ldquo;The only center 100% dedicated to Radiation Oncology in Florida&rdquo;</strong>
-          </p>
-        </div>
-      </div>
 
       <section style={{ background: '#fff' }} aria-labelledby="editorial-heading">
         <div className="cond-editorial">
@@ -111,7 +72,7 @@ export default function SpinalTumorsPage() {
           <p className="cond-editorial__lead">
             Spinal tumors compress or invade the spinal cord — producing progressive weakness,
             incoordination, and pain that worsens as the tumor grows. The spinal cord&apos;s
-            sensitivity to radiation requires submillimeter targeting accuracy. At AARADONC, this
+            sensitivity to radiation requires high-precision targeting. At AARADONC, this
             is exactly what our technology provides.
           </p>
           <p className="cond-editorial__body">
@@ -125,8 +86,7 @@ export default function SpinalTumorsPage() {
           <p className="cond-editorial__body">
             Many spinal tumors — particularly intramedullary masses and tumors at surgically
             challenging vertebral levels — cannot be safely removed without risk of permanent
-            neurological damage. Radiation therapy targets these tumors with precision that surgery
-            cannot match in these locations, delivering therapeutic doses to the tumor while
+            neurological damage. Radiation therapy can treat these tumors, delivering therapeutic doses to the tumor while
             respecting the adjacent spinal cord&apos;s tolerance limits.
           </p>
           <div className="cond-editorial__fact">
@@ -138,51 +98,24 @@ export default function SpinalTumorsPage() {
               function. Early treatment gives the best chance of neurological recovery.
             </div>
           </div>
-          <h3 className="cond-editorial__h3">SRS/SRT — precision for the spine</h3>
+          <h3 className="cond-editorial__h3">Precision for the spine</h3>
           <p className="cond-editorial__body">
-            Stereotactic radiation (SRS/SRT) is ideally suited for spinal tumors. It delivers
-            ablative doses in 1–5 sessions with submillimeter accuracy, protecting the delicate
-            spinal cord while maximizing tumor dose. For well-defined spinal tumors, SRS/SRT can
-            achieve durable local control with minimal sessions and rapid treatment completion.
+            Radiation therapy can be an option for well-defined spinal tumors,
+            delivering high doses while limiting dose to the spinal cord — and may improve
+            neurological function.
           </p>
           <div className="cond-editorial__fact">
             <div className="cond-editorial__fact-icon" aria-hidden="true">{INFO_ICON}</div>
             <div className="cond-editorial__fact-text">
               At AARADONC, <strong>Dr. Lisa DiBernardi</strong> personally reviews every spinal
               tumor case — MRI and CT imaging, neurological status, and treatment history — before
-              designing the radiation plan. Precision here is not an option. It is the requirement.
+              designing the radiation plan.
             </div>
           </div>
         </div>
       </section>
 
-      <div className="cond-bridge" aria-label="Key outcomes">
-        <div className="cond-bridge__stat">
-          <div className="cond-bridge__val">60<em>%+</em></div>
-          <div className="cond-bridge__label">Patients show neurological improvement after radiation</div>
-        </div>
-        <div className="cond-bridge__stat">
-          <div className="cond-bridge__val">1–<em>5</em></div>
-          <div className="cond-bridge__label">Sessions with SRS/SRT — submillimeter spinal targeting</div>
-        </div>
-        <div className="cond-bridge__stat">
-          <div className="cond-bridge__val">Same<em> day</em></div>
-          <div className="cond-bridge__label">Home after every session — outpatient treatment</div>
-        </div>
-      </div>
 
-
-      <section className="seccion" aria-labelledby="faq-heading">
-        <div className="contenedor">
-          <div style={{ textAlign: 'center', maxWidth: 580, margin: '0 auto' }}>
-            <div className="eyebrow" style={{ justifyContent: 'center' }}>Common Questions</div>
-            <h2 id="faq-heading" className="titulo-seccion">
-              What pet families<br /><em>ask us most.</em>
-            </h2>
-          </div>
-          <FAQAccordion items={FAQ_ITEMS} />
-        </div>
-      </section>
 
       <References items={REFERENCES} />
 
@@ -194,7 +127,7 @@ export default function SpinalTumorsPage() {
           </div>
           <p className="cond-cta__text">
             Dr. DiBernardi personally reviews every case. Tell us about your pet and we&apos;ll
-            respond promptly with a clear, honest recommendation.
+            respond promptly with a clear recommendation.
           </p>
           <Link href="/contact-pet-owners" className="cond-cta__btn-primary">Request a Consultation</Link>
         </div>
