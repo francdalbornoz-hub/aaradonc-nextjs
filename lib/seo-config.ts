@@ -15,7 +15,7 @@
  * All titles extracted from source-content/*.txt files — not generated.
  */
 
-import { esPath } from './i18n'
+import { esPath, ES_ENABLED } from './i18n'
 
 // ─── Environment ──────────────────────────────────────────────────────────────
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://aaradonc.com'
@@ -944,6 +944,8 @@ export function getSitemapPaths(): Array<{
     priority: sitemap.priority,
     changefreq: sitemap.changefreq,
   }))
+  // Spanish deactivated → sitemap lists English pages only.
+  if (!ES_ENABLED) return enEntries
   // Spanish mirror: every indexable EN page also has a translated /es counterpart.
   const esEntries = included.map(({ path, sitemap }) => ({
     url: `${SITE_URL}${esPath(path)}`,
@@ -1141,6 +1143,10 @@ function urlsFor(enPath: string): { enUrl: string; esUrl: string } {
  */
 export function i18nAlternates(enPath: string, lang: 'en' | 'es') {
   const { enUrl, esUrl } = urlsFor(enPath)
+  // Spanish deactivated → emit only the self canonical, no hreflang alternates.
+  if (!ES_ENABLED) {
+    return { canonical: lang === 'es' ? esUrl : enUrl }
+  }
   return {
     canonical: lang === 'es' ? esUrl : enUrl,
     languages: {

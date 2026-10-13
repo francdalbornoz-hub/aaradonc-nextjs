@@ -15,6 +15,16 @@
 export type Lang = 'en' | 'es'
 
 /**
+ * Master switch for the Spanish (/es) version on the PUBLIC site.
+ * false = deactivated: language switchers hidden, no hreflang/sitemap for ES,
+ * and /es is redirected away at the server (see public/.htaccess).
+ * The /es pages stay in the repo and still work in local `next dev` so we can
+ * keep translating. To RE-ENABLE: set this to true AND remove the /es redirect
+ * block in public/.htaccess.
+ */
+export const ES_ENABLED = false
+
+/**
  * EN route (path without trailing slash, '/' for home) → ES slug (the segment
  * that goes AFTER /es, no leading/trailing slash; '' for the ES home).
  * Slugs are translated for Spanish SEO + Google Ads relevance.

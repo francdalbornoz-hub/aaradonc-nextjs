@@ -34,6 +34,12 @@ AddType image/svg+xml .svg
   RewriteEngine On
   RewriteBase /
 
+  # ── Spanish (/es) temporarily deactivated — redirect to the English home ──
+  # Must stay ABOVE the "serve existing files" rule so lingering /es files are
+  # not served. Temporary (302) so it is not cached long-term.
+  # TO RE-ENABLE SPANISH: remove this block AND set ES_ENABLED = true in lib/i18n.ts.
+  RewriteRule ^es(/|$) / [R=302,L]
+
   # Serve existing files and directories as-is
   RewriteCond %{REQUEST_FILENAME} -f [OR]
   RewriteCond %{REQUEST_FILENAME} -d

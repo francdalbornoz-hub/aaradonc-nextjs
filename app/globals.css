@@ -3402,56 +3402,6 @@
   border-color: rgba(126, 200, 227, 0.4);
 }
 
-/* ── Floating language switch (bottom-left circular flag) ──────────────────── */
-.lang-fab {
-  position: fixed;
-  left: 20px;
-  bottom: 20px;
-  z-index: 900;
-  width: 54px;
-  height: 54px;
-  border-radius: 50%;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: #fff;
-  border: 1px solid rgba(11, 31, 68, 0.1);
-  box-shadow: 0 10px 28px rgba(11, 31, 68, 0.22), 0 2px 6px rgba(11, 31, 68, 0.12);
-  cursor: pointer;
-  text-decoration: none;
-  transition: transform 0.25s var(--ease-spring), box-shadow 0.25s var(--ease-spring);
-  animation: fadeUp 0.5s var(--ease-spring) both;
-}
-.lang-fab:hover {
-  transform: translateY(-3px) scale(1.06);
-  box-shadow: 0 16px 36px rgba(11, 31, 68, 0.28), 0 3px 8px rgba(11, 31, 68, 0.14);
-}
-.lang-fab:active { transform: translateY(-1px) scale(1.02); }
-.lang-fab__tip {
-  position: absolute;
-  left: calc(100% + 10px);
-  white-space: nowrap;
-  background: #0B1F44;
-  color: #fff;
-  font-family: var(--font-display);
-  font-size: 12px;
-  font-weight: 700;
-  padding: 6px 10px;
-  border-radius: 8px;
-  opacity: 0;
-  pointer-events: none;
-  transform: translateX(-4px);
-  transition: opacity 0.2s var(--ease-spring), transform 0.2s var(--ease-spring);
-}
-.lang-fab:hover .lang-fab__tip { opacity: 1; transform: translateX(0); }
-@media (max-width: 767px) {
-  .lang-fab { width: 48px; height: 48px; left: 16px; bottom: 16px; }
-  .lang-fab__tip { display: none; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .lang-fab, .lang-fab:hover, .lang-fab:active { animation: none; transition: none; transform: none; }
-}
-
 /* ── Cerrar el desplegable al navegar ───────────────────────────────────────
    Tras clickear un link, el mouse sigue sobre el item y el :hover reabriría el
    panel encima de la página nueva. Esta supresión (limpiada al salir el mouse)

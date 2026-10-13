@@ -9,7 +9,7 @@ import {
   type NavDropdownEntry,
   type MegaMenuColumn,
 } from '@/lib/nav-config'
-import { langFromPath, counterpartPath, esPath } from '@/lib/i18n'
+import { langFromPath, counterpartPath, esPath, ES_ENABLED } from '@/lib/i18n'
 import { TargetFlag } from '@/components/ui/Flags'
 
 // Header chrome strings (nav item labels come from nav-config).
@@ -402,15 +402,17 @@ export default function Header() {
               </div>
             </div>
             <div className="topbar__ctas">
-              <Link
-                href={otherLangHref}
-                className="lang-switch"
-                aria-label={t.switchTo}
-                hrefLang={lang === 'es' ? 'en' : 'es'}
-              >
-                <TargetFlag currentLang={lang} size={16} />
-                {lang === 'es' ? 'EN' : 'ES'}
-              </Link>
+              {ES_ENABLED && (
+                <Link
+                  href={otherLangHref}
+                  className="lang-switch"
+                  aria-label={t.switchTo}
+                  hrefLang={lang === 'es' ? 'en' : 'es'}
+                >
+                  <TargetFlag currentLang={lang} size={16} />
+                  {lang === 'es' ? 'EN' : 'ES'}
+                </Link>
+              )}
               <div className="topbar__sep topbar__sep--hide-sm" />
               <a
                 href={CONTACT_INFO.instagram}

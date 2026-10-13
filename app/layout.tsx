@@ -4,7 +4,6 @@ import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 import PageTransition from '@/components/layout/PageTransition'
 import SmoothScroll from '@/components/SmoothScroll'
-import LangFab from '@/components/layout/LangFab'
 import { getPageSeo, ORGANIZATION } from '@/lib/seo-config'
 
 // ─── Default metadata (home page) ────────────────────────────────────────────
@@ -144,9 +143,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
         {/* ── Site footer ─────────────────────────────────────────────────── */}
         <Footer />
-
-        {/* ── Floating language switch (bottom-left flag) ─────────────────── */}
-        <LangFab />
       </body>
     </html>
   )
